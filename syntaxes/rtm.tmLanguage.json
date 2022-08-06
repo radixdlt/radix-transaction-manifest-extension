@@ -1,0 +1,33 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Radix Transaction Manifest",
+	"patterns": [
+		{
+            "match": "#.*",
+            "name": "comment.line.number-sign.rtm"
+        },
+		{
+            "begin": "\"",
+            "end": "\"",
+            "name": "string.quoted.double.rtm"
+        },
+		{
+			"match": "([A-Z][a-z]+)|([A-Z][0-9]+)",
+			"name": "entity.name.function.rtm"
+		},
+		{
+			"match": "^[A-Z]+(?:_[A-Z]+)*",
+			"name": "entity.name.type.class.rtm"
+		},
+		{
+			"match": "([0-9]+(u[0-9]+)?)",
+			"name": "constant.numeric.dec.rtm"
+		},
+		{
+			"match": "(true)|(false)",
+			"name": "constant.language.rtm"
+		}
+		
+	],
+	"scopeName": "source.rtm"
+}
