@@ -10,7 +10,7 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.runManifest"
+        "onLanguage:rtm"
     ],
     "main": "./out/extension.js",
     "contributes": {
@@ -43,6 +43,15 @@
                 "command": "extension.runManifest",
                 "title": "Radix Transaction Manifest: Run the currently open transaction manifest",
                 "icon": "$(play)"
+            },
+            {
+                "command": "extension.defaultAccount",
+                "title": "Radix Transaction Manifest: Copy default account address to clipboard"
+            },
+            {
+                "command": "extension.newAccount",
+                "title": "Radix Transaction Manifest: Create a new account",
+                "icon": "$(person)"
             }
         ],
         "menus": {
@@ -77,6 +86,7 @@
         "typescript": "^4.7.4"
     },
     "dependencies": {
+        "child_process": "^1.0.2",
         "vscode-jsonrpc": "^8.0.2",
         "vscode-languageclient": "^8.0.2"
     }
