@@ -4,6 +4,11 @@ exports.activate = void 0;
 const vscode = require("vscode");
 const resimUtils = require("./resim_utils");
 const extensionUtils = require("./extension_utils");
+const antlr4ts_1 = require("antlr4ts");
+const TransactionManifestLexer_1 = require("./TransactionManifestLexer");
+const TransactionManifestParser_1 = require("./TransactionManifestParser");
+const manifest_listener_1 = require("./manifest_listener");
+const ParseTreeWalker_1 = require("antlr4ts/tree/ParseTreeWalker");
 /**
  * The address of the current resim default account.
  */
@@ -76,6 +81,9 @@ async function activate(context) {
     defaultAccountButton.tooltip = 'Copies the address of the current default account to the clipboard';
     defaultAccountButton.command = 'extension.defaultAccount';
     defaultAccountButton.show();
+    /**
+     * A command used to create a new resim account for the user. This command simply runs `resim new-account`.
+     */
     const newAccount = vscode.commands.registerCommand('extension.newAccount', () => {
         let terminal = extensionUtils.getTerminal('Run Manifest');
         terminal.show(true);
@@ -86,6 +94,32 @@ async function activate(context) {
     newAccountButton.tooltip = 'Creates a new account';
     newAccountButton.command = 'extension.newAccount';
     newAccountButton.show();
+    vscode.languages.registerDocumentFormattingEditProvider('rtm', {
+        provideDocumentFormattingEdits(document) {
+            // Getting the entire document as a string which will then be fed into the antlr parser to make sense of it.
+            let documentContents = document.getText();
+            let charStream = antlr4ts_1.CharStreams.fromString(documentContents);
+            let lexer = new TransactionManifestLexer_1.TransactionManifestLexer(charStream);
+            let tokenStream = new antlr4ts_1.CommonTokenStream(lexer);
+            let parser = new TransactionManifestParser_1.TransactionManifestParser(tokenStream);
+            let tree = parser.manifest();
+            const listener = new manifest_listener_1.ManifestInstructionListener();
+            ParseTreeWalker_1.ParseTreeWalker.DEFAULT.walk(listener, tree);
+            // Getting the positions of the instructions to format them
+            // @ts-ignore			
+            let ranges = listener.manifestInstructionRanges;
+            let textEdits = [];
+            for (var range of ranges) {
+                // Reading the text at the positions so it can be formatted
+                console.log('Formatting:', extensionUtils.rangeToString(range));
+                let instruction = document.getText(range);
+                let formattedInstruction = instruction.split(/[\s|\n|\r|\t]/).filter((x) => !(x.trim().length === 0)).join('\n\t');
+                textEdits.push(new vscode.TextEdit(range, formattedInstruction));
+                console.log("Formatting the instruction", instruction);
+            }
+            return textEdits;
+        },
+    });
     // =================================================================================================================
     // Post-registration code.
     // =================================================================================================================

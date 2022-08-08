@@ -1,3 +1,5 @@
+'use strict';
+
 import * as vscode from 'vscode';
 
 /**
@@ -21,4 +23,12 @@ export function getTerminal(terminalName: string): vscode.Terminal {
     }
 
     return terminal;
+}
+
+/**
+ * This function takes in a range and outputs a user friendly representation of this range that can be easily read. This
+ * function is made to be primarily used for the printing representation of the range. 
+ */
+export function rangeToString(range: vscode.Range): string {
+    return `(${range.start.line}, ${range.start.character}) (${range.end.line}, ${range.end.character})`;
 }

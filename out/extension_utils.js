@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getTerminal = void 0;
+exports.rangeToString = exports.getTerminal = void 0;
 const vscode = require("vscode");
 /**
  * Try to find a terminal with a matching name to run the manifest in, if we can not find any, then a new terminal is
@@ -24,4 +24,12 @@ function getTerminal(terminalName) {
     return terminal;
 }
 exports.getTerminal = getTerminal;
+/**
+ * This function takes in a range and outputs a user friendly representation of this range that can be easily read. This
+ * function is made to be primarily used for the printing representation of the range.
+ */
+function rangeToString(range) {
+    return `(${range.start.line}, ${range.start.character}) (${range.end.line}, ${range.end.character})`;
+}
+exports.rangeToString = rangeToString;
 //# sourceMappingURL=extension_utils.js.map
