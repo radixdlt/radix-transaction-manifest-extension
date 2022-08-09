@@ -9,6 +9,7 @@ const TransactionManifestLexer_1 = require("./TransactionManifestLexer");
 const TransactionManifestParser_1 = require("./TransactionManifestParser");
 const manifest_listener_1 = require("./manifest_listener");
 const ParseTreeWalker_1 = require("antlr4ts/tree/ParseTreeWalker");
+const hover_strings_1 = require("./hover_strings");
 /**
  * The address of the current resim default account.
  */
@@ -118,6 +119,35 @@ async function activate(context) {
                 console.log("Formatting the instruction", instruction);
             }
             return textEdits;
+        },
+    });
+    vscode.languages.registerHoverProvider('rtm', {
+        provideHover(document, position, token) {
+            // We will determine what is shown in the hover through the lexer tokens and not throught the parsed tokens.
+            // this makes the process of determining what to show miles easier. 
+            let hoverResponse = undefined;
+            let charStream = antlr4ts_1.CharStreams.fromString(document.getText());
+            let lexer = new TransactionManifestLexer_1.TransactionManifestLexer(charStream);
+            // @ts-ignore
+            let lexerTokens = lexer.getAllTokens();
+            let hoveredOverToken = undefined;
+            for (var i = 0; i < lexerTokens.length; i++) {
+                let token = lexerTokens[i];
+                let tokenLength = token.stopIndex - token.startIndex;
+                if (token.line - 1 === position.line && token.charPositionInLine <= position.character && token.charPositionInLine + tokenLength + 1 >= position.character) {
+                    hoveredOverToken = token;
+                    break;
+                }
+            }
+            if (hoveredOverToken) {
+                // To get the string representation of this token, we need to construct a range, and get the text in the
+                // document that is at that range
+                let tokenLength = hoveredOverToken.stopIndex - hoveredOverToken.startIndex;
+                let range = new vscode.Range(hoveredOverToken.line - 1, hoveredOverToken.charPositionInLine, hoveredOverToken.line - 1, hoveredOverToken.charPositionInLine + tokenLength + 1);
+                let tokenStringRepresentation = document.getText(range);
+                hoverResponse = (0, hover_strings_1.identifierToHover)(tokenStringRepresentation);
+            }
+            return hoverResponse;
         },
     });
     // =================================================================================================================

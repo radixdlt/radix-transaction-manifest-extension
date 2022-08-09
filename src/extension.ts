@@ -3,12 +3,14 @@
 import * as vscode from 'vscode';
 import * as resimUtils from './resim_utils';
 import * as extensionUtils from './extension_utils';
-import { CharStream, CharStreams, CommonTokenStream } from 'antlr4ts';
+import { CharStream, CharStreams, CommonToken, CommonTokenStream, Token } from 'antlr4ts';
 import { TransactionManifestLexer } from './TransactionManifestLexer';
-import { TransactionManifestParser } from './TransactionManifestParser';
+import { ManifestContext, ManifestInstructionContext, TransactionManifestParser } from './TransactionManifestParser';
 import { TransactionManifestListener } from './TransactionManifestListener';
 import { ManifestInstructionListener } from './manifest_listener';
 import { ParseTreeWalker } from 'antlr4ts/tree/ParseTreeWalker';
+import { ParseTree } from 'antlr4ts/tree/ParseTree';
+import { identifierToHover } from './hover_strings';
 
 /**
  * The address of the current resim default account.
@@ -132,6 +134,41 @@ export async function activate(context: vscode.ExtensionContext) {
 			}
 
 			return textEdits;
+		},
+	});
+
+	vscode.languages.registerHoverProvider('rtm', {
+		provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.Hover | undefined {
+			// We will determine what is shown in the hover through the lexer tokens and not throught the parsed tokens.
+			// this makes the process of determining what to show miles easier. 
+			
+			let hoverResponse: vscode.Hover | undefined = undefined;
+			let charStream: CharStream = CharStreams.fromString(document.getText());
+			let lexer: TransactionManifestLexer = new TransactionManifestLexer(charStream);
+			
+			// @ts-ignore
+			let lexerTokens: CommonToken[] = lexer.getAllTokens();
+			let hoveredOverToken: CommonToken | undefined = undefined;
+			for (var i = 0; i < lexerTokens.length; i++) {
+				let token: CommonToken = lexerTokens[i];
+				let tokenLength: number = token.stopIndex - token.startIndex;
+				if (token.line - 1 === position.line && token.charPositionInLine <= position.character && token.charPositionInLine + tokenLength + 1 >= position.character) {
+					hoveredOverToken = token;
+					break;
+				}
+			}
+			
+			if (hoveredOverToken) {
+				// To get the string representation of this token, we need to construct a range, and get the text in the
+				// document that is at that range
+				let tokenLength: number = hoveredOverToken.stopIndex - hoveredOverToken.startIndex;
+				let range: vscode.Range = new vscode.Range(hoveredOverToken.line - 1, hoveredOverToken.charPositionInLine, hoveredOverToken.line - 1, hoveredOverToken.charPositionInLine + tokenLength + 1);
+				let tokenStringRepresentation: string = document.getText(range);
+
+				hoverResponse = identifierToHover(tokenStringRepresentation);
+			}
+
+			return hoverResponse;
 		},
 	});
 

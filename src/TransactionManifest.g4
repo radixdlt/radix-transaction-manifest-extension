@@ -85,6 +85,8 @@ manifestInstruction
             SEMICOLON       
     |   DROP_ALL_PROOFS
             SEMICOLON
+    |   CLEAR_AUTHZONE
+            SEMICOLON
     |   PUBLISH_PACKAGE
             bytes               // The bytes of the package to publish
             SEMICOLON
