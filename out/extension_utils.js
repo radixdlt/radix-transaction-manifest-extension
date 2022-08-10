@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.rangeToString = exports.getTerminal = void 0;
 const vscode = require("vscode");
@@ -13,7 +13,9 @@ const vscode = require("vscode");
  */
 function getTerminal(terminalName) {
     let terminals = vscode.window.terminals;
-    let matchingNameIndex = terminals.map((x) => x.name === terminalName).indexOf(true);
+    let matchingNameIndex = terminals
+        .map((x) => x.name === terminalName)
+        .indexOf(true);
     let terminal;
     if (matchingNameIndex === -1) {
         terminal = vscode.window.createTerminal(terminalName);

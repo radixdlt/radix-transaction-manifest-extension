@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.executeShell = exports.extractAccountAddressesFromString = exports.getDefaultAccountAddress = void 0;
 const cp = require("child_process");
@@ -7,7 +7,7 @@ const cp = require("child_process");
  */
 async function getDefaultAccountAddress() {
     return new Promise(async (resolve, _reject) => {
-        let showConfigsResult = await executeShell('resim show-configs');
+        let showConfigsResult = await executeShell("resim show-configs");
         let accountAddresses = extractAccountAddressesFromString(showConfigsResult);
         return accountAddresses ? resolve(accountAddresses[0]) : resolve(undefined);
     });

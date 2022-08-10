@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ManifestInstructionListener = void 0;
 const vscode_1 = require("vscode");
