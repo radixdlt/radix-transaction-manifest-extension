@@ -21,13 +21,20 @@ import { ManifestInstructionListener } from "./manifest_listener";
 import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
 import { identifierToHover } from "./hover_strings";
 import { ParseTree } from "antlr4ts/tree/ParseTree";
-import { ANTLRErrorListener } from 'antlr4ts';
+import { ANTLRErrorListener } from "antlr4ts";
+import { ManifestError, ManifestErrorListener } from "./error_listener";
 
 /**
  * The address of the current resim default account.
  */
 let defaultAccountAddress: string | undefined;
 let defaultAccountButton: vscode.StatusBarItem;
+
+/**
+ * A collection of the diagnostics information gathered when analyzing the current open file
+ */
+let diagnosticCollection: vscode.DiagnosticCollection =
+	vscode.languages.createDiagnosticCollection("rtm");
 
 export async function activate(context: vscode.ExtensionContext) {
 	/**
@@ -182,6 +189,9 @@ export async function activate(context: vscode.ExtensionContext) {
 		},
 	});
 
+	/**
+	 * Provides support for actions when the user hovers over specific tokens.
+	 */
 	vscode.languages.registerHoverProvider("rtm", {
 		provideHover(
 			document: vscode.TextDocument,
@@ -232,6 +242,56 @@ export async function activate(context: vscode.ExtensionContext) {
 			return hoverResponse;
 		},
 	});
+
+	/**
+	 * Performs a certain action on save. For now, all that this does is that it gets diagnostics on the current running
+	 * file.
+	 */
+	vscode.workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
+		if (document.languageId === "rtm" && document.uri.scheme === "file") {
+			updateDiagnosticsWithLexerAndParserErrors(document);
+		}
+	});
+
+	vscode.workspace.onDidOpenTextDocument((document: vscode.TextDocument) => {
+		if (document.languageId === "rtm" && document.uri.scheme === "file") {
+			updateDiagnosticsWithLexerAndParserErrors(document);
+		}
+	});
+
+	const updateDiagnosticsWithLexerAndParserErrors = (document: vscode.TextDocument) => {
+		// Lex and parse the contents of the document and then emit the errors encountered.
+		let documentContents: string = document.getText();
+
+		let charStream: CharStream = CharStreams.fromString(documentContents);
+		const errorListener: ManifestErrorListener = new ManifestErrorListener();
+
+		let lexer: TransactionManifestLexer = new TransactionManifestLexer(
+			charStream
+		);
+		lexer.removeErrorListeners();
+		lexer.addErrorListener(errorListener);
+
+		let tokenStream: CommonTokenStream = new CommonTokenStream(lexer);
+		let parser: TransactionManifestParser = new TransactionManifestParser(
+			tokenStream
+		);
+		parser.removeErrorListeners();
+		parser.addErrorListener(errorListener);
+
+		let _tree = parser.manifest();
+		let errors: ManifestError[] = errorListener.getErrors();
+
+		let diagnostics: vscode.Diagnostic[] = errors.map(
+			(error) =>
+				new vscode.Diagnostic(
+					error.range,
+					error.message,
+					vscode.DiagnosticSeverity.Error
+				)
+		);
+		diagnosticCollection.set(document.uri, diagnostics);
+	};
 
 	// =================================================================================================================
 	// Post-registration code.

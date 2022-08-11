@@ -1,7 +1,8 @@
 "use strict";
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValueContext = exports.TypeContext = exports.BytesContext = exports.Non_fungible_addressContext = exports.Non_fungible_idContext = exports.ProofContext = exports.BucketContext = exports.HashContext = exports.Resource_addressContext = exports.Component_addressContext = exports.Package_addressContext = exports.DecimalContext = exports.MapContext = exports.SetContext = exports.ListContext = exports.TupleContext = exports.ArrayContext = exports.ErrContext = exports.OkContext = exports.NoneContext = exports.SomeContext = exports.OptionContext = exports.Enum_Context = exports.StructContext = exports.StringContext = exports.U128Context = exports.U64Context = exports.U32Context = exports.U16Context = exports.U8Context = exports.I128Context = exports.I64Context = exports.I32Context = exports.I16Context = exports.I8Context = exports.BoolContext = exports.UnitContext = exports.ManifestInstructionContext = exports.ManifestContext = exports.TransactionManifestParser = void 0;
+exports.HashContext = exports.Resource_addressContext = exports.Component_addressContext = exports.Package_addressContext = exports.Precise_decimalContext = exports.DecimalContext = exports.MapContext = exports.SetContext = exports.ListContext = exports.TupleContext = exports.ArrayContext = exports.ErrContext = exports.OkContext = exports.NoneContext = exports.SomeContext = exports.OptionContext = exports.Enum_Context = exports.StructContext = exports.StringContext = exports.Safe_u512Context = exports.Safe_u384Context = exports.Safe_u256Context = exports.Safe_u128Context = exports.Safe_u64Context = exports.Safe_u32Context = exports.Safe_u16Context = exports.Safe_u8Context = exports.Safe_i512Context = exports.Safe_i384Context = exports.Safe_i256Context = exports.Safe_i128Context = exports.Safe_i64Context = exports.Safe_i32Context = exports.Safe_i16Context = exports.Safe_i8Context = exports.U128Context = exports.U64Context = exports.U32Context = exports.U16Context = exports.U8Context = exports.I128Context = exports.I64Context = exports.I32Context = exports.I16Context = exports.I8Context = exports.BoolContext = exports.UnitContext = exports.ManifestInstructionContext = exports.ManifestContext = exports.TransactionManifestParser = void 0;
+exports.ValueContext = exports.TypeContext = exports.BytesContext = exports.Non_fungible_addressContext = exports.Non_fungible_idContext = exports.ProofContext = exports.BucketContext = void 0;
 const ATNDeserializer_1 = require("antlr4ts/atn/ATNDeserializer");
 const FailedPredicateException_1 = require("antlr4ts/FailedPredicateException");
 const NoViableAltException_1 = require("antlr4ts/NoViableAltException");
@@ -40,21 +41,21 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 81;
+                this.state = 115;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-                while (((((_la - 57)) & ~0x1F) === 0 && ((1 << (_la - 57)) & ((1 << (TransactionManifestParser.TAKE_FROM_WORKTOP - 57)) | (1 << (TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT - 57)) | (1 << (TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS - 57)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS - 57)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT - 57)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS - 57)) | (1 << (TransactionManifestParser.RETURN_TO_WORKTOP - 57)) | (1 << (TransactionManifestParser.POP_FROM_AUTH_ZONE - 57)) | (1 << (TransactionManifestParser.PUSH_TO_AUTH_ZONE - 57)) | (1 << (TransactionManifestParser.CLEAR_AUTHZONE - 57)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE - 57)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT - 57)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS - 57)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_BUCKET - 57)) | (1 << (TransactionManifestParser.CLONE_PROOF - 57)) | (1 << (TransactionManifestParser.DROP_PROOF - 57)) | (1 << (TransactionManifestParser.DROP_ALL_PROOFS - 57)) | (1 << (TransactionManifestParser.CALL_FUNCTION - 57)) | (1 << (TransactionManifestParser.CALL_METHOD - 57)) | (1 << (TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES - 57)) | (1 << (TransactionManifestParser.PUBLISH_PACKAGE - 57)))) !== 0)) {
+                while (((((_la - 90)) & ~0x1F) === 0 && ((1 << (_la - 90)) & ((1 << (TransactionManifestParser.TAKE_FROM_WORKTOP - 90)) | (1 << (TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT - 90)) | (1 << (TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS - 90)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS - 90)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT - 90)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS - 90)) | (1 << (TransactionManifestParser.RETURN_TO_WORKTOP - 90)) | (1 << (TransactionManifestParser.POP_FROM_AUTH_ZONE - 90)) | (1 << (TransactionManifestParser.PUSH_TO_AUTH_ZONE - 90)) | (1 << (TransactionManifestParser.CLEAR_AUTHZONE - 90)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE - 90)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT - 90)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS - 90)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_BUCKET - 90)) | (1 << (TransactionManifestParser.CLONE_PROOF - 90)) | (1 << (TransactionManifestParser.DROP_PROOF - 90)) | (1 << (TransactionManifestParser.DROP_ALL_PROOFS - 90)) | (1 << (TransactionManifestParser.CALL_FUNCTION - 90)) | (1 << (TransactionManifestParser.CALL_METHOD - 90)) | (1 << (TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES - 90)) | (1 << (TransactionManifestParser.PUBLISH_PACKAGE - 90)))) !== 0)) {
                     {
                         {
-                            this.state = 78;
+                            this.state = 112;
                             this.manifestInstruction();
                         }
                     }
-                    this.state = 83;
+                    this.state = 117;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
                 }
-                this.state = 84;
+                this.state = 118;
                 this.match(TransactionManifestParser.EOF);
             }
         }
@@ -79,297 +80,297 @@ class TransactionManifestParser extends Parser_1.Parser {
         this.enterRule(_localctx, 2, TransactionManifestParser.RULE_manifestInstruction);
         let _la;
         try {
-            this.state = 196;
+            this.state = 230;
             this._errHandler.sync(this);
             switch (this._input.LA(1)) {
                 case TransactionManifestParser.CALL_FUNCTION:
                     this.enterOuterAlt(_localctx, 1);
                     {
-                        this.state = 86;
+                        this.state = 120;
                         this.match(TransactionManifestParser.CALL_FUNCTION);
-                        this.state = 87;
+                        this.state = 121;
                         this.package_address();
-                        this.state = 88;
+                        this.state = 122;
                         this.string();
-                        this.state = 89;
+                        this.state = 123;
                         this.string();
-                        this.state = 93;
+                        this.state = 127;
                         this._errHandler.sync(this);
                         _la = this._input.LA(1);
-                        while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                        while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
                             {
                                 {
-                                    this.state = 90;
+                                    this.state = 124;
                                     this.value();
                                 }
                             }
-                            this.state = 95;
+                            this.state = 129;
                             this._errHandler.sync(this);
                             _la = this._input.LA(1);
                         }
-                        this.state = 96;
+                        this.state = 130;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.CALL_METHOD:
                     this.enterOuterAlt(_localctx, 2);
                     {
-                        this.state = 98;
+                        this.state = 132;
                         this.match(TransactionManifestParser.CALL_METHOD);
-                        this.state = 99;
+                        this.state = 133;
                         this.component_address();
-                        this.state = 100;
+                        this.state = 134;
                         this.string();
-                        this.state = 104;
+                        this.state = 138;
                         this._errHandler.sync(this);
                         _la = this._input.LA(1);
-                        while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                        while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
                             {
                                 {
-                                    this.state = 101;
+                                    this.state = 135;
                                     this.value();
                                 }
                             }
-                            this.state = 106;
+                            this.state = 140;
                             this._errHandler.sync(this);
                             _la = this._input.LA(1);
                         }
-                        this.state = 107;
+                        this.state = 141;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES:
                     this.enterOuterAlt(_localctx, 3);
                     {
-                        this.state = 109;
+                        this.state = 143;
                         this.match(TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES);
-                        this.state = 110;
+                        this.state = 144;
                         this.component_address();
-                        this.state = 111;
+                        this.state = 145;
                         this.string();
-                        this.state = 112;
+                        this.state = 146;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.TAKE_FROM_WORKTOP:
                     this.enterOuterAlt(_localctx, 4);
                     {
-                        this.state = 114;
+                        this.state = 148;
                         this.match(TransactionManifestParser.TAKE_FROM_WORKTOP);
-                        this.state = 115;
+                        this.state = 149;
                         this.resource_address();
-                        this.state = 116;
+                        this.state = 150;
                         this.bucket();
-                        this.state = 117;
+                        this.state = 151;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT:
                     this.enterOuterAlt(_localctx, 5);
                     {
-                        this.state = 119;
+                        this.state = 153;
                         this.match(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT);
-                        this.state = 120;
+                        this.state = 154;
                         this.decimal();
-                        this.state = 121;
+                        this.state = 155;
                         this.resource_address();
-                        this.state = 122;
+                        this.state = 156;
                         this.bucket();
-                        this.state = 123;
+                        this.state = 157;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS:
                     this.enterOuterAlt(_localctx, 6);
                     {
-                        this.state = 125;
+                        this.state = 159;
                         this.match(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS);
-                        this.state = 126;
+                        this.state = 160;
                         this.set();
-                        this.state = 127;
+                        this.state = 161;
                         this.resource_address();
-                        this.state = 128;
+                        this.state = 162;
                         this.bucket();
-                        this.state = 129;
+                        this.state = 163;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.RETURN_TO_WORKTOP:
                     this.enterOuterAlt(_localctx, 7);
                     {
-                        this.state = 131;
+                        this.state = 165;
                         this.match(TransactionManifestParser.RETURN_TO_WORKTOP);
-                        this.state = 132;
+                        this.state = 166;
                         this.bucket();
-                        this.state = 133;
+                        this.state = 167;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS:
                     this.enterOuterAlt(_localctx, 8);
                     {
-                        this.state = 135;
+                        this.state = 169;
                         this.match(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS);
-                        this.state = 136;
+                        this.state = 170;
                         this.resource_address();
-                        this.state = 137;
+                        this.state = 171;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT:
                     this.enterOuterAlt(_localctx, 9);
                     {
-                        this.state = 139;
+                        this.state = 173;
                         this.match(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT);
-                        this.state = 140;
+                        this.state = 174;
                         this.decimal();
-                        this.state = 141;
+                        this.state = 175;
                         this.resource_address();
-                        this.state = 142;
+                        this.state = 176;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS:
                     this.enterOuterAlt(_localctx, 10);
                     {
-                        this.state = 144;
+                        this.state = 178;
                         this.match(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS);
-                        this.state = 145;
+                        this.state = 179;
                         this.set();
-                        this.state = 146;
+                        this.state = 180;
                         this.resource_address();
-                        this.state = 147;
+                        this.state = 181;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.POP_FROM_AUTH_ZONE:
                     this.enterOuterAlt(_localctx, 11);
                     {
-                        this.state = 149;
+                        this.state = 183;
                         this.match(TransactionManifestParser.POP_FROM_AUTH_ZONE);
-                        this.state = 150;
+                        this.state = 184;
                         this.proof();
-                        this.state = 151;
+                        this.state = 185;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.PUSH_TO_AUTH_ZONE:
                     this.enterOuterAlt(_localctx, 12);
                     {
-                        this.state = 153;
+                        this.state = 187;
                         this.match(TransactionManifestParser.PUSH_TO_AUTH_ZONE);
-                        this.state = 154;
+                        this.state = 188;
                         this.proof();
-                        this.state = 155;
+                        this.state = 189;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE:
                     this.enterOuterAlt(_localctx, 13);
                     {
-                        this.state = 157;
+                        this.state = 191;
                         this.match(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE);
-                        this.state = 158;
+                        this.state = 192;
                         this.resource_address();
-                        this.state = 159;
+                        this.state = 193;
                         this.proof();
-                        this.state = 160;
+                        this.state = 194;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT:
                     this.enterOuterAlt(_localctx, 14);
                     {
-                        this.state = 162;
+                        this.state = 196;
                         this.match(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT);
-                        this.state = 163;
+                        this.state = 197;
                         this.decimal();
-                        this.state = 164;
+                        this.state = 198;
                         this.resource_address();
-                        this.state = 165;
+                        this.state = 199;
                         this.proof();
-                        this.state = 166;
+                        this.state = 200;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS:
                     this.enterOuterAlt(_localctx, 15);
                     {
-                        this.state = 168;
+                        this.state = 202;
                         this.match(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS);
-                        this.state = 169;
+                        this.state = 203;
                         this.set();
-                        this.state = 170;
+                        this.state = 204;
                         this.resource_address();
-                        this.state = 171;
+                        this.state = 205;
                         this.proof();
-                        this.state = 172;
+                        this.state = 206;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.CREATE_PROOF_FROM_BUCKET:
                     this.enterOuterAlt(_localctx, 16);
                     {
-                        this.state = 174;
+                        this.state = 208;
                         this.match(TransactionManifestParser.CREATE_PROOF_FROM_BUCKET);
-                        this.state = 175;
+                        this.state = 209;
                         this.bucket();
-                        this.state = 176;
+                        this.state = 210;
                         this.proof();
-                        this.state = 177;
+                        this.state = 211;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.CLONE_PROOF:
                     this.enterOuterAlt(_localctx, 17);
                     {
-                        this.state = 179;
+                        this.state = 213;
                         this.match(TransactionManifestParser.CLONE_PROOF);
-                        this.state = 180;
+                        this.state = 214;
                         this.proof();
-                        this.state = 181;
+                        this.state = 215;
                         this.proof();
-                        this.state = 182;
+                        this.state = 216;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.DROP_PROOF:
                     this.enterOuterAlt(_localctx, 18);
                     {
-                        this.state = 184;
+                        this.state = 218;
                         this.match(TransactionManifestParser.DROP_PROOF);
-                        this.state = 185;
+                        this.state = 219;
                         this.proof();
-                        this.state = 186;
+                        this.state = 220;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.DROP_ALL_PROOFS:
                     this.enterOuterAlt(_localctx, 19);
                     {
-                        this.state = 188;
+                        this.state = 222;
                         this.match(TransactionManifestParser.DROP_ALL_PROOFS);
-                        this.state = 189;
+                        this.state = 223;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.CLEAR_AUTHZONE:
                     this.enterOuterAlt(_localctx, 20);
                     {
-                        this.state = 190;
+                        this.state = 224;
                         this.match(TransactionManifestParser.CLEAR_AUTHZONE);
-                        this.state = 191;
+                        this.state = 225;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
                 case TransactionManifestParser.PUBLISH_PACKAGE:
                     this.enterOuterAlt(_localctx, 21);
                     {
-                        this.state = 192;
+                        this.state = 226;
                         this.match(TransactionManifestParser.PUBLISH_PACKAGE);
-                        this.state = 193;
+                        this.state = 227;
                         this.bytes();
-                        this.state = 194;
+                        this.state = 228;
                         this.match(TransactionManifestParser.SEMICOLON);
                     }
                     break;
@@ -399,7 +400,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 198;
+                this.state = 232;
                 this.match(TransactionManifestParser.T__0);
             }
         }
@@ -425,7 +426,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 200;
+                this.state = 234;
                 this.match(TransactionManifestParser.BOOL_LITERAL);
             }
         }
@@ -451,7 +452,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 202;
+                this.state = 236;
                 this.match(TransactionManifestParser.I8_LITERAL);
             }
         }
@@ -477,7 +478,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 204;
+                this.state = 238;
                 this.match(TransactionManifestParser.I16_LITERAL);
             }
         }
@@ -503,7 +504,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 206;
+                this.state = 240;
                 this.match(TransactionManifestParser.I32_LITERAL);
             }
         }
@@ -529,7 +530,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 208;
+                this.state = 242;
                 this.match(TransactionManifestParser.I64_LITERAL);
             }
         }
@@ -555,7 +556,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 210;
+                this.state = 244;
                 this.match(TransactionManifestParser.I128_LITERAL);
             }
         }
@@ -581,7 +582,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 212;
+                this.state = 246;
                 this.match(TransactionManifestParser.U8_LITERAL);
             }
         }
@@ -607,7 +608,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 214;
+                this.state = 248;
                 this.match(TransactionManifestParser.U16_LITERAL);
             }
         }
@@ -633,7 +634,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 216;
+                this.state = 250;
                 this.match(TransactionManifestParser.U32_LITERAL);
             }
         }
@@ -659,7 +660,7 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 218;
+                this.state = 252;
                 this.match(TransactionManifestParser.U64_LITERAL);
             }
         }
@@ -685,8 +686,424 @@ class TransactionManifestParser extends Parser_1.Parser {
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 220;
+                this.state = 254;
                 this.match(TransactionManifestParser.U128_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_i8() {
+        let _localctx = new Safe_i8Context(this._ctx, this.state);
+        this.enterRule(_localctx, 28, TransactionManifestParser.RULE_safe_i8);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 256;
+                this.match(TransactionManifestParser.SAFE_I8_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_i16() {
+        let _localctx = new Safe_i16Context(this._ctx, this.state);
+        this.enterRule(_localctx, 30, TransactionManifestParser.RULE_safe_i16);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 258;
+                this.match(TransactionManifestParser.SAFE_I16_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_i32() {
+        let _localctx = new Safe_i32Context(this._ctx, this.state);
+        this.enterRule(_localctx, 32, TransactionManifestParser.RULE_safe_i32);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 260;
+                this.match(TransactionManifestParser.SAFE_I32_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_i64() {
+        let _localctx = new Safe_i64Context(this._ctx, this.state);
+        this.enterRule(_localctx, 34, TransactionManifestParser.RULE_safe_i64);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 262;
+                this.match(TransactionManifestParser.SAFE_I64_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_i128() {
+        let _localctx = new Safe_i128Context(this._ctx, this.state);
+        this.enterRule(_localctx, 36, TransactionManifestParser.RULE_safe_i128);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 264;
+                this.match(TransactionManifestParser.SAFE_I128_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_i256() {
+        let _localctx = new Safe_i256Context(this._ctx, this.state);
+        this.enterRule(_localctx, 38, TransactionManifestParser.RULE_safe_i256);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 266;
+                this.match(TransactionManifestParser.SAFE_I256_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_i384() {
+        let _localctx = new Safe_i384Context(this._ctx, this.state);
+        this.enterRule(_localctx, 40, TransactionManifestParser.RULE_safe_i384);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 268;
+                this.match(TransactionManifestParser.SAFE_I384_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_i512() {
+        let _localctx = new Safe_i512Context(this._ctx, this.state);
+        this.enterRule(_localctx, 42, TransactionManifestParser.RULE_safe_i512);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 270;
+                this.match(TransactionManifestParser.SAFE_I512_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_u8() {
+        let _localctx = new Safe_u8Context(this._ctx, this.state);
+        this.enterRule(_localctx, 44, TransactionManifestParser.RULE_safe_u8);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 272;
+                this.match(TransactionManifestParser.SAFE_U8_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_u16() {
+        let _localctx = new Safe_u16Context(this._ctx, this.state);
+        this.enterRule(_localctx, 46, TransactionManifestParser.RULE_safe_u16);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 274;
+                this.match(TransactionManifestParser.SAFE_U16_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_u32() {
+        let _localctx = new Safe_u32Context(this._ctx, this.state);
+        this.enterRule(_localctx, 48, TransactionManifestParser.RULE_safe_u32);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 276;
+                this.match(TransactionManifestParser.SAFE_U32_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_u64() {
+        let _localctx = new Safe_u64Context(this._ctx, this.state);
+        this.enterRule(_localctx, 50, TransactionManifestParser.RULE_safe_u64);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 278;
+                this.match(TransactionManifestParser.SAFE_U64_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_u128() {
+        let _localctx = new Safe_u128Context(this._ctx, this.state);
+        this.enterRule(_localctx, 52, TransactionManifestParser.RULE_safe_u128);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 280;
+                this.match(TransactionManifestParser.SAFE_U128_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_u256() {
+        let _localctx = new Safe_u256Context(this._ctx, this.state);
+        this.enterRule(_localctx, 54, TransactionManifestParser.RULE_safe_u256);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 282;
+                this.match(TransactionManifestParser.SAFE_U256_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_u384() {
+        let _localctx = new Safe_u384Context(this._ctx, this.state);
+        this.enterRule(_localctx, 56, TransactionManifestParser.RULE_safe_u384);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 284;
+                this.match(TransactionManifestParser.SAFE_U384_LITERAL);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    safe_u512() {
+        let _localctx = new Safe_u512Context(this._ctx, this.state);
+        this.enterRule(_localctx, 58, TransactionManifestParser.RULE_safe_u512);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 286;
+                this.match(TransactionManifestParser.SAFE_U512_LITERAL);
             }
         }
         catch (re) {
@@ -707,11 +1124,11 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     string() {
         let _localctx = new StringContext(this._ctx, this.state);
-        this.enterRule(_localctx, 28, TransactionManifestParser.RULE_string);
+        this.enterRule(_localctx, 60, TransactionManifestParser.RULE_string);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 222;
+                this.state = 288;
                 this.match(TransactionManifestParser.STRING_LITERAL);
             }
         }
@@ -733,41 +1150,41 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     struct() {
         let _localctx = new StructContext(this._ctx, this.state);
-        this.enterRule(_localctx, 30, TransactionManifestParser.RULE_struct);
+        this.enterRule(_localctx, 62, TransactionManifestParser.RULE_struct);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 224;
+                this.state = 290;
                 this.match(TransactionManifestParser.STRUCT_TYPE);
-                this.state = 225;
+                this.state = 291;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 234;
+                this.state = 300;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
                     {
-                        this.state = 226;
+                        this.state = 292;
                         this.value();
-                        this.state = 231;
+                        this.state = 297;
                         this._errHandler.sync(this);
                         _la = this._input.LA(1);
                         while (_la === TransactionManifestParser.COMMA) {
                             {
                                 {
-                                    this.state = 227;
+                                    this.state = 293;
                                     this.match(TransactionManifestParser.COMMA);
-                                    this.state = 228;
+                                    this.state = 294;
                                     this.value();
                                 }
                             }
-                            this.state = 233;
+                            this.state = 299;
                             this._errHandler.sync(this);
                             _la = this._input.LA(1);
                         }
                     }
                 }
-                this.state = 236;
+                this.state = 302;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -789,47 +1206,47 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     enum_() {
         let _localctx = new Enum_Context(this._ctx, this.state);
-        this.enterRule(_localctx, 32, TransactionManifestParser.RULE_enum_);
+        this.enterRule(_localctx, 64, TransactionManifestParser.RULE_enum_);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 238;
+                this.state = 304;
                 this.match(TransactionManifestParser.ENUM_TYPE);
-                this.state = 239;
+                this.state = 305;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
                 {
-                    this.state = 240;
+                    this.state = 306;
                     this.string();
-                    this.state = 241;
+                    this.state = 307;
                     this.match(TransactionManifestParser.COMMA);
-                    this.state = 250;
+                    this.state = 316;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
-                    if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                    if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
                         {
-                            this.state = 242;
+                            this.state = 308;
                             this.value();
-                            this.state = 247;
+                            this.state = 313;
                             this._errHandler.sync(this);
                             _la = this._input.LA(1);
                             while (_la === TransactionManifestParser.COMMA) {
                                 {
                                     {
-                                        this.state = 243;
+                                        this.state = 309;
                                         this.match(TransactionManifestParser.COMMA);
-                                        this.state = 244;
+                                        this.state = 310;
                                         this.value();
                                     }
                                 }
-                                this.state = 249;
+                                this.state = 315;
                                 this._errHandler.sync(this);
                                 _la = this._input.LA(1);
                             }
                         }
                     }
                 }
-                this.state = 252;
+                this.state = 318;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -851,22 +1268,22 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     option() {
         let _localctx = new OptionContext(this._ctx, this.state);
-        this.enterRule(_localctx, 34, TransactionManifestParser.RULE_option);
+        this.enterRule(_localctx, 66, TransactionManifestParser.RULE_option);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 256;
+                this.state = 322;
                 this._errHandler.sync(this);
                 switch (this._input.LA(1)) {
                     case TransactionManifestParser.SOME_TYPE:
                         {
-                            this.state = 254;
+                            this.state = 320;
                             this.some();
                         }
                         break;
                     case TransactionManifestParser.NONE_TYPE:
                         {
-                            this.state = 255;
+                            this.state = 321;
                             this.none();
                         }
                         break;
@@ -893,36 +1310,36 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     some() {
         let _localctx = new SomeContext(this._ctx, this.state);
-        this.enterRule(_localctx, 36, TransactionManifestParser.RULE_some);
+        this.enterRule(_localctx, 68, TransactionManifestParser.RULE_some);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 258;
+                this.state = 324;
                 this.match(TransactionManifestParser.SOME_TYPE);
-                this.state = 259;
+                this.state = 325;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
                 {
-                    this.state = 260;
+                    this.state = 326;
                     this.value();
-                    this.state = 265;
+                    this.state = 331;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
                     while (_la === TransactionManifestParser.COMMA) {
                         {
                             {
-                                this.state = 261;
+                                this.state = 327;
                                 this.match(TransactionManifestParser.COMMA);
-                                this.state = 262;
+                                this.state = 328;
                                 this.value();
                             }
                         }
-                        this.state = 267;
+                        this.state = 333;
                         this._errHandler.sync(this);
                         _la = this._input.LA(1);
                     }
                 }
-                this.state = 268;
+                this.state = 334;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -944,11 +1361,11 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     none() {
         let _localctx = new NoneContext(this._ctx, this.state);
-        this.enterRule(_localctx, 38, TransactionManifestParser.RULE_none);
+        this.enterRule(_localctx, 70, TransactionManifestParser.RULE_none);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 270;
+                this.state = 336;
                 this.match(TransactionManifestParser.NONE_TYPE);
             }
         }
@@ -970,36 +1387,36 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     ok() {
         let _localctx = new OkContext(this._ctx, this.state);
-        this.enterRule(_localctx, 40, TransactionManifestParser.RULE_ok);
+        this.enterRule(_localctx, 72, TransactionManifestParser.RULE_ok);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 272;
+                this.state = 338;
                 this.match(TransactionManifestParser.OK_TYPE);
-                this.state = 273;
+                this.state = 339;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
                 {
-                    this.state = 274;
+                    this.state = 340;
                     this.value();
-                    this.state = 279;
+                    this.state = 345;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
                     while (_la === TransactionManifestParser.COMMA) {
                         {
                             {
-                                this.state = 275;
+                                this.state = 341;
                                 this.match(TransactionManifestParser.COMMA);
-                                this.state = 276;
+                                this.state = 342;
                                 this.value();
                             }
                         }
-                        this.state = 281;
+                        this.state = 347;
                         this._errHandler.sync(this);
                         _la = this._input.LA(1);
                     }
                 }
-                this.state = 282;
+                this.state = 348;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1021,277 +1438,33 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     err() {
         let _localctx = new ErrContext(this._ctx, this.state);
-        this.enterRule(_localctx, 42, TransactionManifestParser.RULE_err);
+        this.enterRule(_localctx, 74, TransactionManifestParser.RULE_err);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 284;
+                this.state = 350;
                 this.match(TransactionManifestParser.ERR_TYPE);
-                this.state = 285;
+                this.state = 351;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
                 {
-                    this.state = 286;
+                    this.state = 352;
                     this.value();
-                    this.state = 291;
+                    this.state = 357;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
                     while (_la === TransactionManifestParser.COMMA) {
                         {
                             {
-                                this.state = 287;
+                                this.state = 353;
                                 this.match(TransactionManifestParser.COMMA);
-                                this.state = 288;
+                                this.state = 354;
                                 this.value();
                             }
                         }
-                        this.state = 293;
+                        this.state = 359;
                         this._errHandler.sync(this);
                         _la = this._input.LA(1);
-                    }
-                }
-                this.state = 294;
-                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-            }
-        }
-        catch (re) {
-            if (re instanceof RecognitionException_1.RecognitionException) {
-                _localctx.exception = re;
-                this._errHandler.reportError(this, re);
-                this._errHandler.recover(this, re);
-            }
-            else {
-                throw re;
-            }
-        }
-        finally {
-            this.exitRule();
-        }
-        return _localctx;
-    }
-    // @RuleVersion(0)
-    array() {
-        let _localctx = new ArrayContext(this._ctx, this.state);
-        this.enterRule(_localctx, 44, TransactionManifestParser.RULE_array);
-        let _la;
-        try {
-            this.enterOuterAlt(_localctx, 1);
-            {
-                this.state = 296;
-                this.match(TransactionManifestParser.ARRAY_TYPE);
-                this.state = 297;
-                this.match(TransactionManifestParser.LESS_THAN);
-                this.state = 298;
-                this.type();
-                this.state = 299;
-                this.match(TransactionManifestParser.GREATER_THAN);
-                this.state = 300;
-                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 309;
-                this._errHandler.sync(this);
-                _la = this._input.LA(1);
-                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-                    {
-                        this.state = 301;
-                        this.value();
-                        this.state = 306;
-                        this._errHandler.sync(this);
-                        _la = this._input.LA(1);
-                        while (_la === TransactionManifestParser.COMMA) {
-                            {
-                                {
-                                    this.state = 302;
-                                    this.match(TransactionManifestParser.COMMA);
-                                    this.state = 303;
-                                    this.value();
-                                }
-                            }
-                            this.state = 308;
-                            this._errHandler.sync(this);
-                            _la = this._input.LA(1);
-                        }
-                    }
-                }
-                this.state = 311;
-                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-            }
-        }
-        catch (re) {
-            if (re instanceof RecognitionException_1.RecognitionException) {
-                _localctx.exception = re;
-                this._errHandler.reportError(this, re);
-                this._errHandler.recover(this, re);
-            }
-            else {
-                throw re;
-            }
-        }
-        finally {
-            this.exitRule();
-        }
-        return _localctx;
-    }
-    // @RuleVersion(0)
-    tuple() {
-        let _localctx = new TupleContext(this._ctx, this.state);
-        this.enterRule(_localctx, 46, TransactionManifestParser.RULE_tuple);
-        let _la;
-        try {
-            this.enterOuterAlt(_localctx, 1);
-            {
-                this.state = 313;
-                this.match(TransactionManifestParser.TUPLE_TYPE);
-                this.state = 314;
-                this.match(TransactionManifestParser.LESS_THAN);
-                this.state = 315;
-                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 324;
-                this._errHandler.sync(this);
-                _la = this._input.LA(1);
-                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-                    {
-                        this.state = 316;
-                        this.value();
-                        this.state = 321;
-                        this._errHandler.sync(this);
-                        _la = this._input.LA(1);
-                        while (_la === TransactionManifestParser.COMMA) {
-                            {
-                                {
-                                    this.state = 317;
-                                    this.match(TransactionManifestParser.COMMA);
-                                    this.state = 318;
-                                    this.value();
-                                }
-                            }
-                            this.state = 323;
-                            this._errHandler.sync(this);
-                            _la = this._input.LA(1);
-                        }
-                    }
-                }
-                this.state = 326;
-                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-            }
-        }
-        catch (re) {
-            if (re instanceof RecognitionException_1.RecognitionException) {
-                _localctx.exception = re;
-                this._errHandler.reportError(this, re);
-                this._errHandler.recover(this, re);
-            }
-            else {
-                throw re;
-            }
-        }
-        finally {
-            this.exitRule();
-        }
-        return _localctx;
-    }
-    // @RuleVersion(0)
-    list() {
-        let _localctx = new ListContext(this._ctx, this.state);
-        this.enterRule(_localctx, 48, TransactionManifestParser.RULE_list);
-        let _la;
-        try {
-            this.enterOuterAlt(_localctx, 1);
-            {
-                this.state = 328;
-                this.match(TransactionManifestParser.LIST_TYPE);
-                this.state = 329;
-                this.match(TransactionManifestParser.LESS_THAN);
-                this.state = 330;
-                this.type();
-                this.state = 331;
-                this.match(TransactionManifestParser.GREATER_THAN);
-                this.state = 332;
-                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 341;
-                this._errHandler.sync(this);
-                _la = this._input.LA(1);
-                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-                    {
-                        this.state = 333;
-                        this.value();
-                        this.state = 338;
-                        this._errHandler.sync(this);
-                        _la = this._input.LA(1);
-                        while (_la === TransactionManifestParser.COMMA) {
-                            {
-                                {
-                                    this.state = 334;
-                                    this.match(TransactionManifestParser.COMMA);
-                                    this.state = 335;
-                                    this.value();
-                                }
-                            }
-                            this.state = 340;
-                            this._errHandler.sync(this);
-                            _la = this._input.LA(1);
-                        }
-                    }
-                }
-                this.state = 343;
-                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-            }
-        }
-        catch (re) {
-            if (re instanceof RecognitionException_1.RecognitionException) {
-                _localctx.exception = re;
-                this._errHandler.reportError(this, re);
-                this._errHandler.recover(this, re);
-            }
-            else {
-                throw re;
-            }
-        }
-        finally {
-            this.exitRule();
-        }
-        return _localctx;
-    }
-    // @RuleVersion(0)
-    set() {
-        let _localctx = new SetContext(this._ctx, this.state);
-        this.enterRule(_localctx, 50, TransactionManifestParser.RULE_set);
-        let _la;
-        try {
-            this.enterOuterAlt(_localctx, 1);
-            {
-                this.state = 345;
-                this.match(TransactionManifestParser.SET_TYPE);
-                this.state = 346;
-                this.match(TransactionManifestParser.LESS_THAN);
-                this.state = 347;
-                this.type();
-                this.state = 348;
-                this.match(TransactionManifestParser.GREATER_THAN);
-                this.state = 349;
-                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 358;
-                this._errHandler.sync(this);
-                _la = this._input.LA(1);
-                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-                    {
-                        this.state = 350;
-                        this.value();
-                        this.state = 355;
-                        this._errHandler.sync(this);
-                        _la = this._input.LA(1);
-                        while (_la === TransactionManifestParser.COMMA) {
-                            {
-                                {
-                                    this.state = 351;
-                                    this.match(TransactionManifestParser.COMMA);
-                                    this.state = 352;
-                                    this.value();
-                                }
-                            }
-                            this.state = 357;
-                            this._errHandler.sync(this);
-                            _la = this._input.LA(1);
-                        }
                     }
                 }
                 this.state = 360;
@@ -1314,46 +1487,290 @@ class TransactionManifestParser extends Parser_1.Parser {
         return _localctx;
     }
     // @RuleVersion(0)
-    map() {
-        let _localctx = new MapContext(this._ctx, this.state);
-        this.enterRule(_localctx, 52, TransactionManifestParser.RULE_map);
+    array() {
+        let _localctx = new ArrayContext(this._ctx, this.state);
+        this.enterRule(_localctx, 76, TransactionManifestParser.RULE_array);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
                 this.state = 362;
-                this.match(TransactionManifestParser.MAP_TYPE);
+                this.match(TransactionManifestParser.ARRAY_TYPE);
                 this.state = 363;
                 this.match(TransactionManifestParser.LESS_THAN);
                 this.state = 364;
                 this.type();
                 this.state = 365;
-                this.match(TransactionManifestParser.COMMA);
-                this.state = 366;
-                this.type();
-                this.state = 367;
                 this.match(TransactionManifestParser.GREATER_THAN);
-                this.state = 368;
+                this.state = 366;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
                 this.state = 375;
                 this._errHandler.sync(this);
                 _la = this._input.LA(1);
-                while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                    {
+                        this.state = 367;
+                        this.value();
+                        this.state = 372;
+                        this._errHandler.sync(this);
+                        _la = this._input.LA(1);
+                        while (_la === TransactionManifestParser.COMMA) {
+                            {
+                                {
+                                    this.state = 368;
+                                    this.match(TransactionManifestParser.COMMA);
+                                    this.state = 369;
+                                    this.value();
+                                }
+                            }
+                            this.state = 374;
+                            this._errHandler.sync(this);
+                            _la = this._input.LA(1);
+                        }
+                    }
+                }
+                this.state = 377;
+                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    tuple() {
+        let _localctx = new TupleContext(this._ctx, this.state);
+        this.enterRule(_localctx, 78, TransactionManifestParser.RULE_tuple);
+        let _la;
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 379;
+                this.match(TransactionManifestParser.TUPLE_TYPE);
+                this.state = 380;
+                this.match(TransactionManifestParser.LESS_THAN);
+                this.state = 381;
+                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+                this.state = 390;
+                this._errHandler.sync(this);
+                _la = this._input.LA(1);
+                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                    {
+                        this.state = 382;
+                        this.value();
+                        this.state = 387;
+                        this._errHandler.sync(this);
+                        _la = this._input.LA(1);
+                        while (_la === TransactionManifestParser.COMMA) {
+                            {
+                                {
+                                    this.state = 383;
+                                    this.match(TransactionManifestParser.COMMA);
+                                    this.state = 384;
+                                    this.value();
+                                }
+                            }
+                            this.state = 389;
+                            this._errHandler.sync(this);
+                            _la = this._input.LA(1);
+                        }
+                    }
+                }
+                this.state = 392;
+                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    list() {
+        let _localctx = new ListContext(this._ctx, this.state);
+        this.enterRule(_localctx, 80, TransactionManifestParser.RULE_list);
+        let _la;
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 394;
+                this.match(TransactionManifestParser.LIST_TYPE);
+                this.state = 395;
+                this.match(TransactionManifestParser.LESS_THAN);
+                this.state = 396;
+                this.type();
+                this.state = 397;
+                this.match(TransactionManifestParser.GREATER_THAN);
+                this.state = 398;
+                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+                this.state = 407;
+                this._errHandler.sync(this);
+                _la = this._input.LA(1);
+                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                    {
+                        this.state = 399;
+                        this.value();
+                        this.state = 404;
+                        this._errHandler.sync(this);
+                        _la = this._input.LA(1);
+                        while (_la === TransactionManifestParser.COMMA) {
+                            {
+                                {
+                                    this.state = 400;
+                                    this.match(TransactionManifestParser.COMMA);
+                                    this.state = 401;
+                                    this.value();
+                                }
+                            }
+                            this.state = 406;
+                            this._errHandler.sync(this);
+                            _la = this._input.LA(1);
+                        }
+                    }
+                }
+                this.state = 409;
+                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    set() {
+        let _localctx = new SetContext(this._ctx, this.state);
+        this.enterRule(_localctx, 82, TransactionManifestParser.RULE_set);
+        let _la;
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 411;
+                this.match(TransactionManifestParser.SET_TYPE);
+                this.state = 412;
+                this.match(TransactionManifestParser.LESS_THAN);
+                this.state = 413;
+                this.type();
+                this.state = 414;
+                this.match(TransactionManifestParser.GREATER_THAN);
+                this.state = 415;
+                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+                this.state = 424;
+                this._errHandler.sync(this);
+                _la = this._input.LA(1);
+                if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+                    {
+                        this.state = 416;
+                        this.value();
+                        this.state = 421;
+                        this._errHandler.sync(this);
+                        _la = this._input.LA(1);
+                        while (_la === TransactionManifestParser.COMMA) {
+                            {
+                                {
+                                    this.state = 417;
+                                    this.match(TransactionManifestParser.COMMA);
+                                    this.state = 418;
+                                    this.value();
+                                }
+                            }
+                            this.state = 423;
+                            this._errHandler.sync(this);
+                            _la = this._input.LA(1);
+                        }
+                    }
+                }
+                this.state = 426;
+                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    map() {
+        let _localctx = new MapContext(this._ctx, this.state);
+        this.enterRule(_localctx, 84, TransactionManifestParser.RULE_map);
+        let _la;
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 428;
+                this.match(TransactionManifestParser.MAP_TYPE);
+                this.state = 429;
+                this.match(TransactionManifestParser.LESS_THAN);
+                this.state = 430;
+                this.type();
+                this.state = 431;
+                this.match(TransactionManifestParser.COMMA);
+                this.state = 432;
+                this.type();
+                this.state = 433;
+                this.match(TransactionManifestParser.GREATER_THAN);
+                this.state = 434;
+                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+                this.state = 441;
+                this._errHandler.sync(this);
+                _la = this._input.LA(1);
+                while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.SAFE_I8_LITERAL) | (1 << TransactionManifestParser.SAFE_I16_LITERAL) | (1 << TransactionManifestParser.SAFE_I32_LITERAL) | (1 << TransactionManifestParser.SAFE_I64_LITERAL) | (1 << TransactionManifestParser.SAFE_I128_LITERAL) | (1 << TransactionManifestParser.SAFE_I256_LITERAL) | (1 << TransactionManifestParser.SAFE_I384_LITERAL) | (1 << TransactionManifestParser.SAFE_I512_LITERAL) | (1 << TransactionManifestParser.SAFE_U8_LITERAL) | (1 << TransactionManifestParser.SAFE_U16_LITERAL) | (1 << TransactionManifestParser.SAFE_U32_LITERAL) | (1 << TransactionManifestParser.SAFE_U64_LITERAL) | (1 << TransactionManifestParser.SAFE_U128_LITERAL) | (1 << TransactionManifestParser.SAFE_U384_LITERAL) | (1 << TransactionManifestParser.SAFE_U256_LITERAL) | (1 << TransactionManifestParser.SAFE_U512_LITERAL))) !== 0) || ((((_la - 60)) & ~0x1F) === 0 && ((1 << (_la - 60)) & ((1 << (TransactionManifestParser.STRUCT_TYPE - 60)) | (1 << (TransactionManifestParser.ENUM_TYPE - 60)) | (1 << (TransactionManifestParser.SOME_TYPE - 60)) | (1 << (TransactionManifestParser.NONE_TYPE - 60)) | (1 << (TransactionManifestParser.OK_TYPE - 60)) | (1 << (TransactionManifestParser.ERR_TYPE - 60)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 60)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 60)) | (1 << (TransactionManifestParser.LIST_TYPE - 60)) | (1 << (TransactionManifestParser.SET_TYPE - 60)) | (1 << (TransactionManifestParser.MAP_TYPE - 60)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 60)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.HASH_TYPE - 60)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 60)) | (1 << (TransactionManifestParser.PROOF_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 60)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 60)) | (1 << (TransactionManifestParser.BYTES_TYPE - 60)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
                     {
                         {
-                            this.state = 369;
+                            this.state = 435;
                             this.value();
-                            this.state = 370;
+                            this.state = 436;
                             this.match(TransactionManifestParser.COMMA);
-                            this.state = 371;
+                            this.state = 437;
                             this.value();
                         }
                     }
-                    this.state = 377;
+                    this.state = 443;
                     this._errHandler.sync(this);
                     _la = this._input.LA(1);
                 }
-                this.state = 378;
+                this.state = 444;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1375,17 +1792,49 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     decimal() {
         let _localctx = new DecimalContext(this._ctx, this.state);
-        this.enterRule(_localctx, 54, TransactionManifestParser.RULE_decimal);
+        this.enterRule(_localctx, 86, TransactionManifestParser.RULE_decimal);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 380;
+                this.state = 446;
                 this.match(TransactionManifestParser.DECIMAL_TYPE);
-                this.state = 381;
+                this.state = 447;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 382;
+                this.state = 448;
                 this.match(TransactionManifestParser.STRING_LITERAL);
-                this.state = 383;
+                this.state = 449;
+                this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+            }
+        }
+        catch (re) {
+            if (re instanceof RecognitionException_1.RecognitionException) {
+                _localctx.exception = re;
+                this._errHandler.reportError(this, re);
+                this._errHandler.recover(this, re);
+            }
+            else {
+                throw re;
+            }
+        }
+        finally {
+            this.exitRule();
+        }
+        return _localctx;
+    }
+    // @RuleVersion(0)
+    precise_decimal() {
+        let _localctx = new Precise_decimalContext(this._ctx, this.state);
+        this.enterRule(_localctx, 88, TransactionManifestParser.RULE_precise_decimal);
+        try {
+            this.enterOuterAlt(_localctx, 1);
+            {
+                this.state = 451;
+                this.match(TransactionManifestParser.PRECISE_DECIMAL_TYPE);
+                this.state = 452;
+                this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+                this.state = 453;
+                this.match(TransactionManifestParser.STRING_LITERAL);
+                this.state = 454;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1407,17 +1856,17 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     package_address() {
         let _localctx = new Package_addressContext(this._ctx, this.state);
-        this.enterRule(_localctx, 56, TransactionManifestParser.RULE_package_address);
+        this.enterRule(_localctx, 90, TransactionManifestParser.RULE_package_address);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 385;
+                this.state = 456;
                 this.match(TransactionManifestParser.PACKAGE_ADDRESS_TYPE);
-                this.state = 386;
+                this.state = 457;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 387;
+                this.state = 458;
                 this.match(TransactionManifestParser.STRING_LITERAL);
-                this.state = 388;
+                this.state = 459;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1439,17 +1888,17 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     component_address() {
         let _localctx = new Component_addressContext(this._ctx, this.state);
-        this.enterRule(_localctx, 58, TransactionManifestParser.RULE_component_address);
+        this.enterRule(_localctx, 92, TransactionManifestParser.RULE_component_address);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 390;
+                this.state = 461;
                 this.match(TransactionManifestParser.COMPONENT_ADDRESS_TYPE);
-                this.state = 391;
+                this.state = 462;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 392;
+                this.state = 463;
                 this.match(TransactionManifestParser.STRING_LITERAL);
-                this.state = 393;
+                this.state = 464;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1471,17 +1920,17 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     resource_address() {
         let _localctx = new Resource_addressContext(this._ctx, this.state);
-        this.enterRule(_localctx, 60, TransactionManifestParser.RULE_resource_address);
+        this.enterRule(_localctx, 94, TransactionManifestParser.RULE_resource_address);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 395;
+                this.state = 466;
                 this.match(TransactionManifestParser.RESOURCE_ADDRESS_TYPE);
-                this.state = 396;
+                this.state = 467;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 397;
+                this.state = 468;
                 this.match(TransactionManifestParser.STRING_LITERAL);
-                this.state = 398;
+                this.state = 469;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1503,17 +1952,17 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     hash() {
         let _localctx = new HashContext(this._ctx, this.state);
-        this.enterRule(_localctx, 62, TransactionManifestParser.RULE_hash);
+        this.enterRule(_localctx, 96, TransactionManifestParser.RULE_hash);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 400;
+                this.state = 471;
                 this.match(TransactionManifestParser.HASH_TYPE);
-                this.state = 401;
+                this.state = 472;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 402;
+                this.state = 473;
                 this.match(TransactionManifestParser.STRING_LITERAL);
-                this.state = 403;
+                this.state = 474;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1535,16 +1984,16 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     bucket() {
         let _localctx = new BucketContext(this._ctx, this.state);
-        this.enterRule(_localctx, 64, TransactionManifestParser.RULE_bucket);
+        this.enterRule(_localctx, 98, TransactionManifestParser.RULE_bucket);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 405;
+                this.state = 476;
                 this.match(TransactionManifestParser.BUCKET_TYPE);
-                this.state = 406;
+                this.state = 477;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 407;
+                this.state = 478;
                 _la = this._input.LA(1);
                 if (!(_la === TransactionManifestParser.U32_LITERAL || _la === TransactionManifestParser.STRING_LITERAL)) {
                     this._errHandler.recoverInline(this);
@@ -1556,7 +2005,7 @@ class TransactionManifestParser extends Parser_1.Parser {
                     this._errHandler.reportMatch(this);
                     this.consume();
                 }
-                this.state = 408;
+                this.state = 479;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1578,16 +2027,16 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     proof() {
         let _localctx = new ProofContext(this._ctx, this.state);
-        this.enterRule(_localctx, 66, TransactionManifestParser.RULE_proof);
+        this.enterRule(_localctx, 100, TransactionManifestParser.RULE_proof);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 410;
+                this.state = 481;
                 this.match(TransactionManifestParser.PROOF_TYPE);
-                this.state = 411;
+                this.state = 482;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 412;
+                this.state = 483;
                 _la = this._input.LA(1);
                 if (!(_la === TransactionManifestParser.U32_LITERAL || _la === TransactionManifestParser.STRING_LITERAL)) {
                     this._errHandler.recoverInline(this);
@@ -1599,7 +2048,7 @@ class TransactionManifestParser extends Parser_1.Parser {
                     this._errHandler.reportMatch(this);
                     this.consume();
                 }
-                this.state = 413;
+                this.state = 484;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1621,17 +2070,17 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     non_fungible_id() {
         let _localctx = new Non_fungible_idContext(this._ctx, this.state);
-        this.enterRule(_localctx, 68, TransactionManifestParser.RULE_non_fungible_id);
+        this.enterRule(_localctx, 102, TransactionManifestParser.RULE_non_fungible_id);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 415;
+                this.state = 486;
                 this.match(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE);
-                this.state = 416;
+                this.state = 487;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 417;
+                this.state = 488;
                 this.match(TransactionManifestParser.STRING_LITERAL);
-                this.state = 418;
+                this.state = 489;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1653,17 +2102,17 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     non_fungible_address() {
         let _localctx = new Non_fungible_addressContext(this._ctx, this.state);
-        this.enterRule(_localctx, 70, TransactionManifestParser.RULE_non_fungible_address);
+        this.enterRule(_localctx, 104, TransactionManifestParser.RULE_non_fungible_address);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 420;
+                this.state = 491;
                 this.match(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE);
-                this.state = 421;
+                this.state = 492;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 422;
+                this.state = 493;
                 this.match(TransactionManifestParser.STRING_LITERAL);
-                this.state = 423;
+                this.state = 494;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1685,17 +2134,17 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     bytes() {
         let _localctx = new BytesContext(this._ctx, this.state);
-        this.enterRule(_localctx, 72, TransactionManifestParser.RULE_bytes);
+        this.enterRule(_localctx, 106, TransactionManifestParser.RULE_bytes);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 425;
+                this.state = 496;
                 this.match(TransactionManifestParser.BYTES_TYPE);
-                this.state = 426;
+                this.state = 497;
                 this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-                this.state = 427;
+                this.state = 498;
                 this.match(TransactionManifestParser.STRING_LITERAL);
-                this.state = 428;
+                this.state = 499;
                 this.match(TransactionManifestParser.CLOED_PARENTHESIS);
             }
         }
@@ -1717,14 +2166,14 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     type() {
         let _localctx = new TypeContext(this._ctx, this.state);
-        this.enterRule(_localctx, 74, TransactionManifestParser.RULE_type);
+        this.enterRule(_localctx, 108, TransactionManifestParser.RULE_type);
         let _la;
         try {
             this.enterOuterAlt(_localctx, 1);
             {
-                this.state = 430;
+                this.state = 501;
                 _la = this._input.LA(1);
-                if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.UNIT_TYPE) | (1 << TransactionManifestParser.BOOL_TYPE) | (1 << TransactionManifestParser.I8_TYPE) | (1 << TransactionManifestParser.I16_TYPE) | (1 << TransactionManifestParser.I32_TYPE) | (1 << TransactionManifestParser.I64_TYPE) | (1 << TransactionManifestParser.I128_TYPE) | (1 << TransactionManifestParser.U8_TYPE) | (1 << TransactionManifestParser.U16_TYPE) | (1 << TransactionManifestParser.U32_TYPE) | (1 << TransactionManifestParser.U64_TYPE) | (1 << TransactionManifestParser.U128_TYPE) | (1 << TransactionManifestParser.STRING_TYPE) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE) | (1 << TransactionManifestParser.OPTION_TYPE) | (1 << TransactionManifestParser.RESULT_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0))) {
+                if (!(((((_la - 31)) & ~0x1F) === 0 && ((1 << (_la - 31)) & ((1 << (TransactionManifestParser.UNIT_TYPE - 31)) | (1 << (TransactionManifestParser.BOOL_TYPE - 31)) | (1 << (TransactionManifestParser.I8_TYPE - 31)) | (1 << (TransactionManifestParser.I16_TYPE - 31)) | (1 << (TransactionManifestParser.I32_TYPE - 31)) | (1 << (TransactionManifestParser.I64_TYPE - 31)) | (1 << (TransactionManifestParser.I128_TYPE - 31)) | (1 << (TransactionManifestParser.U8_TYPE - 31)) | (1 << (TransactionManifestParser.U16_TYPE - 31)) | (1 << (TransactionManifestParser.U32_TYPE - 31)) | (1 << (TransactionManifestParser.U64_TYPE - 31)) | (1 << (TransactionManifestParser.U128_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_I8_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_I16_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_I32_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_I64_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_I128_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_I256_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_I384_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_I512_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_U8_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_U16_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_U32_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_U64_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_U128_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_U384_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_U256_TYPE - 31)) | (1 << (TransactionManifestParser.SAFE_U512_TYPE - 31)) | (1 << (TransactionManifestParser.STRING_TYPE - 31)) | (1 << (TransactionManifestParser.STRUCT_TYPE - 31)) | (1 << (TransactionManifestParser.ENUM_TYPE - 31)) | (1 << (TransactionManifestParser.OPTION_TYPE - 31)))) !== 0) || ((((_la - 63)) & ~0x1F) === 0 && ((1 << (_la - 63)) & ((1 << (TransactionManifestParser.RESULT_TYPE - 63)) | (1 << (TransactionManifestParser.SOME_TYPE - 63)) | (1 << (TransactionManifestParser.NONE_TYPE - 63)) | (1 << (TransactionManifestParser.OK_TYPE - 63)) | (1 << (TransactionManifestParser.ERR_TYPE - 63)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 63)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 63)) | (1 << (TransactionManifestParser.LIST_TYPE - 63)) | (1 << (TransactionManifestParser.SET_TYPE - 63)) | (1 << (TransactionManifestParser.MAP_TYPE - 63)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 63)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 63)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 63)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 63)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 63)) | (1 << (TransactionManifestParser.HASH_TYPE - 63)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 63)) | (1 << (TransactionManifestParser.PROOF_TYPE - 63)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 63)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 63)) | (1 << (TransactionManifestParser.BYTES_TYPE - 63)))) !== 0))) {
                     this._errHandler.recoverInline(this);
                 }
                 else {
@@ -1754,253 +2203,372 @@ class TransactionManifestParser extends Parser_1.Parser {
     // @RuleVersion(0)
     value() {
         let _localctx = new ValueContext(this._ctx, this.state);
-        this.enterRule(_localctx, 76, TransactionManifestParser.RULE_value);
+        this.enterRule(_localctx, 110, TransactionManifestParser.RULE_value);
         try {
-            this.state = 467;
+            this.state = 555;
             this._errHandler.sync(this);
             switch (this.interpreter.adaptivePredict(this._input, 21, this._ctx)) {
                 case 1:
                     this.enterOuterAlt(_localctx, 1);
                     {
-                        this.state = 432;
+                        this.state = 503;
                         this.unit();
                     }
                     break;
                 case 2:
                     this.enterOuterAlt(_localctx, 2);
                     {
-                        this.state = 433;
+                        this.state = 504;
                         this.bool();
                     }
                     break;
                 case 3:
                     this.enterOuterAlt(_localctx, 3);
                     {
-                        this.state = 434;
+                        this.state = 505;
                         this.i8();
                     }
                     break;
                 case 4:
                     this.enterOuterAlt(_localctx, 4);
                     {
-                        this.state = 435;
+                        this.state = 506;
                         this.i16();
                     }
                     break;
                 case 5:
                     this.enterOuterAlt(_localctx, 5);
                     {
-                        this.state = 436;
+                        this.state = 507;
                         this.i32();
                     }
                     break;
                 case 6:
                     this.enterOuterAlt(_localctx, 6);
                     {
-                        this.state = 437;
+                        this.state = 508;
                         this.i64();
                     }
                     break;
                 case 7:
                     this.enterOuterAlt(_localctx, 7);
                     {
-                        this.state = 438;
+                        this.state = 509;
                         this.i128();
                     }
                     break;
                 case 8:
                     this.enterOuterAlt(_localctx, 8);
                     {
-                        this.state = 439;
+                        this.state = 510;
                         this.u8();
                     }
                     break;
                 case 9:
                     this.enterOuterAlt(_localctx, 9);
                     {
-                        this.state = 440;
+                        this.state = 511;
                         this.u16();
                     }
                     break;
                 case 10:
                     this.enterOuterAlt(_localctx, 10);
                     {
-                        this.state = 441;
+                        this.state = 512;
                         this.u32();
                     }
                     break;
                 case 11:
                     this.enterOuterAlt(_localctx, 11);
                     {
-                        this.state = 442;
+                        this.state = 513;
                         this.u64();
                     }
                     break;
                 case 12:
                     this.enterOuterAlt(_localctx, 12);
                     {
-                        this.state = 443;
+                        this.state = 514;
                         this.u128();
                     }
                     break;
                 case 13:
                     this.enterOuterAlt(_localctx, 13);
                     {
-                        this.state = 444;
-                        this.string();
+                        this.state = 515;
+                        this.safe_i8();
                     }
                     break;
                 case 14:
                     this.enterOuterAlt(_localctx, 14);
                     {
-                        this.state = 445;
-                        this.struct();
+                        this.state = 516;
+                        this.safe_i16();
                     }
                     break;
                 case 15:
                     this.enterOuterAlt(_localctx, 15);
                     {
-                        this.state = 446;
-                        this.enum_();
+                        this.state = 517;
+                        this.safe_i32();
                     }
                     break;
                 case 16:
                     this.enterOuterAlt(_localctx, 16);
                     {
-                        this.state = 447;
-                        this.option();
+                        this.state = 518;
+                        this.safe_i64();
                     }
                     break;
                 case 17:
                     this.enterOuterAlt(_localctx, 17);
                     {
-                        this.state = 448;
-                        this.some();
+                        this.state = 519;
+                        this.safe_i128();
                     }
                     break;
                 case 18:
                     this.enterOuterAlt(_localctx, 18);
                     {
-                        this.state = 449;
-                        this.none();
+                        this.state = 520;
+                        this.safe_i256();
                     }
                     break;
                 case 19:
                     this.enterOuterAlt(_localctx, 19);
                     {
-                        this.state = 450;
-                        this.ok();
+                        this.state = 521;
+                        this.safe_i384();
                     }
                     break;
                 case 20:
                     this.enterOuterAlt(_localctx, 20);
                     {
-                        this.state = 451;
-                        this.err();
+                        this.state = 522;
+                        this.safe_i512();
                     }
                     break;
                 case 21:
                     this.enterOuterAlt(_localctx, 21);
                     {
-                        this.state = 452;
-                        this.array();
+                        this.state = 523;
+                        this.safe_u8();
                     }
                     break;
                 case 22:
                     this.enterOuterAlt(_localctx, 22);
                     {
-                        this.state = 453;
-                        this.tuple();
+                        this.state = 524;
+                        this.safe_u16();
                     }
                     break;
                 case 23:
                     this.enterOuterAlt(_localctx, 23);
                     {
-                        this.state = 454;
-                        this.list();
+                        this.state = 525;
+                        this.safe_u32();
                     }
                     break;
                 case 24:
                     this.enterOuterAlt(_localctx, 24);
                     {
-                        this.state = 455;
-                        this.set();
+                        this.state = 526;
+                        this.safe_u64();
                     }
                     break;
                 case 25:
                     this.enterOuterAlt(_localctx, 25);
                     {
-                        this.state = 456;
-                        this.map();
+                        this.state = 527;
+                        this.safe_u128();
                     }
                     break;
                 case 26:
                     this.enterOuterAlt(_localctx, 26);
                     {
-                        this.state = 457;
-                        this.decimal();
+                        this.state = 528;
+                        this.safe_u256();
                     }
                     break;
                 case 27:
                     this.enterOuterAlt(_localctx, 27);
                     {
-                        this.state = 458;
-                        this.package_address();
+                        this.state = 529;
+                        this.safe_u384();
                     }
                     break;
                 case 28:
                     this.enterOuterAlt(_localctx, 28);
                     {
-                        this.state = 459;
-                        this.component_address();
+                        this.state = 530;
+                        this.safe_u512();
                     }
                     break;
                 case 29:
                     this.enterOuterAlt(_localctx, 29);
                     {
-                        this.state = 460;
-                        this.resource_address();
+                        this.state = 531;
+                        this.string();
                     }
                     break;
                 case 30:
                     this.enterOuterAlt(_localctx, 30);
                     {
-                        this.state = 461;
-                        this.hash();
+                        this.state = 532;
+                        this.struct();
                     }
                     break;
                 case 31:
                     this.enterOuterAlt(_localctx, 31);
                     {
-                        this.state = 462;
-                        this.bucket();
+                        this.state = 533;
+                        this.enum_();
                     }
                     break;
                 case 32:
                     this.enterOuterAlt(_localctx, 32);
                     {
-                        this.state = 463;
-                        this.proof();
+                        this.state = 534;
+                        this.option();
                     }
                     break;
                 case 33:
                     this.enterOuterAlt(_localctx, 33);
                     {
-                        this.state = 464;
-                        this.non_fungible_id();
+                        this.state = 535;
+                        this.some();
                     }
                     break;
                 case 34:
                     this.enterOuterAlt(_localctx, 34);
                     {
-                        this.state = 465;
-                        this.non_fungible_address();
+                        this.state = 536;
+                        this.none();
                     }
                     break;
                 case 35:
                     this.enterOuterAlt(_localctx, 35);
                     {
-                        this.state = 466;
+                        this.state = 537;
+                        this.ok();
+                    }
+                    break;
+                case 36:
+                    this.enterOuterAlt(_localctx, 36);
+                    {
+                        this.state = 538;
+                        this.err();
+                    }
+                    break;
+                case 37:
+                    this.enterOuterAlt(_localctx, 37);
+                    {
+                        this.state = 539;
+                        this.array();
+                    }
+                    break;
+                case 38:
+                    this.enterOuterAlt(_localctx, 38);
+                    {
+                        this.state = 540;
+                        this.tuple();
+                    }
+                    break;
+                case 39:
+                    this.enterOuterAlt(_localctx, 39);
+                    {
+                        this.state = 541;
+                        this.list();
+                    }
+                    break;
+                case 40:
+                    this.enterOuterAlt(_localctx, 40);
+                    {
+                        this.state = 542;
+                        this.set();
+                    }
+                    break;
+                case 41:
+                    this.enterOuterAlt(_localctx, 41);
+                    {
+                        this.state = 543;
+                        this.map();
+                    }
+                    break;
+                case 42:
+                    this.enterOuterAlt(_localctx, 42);
+                    {
+                        this.state = 544;
+                        this.decimal();
+                    }
+                    break;
+                case 43:
+                    this.enterOuterAlt(_localctx, 43);
+                    {
+                        this.state = 545;
+                        this.precise_decimal();
+                    }
+                    break;
+                case 44:
+                    this.enterOuterAlt(_localctx, 44);
+                    {
+                        this.state = 546;
+                        this.package_address();
+                    }
+                    break;
+                case 45:
+                    this.enterOuterAlt(_localctx, 45);
+                    {
+                        this.state = 547;
+                        this.component_address();
+                    }
+                    break;
+                case 46:
+                    this.enterOuterAlt(_localctx, 46);
+                    {
+                        this.state = 548;
+                        this.resource_address();
+                    }
+                    break;
+                case 47:
+                    this.enterOuterAlt(_localctx, 47);
+                    {
+                        this.state = 549;
+                        this.hash();
+                    }
+                    break;
+                case 48:
+                    this.enterOuterAlt(_localctx, 48);
+                    {
+                        this.state = 550;
+                        this.bucket();
+                    }
+                    break;
+                case 49:
+                    this.enterOuterAlt(_localctx, 49);
+                    {
+                        this.state = 551;
+                        this.proof();
+                    }
+                    break;
+                case 50:
+                    this.enterOuterAlt(_localctx, 50);
+                    {
+                        this.state = 552;
+                        this.non_fungible_id();
+                    }
+                    break;
+                case 51:
+                    this.enterOuterAlt(_localctx, 51);
+                    {
+                        this.state = 553;
+                        this.non_fungible_address();
+                    }
+                    break;
+                case 52:
+                    this.enterOuterAlt(_localctx, 52);
+                    {
+                        this.state = 554;
                         this.bytes();
                     }
                     break;
@@ -2041,77 +2609,110 @@ TransactionManifestParser.U16_LITERAL = 9;
 TransactionManifestParser.U32_LITERAL = 10;
 TransactionManifestParser.U64_LITERAL = 11;
 TransactionManifestParser.U128_LITERAL = 12;
-TransactionManifestParser.TRUE = 13;
-TransactionManifestParser.FALSE = 14;
-TransactionManifestParser.UNIT_TYPE = 15;
-TransactionManifestParser.BOOL_TYPE = 16;
-TransactionManifestParser.I8_TYPE = 17;
-TransactionManifestParser.I16_TYPE = 18;
-TransactionManifestParser.I32_TYPE = 19;
-TransactionManifestParser.I64_TYPE = 20;
-TransactionManifestParser.I128_TYPE = 21;
-TransactionManifestParser.U8_TYPE = 22;
-TransactionManifestParser.U16_TYPE = 23;
-TransactionManifestParser.U32_TYPE = 24;
-TransactionManifestParser.U64_TYPE = 25;
-TransactionManifestParser.U128_TYPE = 26;
-TransactionManifestParser.STRING_TYPE = 27;
-TransactionManifestParser.STRUCT_TYPE = 28;
-TransactionManifestParser.ENUM_TYPE = 29;
-TransactionManifestParser.OPTION_TYPE = 30;
-TransactionManifestParser.RESULT_TYPE = 31;
-TransactionManifestParser.SOME_TYPE = 32;
-TransactionManifestParser.NONE_TYPE = 33;
-TransactionManifestParser.OK_TYPE = 34;
-TransactionManifestParser.ERR_TYPE = 35;
-TransactionManifestParser.ARRAY_TYPE = 36;
-TransactionManifestParser.TUPLE_TYPE = 37;
-TransactionManifestParser.LIST_TYPE = 38;
-TransactionManifestParser.SET_TYPE = 39;
-TransactionManifestParser.MAP_TYPE = 40;
-TransactionManifestParser.DECIMAL_TYPE = 41;
-TransactionManifestParser.PACKAGE_ADDRESS_TYPE = 42;
-TransactionManifestParser.COMPONENT_ADDRESS_TYPE = 43;
-TransactionManifestParser.RESOURCE_ADDRESS_TYPE = 44;
-TransactionManifestParser.HASH_TYPE = 45;
-TransactionManifestParser.BUCKET_TYPE = 46;
-TransactionManifestParser.PROOF_TYPE = 47;
-TransactionManifestParser.NON_FUNGIBLE_ID_TYPE = 48;
-TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE = 49;
-TransactionManifestParser.BYTES_TYPE = 50;
-TransactionManifestParser.OPEN_PARENTHESIS = 51;
-TransactionManifestParser.CLOED_PARENTHESIS = 52;
-TransactionManifestParser.LESS_THAN = 53;
-TransactionManifestParser.GREATER_THAN = 54;
-TransactionManifestParser.COMMA = 55;
-TransactionManifestParser.SEMICOLON = 56;
-TransactionManifestParser.TAKE_FROM_WORKTOP = 57;
-TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT = 58;
-TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS = 59;
-TransactionManifestParser.ASSERT_WORKTOP_CONTAINS = 60;
-TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT = 61;
-TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS = 62;
-TransactionManifestParser.RETURN_TO_WORKTOP = 63;
-TransactionManifestParser.POP_FROM_AUTH_ZONE = 64;
-TransactionManifestParser.PUSH_TO_AUTH_ZONE = 65;
-TransactionManifestParser.CLEAR_AUTHZONE = 66;
-TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE = 67;
-TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT = 68;
-TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS = 69;
-TransactionManifestParser.CREATE_PROOF_FROM_BUCKET = 70;
-TransactionManifestParser.CLONE_PROOF = 71;
-TransactionManifestParser.DROP_PROOF = 72;
-TransactionManifestParser.DROP_ALL_PROOFS = 73;
-TransactionManifestParser.CALL_FUNCTION = 74;
-TransactionManifestParser.CALL_METHOD = 75;
-TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES = 76;
-TransactionManifestParser.PUBLISH_PACKAGE = 77;
-TransactionManifestParser.STRING_LITERAL = 78;
-TransactionManifestParser.DIGIT = 79;
-TransactionManifestParser.LETTER = 80;
-TransactionManifestParser.NUMBER = 81;
-TransactionManifestParser.WS = 82;
-TransactionManifestParser.COMMENT = 83;
+TransactionManifestParser.SAFE_I8_LITERAL = 13;
+TransactionManifestParser.SAFE_I16_LITERAL = 14;
+TransactionManifestParser.SAFE_I32_LITERAL = 15;
+TransactionManifestParser.SAFE_I64_LITERAL = 16;
+TransactionManifestParser.SAFE_I128_LITERAL = 17;
+TransactionManifestParser.SAFE_I256_LITERAL = 18;
+TransactionManifestParser.SAFE_I384_LITERAL = 19;
+TransactionManifestParser.SAFE_I512_LITERAL = 20;
+TransactionManifestParser.SAFE_U8_LITERAL = 21;
+TransactionManifestParser.SAFE_U16_LITERAL = 22;
+TransactionManifestParser.SAFE_U32_LITERAL = 23;
+TransactionManifestParser.SAFE_U64_LITERAL = 24;
+TransactionManifestParser.SAFE_U128_LITERAL = 25;
+TransactionManifestParser.SAFE_U384_LITERAL = 26;
+TransactionManifestParser.SAFE_U256_LITERAL = 27;
+TransactionManifestParser.SAFE_U512_LITERAL = 28;
+TransactionManifestParser.TRUE = 29;
+TransactionManifestParser.FALSE = 30;
+TransactionManifestParser.UNIT_TYPE = 31;
+TransactionManifestParser.BOOL_TYPE = 32;
+TransactionManifestParser.I8_TYPE = 33;
+TransactionManifestParser.I16_TYPE = 34;
+TransactionManifestParser.I32_TYPE = 35;
+TransactionManifestParser.I64_TYPE = 36;
+TransactionManifestParser.I128_TYPE = 37;
+TransactionManifestParser.U8_TYPE = 38;
+TransactionManifestParser.U16_TYPE = 39;
+TransactionManifestParser.U32_TYPE = 40;
+TransactionManifestParser.U64_TYPE = 41;
+TransactionManifestParser.U128_TYPE = 42;
+TransactionManifestParser.SAFE_I8_TYPE = 43;
+TransactionManifestParser.SAFE_I16_TYPE = 44;
+TransactionManifestParser.SAFE_I32_TYPE = 45;
+TransactionManifestParser.SAFE_I64_TYPE = 46;
+TransactionManifestParser.SAFE_I128_TYPE = 47;
+TransactionManifestParser.SAFE_I256_TYPE = 48;
+TransactionManifestParser.SAFE_I384_TYPE = 49;
+TransactionManifestParser.SAFE_I512_TYPE = 50;
+TransactionManifestParser.SAFE_U8_TYPE = 51;
+TransactionManifestParser.SAFE_U16_TYPE = 52;
+TransactionManifestParser.SAFE_U32_TYPE = 53;
+TransactionManifestParser.SAFE_U64_TYPE = 54;
+TransactionManifestParser.SAFE_U128_TYPE = 55;
+TransactionManifestParser.SAFE_U384_TYPE = 56;
+TransactionManifestParser.SAFE_U256_TYPE = 57;
+TransactionManifestParser.SAFE_U512_TYPE = 58;
+TransactionManifestParser.STRING_TYPE = 59;
+TransactionManifestParser.STRUCT_TYPE = 60;
+TransactionManifestParser.ENUM_TYPE = 61;
+TransactionManifestParser.OPTION_TYPE = 62;
+TransactionManifestParser.RESULT_TYPE = 63;
+TransactionManifestParser.SOME_TYPE = 64;
+TransactionManifestParser.NONE_TYPE = 65;
+TransactionManifestParser.OK_TYPE = 66;
+TransactionManifestParser.ERR_TYPE = 67;
+TransactionManifestParser.ARRAY_TYPE = 68;
+TransactionManifestParser.TUPLE_TYPE = 69;
+TransactionManifestParser.LIST_TYPE = 70;
+TransactionManifestParser.SET_TYPE = 71;
+TransactionManifestParser.MAP_TYPE = 72;
+TransactionManifestParser.DECIMAL_TYPE = 73;
+TransactionManifestParser.PRECISE_DECIMAL_TYPE = 74;
+TransactionManifestParser.PACKAGE_ADDRESS_TYPE = 75;
+TransactionManifestParser.COMPONENT_ADDRESS_TYPE = 76;
+TransactionManifestParser.RESOURCE_ADDRESS_TYPE = 77;
+TransactionManifestParser.HASH_TYPE = 78;
+TransactionManifestParser.BUCKET_TYPE = 79;
+TransactionManifestParser.PROOF_TYPE = 80;
+TransactionManifestParser.NON_FUNGIBLE_ID_TYPE = 81;
+TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE = 82;
+TransactionManifestParser.BYTES_TYPE = 83;
+TransactionManifestParser.OPEN_PARENTHESIS = 84;
+TransactionManifestParser.CLOED_PARENTHESIS = 85;
+TransactionManifestParser.LESS_THAN = 86;
+TransactionManifestParser.GREATER_THAN = 87;
+TransactionManifestParser.COMMA = 88;
+TransactionManifestParser.SEMICOLON = 89;
+TransactionManifestParser.TAKE_FROM_WORKTOP = 90;
+TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT = 91;
+TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS = 92;
+TransactionManifestParser.ASSERT_WORKTOP_CONTAINS = 93;
+TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT = 94;
+TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS = 95;
+TransactionManifestParser.RETURN_TO_WORKTOP = 96;
+TransactionManifestParser.POP_FROM_AUTH_ZONE = 97;
+TransactionManifestParser.PUSH_TO_AUTH_ZONE = 98;
+TransactionManifestParser.CLEAR_AUTHZONE = 99;
+TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE = 100;
+TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT = 101;
+TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS = 102;
+TransactionManifestParser.CREATE_PROOF_FROM_BUCKET = 103;
+TransactionManifestParser.CLONE_PROOF = 104;
+TransactionManifestParser.DROP_PROOF = 105;
+TransactionManifestParser.DROP_ALL_PROOFS = 106;
+TransactionManifestParser.CALL_FUNCTION = 107;
+TransactionManifestParser.CALL_METHOD = 108;
+TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES = 109;
+TransactionManifestParser.PUBLISH_PACKAGE = 110;
+TransactionManifestParser.STRING_LITERAL = 111;
+TransactionManifestParser.DIGIT = 112;
+TransactionManifestParser.LETTER = 113;
+TransactionManifestParser.NUMBER = 114;
+TransactionManifestParser.WS = 115;
+TransactionManifestParser.COMMENT = 116;
 TransactionManifestParser.RULE_manifest = 0;
 TransactionManifestParser.RULE_manifestInstruction = 1;
 TransactionManifestParser.RULE_unit = 2;
@@ -2126,50 +2727,75 @@ TransactionManifestParser.RULE_u16 = 10;
 TransactionManifestParser.RULE_u32 = 11;
 TransactionManifestParser.RULE_u64 = 12;
 TransactionManifestParser.RULE_u128 = 13;
-TransactionManifestParser.RULE_string = 14;
-TransactionManifestParser.RULE_struct = 15;
-TransactionManifestParser.RULE_enum_ = 16;
-TransactionManifestParser.RULE_option = 17;
-TransactionManifestParser.RULE_some = 18;
-TransactionManifestParser.RULE_none = 19;
-TransactionManifestParser.RULE_ok = 20;
-TransactionManifestParser.RULE_err = 21;
-TransactionManifestParser.RULE_array = 22;
-TransactionManifestParser.RULE_tuple = 23;
-TransactionManifestParser.RULE_list = 24;
-TransactionManifestParser.RULE_set = 25;
-TransactionManifestParser.RULE_map = 26;
-TransactionManifestParser.RULE_decimal = 27;
-TransactionManifestParser.RULE_package_address = 28;
-TransactionManifestParser.RULE_component_address = 29;
-TransactionManifestParser.RULE_resource_address = 30;
-TransactionManifestParser.RULE_hash = 31;
-TransactionManifestParser.RULE_bucket = 32;
-TransactionManifestParser.RULE_proof = 33;
-TransactionManifestParser.RULE_non_fungible_id = 34;
-TransactionManifestParser.RULE_non_fungible_address = 35;
-TransactionManifestParser.RULE_bytes = 36;
-TransactionManifestParser.RULE_type = 37;
-TransactionManifestParser.RULE_value = 38;
+TransactionManifestParser.RULE_safe_i8 = 14;
+TransactionManifestParser.RULE_safe_i16 = 15;
+TransactionManifestParser.RULE_safe_i32 = 16;
+TransactionManifestParser.RULE_safe_i64 = 17;
+TransactionManifestParser.RULE_safe_i128 = 18;
+TransactionManifestParser.RULE_safe_i256 = 19;
+TransactionManifestParser.RULE_safe_i384 = 20;
+TransactionManifestParser.RULE_safe_i512 = 21;
+TransactionManifestParser.RULE_safe_u8 = 22;
+TransactionManifestParser.RULE_safe_u16 = 23;
+TransactionManifestParser.RULE_safe_u32 = 24;
+TransactionManifestParser.RULE_safe_u64 = 25;
+TransactionManifestParser.RULE_safe_u128 = 26;
+TransactionManifestParser.RULE_safe_u256 = 27;
+TransactionManifestParser.RULE_safe_u384 = 28;
+TransactionManifestParser.RULE_safe_u512 = 29;
+TransactionManifestParser.RULE_string = 30;
+TransactionManifestParser.RULE_struct = 31;
+TransactionManifestParser.RULE_enum_ = 32;
+TransactionManifestParser.RULE_option = 33;
+TransactionManifestParser.RULE_some = 34;
+TransactionManifestParser.RULE_none = 35;
+TransactionManifestParser.RULE_ok = 36;
+TransactionManifestParser.RULE_err = 37;
+TransactionManifestParser.RULE_array = 38;
+TransactionManifestParser.RULE_tuple = 39;
+TransactionManifestParser.RULE_list = 40;
+TransactionManifestParser.RULE_set = 41;
+TransactionManifestParser.RULE_map = 42;
+TransactionManifestParser.RULE_decimal = 43;
+TransactionManifestParser.RULE_precise_decimal = 44;
+TransactionManifestParser.RULE_package_address = 45;
+TransactionManifestParser.RULE_component_address = 46;
+TransactionManifestParser.RULE_resource_address = 47;
+TransactionManifestParser.RULE_hash = 48;
+TransactionManifestParser.RULE_bucket = 49;
+TransactionManifestParser.RULE_proof = 50;
+TransactionManifestParser.RULE_non_fungible_id = 51;
+TransactionManifestParser.RULE_non_fungible_address = 52;
+TransactionManifestParser.RULE_bytes = 53;
+TransactionManifestParser.RULE_type = 54;
+TransactionManifestParser.RULE_value = 55;
 // tslint:disable:no-trailing-whitespace
 TransactionManifestParser.ruleNames = [
     "manifest", "manifestInstruction", "unit", "bool", "i8", "i16", "i32",
-    "i64", "i128", "u8", "u16", "u32", "u64", "u128", "string", "struct",
-    "enum_", "option", "some", "none", "ok", "err", "array", "tuple", "list",
-    "set", "map", "decimal", "package_address", "component_address", "resource_address",
+    "i64", "i128", "u8", "u16", "u32", "u64", "u128", "safe_i8", "safe_i16",
+    "safe_i32", "safe_i64", "safe_i128", "safe_i256", "safe_i384", "safe_i512",
+    "safe_u8", "safe_u16", "safe_u32", "safe_u64", "safe_u128", "safe_u256",
+    "safe_u384", "safe_u512", "string", "struct", "enum_", "option", "some",
+    "none", "ok", "err", "array", "tuple", "list", "set", "map", "decimal",
+    "precise_decimal", "package_address", "component_address", "resource_address",
     "hash", "bucket", "proof", "non_fungible_id", "non_fungible_address",
     "bytes", "type", "value",
 ];
 TransactionManifestParser._LITERAL_NAMES = [
     undefined, "'()'", undefined, undefined, undefined, undefined, undefined,
-    undefined, undefined, undefined, undefined, undefined, undefined, "'true'",
-    "'false'", "'Unit'", "'Bool'", "'I8'", "'I16'", "'I32'", "'I64'", "'I128'",
-    "'U8'", "'U16'", "'U32'", "'U64'", "'U128'", "'String'", "'Struct'", "'Enum'",
+    undefined, undefined, undefined, undefined, undefined, undefined, undefined,
+    undefined, undefined, undefined, undefined, undefined, undefined, undefined,
+    undefined, undefined, undefined, undefined, undefined, undefined, undefined,
+    undefined, "'true'", "'false'", "'Unit'", "'Bool'", "'I8'", "'I16'", "'I32'",
+    "'I64'", "'I128'", "'U8'", "'U16'", "'U32'", "'U64'", "'U128'", "'SafeI8'",
+    "'SafeI16'", "'SafeI32'", "'SafeI64'", "'SafeI128'", "'SafeI256'", "'SafeI384'",
+    "'SafeI512'", "'SafeU8'", "'SafeU16'", "'SafeU32'", "'SafeU64'", "'SafeU128'",
+    "'SafeU384'", "'SafeU256'", "'SafeU512'", "'String'", "'Struct'", "'Enum'",
     "'Option'", "'Result'", "'Some'", "'None'", "'Ok'", "'Err'", "'Array'",
-    "'Tuple'", "'List'", "'Set'", "'Map'", "'Decimal'", "'PackageAddress'",
-    "'ComponentAddress'", "'ResourceAddress'", "'Hash'", "'Bucket'", "'Proof'",
-    "'NonFungibleId'", "'NonFungibleAddress'", "'Bytes'", "'('", "')'", "'<'",
-    "'>'", "','", "';'", "'TAKE_FROM_WORKTOP'", "'TAKE_FROM_WORKTOP_BY_AMOUNT'",
+    "'Tuple'", "'List'", "'Set'", "'Map'", "'Decimal'", "'PreciseDecimal'",
+    "'PackageAddress'", "'ComponentAddress'", "'ResourceAddress'", "'Hash'",
+    "'Bucket'", "'Proof'", "'NonFungibleId'", "'NonFungibleAddress'", "'Bytes'",
+    "'('", "')'", "'<'", "'>'", "','", "';'", "'TAKE_FROM_WORKTOP'", "'TAKE_FROM_WORKTOP_BY_AMOUNT'",
     "'TAKE_FROM_WORKTOP_BY_IDS'", "'ASSERT_WORKTOP_CONTAINS'", "'ASSERT_WORKTOP_CONTAINS_BY_AMOUNT'",
     "'ASSERT_WORKTOP_CONTAINS_BY_IDS'", "'RETURN_TO_WORKTOP'", "'POP_FROM_AUTH_ZONE'",
     "'PUSH_TO_AUTH_ZONE'", "'CLEAR_AUTHZONE'", "'CREATE_PROOF_FROM_AUTH_ZONE'",
@@ -2181,12 +2807,20 @@ TransactionManifestParser._LITERAL_NAMES = [
 TransactionManifestParser._SYMBOLIC_NAMES = [
     undefined, undefined, "BOOL_LITERAL", "I8_LITERAL", "I16_LITERAL", "I32_LITERAL",
     "I64_LITERAL", "I128_LITERAL", "U8_LITERAL", "U16_LITERAL", "U32_LITERAL",
-    "U64_LITERAL", "U128_LITERAL", "TRUE", "FALSE", "UNIT_TYPE", "BOOL_TYPE",
-    "I8_TYPE", "I16_TYPE", "I32_TYPE", "I64_TYPE", "I128_TYPE", "U8_TYPE",
-    "U16_TYPE", "U32_TYPE", "U64_TYPE", "U128_TYPE", "STRING_TYPE", "STRUCT_TYPE",
-    "ENUM_TYPE", "OPTION_TYPE", "RESULT_TYPE", "SOME_TYPE", "NONE_TYPE", "OK_TYPE",
-    "ERR_TYPE", "ARRAY_TYPE", "TUPLE_TYPE", "LIST_TYPE", "SET_TYPE", "MAP_TYPE",
-    "DECIMAL_TYPE", "PACKAGE_ADDRESS_TYPE", "COMPONENT_ADDRESS_TYPE", "RESOURCE_ADDRESS_TYPE",
+    "U64_LITERAL", "U128_LITERAL", "SAFE_I8_LITERAL", "SAFE_I16_LITERAL",
+    "SAFE_I32_LITERAL", "SAFE_I64_LITERAL", "SAFE_I128_LITERAL", "SAFE_I256_LITERAL",
+    "SAFE_I384_LITERAL", "SAFE_I512_LITERAL", "SAFE_U8_LITERAL", "SAFE_U16_LITERAL",
+    "SAFE_U32_LITERAL", "SAFE_U64_LITERAL", "SAFE_U128_LITERAL", "SAFE_U384_LITERAL",
+    "SAFE_U256_LITERAL", "SAFE_U512_LITERAL", "TRUE", "FALSE", "UNIT_TYPE",
+    "BOOL_TYPE", "I8_TYPE", "I16_TYPE", "I32_TYPE", "I64_TYPE", "I128_TYPE",
+    "U8_TYPE", "U16_TYPE", "U32_TYPE", "U64_TYPE", "U128_TYPE", "SAFE_I8_TYPE",
+    "SAFE_I16_TYPE", "SAFE_I32_TYPE", "SAFE_I64_TYPE", "SAFE_I128_TYPE", "SAFE_I256_TYPE",
+    "SAFE_I384_TYPE", "SAFE_I512_TYPE", "SAFE_U8_TYPE", "SAFE_U16_TYPE", "SAFE_U32_TYPE",
+    "SAFE_U64_TYPE", "SAFE_U128_TYPE", "SAFE_U384_TYPE", "SAFE_U256_TYPE",
+    "SAFE_U512_TYPE", "STRING_TYPE", "STRUCT_TYPE", "ENUM_TYPE", "OPTION_TYPE",
+    "RESULT_TYPE", "SOME_TYPE", "NONE_TYPE", "OK_TYPE", "ERR_TYPE", "ARRAY_TYPE",
+    "TUPLE_TYPE", "LIST_TYPE", "SET_TYPE", "MAP_TYPE", "DECIMAL_TYPE", "PRECISE_DECIMAL_TYPE",
+    "PACKAGE_ADDRESS_TYPE", "COMPONENT_ADDRESS_TYPE", "RESOURCE_ADDRESS_TYPE",
     "HASH_TYPE", "BUCKET_TYPE", "PROOF_TYPE", "NON_FUNGIBLE_ID_TYPE", "NON_FUNGIBLE_ADDRESS_TYPE",
     "BYTES_TYPE", "OPEN_PARENTHESIS", "CLOED_PARENTHESIS", "LESS_THAN", "GREATER_THAN",
     "COMMA", "SEMICOLON", "TAKE_FROM_WORKTOP", "TAKE_FROM_WORKTOP_BY_AMOUNT",
@@ -2199,17 +2833,19 @@ TransactionManifestParser._SYMBOLIC_NAMES = [
     "STRING_LITERAL", "DIGIT", "LETTER", "NUMBER", "WS", "COMMENT",
 ];
 TransactionManifestParser.VOCABULARY = new VocabularyImpl_1.VocabularyImpl(TransactionManifestParser._LITERAL_NAMES, TransactionManifestParser._SYMBOLIC_NAMES, []);
-TransactionManifestParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03U\u01D8\x04\x02" +
+TransactionManifestParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03v\u0230\x04\x02" +
     "\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x04\x07" +
     "\t\x07\x04\b\t\b\x04\t\t\t\x04\n\t\n\x04\v\t\v\x04\f\t\f\x04\r\t\r\x04" +
     "\x0E\t\x0E\x04\x0F\t\x0F\x04\x10\t\x10\x04\x11\t\x11\x04\x12\t\x12\x04" +
     "\x13\t\x13\x04\x14\t\x14\x04\x15\t\x15\x04\x16\t\x16\x04\x17\t\x17\x04" +
     "\x18\t\x18\x04\x19\t\x19\x04\x1A\t\x1A\x04\x1B\t\x1B\x04\x1C\t\x1C\x04" +
     "\x1D\t\x1D\x04\x1E\t\x1E\x04\x1F\t\x1F\x04 \t \x04!\t!\x04\"\t\"\x04#" +
-    "\t#\x04$\t$\x04%\t%\x04&\t&\x04\'\t\'\x04(\t(\x03\x02\x07\x02R\n\x02\f" +
-    "\x02\x0E\x02U\v\x02\x03\x02\x03\x02\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
-    "\x03\x07\x03^\n\x03\f\x03\x0E\x03a\v\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
-    "\x03\x03\x03\x03\x07\x03i\n\x03\f\x03\x0E\x03l\v\x03\x03\x03\x03\x03\x03" +
+    "\t#\x04$\t$\x04%\t%\x04&\t&\x04\'\t\'\x04(\t(\x04)\t)\x04*\t*\x04+\t+" +
+    "\x04,\t,\x04-\t-\x04.\t.\x04/\t/\x040\t0\x041\t1\x042\t2\x043\t3\x044" +
+    "\t4\x045\t5\x046\t6\x047\t7\x048\t8\x049\t9\x03\x02\x07\x02t\n\x02\f\x02" +
+    "\x0E\x02w\v\x02\x03\x02\x03\x02\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
+    "\x07\x03\x80\n\x03\f\x03\x0E\x03\x83\v\x03\x03\x03\x03\x03\x03\x03\x03" +
+    "\x03\x03\x03\x03\x03\x07\x03\x8B\n\x03\f\x03\x0E\x03\x8E\v\x03\x03\x03" +
     "\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
     "\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
     "\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
@@ -2219,209 +2855,244 @@ TransactionManifestParser._serializedATN = "\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u
     "\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
     "\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
     "\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03" +
-    "\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x05\x03\xC7\n\x03\x03\x04" +
-    "\x03\x04\x03\x05\x03\x05\x03\x06\x03\x06\x03\x07\x03\x07\x03\b\x03\b\x03" +
-    "\t\x03\t\x03\n\x03\n\x03\v\x03\v\x03\f\x03\f\x03\r\x03\r\x03\x0E\x03\x0E" +
-    "\x03\x0F\x03\x0F\x03\x10\x03\x10\x03\x11\x03\x11\x03\x11\x03\x11\x03\x11" +
-    "\x07\x11\xE8\n\x11\f\x11\x0E\x11\xEB\v\x11\x05\x11\xED\n\x11\x03\x11\x03" +
-    "\x11\x03\x12\x03\x12\x03\x12\x03\x12\x03\x12\x03\x12\x03\x12\x07\x12\xF8" +
-    "\n\x12\f\x12\x0E\x12\xFB\v\x12\x05\x12\xFD\n\x12\x03\x12\x03\x12\x03\x13" +
-    "\x03\x13\x05\x13\u0103\n\x13\x03\x14\x03\x14\x03\x14\x03\x14\x03\x14\x07" +
-    "\x14\u010A\n\x14\f\x14\x0E\x14\u010D\v\x14\x03\x14\x03\x14\x03\x15\x03" +
-    "\x15\x03\x16\x03\x16\x03\x16\x03\x16\x03\x16\x07\x16\u0118\n\x16\f\x16" +
-    "\x0E\x16\u011B\v\x16\x03\x16\x03\x16\x03\x17\x03\x17\x03\x17\x03\x17\x03" +
-    "\x17\x07\x17\u0124\n\x17\f\x17\x0E\x17\u0127\v\x17\x03\x17\x03\x17\x03" +
-    "\x18\x03\x18\x03\x18\x03\x18\x03\x18\x03\x18\x03\x18\x03\x18\x07\x18\u0133" +
-    "\n\x18\f\x18\x0E\x18\u0136\v\x18\x05\x18\u0138\n\x18\x03\x18\x03\x18\x03" +
-    "\x19\x03\x19\x03\x19\x03\x19\x03\x19\x03\x19\x07\x19\u0142\n\x19\f\x19" +
-    "\x0E\x19\u0145\v\x19\x05\x19\u0147\n\x19\x03\x19\x03\x19\x03\x1A\x03\x1A" +
-    "\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x07\x1A\u0153\n\x1A\f" +
-    "\x1A\x0E\x1A\u0156\v\x1A\x05\x1A\u0158\n\x1A\x03\x1A\x03\x1A\x03\x1B\x03" +
-    "\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x03\x1B\x07\x1B\u0164\n\x1B" +
-    "\f\x1B\x0E\x1B\u0167\v\x1B\x05\x1B\u0169\n\x1B\x03\x1B\x03\x1B\x03\x1C" +
-    "\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1C" +
-    "\x03\x1C\x07\x1C\u0178\n\x1C\f\x1C\x0E\x1C\u017B\v\x1C\x03\x1C\x03\x1C" +
-    "\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1E\x03\x1E\x03\x1E\x03\x1E" +
-    "\x03\x1E\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03 \x03 \x03 \x03 \x03" +
-    " \x03!\x03!\x03!\x03!\x03!\x03\"\x03\"\x03\"\x03\"\x03\"\x03#\x03#\x03" +
-    "#\x03#\x03#\x03$\x03$\x03$\x03$\x03$\x03%\x03%\x03%\x03%\x03%\x03&\x03" +
-    "&\x03&\x03&\x03&\x03\'\x03\'\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03" +
-    "(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03" +
-    "(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x05(\u01D6" +
-    "\n(\x03(\x02\x02\x02)\x02\x02\x04\x02\x06\x02\b\x02\n\x02\f\x02\x0E\x02" +
-    "\x10\x02\x12\x02\x14\x02\x16\x02\x18\x02\x1A\x02\x1C\x02\x1E\x02 \x02" +
-    "\"\x02$\x02&\x02(\x02*\x02,\x02.\x020\x022\x024\x026\x028\x02:\x02<\x02" +
-    ">\x02@\x02B\x02D\x02F\x02H\x02J\x02L\x02N\x02\x02\x04\x04\x02\f\fPP\x03" +
-    "\x02\x114\x02\u01FA\x02S\x03\x02\x02\x02\x04\xC6\x03\x02\x02\x02\x06\xC8" +
-    "\x03\x02\x02\x02\b\xCA\x03\x02\x02\x02\n\xCC\x03\x02\x02\x02\f\xCE\x03" +
-    "\x02\x02\x02\x0E\xD0\x03\x02\x02\x02\x10\xD2\x03\x02\x02\x02\x12\xD4\x03" +
-    "\x02\x02\x02\x14\xD6\x03\x02\x02\x02\x16\xD8\x03\x02\x02\x02\x18\xDA\x03" +
-    "\x02\x02\x02\x1A\xDC\x03\x02\x02\x02\x1C\xDE\x03\x02\x02\x02\x1E\xE0\x03" +
-    "\x02\x02\x02 \xE2\x03\x02\x02\x02\"\xF0\x03\x02\x02\x02$\u0102\x03\x02" +
-    "\x02\x02&\u0104\x03\x02\x02\x02(\u0110\x03\x02\x02\x02*\u0112\x03\x02" +
-    "\x02\x02,\u011E\x03\x02\x02\x02.\u012A\x03\x02\x02\x020\u013B\x03\x02" +
-    "\x02\x022\u014A\x03\x02\x02\x024\u015B\x03\x02\x02\x026\u016C\x03\x02" +
-    "\x02\x028\u017E\x03\x02\x02\x02:\u0183\x03\x02\x02\x02<\u0188\x03\x02" +
-    "\x02\x02>\u018D\x03\x02\x02\x02@\u0192\x03\x02\x02\x02B\u0197\x03\x02" +
-    "\x02\x02D\u019C\x03\x02\x02\x02F\u01A1\x03\x02\x02\x02H\u01A6\x03\x02" +
-    "\x02\x02J\u01AB\x03\x02\x02\x02L\u01B0\x03\x02\x02\x02N\u01D5\x03\x02" +
-    "\x02\x02PR\x05\x04\x03\x02QP\x03\x02\x02\x02RU\x03\x02\x02\x02SQ\x03\x02" +
-    "\x02\x02ST\x03\x02\x02\x02TV\x03\x02\x02\x02US\x03\x02\x02\x02VW\x07\x02" +
-    "\x02\x03W\x03\x03\x02\x02\x02XY\x07L\x02\x02YZ\x05:\x1E\x02Z[\x05\x1E" +
-    "\x10\x02[_\x05\x1E\x10\x02\\^\x05N(\x02]\\\x03\x02\x02\x02^a\x03\x02\x02" +
-    "\x02_]\x03\x02\x02\x02_`\x03\x02\x02\x02`b\x03\x02\x02\x02a_\x03\x02\x02" +
-    "\x02bc\x07:\x02\x02c\xC7\x03\x02\x02\x02de\x07M\x02\x02ef\x05<\x1F\x02" +
-    "fj\x05\x1E\x10\x02gi\x05N(\x02hg\x03\x02\x02\x02il\x03\x02\x02\x02jh\x03" +
-    "\x02\x02\x02jk\x03\x02\x02\x02km\x03\x02\x02\x02lj\x03\x02\x02\x02mn\x07" +
-    ":\x02\x02n\xC7\x03\x02\x02\x02op\x07N\x02\x02pq\x05<\x1F\x02qr\x05\x1E" +
-    "\x10\x02rs\x07:\x02\x02s\xC7\x03\x02\x02\x02tu\x07;\x02\x02uv\x05> \x02" +
-    "vw\x05B\"\x02wx\x07:\x02\x02x\xC7\x03\x02\x02\x02yz\x07<\x02\x02z{\x05" +
-    "8\x1D\x02{|\x05> \x02|}\x05B\"\x02}~\x07:\x02\x02~\xC7\x03\x02\x02\x02" +
-    "\x7F\x80\x07=\x02\x02\x80\x81\x054\x1B\x02\x81\x82\x05> \x02\x82\x83\x05" +
-    "B\"\x02\x83\x84\x07:\x02\x02\x84\xC7\x03\x02\x02\x02\x85\x86\x07A\x02" +
-    "\x02\x86\x87\x05B\"\x02\x87\x88\x07:\x02\x02\x88\xC7\x03\x02\x02\x02\x89" +
-    "\x8A\x07>\x02\x02\x8A\x8B\x05> \x02\x8B\x8C\x07:\x02\x02\x8C\xC7\x03\x02" +
-    "\x02\x02\x8D\x8E\x07?\x02\x02\x8E\x8F\x058\x1D\x02\x8F\x90\x05> \x02\x90" +
-    "\x91\x07:\x02\x02\x91\xC7\x03\x02\x02\x02\x92\x93\x07@\x02\x02\x93\x94" +
-    "\x054\x1B\x02\x94\x95\x05> \x02\x95\x96\x07:\x02\x02\x96\xC7\x03\x02\x02" +
-    "\x02\x97\x98\x07B\x02\x02\x98\x99\x05D#\x02\x99\x9A\x07:\x02\x02\x9A\xC7" +
-    "\x03\x02\x02\x02\x9B\x9C\x07C\x02\x02\x9C\x9D\x05D#\x02\x9D\x9E\x07:\x02" +
-    "\x02\x9E\xC7\x03\x02\x02\x02\x9F\xA0\x07E\x02\x02\xA0\xA1\x05> \x02\xA1" +
-    "\xA2\x05D#\x02\xA2\xA3\x07:\x02\x02\xA3\xC7\x03\x02\x02\x02\xA4\xA5\x07" +
-    "F\x02\x02\xA5\xA6\x058\x1D\x02\xA6\xA7\x05> \x02\xA7\xA8\x05D#\x02\xA8" +
-    "\xA9\x07:\x02\x02\xA9\xC7\x03\x02\x02\x02\xAA\xAB\x07G\x02\x02\xAB\xAC" +
-    "\x054\x1B\x02\xAC\xAD\x05> \x02\xAD\xAE\x05D#\x02\xAE\xAF\x07:\x02\x02" +
-    "\xAF\xC7\x03\x02\x02\x02\xB0\xB1\x07H\x02\x02\xB1\xB2\x05B\"\x02\xB2\xB3" +
-    "\x05D#\x02\xB3\xB4\x07:\x02\x02\xB4\xC7\x03\x02\x02\x02\xB5\xB6\x07I\x02" +
-    "\x02\xB6\xB7\x05D#\x02\xB7\xB8\x05D#\x02\xB8\xB9\x07:\x02\x02\xB9\xC7" +
-    "\x03\x02\x02\x02\xBA\xBB\x07J\x02\x02\xBB\xBC\x05D#\x02\xBC\xBD\x07:\x02" +
-    "\x02\xBD\xC7\x03\x02\x02\x02\xBE\xBF\x07K\x02\x02\xBF\xC7\x07:\x02\x02" +
-    "\xC0\xC1\x07D\x02\x02\xC1\xC7\x07:\x02\x02\xC2\xC3\x07O\x02\x02\xC3\xC4" +
-    "\x05J&\x02\xC4\xC5\x07:\x02\x02\xC5\xC7\x03\x02\x02\x02\xC6X\x03\x02\x02" +
-    "\x02\xC6d\x03\x02\x02\x02\xC6o\x03\x02\x02\x02\xC6t\x03\x02\x02\x02\xC6" +
-    "y\x03\x02\x02\x02\xC6\x7F\x03\x02\x02\x02\xC6\x85\x03\x02\x02\x02\xC6" +
-    "\x89\x03\x02\x02\x02\xC6\x8D\x03\x02\x02\x02\xC6\x92\x03\x02\x02\x02\xC6" +
-    "\x97\x03\x02\x02\x02\xC6\x9B\x03\x02\x02\x02\xC6\x9F\x03\x02\x02\x02\xC6" +
-    "\xA4\x03\x02\x02\x02\xC6\xAA\x03\x02\x02\x02\xC6\xB0\x03\x02\x02\x02\xC6" +
-    "\xB5\x03\x02\x02\x02\xC6\xBA\x03\x02\x02\x02\xC6\xBE\x03\x02\x02\x02\xC6" +
-    "\xC0\x03\x02\x02\x02\xC6\xC2\x03\x02\x02\x02\xC7\x05\x03\x02\x02\x02\xC8" +
-    "\xC9\x07\x03\x02\x02\xC9\x07\x03\x02\x02\x02\xCA\xCB\x07\x04\x02\x02\xCB" +
-    "\t\x03\x02\x02\x02\xCC\xCD\x07\x05\x02\x02\xCD\v\x03\x02\x02\x02\xCE\xCF" +
-    "\x07\x06\x02\x02\xCF\r\x03\x02\x02\x02\xD0\xD1\x07\x07\x02\x02\xD1\x0F" +
-    "\x03\x02\x02\x02\xD2\xD3\x07\b\x02\x02\xD3\x11\x03\x02\x02\x02\xD4\xD5" +
-    "\x07\t\x02\x02\xD5\x13\x03\x02\x02\x02\xD6\xD7\x07\n\x02\x02\xD7\x15\x03" +
-    "\x02\x02\x02\xD8\xD9\x07\v\x02\x02\xD9\x17\x03\x02\x02\x02\xDA\xDB\x07" +
-    "\f\x02\x02\xDB\x19\x03\x02\x02\x02\xDC\xDD\x07\r\x02\x02\xDD\x1B\x03\x02" +
-    "\x02\x02\xDE\xDF\x07\x0E\x02\x02\xDF\x1D\x03\x02\x02\x02\xE0\xE1\x07P" +
-    "\x02\x02\xE1\x1F\x03\x02\x02\x02\xE2\xE3\x07\x1E\x02\x02\xE3\xEC\x075" +
-    "\x02\x02\xE4\xE9\x05N(\x02\xE5\xE6\x079\x02\x02\xE6\xE8\x05N(\x02\xE7" +
-    "\xE5\x03\x02\x02\x02\xE8\xEB\x03\x02\x02\x02\xE9\xE7\x03\x02\x02\x02\xE9" +
-    "\xEA\x03\x02\x02\x02\xEA\xED\x03\x02\x02\x02\xEB\xE9\x03\x02\x02\x02\xEC" +
-    "\xE4\x03\x02\x02\x02\xEC\xED\x03\x02\x02\x02\xED\xEE\x03\x02\x02\x02\xEE" +
-    "\xEF\x076\x02\x02\xEF!\x03\x02\x02\x02\xF0\xF1\x07\x1F\x02\x02\xF1\xF2" +
-    "\x075\x02\x02\xF2\xF3\x05\x1E\x10\x02\xF3\xFC\x079\x02\x02\xF4\xF9\x05" +
-    "N(\x02\xF5\xF6\x079\x02\x02\xF6\xF8\x05N(\x02\xF7\xF5\x03\x02\x02\x02" +
-    "\xF8\xFB\x03\x02\x02\x02\xF9\xF7\x03\x02\x02\x02\xF9\xFA\x03\x02\x02\x02" +
-    "\xFA\xFD\x03\x02\x02\x02\xFB\xF9\x03\x02\x02\x02\xFC\xF4\x03\x02\x02\x02" +
-    "\xFC\xFD\x03\x02\x02\x02\xFD\xFE\x03\x02\x02\x02\xFE\xFF\x076\x02\x02" +
-    "\xFF#\x03\x02\x02\x02\u0100\u0103\x05&\x14\x02\u0101\u0103\x05(\x15\x02" +
-    "\u0102\u0100\x03\x02\x02\x02\u0102\u0101\x03\x02\x02\x02\u0103%\x03\x02" +
-    "\x02\x02\u0104\u0105\x07\"\x02\x02\u0105\u0106\x075\x02\x02\u0106\u010B" +
-    "\x05N(\x02\u0107\u0108\x079\x02\x02\u0108\u010A\x05N(\x02\u0109\u0107" +
-    "\x03\x02\x02\x02\u010A\u010D\x03\x02\x02\x02\u010B\u0109\x03\x02\x02\x02" +
-    "\u010B\u010C\x03\x02\x02\x02\u010C\u010E\x03\x02\x02\x02\u010D\u010B\x03" +
-    "\x02\x02\x02\u010E\u010F\x076\x02\x02\u010F\'\x03\x02\x02\x02\u0110\u0111" +
-    "\x07#\x02\x02\u0111)\x03\x02\x02\x02\u0112\u0113\x07$\x02\x02\u0113\u0114" +
-    "\x075\x02\x02\u0114\u0119\x05N(\x02\u0115\u0116\x079\x02\x02\u0116\u0118" +
-    "\x05N(\x02\u0117\u0115\x03\x02\x02\x02\u0118\u011B\x03\x02\x02\x02\u0119" +
-    "\u0117\x03\x02\x02\x02\u0119\u011A\x03\x02\x02\x02\u011A\u011C\x03\x02" +
-    "\x02\x02\u011B\u0119\x03\x02\x02\x02\u011C\u011D\x076\x02\x02\u011D+\x03" +
-    "\x02\x02\x02\u011E\u011F\x07%\x02\x02\u011F\u0120\x075\x02\x02\u0120\u0125" +
-    "\x05N(\x02\u0121\u0122\x079\x02\x02\u0122\u0124\x05N(\x02\u0123\u0121" +
-    "\x03\x02\x02\x02\u0124\u0127\x03\x02\x02\x02\u0125\u0123\x03\x02\x02\x02" +
-    "\u0125\u0126\x03\x02\x02\x02\u0126\u0128\x03\x02\x02\x02\u0127\u0125\x03" +
-    "\x02\x02\x02\u0128\u0129\x076\x02\x02\u0129-\x03\x02\x02\x02\u012A\u012B" +
-    "\x07&\x02\x02\u012B\u012C\x077\x02\x02\u012C\u012D\x05L\'\x02\u012D\u012E" +
-    "\x078\x02\x02\u012E\u0137\x075\x02\x02\u012F\u0134\x05N(\x02\u0130\u0131" +
-    "\x079\x02\x02\u0131\u0133\x05N(\x02\u0132\u0130\x03\x02\x02\x02\u0133" +
-    "\u0136\x03\x02\x02\x02\u0134\u0132\x03\x02\x02\x02\u0134\u0135\x03\x02" +
-    "\x02\x02\u0135\u0138\x03\x02\x02\x02\u0136\u0134\x03\x02\x02\x02\u0137" +
-    "\u012F\x03\x02\x02\x02\u0137\u0138\x03\x02\x02\x02\u0138\u0139\x03\x02" +
-    "\x02\x02\u0139\u013A\x076\x02\x02\u013A/\x03\x02\x02\x02\u013B\u013C\x07" +
-    "\'\x02\x02\u013C\u013D\x077\x02\x02\u013D\u0146\x075\x02\x02\u013E\u0143" +
-    "\x05N(\x02\u013F\u0140\x079\x02\x02\u0140\u0142\x05N(\x02\u0141\u013F" +
-    "\x03\x02\x02\x02\u0142\u0145\x03\x02\x02\x02\u0143\u0141\x03\x02\x02\x02" +
-    "\u0143\u0144\x03\x02\x02\x02\u0144\u0147\x03\x02\x02\x02\u0145\u0143\x03" +
-    "\x02\x02\x02\u0146\u013E\x03\x02\x02\x02\u0146\u0147\x03\x02\x02\x02\u0147" +
-    "\u0148\x03\x02\x02\x02\u0148\u0149\x076\x02\x02\u01491\x03\x02\x02\x02" +
-    "\u014A\u014B\x07(\x02\x02\u014B\u014C\x077\x02\x02\u014C\u014D\x05L\'" +
-    "\x02\u014D\u014E\x078\x02\x02\u014E\u0157\x075\x02\x02\u014F\u0154\x05" +
-    "N(\x02\u0150\u0151\x079\x02\x02\u0151\u0153\x05N(\x02\u0152\u0150\x03" +
-    "\x02\x02\x02\u0153\u0156\x03\x02\x02\x02\u0154\u0152\x03\x02\x02\x02\u0154" +
-    "\u0155\x03\x02\x02\x02\u0155\u0158\x03\x02\x02\x02\u0156\u0154\x03\x02" +
-    "\x02\x02\u0157\u014F\x03\x02\x02\x02\u0157\u0158\x03\x02\x02\x02\u0158" +
-    "\u0159\x03\x02\x02\x02\u0159\u015A\x076\x02\x02\u015A3\x03\x02\x02\x02" +
-    "\u015B\u015C\x07)\x02\x02\u015C\u015D\x077\x02\x02\u015D\u015E\x05L\'" +
-    "\x02\u015E\u015F\x078\x02\x02\u015F\u0168\x075\x02\x02\u0160\u0165\x05" +
-    "N(\x02\u0161\u0162\x079\x02\x02\u0162\u0164\x05N(\x02\u0163\u0161\x03" +
-    "\x02\x02\x02\u0164\u0167\x03\x02\x02\x02\u0165\u0163\x03\x02\x02\x02\u0165" +
-    "\u0166\x03\x02\x02\x02\u0166\u0169\x03\x02\x02\x02\u0167\u0165\x03\x02" +
-    "\x02\x02\u0168\u0160\x03\x02\x02\x02\u0168\u0169\x03\x02\x02\x02\u0169" +
-    "\u016A\x03\x02\x02\x02\u016A\u016B\x076\x02\x02\u016B5\x03\x02\x02\x02" +
-    "\u016C\u016D\x07*\x02\x02\u016D\u016E\x077\x02\x02\u016E\u016F\x05L\'" +
-    "\x02\u016F\u0170\x079\x02\x02\u0170\u0171\x05L\'\x02\u0171\u0172\x078" +
-    "\x02\x02\u0172\u0179\x075\x02\x02\u0173\u0174\x05N(\x02\u0174\u0175\x07" +
-    "9\x02\x02\u0175\u0176\x05N(\x02\u0176\u0178\x03\x02\x02\x02\u0177\u0173" +
-    "\x03\x02\x02\x02\u0178\u017B\x03\x02\x02\x02\u0179\u0177\x03\x02\x02\x02" +
-    "\u0179\u017A\x03\x02\x02\x02\u017A\u017C\x03\x02\x02\x02\u017B\u0179\x03" +
-    "\x02\x02\x02\u017C\u017D\x076\x02\x02\u017D7\x03\x02\x02\x02\u017E\u017F" +
-    "\x07+\x02\x02\u017F\u0180\x075\x02\x02\u0180\u0181\x07P\x02\x02\u0181" +
-    "\u0182\x076\x02\x02\u01829\x03\x02\x02\x02\u0183\u0184\x07,\x02\x02\u0184" +
-    "\u0185\x075\x02\x02\u0185\u0186\x07P\x02\x02\u0186\u0187\x076\x02\x02" +
-    "\u0187;\x03\x02\x02\x02\u0188\u0189\x07-\x02\x02\u0189\u018A\x075\x02" +
-    "\x02\u018A\u018B\x07P\x02\x02\u018B\u018C\x076\x02\x02\u018C=\x03\x02" +
-    "\x02\x02\u018D\u018E\x07.\x02\x02\u018E\u018F\x075\x02\x02\u018F\u0190" +
-    "\x07P\x02\x02\u0190\u0191\x076\x02\x02\u0191?\x03\x02\x02\x02\u0192\u0193" +
-    "\x07/\x02\x02\u0193\u0194\x075\x02\x02\u0194\u0195\x07P\x02\x02\u0195" +
-    "\u0196\x076\x02\x02\u0196A\x03\x02\x02\x02\u0197\u0198\x070\x02\x02\u0198" +
-    "\u0199\x075\x02\x02\u0199\u019A\t\x02\x02\x02\u019A\u019B\x076\x02\x02" +
-    "\u019BC\x03\x02\x02\x02\u019C\u019D\x071\x02\x02\u019D\u019E\x075\x02" +
-    "\x02\u019E\u019F\t\x02\x02\x02\u019F\u01A0\x076\x02\x02\u01A0E\x03\x02" +
-    "\x02\x02\u01A1\u01A2\x072\x02\x02\u01A2\u01A3\x075\x02\x02\u01A3\u01A4" +
-    "\x07P\x02\x02\u01A4\u01A5\x076\x02\x02\u01A5G\x03\x02\x02\x02\u01A6\u01A7" +
-    "\x073\x02\x02\u01A7\u01A8\x075\x02\x02\u01A8\u01A9\x07P\x02\x02\u01A9" +
-    "\u01AA\x076\x02\x02\u01AAI\x03\x02\x02\x02\u01AB\u01AC\x074\x02\x02\u01AC" +
-    "\u01AD\x075\x02\x02\u01AD\u01AE\x07P\x02\x02\u01AE\u01AF\x076\x02\x02" +
-    "\u01AFK\x03\x02\x02\x02\u01B0\u01B1\t\x03\x02\x02\u01B1M\x03\x02\x02\x02" +
-    "\u01B2\u01D6\x05\x06\x04\x02\u01B3\u01D6\x05\b\x05\x02\u01B4\u01D6\x05" +
-    "\n\x06\x02\u01B5\u01D6\x05\f\x07\x02\u01B6\u01D6\x05\x0E\b\x02\u01B7\u01D6" +
-    "\x05\x10\t\x02\u01B8\u01D6\x05\x12\n\x02\u01B9\u01D6\x05\x14\v\x02\u01BA" +
-    "\u01D6\x05\x16\f\x02\u01BB\u01D6\x05\x18\r\x02\u01BC\u01D6\x05\x1A\x0E" +
-    "\x02\u01BD\u01D6\x05\x1C\x0F\x02\u01BE\u01D6\x05\x1E\x10\x02\u01BF\u01D6" +
-    "\x05 \x11\x02\u01C0\u01D6\x05\"\x12\x02\u01C1\u01D6\x05$\x13\x02\u01C2" +
-    "\u01D6\x05&\x14\x02\u01C3\u01D6\x05(\x15\x02\u01C4\u01D6\x05*\x16\x02" +
-    "\u01C5\u01D6\x05,\x17\x02\u01C6\u01D6\x05.\x18\x02\u01C7\u01D6\x050\x19" +
-    "\x02\u01C8\u01D6\x052\x1A\x02\u01C9\u01D6\x054\x1B\x02\u01CA\u01D6\x05" +
-    "6\x1C\x02\u01CB\u01D6\x058\x1D\x02\u01CC\u01D6\x05:\x1E\x02\u01CD\u01D6" +
-    "\x05<\x1F\x02\u01CE\u01D6\x05> \x02\u01CF\u01D6\x05@!\x02\u01D0\u01D6" +
-    "\x05B\"\x02\u01D1\u01D6\x05D#\x02\u01D2\u01D6\x05F$\x02\u01D3\u01D6\x05" +
-    "H%\x02\u01D4\u01D6\x05J&\x02\u01D5\u01B2\x03\x02\x02\x02\u01D5\u01B3\x03" +
-    "\x02\x02\x02\u01D5\u01B4\x03\x02\x02\x02\u01D5\u01B5\x03\x02\x02\x02\u01D5" +
-    "\u01B6\x03\x02\x02\x02\u01D5\u01B7\x03\x02\x02\x02\u01D5\u01B8\x03\x02" +
-    "\x02\x02\u01D5\u01B9\x03\x02\x02\x02\u01D5\u01BA\x03\x02\x02\x02\u01D5" +
-    "\u01BB\x03\x02\x02\x02\u01D5\u01BC\x03\x02\x02\x02\u01D5\u01BD\x03\x02" +
-    "\x02\x02\u01D5\u01BE\x03\x02\x02\x02\u01D5\u01BF\x03\x02\x02\x02\u01D5" +
-    "\u01C0\x03\x02\x02\x02\u01D5\u01C1\x03\x02\x02\x02\u01D5\u01C2\x03\x02" +
-    "\x02\x02\u01D5\u01C3\x03\x02\x02\x02\u01D5\u01C4\x03\x02\x02\x02\u01D5" +
-    "\u01C5\x03\x02\x02\x02\u01D5\u01C6\x03\x02\x02\x02\u01D5\u01C7\x03\x02" +
-    "\x02\x02\u01D5\u01C8\x03\x02\x02\x02\u01D5\u01C9\x03\x02\x02\x02\u01D5" +
-    "\u01CA\x03\x02\x02\x02\u01D5\u01CB\x03\x02\x02\x02\u01D5\u01CC\x03\x02" +
-    "\x02\x02\u01D5\u01CD\x03\x02\x02\x02\u01D5\u01CE\x03\x02\x02\x02\u01D5" +
-    "\u01CF\x03\x02\x02\x02\u01D5\u01D0\x03\x02\x02\x02\u01D5\u01D1\x03\x02" +
-    "\x02\x02\u01D5\u01D2\x03\x02\x02\x02\u01D5\u01D3\x03\x02\x02\x02\u01D5" +
-    "\u01D4\x03\x02\x02\x02\u01D6O\x03\x02\x02\x02\x18S_j\xC6\xE9\xEC\xF9\xFC" +
-    "\u0102\u010B\u0119\u0125\u0134\u0137\u0143\u0146\u0154\u0157\u0165\u0168" +
-    "\u0179\u01D5";
+    "\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x03\x05\x03\xE9\n" +
+    "\x03\x03\x04\x03\x04\x03\x05\x03\x05\x03\x06\x03\x06\x03\x07\x03\x07\x03" +
+    "\b\x03\b\x03\t\x03\t\x03\n\x03\n\x03\v\x03\v\x03\f\x03\f\x03\r\x03\r\x03" +
+    "\x0E\x03\x0E\x03\x0F\x03\x0F\x03\x10\x03\x10\x03\x11\x03\x11\x03\x12\x03" +
+    "\x12\x03\x13\x03\x13\x03\x14\x03\x14\x03\x15\x03\x15\x03\x16\x03\x16\x03" +
+    "\x17\x03\x17\x03\x18\x03\x18\x03\x19\x03\x19\x03\x1A\x03\x1A\x03\x1B\x03" +
+    "\x1B\x03\x1C\x03\x1C\x03\x1D\x03\x1D\x03\x1E\x03\x1E\x03\x1F\x03\x1F\x03" +
+    " \x03 \x03!\x03!\x03!\x03!\x03!\x07!\u012A\n!\f!\x0E!\u012D\v!\x05!\u012F" +
+    "\n!\x03!\x03!\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x07\"\u013A\n" +
+    "\"\f\"\x0E\"\u013D\v\"\x05\"\u013F\n\"\x03\"\x03\"\x03#\x03#\x05#\u0145" +
+    "\n#\x03$\x03$\x03$\x03$\x03$\x07$\u014C\n$\f$\x0E$\u014F\v$\x03$\x03$" +
+    "\x03%\x03%\x03&\x03&\x03&\x03&\x03&\x07&\u015A\n&\f&\x0E&\u015D\v&\x03" +
+    "&\x03&\x03\'\x03\'\x03\'\x03\'\x03\'\x07\'\u0166\n\'\f\'\x0E\'\u0169\v" +
+    "\'\x03\'\x03\'\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x07(\u0175\n(\f" +
+    "(\x0E(\u0178\v(\x05(\u017A\n(\x03(\x03(\x03)\x03)\x03)\x03)\x03)\x03)" +
+    "\x07)\u0184\n)\f)\x0E)\u0187\v)\x05)\u0189\n)\x03)\x03)\x03*\x03*\x03" +
+    "*\x03*\x03*\x03*\x03*\x03*\x07*\u0195\n*\f*\x0E*\u0198\v*\x05*\u019A\n" +
+    "*\x03*\x03*\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x07+\u01A6\n+\f+\x0E" +
+    "+\u01A9\v+\x05+\u01AB\n+\x03+\x03+\x03,\x03,\x03,\x03,\x03,\x03,\x03," +
+    "\x03,\x03,\x03,\x03,\x07,\u01BA\n,\f,\x0E,\u01BD\v,\x03,\x03,\x03-\x03" +
+    "-\x03-\x03-\x03-\x03.\x03.\x03.\x03.\x03.\x03/\x03/\x03/\x03/\x03/\x03" +
+    "0\x030\x030\x030\x030\x031\x031\x031\x031\x031\x032\x032\x032\x032\x03" +
+    "2\x033\x033\x033\x033\x033\x034\x034\x034\x034\x034\x035\x035\x035\x03" +
+    "5\x035\x036\x036\x036\x036\x036\x037\x037\x037\x037\x037\x038\x038\x03" +
+    "9\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x03" +
+    "9\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x03" +
+    "9\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x039\x03" +
+    "9\x039\x039\x039\x039\x039\x039\x039\x039\x039\x059\u022E\n9\x039\x02" +
+    "\x02\x02:\x02\x02\x04\x02\x06\x02\b\x02\n\x02\f\x02\x0E\x02\x10\x02\x12" +
+    "\x02\x14\x02\x16\x02\x18\x02\x1A\x02\x1C\x02\x1E\x02 \x02\"\x02$\x02&" +
+    "\x02(\x02*\x02,\x02.\x020\x022\x024\x026\x028\x02:\x02<\x02>\x02@\x02" +
+    "B\x02D\x02F\x02H\x02J\x02L\x02N\x02P\x02R\x02T\x02V\x02X\x02Z\x02\\\x02" +
+    "^\x02`\x02b\x02d\x02f\x02h\x02j\x02l\x02n\x02p\x02\x02\x04\x04\x02\f\f" +
+    "qq\x03\x02!U\x02\u0252\x02u\x03\x02\x02\x02\x04\xE8\x03\x02\x02\x02\x06" +
+    "\xEA\x03\x02\x02\x02\b\xEC\x03\x02\x02\x02\n\xEE\x03\x02\x02\x02\f\xF0" +
+    "\x03\x02\x02\x02\x0E\xF2\x03\x02\x02\x02\x10\xF4\x03\x02\x02\x02\x12\xF6" +
+    "\x03\x02\x02\x02\x14\xF8\x03\x02\x02\x02\x16\xFA\x03\x02\x02\x02\x18\xFC" +
+    "\x03\x02\x02\x02\x1A\xFE\x03\x02\x02\x02\x1C\u0100\x03\x02\x02\x02\x1E" +
+    "\u0102\x03\x02\x02\x02 \u0104\x03\x02\x02\x02\"\u0106\x03\x02\x02\x02" +
+    "$\u0108\x03\x02\x02\x02&\u010A\x03\x02\x02\x02(\u010C\x03\x02\x02\x02" +
+    "*\u010E\x03\x02\x02\x02,\u0110\x03\x02\x02\x02.\u0112\x03\x02\x02\x02" +
+    "0\u0114\x03\x02\x02\x022\u0116\x03\x02\x02\x024\u0118\x03\x02\x02\x02" +
+    "6\u011A\x03\x02\x02\x028\u011C\x03\x02\x02\x02:\u011E\x03\x02\x02\x02" +
+    "<\u0120\x03\x02\x02\x02>\u0122\x03\x02\x02\x02@\u0124\x03\x02\x02\x02" +
+    "B\u0132\x03\x02\x02\x02D\u0144\x03\x02\x02\x02F\u0146\x03\x02\x02\x02" +
+    "H\u0152\x03\x02\x02\x02J\u0154\x03\x02\x02\x02L\u0160\x03\x02\x02\x02" +
+    "N\u016C\x03\x02\x02\x02P\u017D\x03\x02\x02\x02R\u018C\x03\x02\x02\x02" +
+    "T\u019D\x03\x02\x02\x02V\u01AE\x03\x02\x02\x02X\u01C0\x03\x02\x02\x02" +
+    "Z\u01C5\x03\x02\x02\x02\\\u01CA\x03\x02\x02\x02^\u01CF\x03\x02\x02\x02" +
+    "`\u01D4\x03\x02\x02\x02b\u01D9\x03\x02\x02\x02d\u01DE\x03\x02\x02\x02" +
+    "f\u01E3\x03\x02\x02\x02h\u01E8\x03\x02\x02\x02j\u01ED\x03\x02\x02\x02" +
+    "l\u01F2\x03\x02\x02\x02n\u01F7\x03\x02\x02\x02p\u022D\x03\x02\x02\x02" +
+    "rt\x05\x04\x03\x02sr\x03\x02\x02\x02tw\x03\x02\x02\x02us\x03\x02\x02\x02" +
+    "uv\x03\x02\x02\x02vx\x03\x02\x02\x02wu\x03\x02\x02\x02xy\x07\x02\x02\x03" +
+    "y\x03\x03\x02\x02\x02z{\x07m\x02\x02{|\x05\\/\x02|}\x05> \x02}\x81\x05" +
+    "> \x02~\x80\x05p9\x02\x7F~\x03\x02\x02\x02\x80\x83\x03\x02\x02\x02\x81" +
+    "\x7F\x03\x02\x02\x02\x81\x82\x03\x02\x02\x02\x82\x84\x03\x02\x02\x02\x83" +
+    "\x81\x03\x02\x02\x02\x84\x85\x07[\x02\x02\x85\xE9\x03\x02\x02\x02\x86" +
+    "\x87\x07n\x02\x02\x87\x88\x05^0\x02\x88\x8C\x05> \x02\x89\x8B\x05p9\x02" +
+    "\x8A\x89\x03\x02\x02\x02\x8B\x8E\x03\x02\x02\x02\x8C\x8A\x03\x02\x02\x02" +
+    "\x8C\x8D\x03\x02\x02\x02\x8D\x8F\x03\x02\x02\x02\x8E\x8C\x03\x02\x02\x02" +
+    "\x8F\x90\x07[\x02\x02\x90\xE9\x03\x02\x02\x02\x91\x92\x07o\x02\x02\x92" +
+    "\x93\x05^0\x02\x93\x94\x05> \x02\x94\x95\x07[\x02\x02\x95\xE9\x03\x02" +
+    "\x02\x02\x96\x97\x07\\\x02\x02\x97\x98\x05`1\x02\x98\x99\x05d3\x02\x99" +
+    "\x9A\x07[\x02\x02\x9A\xE9\x03\x02\x02\x02\x9B\x9C\x07]\x02\x02\x9C\x9D" +
+    "\x05X-\x02\x9D\x9E\x05`1\x02\x9E\x9F\x05d3\x02\x9F\xA0\x07[\x02\x02\xA0" +
+    "\xE9\x03\x02\x02\x02\xA1\xA2\x07^\x02\x02\xA2\xA3\x05T+\x02\xA3\xA4\x05" +
+    "`1\x02\xA4\xA5\x05d3\x02\xA5\xA6\x07[\x02\x02\xA6\xE9\x03\x02\x02\x02" +
+    "\xA7\xA8\x07b\x02\x02\xA8\xA9\x05d3\x02\xA9\xAA\x07[\x02\x02\xAA\xE9\x03" +
+    "\x02\x02\x02\xAB\xAC\x07_\x02\x02\xAC\xAD\x05`1\x02\xAD\xAE\x07[\x02\x02" +
+    "\xAE\xE9\x03\x02\x02\x02\xAF\xB0\x07`\x02\x02\xB0\xB1\x05X-\x02\xB1\xB2" +
+    "\x05`1\x02\xB2\xB3\x07[\x02\x02\xB3\xE9\x03\x02\x02\x02\xB4\xB5\x07a\x02" +
+    "\x02\xB5\xB6\x05T+\x02\xB6\xB7\x05`1\x02\xB7\xB8\x07[\x02\x02\xB8\xE9" +
+    "\x03\x02\x02\x02\xB9\xBA\x07c\x02\x02\xBA\xBB\x05f4\x02\xBB\xBC\x07[\x02" +
+    "\x02\xBC\xE9\x03\x02\x02\x02\xBD\xBE\x07d\x02\x02\xBE\xBF\x05f4\x02\xBF" +
+    "\xC0\x07[\x02\x02\xC0\xE9\x03\x02\x02\x02\xC1\xC2\x07f\x02\x02\xC2\xC3" +
+    "\x05`1\x02\xC3\xC4\x05f4\x02\xC4\xC5\x07[\x02\x02\xC5\xE9\x03\x02\x02" +
+    "\x02\xC6\xC7\x07g\x02\x02\xC7\xC8\x05X-\x02\xC8\xC9\x05`1\x02\xC9\xCA" +
+    "\x05f4\x02\xCA\xCB\x07[\x02\x02\xCB\xE9\x03\x02\x02\x02\xCC\xCD\x07h\x02" +
+    "\x02\xCD\xCE\x05T+\x02\xCE\xCF\x05`1\x02\xCF\xD0\x05f4\x02\xD0\xD1\x07" +
+    "[\x02\x02\xD1\xE9\x03\x02\x02\x02\xD2\xD3\x07i\x02\x02\xD3\xD4\x05d3\x02" +
+    "\xD4\xD5\x05f4\x02\xD5\xD6\x07[\x02\x02\xD6\xE9\x03\x02\x02\x02\xD7\xD8" +
+    "\x07j\x02\x02\xD8\xD9\x05f4\x02\xD9\xDA\x05f4\x02\xDA\xDB\x07[\x02\x02" +
+    "\xDB\xE9\x03\x02\x02\x02\xDC\xDD\x07k\x02\x02\xDD\xDE\x05f4\x02\xDE\xDF" +
+    "\x07[\x02\x02\xDF\xE9\x03\x02\x02\x02\xE0\xE1\x07l\x02\x02\xE1\xE9\x07" +
+    "[\x02\x02\xE2\xE3\x07e\x02\x02\xE3\xE9\x07[\x02\x02\xE4\xE5\x07p\x02\x02" +
+    "\xE5\xE6\x05l7\x02\xE6\xE7\x07[\x02\x02\xE7\xE9\x03\x02\x02\x02\xE8z\x03" +
+    "\x02\x02\x02\xE8\x86\x03\x02\x02\x02\xE8\x91\x03\x02\x02\x02\xE8\x96\x03" +
+    "\x02\x02\x02\xE8\x9B\x03\x02\x02\x02\xE8\xA1\x03\x02\x02\x02\xE8\xA7\x03" +
+    "\x02\x02\x02\xE8\xAB\x03\x02\x02\x02\xE8\xAF\x03\x02\x02\x02\xE8\xB4\x03" +
+    "\x02\x02\x02\xE8\xB9\x03\x02\x02\x02\xE8\xBD\x03\x02\x02\x02\xE8\xC1\x03" +
+    "\x02\x02\x02\xE8\xC6\x03\x02\x02\x02\xE8\xCC\x03\x02\x02\x02\xE8\xD2\x03" +
+    "\x02\x02\x02\xE8\xD7\x03\x02\x02\x02\xE8\xDC\x03\x02\x02\x02\xE8\xE0\x03" +
+    "\x02\x02\x02\xE8\xE2\x03\x02\x02\x02\xE8\xE4\x03\x02\x02\x02\xE9\x05\x03" +
+    "\x02\x02\x02\xEA\xEB\x07\x03\x02\x02\xEB\x07\x03\x02\x02\x02\xEC\xED\x07" +
+    "\x04\x02\x02\xED\t\x03\x02\x02\x02\xEE\xEF\x07\x05\x02\x02\xEF\v\x03\x02" +
+    "\x02\x02\xF0\xF1\x07\x06\x02\x02\xF1\r\x03\x02\x02\x02\xF2\xF3\x07\x07" +
+    "\x02\x02\xF3\x0F\x03\x02\x02\x02\xF4\xF5\x07\b\x02\x02\xF5\x11\x03\x02" +
+    "\x02\x02\xF6\xF7\x07\t\x02\x02\xF7\x13\x03\x02\x02\x02\xF8\xF9\x07\n\x02" +
+    "\x02\xF9\x15\x03\x02\x02\x02\xFA\xFB\x07\v\x02\x02\xFB\x17\x03\x02\x02" +
+    "\x02\xFC\xFD\x07\f\x02\x02\xFD\x19\x03\x02\x02\x02\xFE\xFF\x07\r\x02\x02" +
+    "\xFF\x1B\x03\x02\x02\x02\u0100\u0101\x07\x0E\x02\x02\u0101\x1D\x03\x02" +
+    "\x02\x02\u0102\u0103\x07\x0F\x02\x02\u0103\x1F\x03\x02\x02\x02\u0104\u0105" +
+    "\x07\x10\x02\x02\u0105!\x03\x02\x02\x02\u0106\u0107\x07\x11\x02\x02\u0107" +
+    "#\x03\x02\x02\x02\u0108\u0109\x07\x12\x02\x02\u0109%\x03\x02\x02\x02\u010A" +
+    "\u010B\x07\x13\x02\x02\u010B\'\x03\x02\x02\x02\u010C\u010D\x07\x14\x02" +
+    "\x02\u010D)\x03\x02\x02\x02\u010E\u010F\x07\x15\x02\x02\u010F+\x03\x02" +
+    "\x02\x02\u0110\u0111\x07\x16\x02\x02\u0111-\x03\x02\x02\x02\u0112\u0113" +
+    "\x07\x17\x02\x02\u0113/\x03\x02\x02\x02\u0114\u0115\x07\x18\x02\x02\u0115" +
+    "1\x03\x02\x02\x02\u0116\u0117\x07\x19\x02\x02\u01173\x03\x02\x02\x02\u0118" +
+    "\u0119\x07\x1A\x02\x02\u01195\x03\x02\x02\x02\u011A\u011B\x07\x1B\x02" +
+    "\x02\u011B7\x03\x02\x02\x02\u011C\u011D\x07\x1D\x02\x02\u011D9\x03\x02" +
+    "\x02\x02\u011E\u011F\x07\x1C\x02\x02\u011F;\x03\x02\x02\x02\u0120\u0121" +
+    "\x07\x1E\x02\x02\u0121=\x03\x02\x02\x02\u0122\u0123\x07q\x02\x02\u0123" +
+    "?\x03\x02\x02\x02\u0124\u0125\x07>\x02\x02\u0125\u012E\x07V\x02\x02\u0126" +
+    "\u012B\x05p9\x02\u0127\u0128\x07Z\x02\x02\u0128\u012A\x05p9\x02\u0129" +
+    "\u0127\x03\x02\x02\x02\u012A\u012D\x03\x02\x02\x02\u012B\u0129\x03\x02" +
+    "\x02\x02\u012B\u012C\x03\x02\x02\x02\u012C\u012F\x03\x02\x02\x02\u012D" +
+    "\u012B\x03\x02\x02\x02\u012E\u0126\x03\x02\x02\x02\u012E\u012F\x03\x02" +
+    "\x02\x02\u012F\u0130\x03\x02\x02\x02\u0130\u0131\x07W\x02\x02\u0131A\x03" +
+    "\x02\x02\x02\u0132\u0133\x07?\x02\x02\u0133\u0134\x07V\x02\x02\u0134\u0135" +
+    "\x05> \x02\u0135\u013E\x07Z\x02\x02\u0136\u013B\x05p9\x02\u0137\u0138" +
+    "\x07Z\x02\x02\u0138\u013A\x05p9\x02\u0139\u0137\x03\x02\x02\x02\u013A" +
+    "\u013D\x03\x02\x02\x02\u013B\u0139\x03\x02\x02\x02\u013B\u013C\x03\x02" +
+    "\x02\x02\u013C\u013F\x03\x02\x02\x02\u013D\u013B\x03\x02\x02\x02\u013E" +
+    "\u0136\x03\x02\x02\x02\u013E\u013F\x03\x02\x02\x02\u013F\u0140\x03\x02" +
+    "\x02\x02\u0140\u0141\x07W\x02\x02\u0141C\x03\x02\x02\x02\u0142\u0145\x05" +
+    "F$\x02\u0143\u0145\x05H%\x02\u0144\u0142\x03\x02\x02\x02\u0144\u0143\x03" +
+    "\x02\x02\x02\u0145E\x03\x02\x02\x02\u0146\u0147\x07B\x02\x02\u0147\u0148" +
+    "\x07V\x02\x02\u0148\u014D\x05p9\x02\u0149\u014A\x07Z\x02\x02\u014A\u014C" +
+    "\x05p9\x02\u014B\u0149\x03\x02\x02\x02\u014C\u014F\x03\x02\x02\x02\u014D" +
+    "\u014B\x03\x02\x02\x02\u014D\u014E\x03\x02\x02\x02\u014E\u0150\x03\x02" +
+    "\x02\x02\u014F\u014D\x03\x02\x02\x02\u0150\u0151\x07W\x02\x02\u0151G\x03" +
+    "\x02\x02\x02\u0152\u0153\x07C\x02\x02\u0153I\x03\x02\x02\x02\u0154\u0155" +
+    "\x07D\x02\x02\u0155\u0156\x07V\x02\x02\u0156\u015B\x05p9\x02\u0157\u0158" +
+    "\x07Z\x02\x02\u0158\u015A\x05p9\x02\u0159\u0157\x03\x02\x02\x02\u015A" +
+    "\u015D\x03\x02\x02\x02\u015B\u0159\x03\x02\x02\x02\u015B\u015C\x03\x02" +
+    "\x02\x02\u015C\u015E\x03\x02\x02\x02\u015D\u015B\x03\x02\x02\x02\u015E" +
+    "\u015F\x07W\x02\x02\u015FK\x03\x02\x02\x02\u0160\u0161\x07E\x02\x02\u0161" +
+    "\u0162\x07V\x02\x02\u0162\u0167\x05p9\x02\u0163\u0164\x07Z\x02\x02\u0164" +
+    "\u0166\x05p9\x02\u0165\u0163\x03\x02\x02\x02\u0166\u0169\x03\x02\x02\x02" +
+    "\u0167\u0165\x03\x02\x02\x02\u0167\u0168\x03\x02\x02\x02\u0168\u016A\x03" +
+    "\x02\x02\x02\u0169\u0167\x03\x02\x02\x02\u016A\u016B\x07W\x02\x02\u016B" +
+    "M\x03\x02\x02\x02\u016C\u016D\x07F\x02\x02\u016D\u016E\x07X\x02\x02\u016E" +
+    "\u016F\x05n8\x02\u016F\u0170\x07Y\x02\x02\u0170\u0179\x07V\x02\x02\u0171" +
+    "\u0176\x05p9\x02\u0172\u0173\x07Z\x02\x02\u0173\u0175\x05p9\x02\u0174" +
+    "\u0172\x03\x02\x02\x02\u0175\u0178\x03\x02\x02\x02\u0176\u0174\x03\x02" +
+    "\x02\x02\u0176\u0177\x03\x02\x02\x02\u0177\u017A\x03\x02\x02\x02\u0178" +
+    "\u0176\x03\x02\x02\x02\u0179\u0171\x03\x02\x02\x02\u0179\u017A\x03\x02" +
+    "\x02\x02\u017A\u017B\x03\x02\x02\x02\u017B\u017C\x07W\x02\x02\u017CO\x03" +
+    "\x02\x02\x02\u017D\u017E\x07G\x02\x02\u017E\u017F\x07X\x02\x02\u017F\u0188" +
+    "\x07V\x02\x02\u0180\u0185\x05p9\x02\u0181\u0182\x07Z\x02\x02\u0182\u0184" +
+    "\x05p9\x02\u0183\u0181\x03\x02\x02\x02\u0184\u0187\x03\x02\x02\x02\u0185" +
+    "\u0183\x03\x02\x02\x02\u0185\u0186\x03\x02\x02\x02\u0186\u0189\x03\x02" +
+    "\x02\x02\u0187\u0185\x03\x02\x02\x02\u0188\u0180\x03\x02\x02\x02\u0188" +
+    "\u0189\x03\x02\x02\x02\u0189\u018A\x03\x02\x02\x02\u018A\u018B\x07W\x02" +
+    "\x02\u018BQ\x03\x02\x02\x02\u018C\u018D\x07H\x02\x02\u018D\u018E\x07X" +
+    "\x02\x02\u018E\u018F\x05n8\x02\u018F\u0190\x07Y\x02\x02\u0190\u0199\x07" +
+    "V\x02\x02\u0191\u0196\x05p9\x02\u0192\u0193\x07Z\x02\x02\u0193\u0195\x05" +
+    "p9\x02\u0194\u0192\x03\x02\x02\x02\u0195\u0198\x03\x02\x02\x02\u0196\u0194" +
+    "\x03\x02\x02\x02\u0196\u0197\x03\x02\x02\x02\u0197\u019A\x03\x02\x02\x02" +
+    "\u0198\u0196\x03\x02\x02\x02\u0199\u0191\x03\x02\x02\x02\u0199\u019A\x03" +
+    "\x02\x02\x02\u019A\u019B\x03\x02\x02\x02\u019B\u019C\x07W\x02\x02\u019C" +
+    "S\x03\x02\x02\x02\u019D\u019E\x07I\x02\x02\u019E\u019F\x07X\x02\x02\u019F" +
+    "\u01A0\x05n8\x02\u01A0\u01A1\x07Y\x02\x02\u01A1\u01AA\x07V\x02\x02\u01A2" +
+    "\u01A7\x05p9\x02\u01A3\u01A4\x07Z\x02\x02\u01A4\u01A6\x05p9\x02\u01A5" +
+    "\u01A3\x03\x02\x02\x02\u01A6\u01A9\x03\x02\x02\x02\u01A7\u01A5\x03\x02" +
+    "\x02\x02\u01A7\u01A8\x03\x02\x02\x02\u01A8\u01AB\x03\x02\x02\x02\u01A9" +
+    "\u01A7\x03\x02\x02\x02\u01AA\u01A2\x03\x02\x02\x02\u01AA\u01AB\x03\x02" +
+    "\x02\x02\u01AB\u01AC\x03\x02\x02\x02\u01AC\u01AD\x07W\x02\x02\u01ADU\x03" +
+    "\x02\x02\x02\u01AE\u01AF\x07J\x02\x02\u01AF\u01B0\x07X\x02\x02\u01B0\u01B1" +
+    "\x05n8\x02\u01B1\u01B2\x07Z\x02\x02\u01B2\u01B3\x05n8\x02\u01B3\u01B4" +
+    "\x07Y\x02\x02\u01B4\u01BB\x07V\x02\x02\u01B5\u01B6\x05p9\x02\u01B6\u01B7" +
+    "\x07Z\x02\x02\u01B7\u01B8\x05p9\x02\u01B8\u01BA\x03\x02\x02\x02\u01B9" +
+    "\u01B5\x03\x02\x02\x02\u01BA\u01BD\x03\x02\x02\x02\u01BB\u01B9\x03\x02" +
+    "\x02\x02\u01BB\u01BC\x03\x02\x02\x02\u01BC\u01BE\x03\x02\x02\x02\u01BD" +
+    "\u01BB\x03\x02\x02\x02\u01BE\u01BF\x07W\x02\x02\u01BFW\x03\x02\x02\x02" +
+    "\u01C0\u01C1\x07K\x02\x02\u01C1\u01C2\x07V\x02\x02\u01C2\u01C3\x07q\x02" +
+    "\x02\u01C3\u01C4\x07W\x02\x02\u01C4Y\x03\x02\x02\x02\u01C5\u01C6\x07L" +
+    "\x02\x02\u01C6\u01C7\x07V\x02\x02\u01C7\u01C8\x07q\x02\x02\u01C8\u01C9" +
+    "\x07W\x02\x02\u01C9[\x03\x02\x02\x02\u01CA\u01CB\x07M\x02\x02\u01CB\u01CC" +
+    "\x07V\x02\x02\u01CC\u01CD\x07q\x02\x02\u01CD\u01CE\x07W\x02\x02\u01CE" +
+    "]\x03\x02\x02\x02\u01CF\u01D0\x07N\x02\x02\u01D0\u01D1\x07V\x02\x02\u01D1" +
+    "\u01D2\x07q\x02\x02\u01D2\u01D3\x07W\x02\x02\u01D3_\x03\x02\x02\x02\u01D4" +
+    "\u01D5\x07O\x02\x02\u01D5\u01D6\x07V\x02\x02\u01D6\u01D7\x07q\x02\x02" +
+    "\u01D7\u01D8\x07W\x02\x02\u01D8a\x03\x02\x02\x02\u01D9\u01DA\x07P\x02" +
+    "\x02\u01DA\u01DB\x07V\x02\x02\u01DB\u01DC\x07q\x02\x02\u01DC\u01DD\x07" +
+    "W\x02\x02\u01DDc\x03\x02\x02\x02\u01DE\u01DF\x07Q\x02\x02\u01DF\u01E0" +
+    "\x07V\x02\x02\u01E0\u01E1\t\x02\x02\x02\u01E1\u01E2\x07W\x02\x02\u01E2" +
+    "e\x03\x02\x02\x02\u01E3\u01E4\x07R\x02\x02\u01E4\u01E5\x07V\x02\x02\u01E5" +
+    "\u01E6\t\x02\x02\x02\u01E6\u01E7\x07W\x02\x02\u01E7g\x03\x02\x02\x02\u01E8" +
+    "\u01E9\x07S\x02\x02\u01E9\u01EA\x07V\x02\x02\u01EA\u01EB\x07q\x02\x02" +
+    "\u01EB\u01EC\x07W\x02\x02\u01ECi\x03\x02\x02\x02\u01ED\u01EE\x07T\x02" +
+    "\x02\u01EE\u01EF\x07V\x02\x02\u01EF\u01F0\x07q\x02\x02\u01F0\u01F1\x07" +
+    "W\x02\x02\u01F1k\x03\x02\x02\x02\u01F2\u01F3\x07U\x02\x02\u01F3\u01F4" +
+    "\x07V\x02\x02\u01F4\u01F5\x07q\x02\x02\u01F5\u01F6\x07W\x02\x02\u01F6" +
+    "m\x03\x02\x02\x02\u01F7\u01F8\t\x03\x02\x02\u01F8o\x03\x02\x02\x02\u01F9" +
+    "\u022E\x05\x06\x04\x02\u01FA\u022E\x05\b\x05\x02\u01FB\u022E\x05\n\x06" +
+    "\x02\u01FC\u022E\x05\f\x07\x02\u01FD\u022E\x05\x0E\b\x02\u01FE\u022E\x05" +
+    "\x10\t\x02\u01FF\u022E\x05\x12\n\x02\u0200\u022E\x05\x14\v\x02\u0201\u022E" +
+    "\x05\x16\f\x02\u0202\u022E\x05\x18\r\x02\u0203\u022E\x05\x1A\x0E\x02\u0204" +
+    "\u022E\x05\x1C\x0F\x02\u0205\u022E\x05\x1E\x10\x02\u0206\u022E\x05 \x11" +
+    "\x02\u0207\u022E\x05\"\x12\x02\u0208\u022E\x05$\x13\x02\u0209\u022E\x05" +
+    "&\x14\x02\u020A\u022E\x05(\x15\x02\u020B\u022E\x05*\x16\x02\u020C\u022E" +
+    "\x05,\x17\x02\u020D\u022E\x05.\x18\x02\u020E\u022E\x050\x19\x02\u020F" +
+    "\u022E\x052\x1A\x02\u0210\u022E\x054\x1B\x02\u0211\u022E\x056\x1C\x02" +
+    "\u0212\u022E\x058\x1D\x02\u0213\u022E\x05:\x1E\x02\u0214\u022E\x05<\x1F" +
+    "\x02\u0215\u022E\x05> \x02\u0216\u022E\x05@!\x02\u0217\u022E\x05B\"\x02" +
+    "\u0218\u022E\x05D#\x02\u0219\u022E\x05F$\x02\u021A\u022E\x05H%\x02\u021B" +
+    "\u022E\x05J&\x02\u021C\u022E\x05L\'\x02\u021D\u022E\x05N(\x02\u021E\u022E" +
+    "\x05P)\x02\u021F\u022E\x05R*\x02\u0220\u022E\x05T+\x02\u0221\u022E\x05" +
+    "V,\x02\u0222\u022E\x05X-\x02\u0223\u022E\x05Z.\x02\u0224\u022E\x05\\/" +
+    "\x02\u0225\u022E\x05^0\x02\u0226\u022E\x05`1\x02\u0227\u022E\x05b2\x02" +
+    "\u0228\u022E\x05d3\x02\u0229\u022E\x05f4\x02\u022A\u022E\x05h5\x02\u022B" +
+    "\u022E\x05j6\x02\u022C\u022E\x05l7\x02\u022D\u01F9\x03\x02\x02\x02\u022D" +
+    "\u01FA\x03\x02\x02\x02\u022D\u01FB\x03\x02\x02\x02\u022D\u01FC\x03\x02" +
+    "\x02\x02\u022D\u01FD\x03\x02\x02\x02\u022D\u01FE\x03\x02\x02\x02\u022D" +
+    "\u01FF\x03\x02\x02\x02\u022D\u0200\x03\x02\x02\x02\u022D\u0201\x03\x02" +
+    "\x02\x02\u022D\u0202\x03\x02\x02\x02\u022D\u0203\x03\x02\x02\x02\u022D" +
+    "\u0204\x03\x02\x02\x02\u022D\u0205\x03\x02\x02\x02\u022D\u0206\x03\x02" +
+    "\x02\x02\u022D\u0207\x03\x02\x02\x02\u022D\u0208\x03\x02\x02\x02\u022D" +
+    "\u0209\x03\x02\x02\x02\u022D\u020A\x03\x02\x02\x02\u022D\u020B\x03\x02" +
+    "\x02\x02\u022D\u020C\x03\x02\x02\x02\u022D\u020D\x03\x02\x02\x02\u022D" +
+    "\u020E\x03\x02\x02\x02\u022D\u020F\x03\x02\x02\x02\u022D\u0210\x03\x02" +
+    "\x02\x02\u022D\u0211\x03\x02\x02\x02\u022D\u0212\x03\x02\x02\x02\u022D" +
+    "\u0213\x03\x02\x02\x02\u022D\u0214\x03\x02\x02\x02\u022D\u0215\x03\x02" +
+    "\x02\x02\u022D\u0216\x03\x02\x02\x02\u022D\u0217\x03\x02\x02\x02\u022D" +
+    "\u0218\x03\x02\x02\x02\u022D\u0219\x03\x02\x02\x02\u022D\u021A\x03\x02" +
+    "\x02\x02\u022D\u021B\x03\x02\x02\x02\u022D\u021C\x03\x02\x02\x02\u022D" +
+    "\u021D\x03\x02\x02\x02\u022D\u021E\x03\x02\x02\x02\u022D\u021F\x03\x02" +
+    "\x02\x02\u022D\u0220\x03\x02\x02\x02\u022D\u0221\x03\x02\x02\x02\u022D" +
+    "\u0222\x03\x02\x02\x02\u022D\u0223\x03\x02\x02\x02\u022D\u0224\x03\x02" +
+    "\x02\x02\u022D\u0225\x03\x02\x02\x02\u022D\u0226\x03\x02\x02\x02\u022D" +
+    "\u0227\x03\x02\x02\x02\u022D\u0228\x03\x02\x02\x02\u022D\u0229\x03\x02" +
+    "\x02\x02\u022D\u022A\x03\x02\x02\x02\u022D\u022B\x03\x02\x02\x02\u022D" +
+    "\u022C\x03\x02\x02\x02\u022Eq\x03\x02\x02\x02\x18u\x81\x8C\xE8\u012B\u012E" +
+    "\u013B\u013E\u0144\u014D\u015B\u0167\u0176\u0179\u0185\u0188\u0196\u0199" +
+    "\u01A7\u01AA\u01BB\u022D";
 class ManifestContext extends ParserRuleContext_1.ParserRuleContext {
     EOF() { return this.getToken(TransactionManifestParser.EOF, 0); }
     manifestInstruction(i) {
@@ -2915,6 +3586,486 @@ class U128Context extends ParserRuleContext_1.ParserRuleContext {
     }
 }
 exports.U128Context = U128Context;
+class Safe_i8Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_I8_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_I8_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_i8; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_i8) {
+            listener.enterSafe_i8(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_i8) {
+            listener.exitSafe_i8(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_i8) {
+            return visitor.visitSafe_i8(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_i8Context = Safe_i8Context;
+class Safe_i16Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_I16_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_I16_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_i16; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_i16) {
+            listener.enterSafe_i16(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_i16) {
+            listener.exitSafe_i16(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_i16) {
+            return visitor.visitSafe_i16(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_i16Context = Safe_i16Context;
+class Safe_i32Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_I32_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_I32_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_i32; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_i32) {
+            listener.enterSafe_i32(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_i32) {
+            listener.exitSafe_i32(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_i32) {
+            return visitor.visitSafe_i32(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_i32Context = Safe_i32Context;
+class Safe_i64Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_I64_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_I64_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_i64; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_i64) {
+            listener.enterSafe_i64(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_i64) {
+            listener.exitSafe_i64(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_i64) {
+            return visitor.visitSafe_i64(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_i64Context = Safe_i64Context;
+class Safe_i128Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_I128_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_I128_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_i128; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_i128) {
+            listener.enterSafe_i128(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_i128) {
+            listener.exitSafe_i128(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_i128) {
+            return visitor.visitSafe_i128(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_i128Context = Safe_i128Context;
+class Safe_i256Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_I256_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_I256_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_i256; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_i256) {
+            listener.enterSafe_i256(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_i256) {
+            listener.exitSafe_i256(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_i256) {
+            return visitor.visitSafe_i256(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_i256Context = Safe_i256Context;
+class Safe_i384Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_I384_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_I384_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_i384; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_i384) {
+            listener.enterSafe_i384(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_i384) {
+            listener.exitSafe_i384(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_i384) {
+            return visitor.visitSafe_i384(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_i384Context = Safe_i384Context;
+class Safe_i512Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_I512_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_I512_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_i512; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_i512) {
+            listener.enterSafe_i512(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_i512) {
+            listener.exitSafe_i512(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_i512) {
+            return visitor.visitSafe_i512(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_i512Context = Safe_i512Context;
+class Safe_u8Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_U8_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_U8_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_u8; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_u8) {
+            listener.enterSafe_u8(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_u8) {
+            listener.exitSafe_u8(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_u8) {
+            return visitor.visitSafe_u8(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_u8Context = Safe_u8Context;
+class Safe_u16Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_U16_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_U16_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_u16; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_u16) {
+            listener.enterSafe_u16(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_u16) {
+            listener.exitSafe_u16(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_u16) {
+            return visitor.visitSafe_u16(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_u16Context = Safe_u16Context;
+class Safe_u32Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_U32_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_U32_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_u32; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_u32) {
+            listener.enterSafe_u32(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_u32) {
+            listener.exitSafe_u32(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_u32) {
+            return visitor.visitSafe_u32(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_u32Context = Safe_u32Context;
+class Safe_u64Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_U64_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_U64_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_u64; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_u64) {
+            listener.enterSafe_u64(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_u64) {
+            listener.exitSafe_u64(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_u64) {
+            return visitor.visitSafe_u64(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_u64Context = Safe_u64Context;
+class Safe_u128Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_U128_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_U128_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_u128; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_u128) {
+            listener.enterSafe_u128(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_u128) {
+            listener.exitSafe_u128(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_u128) {
+            return visitor.visitSafe_u128(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_u128Context = Safe_u128Context;
+class Safe_u256Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_U256_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_U256_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_u256; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_u256) {
+            listener.enterSafe_u256(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_u256) {
+            listener.exitSafe_u256(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_u256) {
+            return visitor.visitSafe_u256(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_u256Context = Safe_u256Context;
+class Safe_u384Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_U384_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_U384_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_u384; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_u384) {
+            listener.enterSafe_u384(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_u384) {
+            listener.exitSafe_u384(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_u384) {
+            return visitor.visitSafe_u384(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_u384Context = Safe_u384Context;
+class Safe_u512Context extends ParserRuleContext_1.ParserRuleContext {
+    SAFE_U512_LITERAL() { return this.getToken(TransactionManifestParser.SAFE_U512_LITERAL, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_safe_u512; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterSafe_u512) {
+            listener.enterSafe_u512(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitSafe_u512) {
+            listener.exitSafe_u512(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitSafe_u512) {
+            return visitor.visitSafe_u512(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Safe_u512Context = Safe_u512Context;
 class StringContext extends ParserRuleContext_1.ParserRuleContext {
     STRING_LITERAL() { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
     constructor(parent, invokingState) {
@@ -3552,6 +4703,39 @@ class DecimalContext extends ParserRuleContext_1.ParserRuleContext {
     }
 }
 exports.DecimalContext = DecimalContext;
+class Precise_decimalContext extends ParserRuleContext_1.ParserRuleContext {
+    PRECISE_DECIMAL_TYPE() { return this.getToken(TransactionManifestParser.PRECISE_DECIMAL_TYPE, 0); }
+    OPEN_PARENTHESIS() { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
+    STRING_LITERAL() { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
+    CLOED_PARENTHESIS() { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+    constructor(parent, invokingState) {
+        super(parent, invokingState);
+    }
+    // @Override
+    get ruleIndex() { return TransactionManifestParser.RULE_precise_decimal; }
+    // @Override
+    enterRule(listener) {
+        if (listener.enterPrecise_decimal) {
+            listener.enterPrecise_decimal(this);
+        }
+    }
+    // @Override
+    exitRule(listener) {
+        if (listener.exitPrecise_decimal) {
+            listener.exitPrecise_decimal(this);
+        }
+    }
+    // @Override
+    accept(visitor) {
+        if (visitor.visitPrecise_decimal) {
+            return visitor.visitPrecise_decimal(this);
+        }
+        else {
+            return visitor.visitChildren(this);
+        }
+    }
+}
+exports.Precise_decimalContext = Precise_decimalContext;
 class Package_addressContext extends ParserRuleContext_1.ParserRuleContext {
     PACKAGE_ADDRESS_TYPE() { return this.getToken(TransactionManifestParser.PACKAGE_ADDRESS_TYPE, 0); }
     OPEN_PARENTHESIS() { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
@@ -3864,6 +5048,22 @@ class TypeContext extends ParserRuleContext_1.ParserRuleContext {
     U32_TYPE() { return this.tryGetToken(TransactionManifestParser.U32_TYPE, 0); }
     U64_TYPE() { return this.tryGetToken(TransactionManifestParser.U64_TYPE, 0); }
     U128_TYPE() { return this.tryGetToken(TransactionManifestParser.U128_TYPE, 0); }
+    SAFE_I8_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_I8_TYPE, 0); }
+    SAFE_I16_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_I16_TYPE, 0); }
+    SAFE_I32_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_I32_TYPE, 0); }
+    SAFE_I64_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_I64_TYPE, 0); }
+    SAFE_I128_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_I128_TYPE, 0); }
+    SAFE_I256_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_I256_TYPE, 0); }
+    SAFE_I384_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_I384_TYPE, 0); }
+    SAFE_I512_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_I512_TYPE, 0); }
+    SAFE_U8_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_U8_TYPE, 0); }
+    SAFE_U16_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_U16_TYPE, 0); }
+    SAFE_U32_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_U32_TYPE, 0); }
+    SAFE_U64_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_U64_TYPE, 0); }
+    SAFE_U128_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_U128_TYPE, 0); }
+    SAFE_U384_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_U384_TYPE, 0); }
+    SAFE_U256_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_U256_TYPE, 0); }
+    SAFE_U512_TYPE() { return this.tryGetToken(TransactionManifestParser.SAFE_U512_TYPE, 0); }
     STRING_TYPE() { return this.tryGetToken(TransactionManifestParser.STRING_TYPE, 0); }
     STRUCT_TYPE() { return this.tryGetToken(TransactionManifestParser.STRUCT_TYPE, 0); }
     ENUM_TYPE() { return this.tryGetToken(TransactionManifestParser.ENUM_TYPE, 0); }
@@ -3879,6 +5079,7 @@ class TypeContext extends ParserRuleContext_1.ParserRuleContext {
     SET_TYPE() { return this.tryGetToken(TransactionManifestParser.SET_TYPE, 0); }
     MAP_TYPE() { return this.tryGetToken(TransactionManifestParser.MAP_TYPE, 0); }
     DECIMAL_TYPE() { return this.tryGetToken(TransactionManifestParser.DECIMAL_TYPE, 0); }
+    PRECISE_DECIMAL_TYPE() { return this.tryGetToken(TransactionManifestParser.PRECISE_DECIMAL_TYPE, 0); }
     PACKAGE_ADDRESS_TYPE() { return this.tryGetToken(TransactionManifestParser.PACKAGE_ADDRESS_TYPE, 0); }
     COMPONENT_ADDRESS_TYPE() { return this.tryGetToken(TransactionManifestParser.COMPONENT_ADDRESS_TYPE, 0); }
     RESOURCE_ADDRESS_TYPE() { return this.tryGetToken(TransactionManifestParser.RESOURCE_ADDRESS_TYPE, 0); }
@@ -3953,6 +5154,54 @@ class ValueContext extends ParserRuleContext_1.ParserRuleContext {
     u128() {
         return this.tryGetRuleContext(0, U128Context);
     }
+    safe_i8() {
+        return this.tryGetRuleContext(0, Safe_i8Context);
+    }
+    safe_i16() {
+        return this.tryGetRuleContext(0, Safe_i16Context);
+    }
+    safe_i32() {
+        return this.tryGetRuleContext(0, Safe_i32Context);
+    }
+    safe_i64() {
+        return this.tryGetRuleContext(0, Safe_i64Context);
+    }
+    safe_i128() {
+        return this.tryGetRuleContext(0, Safe_i128Context);
+    }
+    safe_i256() {
+        return this.tryGetRuleContext(0, Safe_i256Context);
+    }
+    safe_i384() {
+        return this.tryGetRuleContext(0, Safe_i384Context);
+    }
+    safe_i512() {
+        return this.tryGetRuleContext(0, Safe_i512Context);
+    }
+    safe_u8() {
+        return this.tryGetRuleContext(0, Safe_u8Context);
+    }
+    safe_u16() {
+        return this.tryGetRuleContext(0, Safe_u16Context);
+    }
+    safe_u32() {
+        return this.tryGetRuleContext(0, Safe_u32Context);
+    }
+    safe_u64() {
+        return this.tryGetRuleContext(0, Safe_u64Context);
+    }
+    safe_u128() {
+        return this.tryGetRuleContext(0, Safe_u128Context);
+    }
+    safe_u256() {
+        return this.tryGetRuleContext(0, Safe_u256Context);
+    }
+    safe_u384() {
+        return this.tryGetRuleContext(0, Safe_u384Context);
+    }
+    safe_u512() {
+        return this.tryGetRuleContext(0, Safe_u512Context);
+    }
     string() {
         return this.tryGetRuleContext(0, StringContext);
     }
@@ -3994,6 +5243,9 @@ class ValueContext extends ParserRuleContext_1.ParserRuleContext {
     }
     decimal() {
         return this.tryGetRuleContext(0, DecimalContext);
+    }
+    precise_decimal() {
+        return this.tryGetRuleContext(0, Precise_decimalContext);
     }
     package_address() {
         return this.tryGetRuleContext(0, Package_addressContext);
