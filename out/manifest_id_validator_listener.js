@@ -165,7 +165,7 @@ class ManifestIdValidator {
             }
         };
         this.getDiagnostics = () => {
-            console.log("Diagnostics are: {}", this.diagnostics);
+            this.diagnostics.push(...this.availableBuckets.map((x) => new vscode_1.Diagnostic(x.range, "Dangling Bucket: This Bucket nas not been deposited anywhere during this transaction and will therefore lead the transaction to fail")));
             return this.diagnostics;
         };
         this.document = document;
@@ -244,24 +244,24 @@ class ManifestIdValidator {
                     case IdValidatorMode.add:
                         for (var bucketDef of bucketDefs) {
                             if (!this.addBucketDefinition(bucketDef)) {
-                                diagnostics.push(new vscode_1.Diagnostic(bucketDef.range, "A Bucket was previously created with the same name or Id. To resolve this issue, consider changing the name of the Bucket to a unique name. ", vscode_1.DiagnosticSeverity.Error));
+                                diagnostics.push(new vscode_1.Diagnostic(bucketDef.range, "Invalid Bucket Name or Id: A Bucket was previously created with the same name or Id. To resolve this issue, consider changing the name of the Bucket to a unique name. ", vscode_1.DiagnosticSeverity.Error));
                             }
                         }
                         for (var proofDef of proofDefs) {
                             if (!this.addProofDefinition(proofDef)) {
-                                diagnostics.push(new vscode_1.Diagnostic(proofDef.range, "A Proof was previously created with the same name or Id. To resolve this issue, consider changing the name of the Proof to a unique name. ", vscode_1.DiagnosticSeverity.Error));
+                                diagnostics.push(new vscode_1.Diagnostic(proofDef.range, "Invalid Proof Name or Id: A Proof was previously created with the same name or Id. To resolve this issue, consider changing the name of the Proof to a unique name. ", vscode_1.DiagnosticSeverity.Error));
                             }
                         }
                         break;
                     case IdValidatorMode.remove:
                         for (var bucketDef of bucketDefs) {
                             if (!this.removeBucket(bucketDef.bucket)) {
-                                diagnostics.push(new vscode_1.Diagnostic(bucketDef.range, "No Bucket with the given name of Id exists. This either means that the Bucket has been moved as a result of a previous instruction or that it never existed.", vscode_1.DiagnosticSeverity.Error));
+                                diagnostics.push(new vscode_1.Diagnostic(bucketDef.range, "Invalid Bucket: No Bucket with the given name of Id exists. This either means that the Bucket has been moved as a result of a previous instruction or that it never existed.", vscode_1.DiagnosticSeverity.Error));
                             }
                         }
                         for (var proofDef of proofDefs) {
                             if (!this.removeProof(proofDef.proof)) {
-                                diagnostics.push(new vscode_1.Diagnostic(proofDef.range, "No Proof with the given name of Id exists. This either means that the Proof has been moved as a result of a previous instruction or that it never existed.", vscode_1.DiagnosticSeverity.Error));
+                                diagnostics.push(new vscode_1.Diagnostic(proofDef.range, "Invalid Proof: No Proof with the given name of Id exists. This either means that the Proof has been moved as a result of a previous instruction or that it never existed.", vscode_1.DiagnosticSeverity.Error));
                             }
                         }
                         break;
