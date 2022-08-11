@@ -104,6 +104,22 @@ u16                 :   U16_LITERAL ;
 u32                 :   U32_LITERAL ;
 u64                 :   U64_LITERAL ;
 u128                :   U128_LITERAL ;
+safe_i8             :   SAFE_I8_LITERAL ;
+safe_i16            :   SAFE_I16_LITERAL ;
+safe_i32            :   SAFE_I32_LITERAL ;
+safe_i64            :   SAFE_I64_LITERAL ;
+safe_i128           :   SAFE_I128_LITERAL ;
+safe_i256           :   SAFE_I256_LITERAL ;
+safe_i384           :   SAFE_I384_LITERAL ;
+safe_i512           :   SAFE_I512_LITERAL ;
+safe_u8             :   SAFE_U8_LITERAL ;
+safe_u16            :   SAFE_U16_LITERAL ;
+safe_u32            :   SAFE_U32_LITERAL ;
+safe_u64            :   SAFE_U64_LITERAL ;
+safe_u128           :   SAFE_U128_LITERAL ;
+safe_u256           :   SAFE_U256_LITERAL ;
+safe_u384           :   SAFE_U384_LITERAL ;
+safe_u512           :   SAFE_U512_LITERAL ;
 string              :   STRING_LITERAL ;
 struct              :   STRUCT_TYPE OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
 enum_               :   ENUM_TYPE OPEN_PARENTHESIS (string COMMA (value (COMMA value)*)?) CLOED_PARENTHESIS ;
@@ -118,6 +134,7 @@ list                :   LIST_TYPE LESS_THAN type GREATER_THAN OPEN_PARENTHESIS (
 set                 :   SET_TYPE LESS_THAN type GREATER_THAN OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
 map                 :   MAP_TYPE LESS_THAN type COMMA type GREATER_THAN OPEN_PARENTHESIS (value COMMA value)* CLOED_PARENTHESIS ;
 decimal             :   DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+precise_decimal     :   PRECISE_DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 package_address     :   PACKAGE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 component_address   :   COMPONENT_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 resource_address    :   RESOURCE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
@@ -141,6 +158,22 @@ type
     | U32_TYPE
     | U64_TYPE
     | U128_TYPE
+    | SAFE_I8_TYPE
+    | SAFE_I16_TYPE
+    | SAFE_I32_TYPE
+    | SAFE_I64_TYPE
+    | SAFE_I128_TYPE
+    | SAFE_I256_TYPE
+    | SAFE_I384_TYPE
+    | SAFE_I512_TYPE
+    | SAFE_U8_TYPE
+    | SAFE_U16_TYPE
+    | SAFE_U32_TYPE
+    | SAFE_U64_TYPE
+    | SAFE_U128_TYPE
+    | SAFE_U384_TYPE
+    | SAFE_U256_TYPE
+    | SAFE_U512_TYPE
     | STRING_TYPE
     | STRUCT_TYPE
     | ENUM_TYPE
@@ -156,6 +189,7 @@ type
     | SET_TYPE
     | MAP_TYPE
     | DECIMAL_TYPE
+    | PRECISE_DECIMAL_TYPE
     | PACKAGE_ADDRESS_TYPE
     | COMPONENT_ADDRESS_TYPE
     | RESOURCE_ADDRESS_TYPE
@@ -180,6 +214,22 @@ value
     | u32
     | u64
     | u128
+    | safe_i8
+    | safe_i16
+    | safe_i32
+    | safe_i64
+    | safe_i128
+    | safe_i256
+    | safe_i384
+    | safe_i512
+    | safe_u8
+    | safe_u16
+    | safe_u32
+    | safe_u64
+    | safe_u128
+    | safe_u256
+    | safe_u384
+    | safe_u512
     | string
     | struct
     | enum_
@@ -194,6 +244,7 @@ value
     | set
     | map
     | decimal
+    | precise_decimal
     | package_address
     | component_address
     | resource_address
@@ -221,6 +272,23 @@ U32_LITERAL                         : NUMBER 'u32' ;
 U64_LITERAL                         : NUMBER 'u64' ; 
 U128_LITERAL                        : NUMBER 'u128' ; 
 
+SAFE_I8_LITERAL                     : NUMBER 'si8' ;
+SAFE_I16_LITERAL                    : NUMBER 'si16' ; 
+SAFE_I32_LITERAL                    : NUMBER 'si32' ; 
+SAFE_I64_LITERAL                    : NUMBER 'si64' ; 
+SAFE_I128_LITERAL                   : NUMBER 'si128' ; 
+SAFE_I256_LITERAL                   : NUMBER 'si256' ; 
+SAFE_I384_LITERAL                   : NUMBER 'si384' ; 
+SAFE_I512_LITERAL                   : NUMBER 'si512' ; 
+SAFE_U8_LITERAL                     : NUMBER 'su8' ;
+SAFE_U16_LITERAL                    : NUMBER 'su16' ; 
+SAFE_U32_LITERAL                    : NUMBER 'su32' ; 
+SAFE_U64_LITERAL                    : NUMBER 'su64' ; 
+SAFE_U128_LITERAL                   : NUMBER 'su128' ; 
+SAFE_U384_LITERAL                   : NUMBER 'su384' ; 
+SAFE_U256_LITERAL                   : NUMBER 'su256' ; 
+SAFE_U512_LITERAL                   : NUMBER 'su512' ; 
+
 TRUE                                : 'true' ;
 FALSE                               : 'false' ;
 
@@ -236,6 +304,22 @@ U16_TYPE                            : 'U16' ;
 U32_TYPE                            : 'U32' ;
 U64_TYPE                            : 'U64' ;
 U128_TYPE                           : 'U128' ;
+SAFE_I8_TYPE                        : 'SafeI8' ;
+SAFE_I16_TYPE                       : 'SafeI16' ; 
+SAFE_I32_TYPE                       : 'SafeI32' ; 
+SAFE_I64_TYPE                       : 'SafeI64' ; 
+SAFE_I128_TYPE                      : 'SafeI128' ; 
+SAFE_I256_TYPE                      : 'SafeI256' ; 
+SAFE_I384_TYPE                      : 'SafeI384' ; 
+SAFE_I512_TYPE                      : 'SafeI512' ; 
+SAFE_U8_TYPE                        : 'SafeU8' ;
+SAFE_U16_TYPE                       : 'SafeU16' ; 
+SAFE_U32_TYPE                       : 'SafeU32' ; 
+SAFE_U64_TYPE                       : 'SafeU64' ; 
+SAFE_U128_TYPE                      : 'SafeU128' ; 
+SAFE_U384_TYPE                      : 'SafeU384' ; 
+SAFE_U256_TYPE                      : 'SafeU256' ; 
+SAFE_U512_TYPE                      : 'SafeU512' ; 
 STRING_TYPE                         : 'String' ;
 STRUCT_TYPE                         : 'Struct' ;
 ENUM_TYPE                           : 'Enum' ;
@@ -252,6 +336,7 @@ SET_TYPE                            : 'Set' ;
 MAP_TYPE                            : 'Map' ;
 
 DECIMAL_TYPE                        : 'Decimal' ;
+PRECISE_DECIMAL_TYPE                : 'PreciseDecimal' ;
 PACKAGE_ADDRESS_TYPE                : 'PackageAddress' ;
 COMPONENT_ADDRESS_TYPE              : 'ComponentAddress' ;
 RESOURCE_ADDRESS_TYPE               : 'ResourceAddress' ;

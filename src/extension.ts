@@ -19,8 +19,9 @@ import {
 import { TransactionManifestListener } from "./TransactionManifestListener";
 import { ManifestInstructionListener } from "./manifest_listener";
 import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
-import { ParseTree } from "antlr4ts/tree/ParseTree";
 import { identifierToHover } from "./hover_strings";
+import { ParseTree } from "antlr4ts/tree/ParseTree";
+import { ANTLRErrorListener } from 'antlr4ts';
 
 /**
  * The address of the current resim default account.

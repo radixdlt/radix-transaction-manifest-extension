@@ -17,6 +17,22 @@ import { U16Context } from "./TransactionManifestParser";
 import { U32Context } from "./TransactionManifestParser";
 import { U64Context } from "./TransactionManifestParser";
 import { U128Context } from "./TransactionManifestParser";
+import { Safe_i8Context } from "./TransactionManifestParser";
+import { Safe_i16Context } from "./TransactionManifestParser";
+import { Safe_i32Context } from "./TransactionManifestParser";
+import { Safe_i64Context } from "./TransactionManifestParser";
+import { Safe_i128Context } from "./TransactionManifestParser";
+import { Safe_i256Context } from "./TransactionManifestParser";
+import { Safe_i384Context } from "./TransactionManifestParser";
+import { Safe_i512Context } from "./TransactionManifestParser";
+import { Safe_u8Context } from "./TransactionManifestParser";
+import { Safe_u16Context } from "./TransactionManifestParser";
+import { Safe_u32Context } from "./TransactionManifestParser";
+import { Safe_u64Context } from "./TransactionManifestParser";
+import { Safe_u128Context } from "./TransactionManifestParser";
+import { Safe_u256Context } from "./TransactionManifestParser";
+import { Safe_u384Context } from "./TransactionManifestParser";
+import { Safe_u512Context } from "./TransactionManifestParser";
 import { StringContext } from "./TransactionManifestParser";
 import { StructContext } from "./TransactionManifestParser";
 import { Enum_Context } from "./TransactionManifestParser";
@@ -31,6 +47,7 @@ import { ListContext } from "./TransactionManifestParser";
 import { SetContext } from "./TransactionManifestParser";
 import { MapContext } from "./TransactionManifestParser";
 import { DecimalContext } from "./TransactionManifestParser";
+import { Precise_decimalContext } from "./TransactionManifestParser";
 import { Package_addressContext } from "./TransactionManifestParser";
 import { Component_addressContext } from "./TransactionManifestParser";
 import { Resource_addressContext } from "./TransactionManifestParser";
@@ -151,6 +168,118 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	visitU128?: (ctx: U128Context) => Result;
 
 	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_i8`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_i8?: (ctx: Safe_i8Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_i16`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_i16?: (ctx: Safe_i16Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_i32`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_i32?: (ctx: Safe_i32Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_i64`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_i64?: (ctx: Safe_i64Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_i128`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_i128?: (ctx: Safe_i128Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_i256`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_i256?: (ctx: Safe_i256Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_i384`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_i384?: (ctx: Safe_i384Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_i512`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_i512?: (ctx: Safe_i512Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_u8`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_u8?: (ctx: Safe_u8Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_u16`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_u16?: (ctx: Safe_u16Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_u32`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_u32?: (ctx: Safe_u32Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_u64`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_u64?: (ctx: Safe_u64Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_u128`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_u128?: (ctx: Safe_u128Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_u256`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_u256?: (ctx: Safe_u256Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_u384`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_u384?: (ctx: Safe_u384Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.safe_u512`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSafe_u512?: (ctx: Safe_u512Context) => Result;
+
+	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.string`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -247,6 +376,13 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	 * @return the visitor result
 	 */
 	visitDecimal?: (ctx: DecimalContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.precise_decimal`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPrecise_decimal?: (ctx: Precise_decimalContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.package_address`.
