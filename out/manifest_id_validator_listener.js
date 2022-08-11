@@ -231,13 +231,22 @@ class ManifestIdValidator {
                         }
                     }
                 }
-                // TODO: This is a way to quickly get the IdValidator to work. Need to change
+                // TODO: This is a way to quickly get the IdValidator to work. Need to change it so that the id validator
+                // is more dynamic and can handle cases such as this with ease.
                 switch (instruction) {
                     case 'CLONE_PROOF':
-                        proofDefs.splice(0, 1);
+                        let proofDefinition = proofDefs.splice(0, 1)[0];
+                        let proofExists = this.availableProofs.map((x) => x.proof.toString()).indexOf(proofDefinition.proof.toString()) !== -1;
+                        if (!proofExists) {
+                            diagnostics.push(new vscode_1.Diagnostic(proofDefinition.range, "Invalid Proof: No Proof with the given name of Id exists. This either means that the Proof has been moved as a result of a previous instruction or that it never existed.", vscode_1.DiagnosticSeverity.Error));
+                        }
                         break;
                     case 'CREATE_PROOF_FROM_BUCKET':
-                        bucketDefs.splice(0, 1);
+                        let bucketDefinition = bucketDefs.splice(0, 1)[0];
+                        let bucketExists = this.availableBuckets.map((x) => x.bucket.toString()).indexOf(bucketDefinition.bucket.toString()) !== -1;
+                        if (!bucketExists) {
+                            diagnostics.push(new vscode_1.Diagnostic(bucketDefinition.range, "Invalid Bucket: No Bucket with the given name of Id exists. This either means that the Proof has been moved as a result of a previous instruction or that it never existed.", vscode_1.DiagnosticSeverity.Error));
+                        }
                         break;
                 }
                 switch (idValidatorMode) {
