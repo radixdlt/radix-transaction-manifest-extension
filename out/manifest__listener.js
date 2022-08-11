@@ -27,4 +27,4 @@ class ManifestFormatterListener {
     }
 }
 exports.ManifestFormatterListener = ManifestFormatterListener;
-//# sourceMappingURL=manifest_listener.js.map
+//# sourceMappingURL=manifest__listener.js.map

@@ -47,15 +47,15 @@ import { ListContext } from "./TransactionManifestParser";
 import { SetContext } from "./TransactionManifestParser";
 import { MapContext } from "./TransactionManifestParser";
 import { DecimalContext } from "./TransactionManifestParser";
-import { Precise_decimalContext } from "./TransactionManifestParser";
-import { Package_addressContext } from "./TransactionManifestParser";
-import { Component_addressContext } from "./TransactionManifestParser";
-import { Resource_addressContext } from "./TransactionManifestParser";
+import { PreciseDecimalContext } from "./TransactionManifestParser";
+import { PackageAddressContext } from "./TransactionManifestParser";
+import { ComponentAddressContext } from "./TransactionManifestParser";
+import { ResourceAddressContext } from "./TransactionManifestParser";
 import { HashContext } from "./TransactionManifestParser";
 import { BucketContext } from "./TransactionManifestParser";
 import { ProofContext } from "./TransactionManifestParser";
 import { Non_fungible_idContext } from "./TransactionManifestParser";
-import { Non_fungible_addressContext } from "./TransactionManifestParser";
+import { Non_fungibleAddressContext } from "./TransactionManifestParser";
 import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
@@ -551,48 +551,48 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitDecimal?: (ctx: DecimalContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.precise_decimal`.
+	 * Enter a parse tree produced by `TransactionManifestParser.preciseDecimal`.
 	 * @param ctx the parse tree
 	 */
-	enterPrecise_decimal?: (ctx: Precise_decimalContext) => void;
+	enterPreciseDecimal?: (ctx: PreciseDecimalContext) => void;
 	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.precise_decimal`.
+	 * Exit a parse tree produced by `TransactionManifestParser.preciseDecimal`.
 	 * @param ctx the parse tree
 	 */
-	exitPrecise_decimal?: (ctx: Precise_decimalContext) => void;
+	exitPreciseDecimal?: (ctx: PreciseDecimalContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.package_address`.
+	 * Enter a parse tree produced by `TransactionManifestParser.packageAddress`.
 	 * @param ctx the parse tree
 	 */
-	enterPackage_address?: (ctx: Package_addressContext) => void;
+	enterPackageAddress?: (ctx: PackageAddressContext) => void;
 	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.package_address`.
+	 * Exit a parse tree produced by `TransactionManifestParser.packageAddress`.
 	 * @param ctx the parse tree
 	 */
-	exitPackage_address?: (ctx: Package_addressContext) => void;
+	exitPackageAddress?: (ctx: PackageAddressContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.component_address`.
+	 * Enter a parse tree produced by `TransactionManifestParser.componentAddress`.
 	 * @param ctx the parse tree
 	 */
-	enterComponent_address?: (ctx: Component_addressContext) => void;
+	enterComponentAddress?: (ctx: ComponentAddressContext) => void;
 	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.component_address`.
+	 * Exit a parse tree produced by `TransactionManifestParser.componentAddress`.
 	 * @param ctx the parse tree
 	 */
-	exitComponent_address?: (ctx: Component_addressContext) => void;
+	exitComponentAddress?: (ctx: ComponentAddressContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.resource_address`.
+	 * Enter a parse tree produced by `TransactionManifestParser.resourceAddress`.
 	 * @param ctx the parse tree
 	 */
-	enterResource_address?: (ctx: Resource_addressContext) => void;
+	enterResourceAddress?: (ctx: ResourceAddressContext) => void;
 	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.resource_address`.
+	 * Exit a parse tree produced by `TransactionManifestParser.resourceAddress`.
 	 * @param ctx the parse tree
 	 */
-	exitResource_address?: (ctx: Resource_addressContext) => void;
+	exitResourceAddress?: (ctx: ResourceAddressContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.hash`.
@@ -639,15 +639,15 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitNon_fungible_id?: (ctx: Non_fungible_idContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.non_fungible_address`.
+	 * Enter a parse tree produced by `TransactionManifestParser.non_fungibleAddress`.
 	 * @param ctx the parse tree
 	 */
-	enterNon_fungible_address?: (ctx: Non_fungible_addressContext) => void;
+	enterNon_fungibleAddress?: (ctx: Non_fungibleAddressContext) => void;
 	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.non_fungible_address`.
+	 * Exit a parse tree produced by `TransactionManifestParser.non_fungibleAddress`.
 	 * @param ctx the parse tree
 	 */
-	exitNon_fungible_address?: (ctx: Non_fungible_addressContext) => void;
+	exitNon_fungibleAddress?: (ctx: Non_fungibleAddressContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.bytes`.

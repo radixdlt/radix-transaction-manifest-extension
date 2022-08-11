@@ -17,12 +17,11 @@ import {
 	TransactionManifestParser,
 } from "./TransactionManifestParser";
 import { TransactionManifestListener } from "./TransactionManifestListener";
-import { ManifestInstructionListener } from "./manifest_listener";
+import { ManifestError, ManifestErrorListener } from "./error_listener";
+import { ManifestFormatterListener } from "./manifest_format_listener";
 import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
 import { identifierToHover } from "./hover_strings";
-import { ParseTree } from "antlr4ts/tree/ParseTree";
-import { ANTLRErrorListener } from "antlr4ts";
-import { ManifestError, ManifestErrorListener } from "./error_listener";
+import { ManifestIdValidator } from "./manifest_id_validator_listener";
 
 /**
  * The address of the current resim default account.
@@ -165,7 +164,7 @@ export async function activate(context: vscode.ExtensionContext) {
 			let tree = parser.manifest();
 
 			const listener: TransactionManifestListener =
-				new ManifestInstructionListener();
+				new ManifestFormatterListener();
 			ParseTreeWalker.DEFAULT.walk(listener, tree);
 
 			// Getting the positions of the instructions to format them
@@ -249,17 +248,24 @@ export async function activate(context: vscode.ExtensionContext) {
 	 */
 	vscode.workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
 		if (document.languageId === "rtm" && document.uri.scheme === "file") {
-			updateDiagnosticsWithLexerAndParserErrors(document);
+			updateDiagnostics(document);
 		}
 	});
 
 	vscode.workspace.onDidOpenTextDocument((document: vscode.TextDocument) => {
 		if (document.languageId === "rtm" && document.uri.scheme === "file") {
-			updateDiagnosticsWithLexerAndParserErrors(document);
+			updateDiagnostics(document);
 		}
 	});
 
-	const updateDiagnosticsWithLexerAndParserErrors = (document: vscode.TextDocument) => {
+	const updateDiagnostics = (document: vscode.TextDocument) => {
+		let diagnostics: vscode.Diagnostic[] = [];
+		diagnostics.push(...getDiagnosticsWithLexerAndParserErrors(document));
+		diagnostics.push(...getIdValidatorErrors(document));
+		diagnosticCollection.set(document.uri, diagnostics);
+	};
+
+	const getDiagnosticsWithLexerAndParserErrors = (document: vscode.TextDocument): vscode.Diagnostic[] => {
 		// Lex and parse the contents of the document and then emit the errors encountered.
 		let documentContents: string = document.getText();
 
@@ -279,10 +285,10 @@ export async function activate(context: vscode.ExtensionContext) {
 		parser.removeErrorListeners();
 		parser.addErrorListener(errorListener);
 
-		let _tree = parser.manifest();
+		parser.manifest();
 		let errors: ManifestError[] = errorListener.getErrors();
 
-		let diagnostics: vscode.Diagnostic[] = errors.map(
+		return errors.map(
 			(error) =>
 				new vscode.Diagnostic(
 					error.range,
@@ -290,7 +296,22 @@ export async function activate(context: vscode.ExtensionContext) {
 					vscode.DiagnosticSeverity.Error
 				)
 		);
-		diagnosticCollection.set(document.uri, diagnostics);
+	};
+
+	const getIdValidatorErrors = (document: vscode.TextDocument): vscode.Diagnostic[] => {
+		let documentContents: string = document.getText();
+
+		let charStream: CharStream = CharStreams.fromString(documentContents);
+		let lexer: TransactionManifestLexer = new TransactionManifestLexer(charStream);
+		let tokenStream: CommonTokenStream = new CommonTokenStream(lexer);
+		let parser: TransactionManifestParser = new TransactionManifestParser(tokenStream);
+
+		const listener: ManifestIdValidator = new ManifestIdValidator(document);
+		let tree = parser.manifest();
+		// @ts-ignore
+		ParseTreeWalker.DEFAULT.walk(listener, tree);
+		
+		return listener.getDiagnostics();
 	};
 
 	// =================================================================================================================

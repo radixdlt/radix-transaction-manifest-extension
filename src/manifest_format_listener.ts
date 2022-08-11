@@ -8,7 +8,7 @@ import { TransactionManifestListener } from "./TransactionManifestListener";
 import { Position, Range } from "vscode";
 import { Token } from "antlr4ts";
 
-export class ManifestInstructionListener
+export class ManifestFormatterListener
   implements TransactionManifestListener
 {
   manifestInstructionRanges: Range[] = [];

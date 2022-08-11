@@ -48,28 +48,27 @@ public class TransactionManifestParser extends Parser {
 		RULE_manifest = 0, RULE_manifestInstruction = 1, RULE_unit = 2, RULE_bool = 3, 
 		RULE_i8 = 4, RULE_i16 = 5, RULE_i32 = 6, RULE_i64 = 7, RULE_i128 = 8, 
 		RULE_u8 = 9, RULE_u16 = 10, RULE_u32 = 11, RULE_u64 = 12, RULE_u128 = 13, 
-		RULE_safe_i8 = 14, RULE_safe_i16 = 15, RULE_safe_i32 = 16, RULE_safe_i64 = 17, 
-		RULE_safe_i128 = 18, RULE_safe_i256 = 19, RULE_safe_i384 = 20, RULE_safe_i512 = 21, 
-		RULE_safe_u8 = 22, RULE_safe_u16 = 23, RULE_safe_u32 = 24, RULE_safe_u64 = 25, 
-		RULE_safe_u128 = 26, RULE_safe_u256 = 27, RULE_safe_u384 = 28, RULE_safe_u512 = 29, 
+		RULE_safeI8 = 14, RULE_safeI16 = 15, RULE_safeI32 = 16, RULE_safeI64 = 17, 
+		RULE_safeI128 = 18, RULE_safeI256 = 19, RULE_safeI384 = 20, RULE_safeI512 = 21, 
+		RULE_safeU8 = 22, RULE_safeU16 = 23, RULE_safeU32 = 24, RULE_safeU64 = 25, 
+		RULE_safeU128 = 26, RULE_safeU256 = 27, RULE_safeU384 = 28, RULE_safeU512 = 29, 
 		RULE_string = 30, RULE_struct = 31, RULE_enum_ = 32, RULE_option = 33, 
 		RULE_some = 34, RULE_none = 35, RULE_ok = 36, RULE_err = 37, RULE_array = 38, 
 		RULE_tuple = 39, RULE_list = 40, RULE_set = 41, RULE_map = 42, RULE_decimal = 43, 
-		RULE_precise_decimal = 44, RULE_package_address = 45, RULE_component_address = 46, 
-		RULE_resource_address = 47, RULE_hash = 48, RULE_bucket = 49, RULE_proof = 50, 
-		RULE_non_fungible_id = 51, RULE_non_fungible_address = 52, RULE_bytes = 53, 
+		RULE_preciseDecimal = 44, RULE_packageAddress = 45, RULE_componentAddress = 46, 
+		RULE_resourceAddress = 47, RULE_hash = 48, RULE_bucket = 49, RULE_proof = 50, 
+		RULE_nonFungible_id = 51, RULE_nonFungibleAddress = 52, RULE_bytes = 53, 
 		RULE_type = 54, RULE_value = 55;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"manifest", "manifestInstruction", "unit", "bool", "i8", "i16", "i32", 
-			"i64", "i128", "u8", "u16", "u32", "u64", "u128", "safe_i8", "safe_i16", 
-			"safe_i32", "safe_i64", "safe_i128", "safe_i256", "safe_i384", "safe_i512", 
-			"safe_u8", "safe_u16", "safe_u32", "safe_u64", "safe_u128", "safe_u256", 
-			"safe_u384", "safe_u512", "string", "struct", "enum_", "option", "some", 
-			"none", "ok", "err", "array", "tuple", "list", "set", "map", "decimal", 
-			"precise_decimal", "package_address", "component_address", "resource_address", 
-			"hash", "bucket", "proof", "non_fungible_id", "non_fungible_address", 
-			"bytes", "type", "value"
+			"i64", "i128", "u8", "u16", "u32", "u64", "u128", "safeI8", "safeI16", 
+			"safeI32", "safeI64", "safeI128", "safeI256", "safeI384", "safeI512", 
+			"safeU8", "safeU16", "safeU32", "safeU64", "safeU128", "safeU256", "safeU384", 
+			"safeU512", "string", "struct", "enum_", "option", "some", "none", "ok", 
+			"err", "array", "tuple", "list", "set", "map", "decimal", "preciseDecimal", 
+			"packageAddress", "componentAddress", "resourceAddress", "hash", "bucket", 
+			"proof", "nonFungible_id", "nonFungibleAddress", "bytes", "type", "value"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -232,8 +231,8 @@ public class TransactionManifestParser extends Parser {
 
 	public static class ManifestInstructionContext extends ParserRuleContext {
 		public TerminalNode CALL_FUNCTION() { return getToken(TransactionManifestParser.CALL_FUNCTION, 0); }
-		public Package_addressContext package_address() {
-			return getRuleContext(Package_addressContext.class,0);
+		public PackageAddressContext packageAddress() {
+			return getRuleContext(PackageAddressContext.class,0);
 		}
 		public List<StringContext> string() {
 			return getRuleContexts(StringContext.class);
@@ -249,13 +248,13 @@ public class TransactionManifestParser extends Parser {
 			return getRuleContext(ValueContext.class,i);
 		}
 		public TerminalNode CALL_METHOD() { return getToken(TransactionManifestParser.CALL_METHOD, 0); }
-		public Component_addressContext component_address() {
-			return getRuleContext(Component_addressContext.class,0);
+		public ComponentAddressContext componentAddress() {
+			return getRuleContext(ComponentAddressContext.class,0);
 		}
 		public TerminalNode CALL_METHOD_WITH_ALL_RESOURCES() { return getToken(TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES, 0); }
 		public TerminalNode TAKE_FROM_WORKTOP() { return getToken(TransactionManifestParser.TAKE_FROM_WORKTOP, 0); }
-		public Resource_addressContext resource_address() {
-			return getRuleContext(Resource_addressContext.class,0);
+		public ResourceAddressContext resourceAddress() {
+			return getRuleContext(ResourceAddressContext.class,0);
 		}
 		public BucketContext bucket() {
 			return getRuleContext(BucketContext.class,0);
@@ -312,7 +311,7 @@ public class TransactionManifestParser extends Parser {
 				setState(120);
 				match(CALL_FUNCTION);
 				setState(121);
-				package_address();
+				packageAddress();
 				setState(122);
 				string();
 				setState(123);
@@ -341,7 +340,7 @@ public class TransactionManifestParser extends Parser {
 				setState(132);
 				match(CALL_METHOD);
 				setState(133);
-				component_address();
+				componentAddress();
 				setState(134);
 				string();
 				setState(138);
@@ -368,7 +367,7 @@ public class TransactionManifestParser extends Parser {
 				setState(143);
 				match(CALL_METHOD_WITH_ALL_RESOURCES);
 				setState(144);
-				component_address();
+				componentAddress();
 				setState(145);
 				string();
 				setState(146);
@@ -381,7 +380,7 @@ public class TransactionManifestParser extends Parser {
 				setState(148);
 				match(TAKE_FROM_WORKTOP);
 				setState(149);
-				resource_address();
+				resourceAddress();
 				setState(150);
 				bucket();
 				setState(151);
@@ -396,7 +395,7 @@ public class TransactionManifestParser extends Parser {
 				setState(154);
 				decimal();
 				setState(155);
-				resource_address();
+				resourceAddress();
 				setState(156);
 				bucket();
 				setState(157);
@@ -411,7 +410,7 @@ public class TransactionManifestParser extends Parser {
 				setState(160);
 				set();
 				setState(161);
-				resource_address();
+				resourceAddress();
 				setState(162);
 				bucket();
 				setState(163);
@@ -435,7 +434,7 @@ public class TransactionManifestParser extends Parser {
 				setState(169);
 				match(ASSERT_WORKTOP_CONTAINS);
 				setState(170);
-				resource_address();
+				resourceAddress();
 				setState(171);
 				match(SEMICOLON);
 				}
@@ -448,7 +447,7 @@ public class TransactionManifestParser extends Parser {
 				setState(174);
 				decimal();
 				setState(175);
-				resource_address();
+				resourceAddress();
 				setState(176);
 				match(SEMICOLON);
 				}
@@ -461,7 +460,7 @@ public class TransactionManifestParser extends Parser {
 				setState(179);
 				set();
 				setState(180);
-				resource_address();
+				resourceAddress();
 				setState(181);
 				match(SEMICOLON);
 				}
@@ -494,7 +493,7 @@ public class TransactionManifestParser extends Parser {
 				setState(191);
 				match(CREATE_PROOF_FROM_AUTH_ZONE);
 				setState(192);
-				resource_address();
+				resourceAddress();
 				setState(193);
 				proof();
 				setState(194);
@@ -509,7 +508,7 @@ public class TransactionManifestParser extends Parser {
 				setState(197);
 				decimal();
 				setState(198);
-				resource_address();
+				resourceAddress();
 				setState(199);
 				proof();
 				setState(200);
@@ -524,7 +523,7 @@ public class TransactionManifestParser extends Parser {
 				setState(203);
 				set();
 				setState(204);
-				resource_address();
+				resourceAddress();
 				setState(205);
 				proof();
 				setState(206);
@@ -959,17 +958,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_i8Context extends ParserRuleContext {
+	public static class SafeI8Context extends ParserRuleContext {
 		public TerminalNode SAFE_I8_LITERAL() { return getToken(TransactionManifestParser.SAFE_I8_LITERAL, 0); }
-		public Safe_i8Context(ParserRuleContext parent, int invokingState) {
+		public SafeI8Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_i8; }
+		@Override public int getRuleIndex() { return RULE_safeI8; }
 	}
 
-	public final Safe_i8Context safe_i8() throws RecognitionException {
-		Safe_i8Context _localctx = new Safe_i8Context(_ctx, getState());
-		enterRule(_localctx, 28, RULE_safe_i8);
+	public final SafeI8Context safeI8() throws RecognitionException {
+		SafeI8Context _localctx = new SafeI8Context(_ctx, getState());
+		enterRule(_localctx, 28, RULE_safeI8);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -988,17 +987,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_i16Context extends ParserRuleContext {
+	public static class SafeI16Context extends ParserRuleContext {
 		public TerminalNode SAFE_I16_LITERAL() { return getToken(TransactionManifestParser.SAFE_I16_LITERAL, 0); }
-		public Safe_i16Context(ParserRuleContext parent, int invokingState) {
+		public SafeI16Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_i16; }
+		@Override public int getRuleIndex() { return RULE_safeI16; }
 	}
 
-	public final Safe_i16Context safe_i16() throws RecognitionException {
-		Safe_i16Context _localctx = new Safe_i16Context(_ctx, getState());
-		enterRule(_localctx, 30, RULE_safe_i16);
+	public final SafeI16Context safeI16() throws RecognitionException {
+		SafeI16Context _localctx = new SafeI16Context(_ctx, getState());
+		enterRule(_localctx, 30, RULE_safeI16);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1017,17 +1016,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_i32Context extends ParserRuleContext {
+	public static class SafeI32Context extends ParserRuleContext {
 		public TerminalNode SAFE_I32_LITERAL() { return getToken(TransactionManifestParser.SAFE_I32_LITERAL, 0); }
-		public Safe_i32Context(ParserRuleContext parent, int invokingState) {
+		public SafeI32Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_i32; }
+		@Override public int getRuleIndex() { return RULE_safeI32; }
 	}
 
-	public final Safe_i32Context safe_i32() throws RecognitionException {
-		Safe_i32Context _localctx = new Safe_i32Context(_ctx, getState());
-		enterRule(_localctx, 32, RULE_safe_i32);
+	public final SafeI32Context safeI32() throws RecognitionException {
+		SafeI32Context _localctx = new SafeI32Context(_ctx, getState());
+		enterRule(_localctx, 32, RULE_safeI32);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1046,17 +1045,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_i64Context extends ParserRuleContext {
+	public static class SafeI64Context extends ParserRuleContext {
 		public TerminalNode SAFE_I64_LITERAL() { return getToken(TransactionManifestParser.SAFE_I64_LITERAL, 0); }
-		public Safe_i64Context(ParserRuleContext parent, int invokingState) {
+		public SafeI64Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_i64; }
+		@Override public int getRuleIndex() { return RULE_safeI64; }
 	}
 
-	public final Safe_i64Context safe_i64() throws RecognitionException {
-		Safe_i64Context _localctx = new Safe_i64Context(_ctx, getState());
-		enterRule(_localctx, 34, RULE_safe_i64);
+	public final SafeI64Context safeI64() throws RecognitionException {
+		SafeI64Context _localctx = new SafeI64Context(_ctx, getState());
+		enterRule(_localctx, 34, RULE_safeI64);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1075,17 +1074,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_i128Context extends ParserRuleContext {
+	public static class SafeI128Context extends ParserRuleContext {
 		public TerminalNode SAFE_I128_LITERAL() { return getToken(TransactionManifestParser.SAFE_I128_LITERAL, 0); }
-		public Safe_i128Context(ParserRuleContext parent, int invokingState) {
+		public SafeI128Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_i128; }
+		@Override public int getRuleIndex() { return RULE_safeI128; }
 	}
 
-	public final Safe_i128Context safe_i128() throws RecognitionException {
-		Safe_i128Context _localctx = new Safe_i128Context(_ctx, getState());
-		enterRule(_localctx, 36, RULE_safe_i128);
+	public final SafeI128Context safeI128() throws RecognitionException {
+		SafeI128Context _localctx = new SafeI128Context(_ctx, getState());
+		enterRule(_localctx, 36, RULE_safeI128);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1104,17 +1103,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_i256Context extends ParserRuleContext {
+	public static class SafeI256Context extends ParserRuleContext {
 		public TerminalNode SAFE_I256_LITERAL() { return getToken(TransactionManifestParser.SAFE_I256_LITERAL, 0); }
-		public Safe_i256Context(ParserRuleContext parent, int invokingState) {
+		public SafeI256Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_i256; }
+		@Override public int getRuleIndex() { return RULE_safeI256; }
 	}
 
-	public final Safe_i256Context safe_i256() throws RecognitionException {
-		Safe_i256Context _localctx = new Safe_i256Context(_ctx, getState());
-		enterRule(_localctx, 38, RULE_safe_i256);
+	public final SafeI256Context safeI256() throws RecognitionException {
+		SafeI256Context _localctx = new SafeI256Context(_ctx, getState());
+		enterRule(_localctx, 38, RULE_safeI256);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1133,17 +1132,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_i384Context extends ParserRuleContext {
+	public static class SafeI384Context extends ParserRuleContext {
 		public TerminalNode SAFE_I384_LITERAL() { return getToken(TransactionManifestParser.SAFE_I384_LITERAL, 0); }
-		public Safe_i384Context(ParserRuleContext parent, int invokingState) {
+		public SafeI384Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_i384; }
+		@Override public int getRuleIndex() { return RULE_safeI384; }
 	}
 
-	public final Safe_i384Context safe_i384() throws RecognitionException {
-		Safe_i384Context _localctx = new Safe_i384Context(_ctx, getState());
-		enterRule(_localctx, 40, RULE_safe_i384);
+	public final SafeI384Context safeI384() throws RecognitionException {
+		SafeI384Context _localctx = new SafeI384Context(_ctx, getState());
+		enterRule(_localctx, 40, RULE_safeI384);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1162,17 +1161,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_i512Context extends ParserRuleContext {
+	public static class SafeI512Context extends ParserRuleContext {
 		public TerminalNode SAFE_I512_LITERAL() { return getToken(TransactionManifestParser.SAFE_I512_LITERAL, 0); }
-		public Safe_i512Context(ParserRuleContext parent, int invokingState) {
+		public SafeI512Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_i512; }
+		@Override public int getRuleIndex() { return RULE_safeI512; }
 	}
 
-	public final Safe_i512Context safe_i512() throws RecognitionException {
-		Safe_i512Context _localctx = new Safe_i512Context(_ctx, getState());
-		enterRule(_localctx, 42, RULE_safe_i512);
+	public final SafeI512Context safeI512() throws RecognitionException {
+		SafeI512Context _localctx = new SafeI512Context(_ctx, getState());
+		enterRule(_localctx, 42, RULE_safeI512);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1191,17 +1190,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_u8Context extends ParserRuleContext {
+	public static class SafeU8Context extends ParserRuleContext {
 		public TerminalNode SAFE_U8_LITERAL() { return getToken(TransactionManifestParser.SAFE_U8_LITERAL, 0); }
-		public Safe_u8Context(ParserRuleContext parent, int invokingState) {
+		public SafeU8Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_u8; }
+		@Override public int getRuleIndex() { return RULE_safeU8; }
 	}
 
-	public final Safe_u8Context safe_u8() throws RecognitionException {
-		Safe_u8Context _localctx = new Safe_u8Context(_ctx, getState());
-		enterRule(_localctx, 44, RULE_safe_u8);
+	public final SafeU8Context safeU8() throws RecognitionException {
+		SafeU8Context _localctx = new SafeU8Context(_ctx, getState());
+		enterRule(_localctx, 44, RULE_safeU8);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1220,17 +1219,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_u16Context extends ParserRuleContext {
+	public static class SafeU16Context extends ParserRuleContext {
 		public TerminalNode SAFE_U16_LITERAL() { return getToken(TransactionManifestParser.SAFE_U16_LITERAL, 0); }
-		public Safe_u16Context(ParserRuleContext parent, int invokingState) {
+		public SafeU16Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_u16; }
+		@Override public int getRuleIndex() { return RULE_safeU16; }
 	}
 
-	public final Safe_u16Context safe_u16() throws RecognitionException {
-		Safe_u16Context _localctx = new Safe_u16Context(_ctx, getState());
-		enterRule(_localctx, 46, RULE_safe_u16);
+	public final SafeU16Context safeU16() throws RecognitionException {
+		SafeU16Context _localctx = new SafeU16Context(_ctx, getState());
+		enterRule(_localctx, 46, RULE_safeU16);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1249,17 +1248,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_u32Context extends ParserRuleContext {
+	public static class SafeU32Context extends ParserRuleContext {
 		public TerminalNode SAFE_U32_LITERAL() { return getToken(TransactionManifestParser.SAFE_U32_LITERAL, 0); }
-		public Safe_u32Context(ParserRuleContext parent, int invokingState) {
+		public SafeU32Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_u32; }
+		@Override public int getRuleIndex() { return RULE_safeU32; }
 	}
 
-	public final Safe_u32Context safe_u32() throws RecognitionException {
-		Safe_u32Context _localctx = new Safe_u32Context(_ctx, getState());
-		enterRule(_localctx, 48, RULE_safe_u32);
+	public final SafeU32Context safeU32() throws RecognitionException {
+		SafeU32Context _localctx = new SafeU32Context(_ctx, getState());
+		enterRule(_localctx, 48, RULE_safeU32);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1278,17 +1277,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_u64Context extends ParserRuleContext {
+	public static class SafeU64Context extends ParserRuleContext {
 		public TerminalNode SAFE_U64_LITERAL() { return getToken(TransactionManifestParser.SAFE_U64_LITERAL, 0); }
-		public Safe_u64Context(ParserRuleContext parent, int invokingState) {
+		public SafeU64Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_u64; }
+		@Override public int getRuleIndex() { return RULE_safeU64; }
 	}
 
-	public final Safe_u64Context safe_u64() throws RecognitionException {
-		Safe_u64Context _localctx = new Safe_u64Context(_ctx, getState());
-		enterRule(_localctx, 50, RULE_safe_u64);
+	public final SafeU64Context safeU64() throws RecognitionException {
+		SafeU64Context _localctx = new SafeU64Context(_ctx, getState());
+		enterRule(_localctx, 50, RULE_safeU64);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1307,17 +1306,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_u128Context extends ParserRuleContext {
+	public static class SafeU128Context extends ParserRuleContext {
 		public TerminalNode SAFE_U128_LITERAL() { return getToken(TransactionManifestParser.SAFE_U128_LITERAL, 0); }
-		public Safe_u128Context(ParserRuleContext parent, int invokingState) {
+		public SafeU128Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_u128; }
+		@Override public int getRuleIndex() { return RULE_safeU128; }
 	}
 
-	public final Safe_u128Context safe_u128() throws RecognitionException {
-		Safe_u128Context _localctx = new Safe_u128Context(_ctx, getState());
-		enterRule(_localctx, 52, RULE_safe_u128);
+	public final SafeU128Context safeU128() throws RecognitionException {
+		SafeU128Context _localctx = new SafeU128Context(_ctx, getState());
+		enterRule(_localctx, 52, RULE_safeU128);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1336,17 +1335,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_u256Context extends ParserRuleContext {
+	public static class SafeU256Context extends ParserRuleContext {
 		public TerminalNode SAFE_U256_LITERAL() { return getToken(TransactionManifestParser.SAFE_U256_LITERAL, 0); }
-		public Safe_u256Context(ParserRuleContext parent, int invokingState) {
+		public SafeU256Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_u256; }
+		@Override public int getRuleIndex() { return RULE_safeU256; }
 	}
 
-	public final Safe_u256Context safe_u256() throws RecognitionException {
-		Safe_u256Context _localctx = new Safe_u256Context(_ctx, getState());
-		enterRule(_localctx, 54, RULE_safe_u256);
+	public final SafeU256Context safeU256() throws RecognitionException {
+		SafeU256Context _localctx = new SafeU256Context(_ctx, getState());
+		enterRule(_localctx, 54, RULE_safeU256);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1365,17 +1364,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_u384Context extends ParserRuleContext {
+	public static class SafeU384Context extends ParserRuleContext {
 		public TerminalNode SAFE_U384_LITERAL() { return getToken(TransactionManifestParser.SAFE_U384_LITERAL, 0); }
-		public Safe_u384Context(ParserRuleContext parent, int invokingState) {
+		public SafeU384Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_u384; }
+		@Override public int getRuleIndex() { return RULE_safeU384; }
 	}
 
-	public final Safe_u384Context safe_u384() throws RecognitionException {
-		Safe_u384Context _localctx = new Safe_u384Context(_ctx, getState());
-		enterRule(_localctx, 56, RULE_safe_u384);
+	public final SafeU384Context safeU384() throws RecognitionException {
+		SafeU384Context _localctx = new SafeU384Context(_ctx, getState());
+		enterRule(_localctx, 56, RULE_safeU384);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -1394,17 +1393,17 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Safe_u512Context extends ParserRuleContext {
+	public static class SafeU512Context extends ParserRuleContext {
 		public TerminalNode SAFE_U512_LITERAL() { return getToken(TransactionManifestParser.SAFE_U512_LITERAL, 0); }
-		public Safe_u512Context(ParserRuleContext parent, int invokingState) {
+		public SafeU512Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_safe_u512; }
+		@Override public int getRuleIndex() { return RULE_safeU512; }
 	}
 
-	public final Safe_u512Context safe_u512() throws RecognitionException {
-		Safe_u512Context _localctx = new Safe_u512Context(_ctx, getState());
-		enterRule(_localctx, 58, RULE_safe_u512);
+	public final SafeU512Context safeU512() throws RecognitionException {
+		SafeU512Context _localctx = new SafeU512Context(_ctx, getState());
+		enterRule(_localctx, 58, RULE_safeU512);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2326,20 +2325,20 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Precise_decimalContext extends ParserRuleContext {
+	public static class PreciseDecimalContext extends ParserRuleContext {
 		public TerminalNode PRECISE_DECIMAL_TYPE() { return getToken(TransactionManifestParser.PRECISE_DECIMAL_TYPE, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 		public TerminalNode STRING_LITERAL() { return getToken(TransactionManifestParser.STRING_LITERAL, 0); }
 		public TerminalNode CLOED_PARENTHESIS() { return getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-		public Precise_decimalContext(ParserRuleContext parent, int invokingState) {
+		public PreciseDecimalContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_precise_decimal; }
+		@Override public int getRuleIndex() { return RULE_preciseDecimal; }
 	}
 
-	public final Precise_decimalContext precise_decimal() throws RecognitionException {
-		Precise_decimalContext _localctx = new Precise_decimalContext(_ctx, getState());
-		enterRule(_localctx, 88, RULE_precise_decimal);
+	public final PreciseDecimalContext preciseDecimal() throws RecognitionException {
+		PreciseDecimalContext _localctx = new PreciseDecimalContext(_ctx, getState());
+		enterRule(_localctx, 88, RULE_preciseDecimal);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2364,20 +2363,20 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Package_addressContext extends ParserRuleContext {
+	public static class PackageAddressContext extends ParserRuleContext {
 		public TerminalNode PACKAGE_ADDRESS_TYPE() { return getToken(TransactionManifestParser.PACKAGE_ADDRESS_TYPE, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 		public TerminalNode STRING_LITERAL() { return getToken(TransactionManifestParser.STRING_LITERAL, 0); }
 		public TerminalNode CLOED_PARENTHESIS() { return getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-		public Package_addressContext(ParserRuleContext parent, int invokingState) {
+		public PackageAddressContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_package_address; }
+		@Override public int getRuleIndex() { return RULE_packageAddress; }
 	}
 
-	public final Package_addressContext package_address() throws RecognitionException {
-		Package_addressContext _localctx = new Package_addressContext(_ctx, getState());
-		enterRule(_localctx, 90, RULE_package_address);
+	public final PackageAddressContext packageAddress() throws RecognitionException {
+		PackageAddressContext _localctx = new PackageAddressContext(_ctx, getState());
+		enterRule(_localctx, 90, RULE_packageAddress);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2402,20 +2401,20 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Component_addressContext extends ParserRuleContext {
+	public static class ComponentAddressContext extends ParserRuleContext {
 		public TerminalNode COMPONENT_ADDRESS_TYPE() { return getToken(TransactionManifestParser.COMPONENT_ADDRESS_TYPE, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 		public TerminalNode STRING_LITERAL() { return getToken(TransactionManifestParser.STRING_LITERAL, 0); }
 		public TerminalNode CLOED_PARENTHESIS() { return getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-		public Component_addressContext(ParserRuleContext parent, int invokingState) {
+		public ComponentAddressContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_component_address; }
+		@Override public int getRuleIndex() { return RULE_componentAddress; }
 	}
 
-	public final Component_addressContext component_address() throws RecognitionException {
-		Component_addressContext _localctx = new Component_addressContext(_ctx, getState());
-		enterRule(_localctx, 92, RULE_component_address);
+	public final ComponentAddressContext componentAddress() throws RecognitionException {
+		ComponentAddressContext _localctx = new ComponentAddressContext(_ctx, getState());
+		enterRule(_localctx, 92, RULE_componentAddress);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2440,20 +2439,20 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Resource_addressContext extends ParserRuleContext {
+	public static class ResourceAddressContext extends ParserRuleContext {
 		public TerminalNode RESOURCE_ADDRESS_TYPE() { return getToken(TransactionManifestParser.RESOURCE_ADDRESS_TYPE, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 		public TerminalNode STRING_LITERAL() { return getToken(TransactionManifestParser.STRING_LITERAL, 0); }
 		public TerminalNode CLOED_PARENTHESIS() { return getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-		public Resource_addressContext(ParserRuleContext parent, int invokingState) {
+		public ResourceAddressContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_resource_address; }
+		@Override public int getRuleIndex() { return RULE_resourceAddress; }
 	}
 
-	public final Resource_addressContext resource_address() throws RecognitionException {
-		Resource_addressContext _localctx = new Resource_addressContext(_ctx, getState());
-		enterRule(_localctx, 94, RULE_resource_address);
+	public final ResourceAddressContext resourceAddress() throws RecognitionException {
+		ResourceAddressContext _localctx = new ResourceAddressContext(_ctx, getState());
+		enterRule(_localctx, 94, RULE_resourceAddress);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2612,20 +2611,20 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Non_fungible_idContext extends ParserRuleContext {
+	public static class NonFungible_idContext extends ParserRuleContext {
 		public TerminalNode NON_FUNGIBLE_ID_TYPE() { return getToken(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 		public TerminalNode STRING_LITERAL() { return getToken(TransactionManifestParser.STRING_LITERAL, 0); }
 		public TerminalNode CLOED_PARENTHESIS() { return getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-		public Non_fungible_idContext(ParserRuleContext parent, int invokingState) {
+		public NonFungible_idContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_non_fungible_id; }
+		@Override public int getRuleIndex() { return RULE_nonFungible_id; }
 	}
 
-	public final Non_fungible_idContext non_fungible_id() throws RecognitionException {
-		Non_fungible_idContext _localctx = new Non_fungible_idContext(_ctx, getState());
-		enterRule(_localctx, 102, RULE_non_fungible_id);
+	public final NonFungible_idContext nonFungible_id() throws RecognitionException {
+		NonFungible_idContext _localctx = new NonFungible_idContext(_ctx, getState());
+		enterRule(_localctx, 102, RULE_nonFungible_id);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2650,20 +2649,20 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Non_fungible_addressContext extends ParserRuleContext {
+	public static class NonFungibleAddressContext extends ParserRuleContext {
 		public TerminalNode NON_FUNGIBLE_ADDRESS_TYPE() { return getToken(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 		public TerminalNode STRING_LITERAL() { return getToken(TransactionManifestParser.STRING_LITERAL, 0); }
 		public TerminalNode CLOED_PARENTHESIS() { return getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-		public Non_fungible_addressContext(ParserRuleContext parent, int invokingState) {
+		public NonFungibleAddressContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_non_fungible_address; }
+		@Override public int getRuleIndex() { return RULE_nonFungibleAddress; }
 	}
 
-	public final Non_fungible_addressContext non_fungible_address() throws RecognitionException {
-		Non_fungible_addressContext _localctx = new Non_fungible_addressContext(_ctx, getState());
-		enterRule(_localctx, 104, RULE_non_fungible_address);
+	public final NonFungibleAddressContext nonFungibleAddress() throws RecognitionException {
+		NonFungibleAddressContext _localctx = new NonFungibleAddressContext(_ctx, getState());
+		enterRule(_localctx, 104, RULE_nonFungibleAddress);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2853,53 +2852,53 @@ public class TransactionManifestParser extends Parser {
 		public U128Context u128() {
 			return getRuleContext(U128Context.class,0);
 		}
-		public Safe_i8Context safe_i8() {
-			return getRuleContext(Safe_i8Context.class,0);
+		public SafeI8Context safeI8() {
+			return getRuleContext(SafeI8Context.class,0);
 		}
-		public Safe_i16Context safe_i16() {
-			return getRuleContext(Safe_i16Context.class,0);
+		public SafeI16Context safeI16() {
+			return getRuleContext(SafeI16Context.class,0);
 		}
-		public Safe_i32Context safe_i32() {
-			return getRuleContext(Safe_i32Context.class,0);
+		public SafeI32Context safeI32() {
+			return getRuleContext(SafeI32Context.class,0);
 		}
-		public Safe_i64Context safe_i64() {
-			return getRuleContext(Safe_i64Context.class,0);
+		public SafeI64Context safeI64() {
+			return getRuleContext(SafeI64Context.class,0);
 		}
-		public Safe_i128Context safe_i128() {
-			return getRuleContext(Safe_i128Context.class,0);
+		public SafeI128Context safeI128() {
+			return getRuleContext(SafeI128Context.class,0);
 		}
-		public Safe_i256Context safe_i256() {
-			return getRuleContext(Safe_i256Context.class,0);
+		public SafeI256Context safeI256() {
+			return getRuleContext(SafeI256Context.class,0);
 		}
-		public Safe_i384Context safe_i384() {
-			return getRuleContext(Safe_i384Context.class,0);
+		public SafeI384Context safeI384() {
+			return getRuleContext(SafeI384Context.class,0);
 		}
-		public Safe_i512Context safe_i512() {
-			return getRuleContext(Safe_i512Context.class,0);
+		public SafeI512Context safeI512() {
+			return getRuleContext(SafeI512Context.class,0);
 		}
-		public Safe_u8Context safe_u8() {
-			return getRuleContext(Safe_u8Context.class,0);
+		public SafeU8Context safeU8() {
+			return getRuleContext(SafeU8Context.class,0);
 		}
-		public Safe_u16Context safe_u16() {
-			return getRuleContext(Safe_u16Context.class,0);
+		public SafeU16Context safeU16() {
+			return getRuleContext(SafeU16Context.class,0);
 		}
-		public Safe_u32Context safe_u32() {
-			return getRuleContext(Safe_u32Context.class,0);
+		public SafeU32Context safeU32() {
+			return getRuleContext(SafeU32Context.class,0);
 		}
-		public Safe_u64Context safe_u64() {
-			return getRuleContext(Safe_u64Context.class,0);
+		public SafeU64Context safeU64() {
+			return getRuleContext(SafeU64Context.class,0);
 		}
-		public Safe_u128Context safe_u128() {
-			return getRuleContext(Safe_u128Context.class,0);
+		public SafeU128Context safeU128() {
+			return getRuleContext(SafeU128Context.class,0);
 		}
-		public Safe_u256Context safe_u256() {
-			return getRuleContext(Safe_u256Context.class,0);
+		public SafeU256Context safeU256() {
+			return getRuleContext(SafeU256Context.class,0);
 		}
-		public Safe_u384Context safe_u384() {
-			return getRuleContext(Safe_u384Context.class,0);
+		public SafeU384Context safeU384() {
+			return getRuleContext(SafeU384Context.class,0);
 		}
-		public Safe_u512Context safe_u512() {
-			return getRuleContext(Safe_u512Context.class,0);
+		public SafeU512Context safeU512() {
+			return getRuleContext(SafeU512Context.class,0);
 		}
 		public StringContext string() {
 			return getRuleContext(StringContext.class,0);
@@ -2943,17 +2942,17 @@ public class TransactionManifestParser extends Parser {
 		public DecimalContext decimal() {
 			return getRuleContext(DecimalContext.class,0);
 		}
-		public Precise_decimalContext precise_decimal() {
-			return getRuleContext(Precise_decimalContext.class,0);
+		public PreciseDecimalContext preciseDecimal() {
+			return getRuleContext(PreciseDecimalContext.class,0);
 		}
-		public Package_addressContext package_address() {
-			return getRuleContext(Package_addressContext.class,0);
+		public PackageAddressContext packageAddress() {
+			return getRuleContext(PackageAddressContext.class,0);
 		}
-		public Component_addressContext component_address() {
-			return getRuleContext(Component_addressContext.class,0);
+		public ComponentAddressContext componentAddress() {
+			return getRuleContext(ComponentAddressContext.class,0);
 		}
-		public Resource_addressContext resource_address() {
-			return getRuleContext(Resource_addressContext.class,0);
+		public ResourceAddressContext resourceAddress() {
+			return getRuleContext(ResourceAddressContext.class,0);
 		}
 		public HashContext hash() {
 			return getRuleContext(HashContext.class,0);
@@ -2964,11 +2963,11 @@ public class TransactionManifestParser extends Parser {
 		public ProofContext proof() {
 			return getRuleContext(ProofContext.class,0);
 		}
-		public Non_fungible_idContext non_fungible_id() {
-			return getRuleContext(Non_fungible_idContext.class,0);
+		public NonFungible_idContext nonFungible_id() {
+			return getRuleContext(NonFungible_idContext.class,0);
 		}
-		public Non_fungible_addressContext non_fungible_address() {
-			return getRuleContext(Non_fungible_addressContext.class,0);
+		public NonFungibleAddressContext nonFungibleAddress() {
+			return getRuleContext(NonFungibleAddressContext.class,0);
 		}
 		public BytesContext bytes() {
 			return getRuleContext(BytesContext.class,0);
@@ -3074,112 +3073,112 @@ public class TransactionManifestParser extends Parser {
 				enterOuterAlt(_localctx, 13);
 				{
 				setState(515);
-				safe_i8();
+				safeI8();
 				}
 				break;
 			case 14:
 				enterOuterAlt(_localctx, 14);
 				{
 				setState(516);
-				safe_i16();
+				safeI16();
 				}
 				break;
 			case 15:
 				enterOuterAlt(_localctx, 15);
 				{
 				setState(517);
-				safe_i32();
+				safeI32();
 				}
 				break;
 			case 16:
 				enterOuterAlt(_localctx, 16);
 				{
 				setState(518);
-				safe_i64();
+				safeI64();
 				}
 				break;
 			case 17:
 				enterOuterAlt(_localctx, 17);
 				{
 				setState(519);
-				safe_i128();
+				safeI128();
 				}
 				break;
 			case 18:
 				enterOuterAlt(_localctx, 18);
 				{
 				setState(520);
-				safe_i256();
+				safeI256();
 				}
 				break;
 			case 19:
 				enterOuterAlt(_localctx, 19);
 				{
 				setState(521);
-				safe_i384();
+				safeI384();
 				}
 				break;
 			case 20:
 				enterOuterAlt(_localctx, 20);
 				{
 				setState(522);
-				safe_i512();
+				safeI512();
 				}
 				break;
 			case 21:
 				enterOuterAlt(_localctx, 21);
 				{
 				setState(523);
-				safe_u8();
+				safeU8();
 				}
 				break;
 			case 22:
 				enterOuterAlt(_localctx, 22);
 				{
 				setState(524);
-				safe_u16();
+				safeU16();
 				}
 				break;
 			case 23:
 				enterOuterAlt(_localctx, 23);
 				{
 				setState(525);
-				safe_u32();
+				safeU32();
 				}
 				break;
 			case 24:
 				enterOuterAlt(_localctx, 24);
 				{
 				setState(526);
-				safe_u64();
+				safeU64();
 				}
 				break;
 			case 25:
 				enterOuterAlt(_localctx, 25);
 				{
 				setState(527);
-				safe_u128();
+				safeU128();
 				}
 				break;
 			case 26:
 				enterOuterAlt(_localctx, 26);
 				{
 				setState(528);
-				safe_u256();
+				safeU256();
 				}
 				break;
 			case 27:
 				enterOuterAlt(_localctx, 27);
 				{
 				setState(529);
-				safe_u384();
+				safeU384();
 				}
 				break;
 			case 28:
 				enterOuterAlt(_localctx, 28);
 				{
 				setState(530);
-				safe_u512();
+				safeU512();
 				}
 				break;
 			case 29:
@@ -3284,28 +3283,28 @@ public class TransactionManifestParser extends Parser {
 				enterOuterAlt(_localctx, 43);
 				{
 				setState(545);
-				precise_decimal();
+				preciseDecimal();
 				}
 				break;
 			case 44:
 				enterOuterAlt(_localctx, 44);
 				{
 				setState(546);
-				package_address();
+				packageAddress();
 				}
 				break;
 			case 45:
 				enterOuterAlt(_localctx, 45);
 				{
 				setState(547);
-				component_address();
+				componentAddress();
 				}
 				break;
 			case 46:
 				enterOuterAlt(_localctx, 46);
 				{
 				setState(548);
-				resource_address();
+				resourceAddress();
 				}
 				break;
 			case 47:
@@ -3333,14 +3332,14 @@ public class TransactionManifestParser extends Parser {
 				enterOuterAlt(_localctx, 50);
 				{
 				setState(552);
-				non_fungible_id();
+				nonFungible_id();
 				}
 				break;
 			case 51:
 				enterOuterAlt(_localctx, 51);
 				{
 				setState(553);
-				non_fungible_address();
+				nonFungibleAddress();
 				}
 				break;
 			case 52:

@@ -7,10 +7,11 @@ const extensionUtils = require("./extension_utils");
 const antlr4ts_1 = require("antlr4ts");
 const TransactionManifestLexer_1 = require("./TransactionManifestLexer");
 const TransactionManifestParser_1 = require("./TransactionManifestParser");
-const manifest_listener_1 = require("./manifest_listener");
+const error_listener_1 = require("./error_listener");
+const manifest_format_listener_1 = require("./manifest_format_listener");
 const ParseTreeWalker_1 = require("antlr4ts/tree/ParseTreeWalker");
 const hover_strings_1 = require("./hover_strings");
-const error_listener_1 = require("./error_listener");
+const manifest_id_validator_listener_1 = require("./manifest_id_validator_listener");
 /**
  * The address of the current resim default account.
  */
@@ -112,7 +113,7 @@ async function activate(context) {
             let tokenStream = new antlr4ts_1.CommonTokenStream(lexer);
             let parser = new TransactionManifestParser_1.TransactionManifestParser(tokenStream);
             let tree = parser.manifest();
-            const listener = new manifest_listener_1.ManifestInstructionListener();
+            const listener = new manifest_format_listener_1.ManifestFormatterListener();
             ParseTreeWalker_1.ParseTreeWalker.DEFAULT.walk(listener, tree);
             // Getting the positions of the instructions to format them
             // @ts-ignore
@@ -172,15 +173,21 @@ async function activate(context) {
      */
     vscode.workspace.onDidSaveTextDocument((document) => {
         if (document.languageId === "rtm" && document.uri.scheme === "file") {
-            updateDiagnosticsWithLexerAndParserErrors(document);
+            updateDiagnostics(document);
         }
     });
     vscode.workspace.onDidOpenTextDocument((document) => {
         if (document.languageId === "rtm" && document.uri.scheme === "file") {
-            updateDiagnosticsWithLexerAndParserErrors(document);
+            updateDiagnostics(document);
         }
     });
-    const updateDiagnosticsWithLexerAndParserErrors = (document) => {
+    const updateDiagnostics = (document) => {
+        let diagnostics = [];
+        diagnostics.push(...getDiagnosticsWithLexerAndParserErrors(document));
+        diagnostics.push(...getIdValidatorErrors(document));
+        diagnosticCollection.set(document.uri, diagnostics);
+    };
+    const getDiagnosticsWithLexerAndParserErrors = (document) => {
         // Lex and parse the contents of the document and then emit the errors encountered.
         let documentContents = document.getText();
         let charStream = antlr4ts_1.CharStreams.fromString(documentContents);
@@ -192,10 +199,21 @@ async function activate(context) {
         let parser = new TransactionManifestParser_1.TransactionManifestParser(tokenStream);
         parser.removeErrorListeners();
         parser.addErrorListener(errorListener);
-        let _tree = parser.manifest();
+        parser.manifest();
         let errors = errorListener.getErrors();
-        let diagnostics = errors.map((error) => new vscode.Diagnostic(error.range, error.message, vscode.DiagnosticSeverity.Error));
-        diagnosticCollection.set(document.uri, diagnostics);
+        return errors.map((error) => new vscode.Diagnostic(error.range, error.message, vscode.DiagnosticSeverity.Error));
+    };
+    const getIdValidatorErrors = (document) => {
+        let documentContents = document.getText();
+        let charStream = antlr4ts_1.CharStreams.fromString(documentContents);
+        let lexer = new TransactionManifestLexer_1.TransactionManifestLexer(charStream);
+        let tokenStream = new antlr4ts_1.CommonTokenStream(lexer);
+        let parser = new TransactionManifestParser_1.TransactionManifestParser(tokenStream);
+        const listener = new manifest_id_validator_listener_1.ManifestIdValidator(document);
+        let tree = parser.manifest();
+        // @ts-ignore
+        ParseTreeWalker_1.ParseTreeWalker.DEFAULT.walk(listener, tree);
+        return listener.getDiagnostics();
     };
     // =================================================================================================================
     // Post-registration code.

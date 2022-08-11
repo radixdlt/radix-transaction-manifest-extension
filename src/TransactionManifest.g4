@@ -10,47 +10,47 @@ manifest
 
 manifestInstruction
     :   CALL_FUNCTION
-            package_address     // Address of the package
+            packageAddress      // Address of the package
             string              // blueprint name
             string              // function name
             value*              // arguments
             SEMICOLON
     |   CALL_METHOD
-            component_address   // Address of the component
+            componentAddress    // Address of the component
             string              // method name
             value*              // arguments
             SEMICOLON
     |   CALL_METHOD_WITH_ALL_RESOURCES
-            component_address   // Address of the component
+            componentAddress    // Address of the component
             string              // method name
             SEMICOLON
     |   TAKE_FROM_WORKTOP
-            resource_address    // The resource address to take
+            resourceAddress     // The resource address to take
             bucket              // The bucket that the resource will go into
             SEMICOLON
     |   TAKE_FROM_WORKTOP_BY_AMOUNT
             decimal             // Amount to take
-            resource_address    // The resource address to take
+            resourceAddress     // The resource address to take
             bucket              // The bucket that the resource will go into
             SEMICOLON
     |   TAKE_FROM_WORKTOP_BY_IDS
             set                 // Set of IDs to take
-            resource_address    // The resource address to take
+            resourceAddress     // The resource address to take
             bucket              // The bucket that the resource will go into
             SEMICOLON
     |   RETURN_TO_WORKTOP
             bucket              // The bucket to return
             SEMICOLON
     |   ASSERT_WORKTOP_CONTAINS
-            resource_address    // The resource address to assert
+            resourceAddress     // The resource address to assert
             SEMICOLON
     |   ASSERT_WORKTOP_CONTAINS_BY_AMOUNT
             decimal             // Amount to assert
-            resource_address    // The resource address to assert
+            resourceAddress     // The resource address to assert
             SEMICOLON
     |   ASSERT_WORKTOP_CONTAINS_BY_IDS
             set                 // Set of IDs to assert
-            resource_address    // The resource address to assert
+            resourceAddress     // The resource address to assert
             SEMICOLON
     |   POP_FROM_AUTH_ZONE
             proof               // A named proof where the popped proof goes
@@ -59,17 +59,17 @@ manifestInstruction
             proof               // The proof to push to the auth zone
             SEMICOLON
     |   CREATE_PROOF_FROM_AUTH_ZONE
-            resource_address    // The resource address to take
+            resourceAddress     // The resource address to take
             proof               // The named proof that the created proof will be stored in
             SEMICOLON
     |   CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT
             decimal             // Amount to take
-            resource_address    // The resource address to take
+            resourceAddress     // The resource address to take
             proof               // The named proof that the created proof will be stored in
             SEMICOLON
     |   CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS
             set                 // Set of IDs to take
-            resource_address    // The resource address to take
+            resourceAddress     // The resource address to take
             proof               // The named proof that the created proof will be stored in
             SEMICOLON   
     |   CREATE_PROOF_FROM_BUCKET
@@ -104,22 +104,22 @@ u16                 :   U16_LITERAL ;
 u32                 :   U32_LITERAL ;
 u64                 :   U64_LITERAL ;
 u128                :   U128_LITERAL ;
-safe_i8             :   SAFE_I8_LITERAL ;
-safe_i16            :   SAFE_I16_LITERAL ;
-safe_i32            :   SAFE_I32_LITERAL ;
-safe_i64            :   SAFE_I64_LITERAL ;
-safe_i128           :   SAFE_I128_LITERAL ;
-safe_i256           :   SAFE_I256_LITERAL ;
-safe_i384           :   SAFE_I384_LITERAL ;
-safe_i512           :   SAFE_I512_LITERAL ;
-safe_u8             :   SAFE_U8_LITERAL ;
-safe_u16            :   SAFE_U16_LITERAL ;
-safe_u32            :   SAFE_U32_LITERAL ;
-safe_u64            :   SAFE_U64_LITERAL ;
-safe_u128           :   SAFE_U128_LITERAL ;
-safe_u256           :   SAFE_U256_LITERAL ;
-safe_u384           :   SAFE_U384_LITERAL ;
-safe_u512           :   SAFE_U512_LITERAL ;
+safeI8              :   SAFE_I8_LITERAL ;
+safeI16             :   SAFE_I16_LITERAL ;
+safeI32             :   SAFE_I32_LITERAL ;
+safeI64             :   SAFE_I64_LITERAL ;
+safeI128            :   SAFE_I128_LITERAL ;
+safeI256            :   SAFE_I256_LITERAL ;
+safeI384            :   SAFE_I384_LITERAL ;
+safeI512            :   SAFE_I512_LITERAL ;
+safeU8              :   SAFE_U8_LITERAL ;
+safeU16             :   SAFE_U16_LITERAL ;
+safeU32             :   SAFE_U32_LITERAL ;
+safeU64             :   SAFE_U64_LITERAL ;
+safeU128            :   SAFE_U128_LITERAL ;
+safeU256            :   SAFE_U256_LITERAL ;
+safeU384            :   SAFE_U384_LITERAL ;
+safeU512            :   SAFE_U512_LITERAL ;
 string              :   STRING_LITERAL ;
 struct              :   STRUCT_TYPE OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
 enum_               :   ENUM_TYPE OPEN_PARENTHESIS (string COMMA (value (COMMA value)*)?) CLOED_PARENTHESIS ;
@@ -134,15 +134,15 @@ list                :   LIST_TYPE LESS_THAN type GREATER_THAN OPEN_PARENTHESIS (
 set                 :   SET_TYPE LESS_THAN type GREATER_THAN OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
 map                 :   MAP_TYPE LESS_THAN type COMMA type GREATER_THAN OPEN_PARENTHESIS (value COMMA value)* CLOED_PARENTHESIS ;
 decimal             :   DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-precise_decimal     :   PRECISE_DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-package_address     :   PACKAGE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-component_address   :   COMPONENT_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-resource_address    :   RESOURCE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+preciseDecimal      :   PRECISE_DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+packageAddress      :   PACKAGE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+componentAddress    :   COMPONENT_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+resourceAddress     :   RESOURCE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 hash                :   HASH_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 bucket              :   BUCKET_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
 proof               :   PROOF_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
-non_fungible_id     :   NON_FUNGIBLE_ID_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ; // Might need to revise this.
-non_fungible_address:   NON_FUNGIBLE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+nonFungible_id      :   NON_FUNGIBLE_ID_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ; // Might need to revise this.
+nonFungibleAddress  :   NON_FUNGIBLE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 bytes               :   BYTES_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 
 type
@@ -214,22 +214,22 @@ value
     | u32
     | u64
     | u128
-    | safe_i8
-    | safe_i16
-    | safe_i32
-    | safe_i64
-    | safe_i128
-    | safe_i256
-    | safe_i384
-    | safe_i512
-    | safe_u8
-    | safe_u16
-    | safe_u32
-    | safe_u64
-    | safe_u128
-    | safe_u256
-    | safe_u384
-    | safe_u512
+    | safeI8
+    | safeI16
+    | safeI32
+    | safeI64
+    | safeI128
+    | safeI256
+    | safeI384
+    | safeI512
+    | safeU8
+    | safeU16
+    | safeU32
+    | safeU64
+    | safeU128
+    | safeU256
+    | safeU384
+    | safeU512
     | string
     | struct
     | enum_
@@ -244,15 +244,15 @@ value
     | set
     | map
     | decimal
-    | precise_decimal
-    | package_address
-    | component_address
-    | resource_address
+    | preciseDecimal
+    | packageAddress
+    | componentAddress
+    | resourceAddress
     | hash
     | bucket
     | proof
-    | non_fungible_id
-    | non_fungible_address
+    | nonFungible_id
+    | nonFungibleAddress
     | bytes
     ;
 

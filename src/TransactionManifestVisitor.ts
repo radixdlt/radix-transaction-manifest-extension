@@ -47,15 +47,15 @@ import { ListContext } from "./TransactionManifestParser";
 import { SetContext } from "./TransactionManifestParser";
 import { MapContext } from "./TransactionManifestParser";
 import { DecimalContext } from "./TransactionManifestParser";
-import { Precise_decimalContext } from "./TransactionManifestParser";
-import { Package_addressContext } from "./TransactionManifestParser";
-import { Component_addressContext } from "./TransactionManifestParser";
-import { Resource_addressContext } from "./TransactionManifestParser";
+import { PreciseDecimalContext } from "./TransactionManifestParser";
+import { PackageAddressContext } from "./TransactionManifestParser";
+import { ComponentAddressContext } from "./TransactionManifestParser";
+import { ResourceAddressContext } from "./TransactionManifestParser";
 import { HashContext } from "./TransactionManifestParser";
 import { BucketContext } from "./TransactionManifestParser";
 import { ProofContext } from "./TransactionManifestParser";
 import { Non_fungible_idContext } from "./TransactionManifestParser";
-import { Non_fungible_addressContext } from "./TransactionManifestParser";
+import { Non_fungibleAddressContext } from "./TransactionManifestParser";
 import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
@@ -378,32 +378,32 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	visitDecimal?: (ctx: DecimalContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.precise_decimal`.
+	 * Visit a parse tree produced by `TransactionManifestParser.preciseDecimal`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitPrecise_decimal?: (ctx: Precise_decimalContext) => Result;
+	visitPreciseDecimal?: (ctx: PreciseDecimalContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.package_address`.
+	 * Visit a parse tree produced by `TransactionManifestParser.packageAddress`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitPackage_address?: (ctx: Package_addressContext) => Result;
+	visitPackageAddress?: (ctx: PackageAddressContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.component_address`.
+	 * Visit a parse tree produced by `TransactionManifestParser.componentAddress`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitComponent_address?: (ctx: Component_addressContext) => Result;
+	visitComponentAddress?: (ctx: ComponentAddressContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.resource_address`.
+	 * Visit a parse tree produced by `TransactionManifestParser.resourceAddress`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitResource_address?: (ctx: Resource_addressContext) => Result;
+	visitResourceAddress?: (ctx: ResourceAddressContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.hash`.
@@ -434,11 +434,11 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	visitNon_fungible_id?: (ctx: Non_fungible_idContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.non_fungible_address`.
+	 * Visit a parse tree produced by `TransactionManifestParser.non_fungibleAddress`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitNon_fungible_address?: (ctx: Non_fungible_addressContext) => Result;
+	visitNon_fungibleAddress?: (ctx: Non_fungibleAddressContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.bytes`.

@@ -188,15 +188,15 @@ export class TransactionManifestParser extends Parser {
 	public static readonly RULE_set = 41;
 	public static readonly RULE_map = 42;
 	public static readonly RULE_decimal = 43;
-	public static readonly RULE_precise_decimal = 44;
-	public static readonly RULE_package_address = 45;
-	public static readonly RULE_component_address = 46;
-	public static readonly RULE_resource_address = 47;
+	public static readonly RULE_preciseDecimal = 44;
+	public static readonly RULE_packageAddress = 45;
+	public static readonly RULE_componentAddress = 46;
+	public static readonly RULE_resourceAddress = 47;
 	public static readonly RULE_hash = 48;
 	public static readonly RULE_bucket = 49;
 	public static readonly RULE_proof = 50;
 	public static readonly RULE_non_fungible_id = 51;
-	public static readonly RULE_non_fungible_address = 52;
+	public static readonly RULE_non_fungibleAddress = 52;
 	public static readonly RULE_bytes = 53;
 	public static readonly RULE_type = 54;
 	public static readonly RULE_value = 55;
@@ -208,9 +208,9 @@ export class TransactionManifestParser extends Parser {
 		"safe_u8", "safe_u16", "safe_u32", "safe_u64", "safe_u128", "safe_u256", 
 		"safe_u384", "safe_u512", "string", "struct", "enum_", "option", "some", 
 		"none", "ok", "err", "array", "tuple", "list", "set", "map", "decimal", 
-		"precise_decimal", "package_address", "component_address", "resource_address", 
-		"hash", "bucket", "proof", "non_fungible_id", "non_fungible_address", 
-		"bytes", "type", "value",
+		"preciseDecimal", "packageAddress", "componentAddress", "resourceAddress", 
+		"hash", "bucket", "proof", "non_fungible_id", "non_fungibleAddress", "bytes", 
+		"type", "value",
 	];
 
 	private static readonly _LITERAL_NAMES: Array<string | undefined> = [
@@ -345,7 +345,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 120;
 				this.match(TransactionManifestParser.CALL_FUNCTION);
 				this.state = 121;
-				this.package_address();
+				this.packageAddress();
 				this.state = 122;
 				this.string();
 				this.state = 123;
@@ -374,7 +374,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 132;
 				this.match(TransactionManifestParser.CALL_METHOD);
 				this.state = 133;
-				this.component_address();
+				this.componentAddress();
 				this.state = 134;
 				this.string();
 				this.state = 138;
@@ -401,7 +401,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 143;
 				this.match(TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES);
 				this.state = 144;
-				this.component_address();
+				this.componentAddress();
 				this.state = 145;
 				this.string();
 				this.state = 146;
@@ -414,7 +414,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 148;
 				this.match(TransactionManifestParser.TAKE_FROM_WORKTOP);
 				this.state = 149;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 150;
 				this.bucket();
 				this.state = 151;
@@ -429,7 +429,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 154;
 				this.decimal();
 				this.state = 155;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 156;
 				this.bucket();
 				this.state = 157;
@@ -444,7 +444,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 160;
 				this.set();
 				this.state = 161;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 162;
 				this.bucket();
 				this.state = 163;
@@ -468,7 +468,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 169;
 				this.match(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS);
 				this.state = 170;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 171;
 				this.match(TransactionManifestParser.SEMICOLON);
 				}
@@ -481,7 +481,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 174;
 				this.decimal();
 				this.state = 175;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 176;
 				this.match(TransactionManifestParser.SEMICOLON);
 				}
@@ -494,7 +494,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 179;
 				this.set();
 				this.state = 180;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 181;
 				this.match(TransactionManifestParser.SEMICOLON);
 				}
@@ -527,7 +527,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 191;
 				this.match(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE);
 				this.state = 192;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 193;
 				this.proof();
 				this.state = 194;
@@ -542,7 +542,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 197;
 				this.decimal();
 				this.state = 198;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 199;
 				this.proof();
 				this.state = 200;
@@ -557,7 +557,7 @@ export class TransactionManifestParser extends Parser {
 				this.state = 203;
 				this.set();
 				this.state = 204;
-				this.resource_address();
+				this.resourceAddress();
 				this.state = 205;
 				this.proof();
 				this.state = 206;
@@ -2041,9 +2041,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public precise_decimal(): Precise_decimalContext {
-		let _localctx: Precise_decimalContext = new Precise_decimalContext(this._ctx, this.state);
-		this.enterRule(_localctx, 88, TransactionManifestParser.RULE_precise_decimal);
+	public preciseDecimal(): PreciseDecimalContext {
+		let _localctx: PreciseDecimalContext = new PreciseDecimalContext(this._ctx, this.state);
+		this.enterRule(_localctx, 88, TransactionManifestParser.RULE_preciseDecimal);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2072,9 +2072,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public package_address(): Package_addressContext {
-		let _localctx: Package_addressContext = new Package_addressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 90, TransactionManifestParser.RULE_package_address);
+	public packageAddress(): PackageAddressContext {
+		let _localctx: PackageAddressContext = new PackageAddressContext(this._ctx, this.state);
+		this.enterRule(_localctx, 90, TransactionManifestParser.RULE_packageAddress);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2103,9 +2103,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public component_address(): Component_addressContext {
-		let _localctx: Component_addressContext = new Component_addressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 92, TransactionManifestParser.RULE_component_address);
+	public componentAddress(): ComponentAddressContext {
+		let _localctx: ComponentAddressContext = new ComponentAddressContext(this._ctx, this.state);
+		this.enterRule(_localctx, 92, TransactionManifestParser.RULE_componentAddress);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2134,9 +2134,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public resource_address(): Resource_addressContext {
-		let _localctx: Resource_addressContext = new Resource_addressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 94, TransactionManifestParser.RULE_resource_address);
+	public resourceAddress(): ResourceAddressContext {
+		let _localctx: ResourceAddressContext = new ResourceAddressContext(this._ctx, this.state);
+		this.enterRule(_localctx, 94, TransactionManifestParser.RULE_resourceAddress);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2311,9 +2311,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public non_fungible_address(): Non_fungible_addressContext {
-		let _localctx: Non_fungible_addressContext = new Non_fungible_addressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 104, TransactionManifestParser.RULE_non_fungible_address);
+	public non_fungibleAddress(): Non_fungibleAddressContext {
+		let _localctx: Non_fungibleAddressContext = new Non_fungibleAddressContext(this._ctx, this.state);
+		this.enterRule(_localctx, 104, TransactionManifestParser.RULE_non_fungibleAddress);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2756,7 +2756,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 43);
 				{
 				this.state = 545;
-				this.precise_decimal();
+				this.preciseDecimal();
 				}
 				break;
 
@@ -2764,7 +2764,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 44);
 				{
 				this.state = 546;
-				this.package_address();
+				this.packageAddress();
 				}
 				break;
 
@@ -2772,7 +2772,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 45);
 				{
 				this.state = 547;
-				this.component_address();
+				this.componentAddress();
 				}
 				break;
 
@@ -2780,7 +2780,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 46);
 				{
 				this.state = 548;
-				this.resource_address();
+				this.resourceAddress();
 				}
 				break;
 
@@ -2820,7 +2820,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 51);
 				{
 				this.state = 553;
-				this.non_fungible_address();
+				this.non_fungibleAddress();
 				}
 				break;
 
@@ -3161,8 +3161,8 @@ export class ManifestContext extends ParserRuleContext {
 
 export class ManifestInstructionContext extends ParserRuleContext {
 	public CALL_FUNCTION(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.CALL_FUNCTION, 0); }
-	public package_address(): Package_addressContext | undefined {
-		return this.tryGetRuleContext(0, Package_addressContext);
+	public packageAddress(): PackageAddressContext | undefined {
+		return this.tryGetRuleContext(0, PackageAddressContext);
 	}
 	public string(): StringContext[];
 	public string(i: number): StringContext;
@@ -3184,13 +3184,13 @@ export class ManifestInstructionContext extends ParserRuleContext {
 		}
 	}
 	public CALL_METHOD(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.CALL_METHOD, 0); }
-	public component_address(): Component_addressContext | undefined {
-		return this.tryGetRuleContext(0, Component_addressContext);
+	public componentAddress(): ComponentAddressContext | undefined {
+		return this.tryGetRuleContext(0, ComponentAddressContext);
 	}
 	public CALL_METHOD_WITH_ALL_RESOURCES(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES, 0); }
 	public TAKE_FROM_WORKTOP(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.TAKE_FROM_WORKTOP, 0); }
-	public resource_address(): Resource_addressContext | undefined {
-		return this.tryGetRuleContext(0, Resource_addressContext);
+	public resourceAddress(): ResourceAddressContext | undefined {
+		return this.tryGetRuleContext(0, ResourceAddressContext);
 	}
 	public bucket(): BucketContext | undefined {
 		return this.tryGetRuleContext(0, BucketContext);
@@ -4755,7 +4755,7 @@ export class DecimalContext extends ParserRuleContext {
 }
 
 
-export class Precise_decimalContext extends ParserRuleContext {
+export class PreciseDecimalContext extends ParserRuleContext {
 	public PRECISE_DECIMAL_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.PRECISE_DECIMAL_TYPE, 0); }
 	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -4764,23 +4764,23 @@ export class Precise_decimalContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_precise_decimal; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_preciseDecimal; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterPrecise_decimal) {
-			listener.enterPrecise_decimal(this);
+		if (listener.enterPreciseDecimal) {
+			listener.enterPreciseDecimal(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitPrecise_decimal) {
-			listener.exitPrecise_decimal(this);
+		if (listener.exitPreciseDecimal) {
+			listener.exitPreciseDecimal(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitPrecise_decimal) {
-			return visitor.visitPrecise_decimal(this);
+		if (visitor.visitPreciseDecimal) {
+			return visitor.visitPreciseDecimal(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -4788,7 +4788,7 @@ export class Precise_decimalContext extends ParserRuleContext {
 }
 
 
-export class Package_addressContext extends ParserRuleContext {
+export class PackageAddressContext extends ParserRuleContext {
 	public PACKAGE_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.PACKAGE_ADDRESS_TYPE, 0); }
 	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -4797,23 +4797,23 @@ export class Package_addressContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_package_address; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_packageAddress; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterPackage_address) {
-			listener.enterPackage_address(this);
+		if (listener.enterPackageAddress) {
+			listener.enterPackageAddress(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitPackage_address) {
-			listener.exitPackage_address(this);
+		if (listener.exitPackageAddress) {
+			listener.exitPackageAddress(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitPackage_address) {
-			return visitor.visitPackage_address(this);
+		if (visitor.visitPackageAddress) {
+			return visitor.visitPackageAddress(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -4821,7 +4821,7 @@ export class Package_addressContext extends ParserRuleContext {
 }
 
 
-export class Component_addressContext extends ParserRuleContext {
+export class ComponentAddressContext extends ParserRuleContext {
 	public COMPONENT_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.COMPONENT_ADDRESS_TYPE, 0); }
 	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -4830,23 +4830,23 @@ export class Component_addressContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_component_address; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_componentAddress; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterComponent_address) {
-			listener.enterComponent_address(this);
+		if (listener.enterComponentAddress) {
+			listener.enterComponentAddress(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitComponent_address) {
-			listener.exitComponent_address(this);
+		if (listener.exitComponentAddress) {
+			listener.exitComponentAddress(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitComponent_address) {
-			return visitor.visitComponent_address(this);
+		if (visitor.visitComponentAddress) {
+			return visitor.visitComponentAddress(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -4854,7 +4854,7 @@ export class Component_addressContext extends ParserRuleContext {
 }
 
 
-export class Resource_addressContext extends ParserRuleContext {
+export class ResourceAddressContext extends ParserRuleContext {
 	public RESOURCE_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.RESOURCE_ADDRESS_TYPE, 0); }
 	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -4863,23 +4863,23 @@ export class Resource_addressContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_resource_address; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_resourceAddress; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterResource_address) {
-			listener.enterResource_address(this);
+		if (listener.enterResourceAddress) {
+			listener.enterResourceAddress(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitResource_address) {
-			listener.exitResource_address(this);
+		if (listener.exitResourceAddress) {
+			listener.exitResourceAddress(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitResource_address) {
-			return visitor.visitResource_address(this);
+		if (visitor.visitResourceAddress) {
+			return visitor.visitResourceAddress(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -5021,7 +5021,7 @@ export class Non_fungible_idContext extends ParserRuleContext {
 }
 
 
-export class Non_fungible_addressContext extends ParserRuleContext {
+export class Non_fungibleAddressContext extends ParserRuleContext {
 	public NON_FUNGIBLE_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE, 0); }
 	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -5030,23 +5030,23 @@ export class Non_fungible_addressContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_non_fungible_address; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_non_fungibleAddress; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterNon_fungible_address) {
-			listener.enterNon_fungible_address(this);
+		if (listener.enterNon_fungibleAddress) {
+			listener.enterNon_fungibleAddress(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitNon_fungible_address) {
-			listener.exitNon_fungible_address(this);
+		if (listener.exitNon_fungibleAddress) {
+			listener.exitNon_fungibleAddress(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitNon_fungible_address) {
-			return visitor.visitNon_fungible_address(this);
+		if (visitor.visitNon_fungibleAddress) {
+			return visitor.visitNon_fungibleAddress(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -5296,17 +5296,17 @@ export class ValueContext extends ParserRuleContext {
 	public decimal(): DecimalContext | undefined {
 		return this.tryGetRuleContext(0, DecimalContext);
 	}
-	public precise_decimal(): Precise_decimalContext | undefined {
-		return this.tryGetRuleContext(0, Precise_decimalContext);
+	public preciseDecimal(): PreciseDecimalContext | undefined {
+		return this.tryGetRuleContext(0, PreciseDecimalContext);
 	}
-	public package_address(): Package_addressContext | undefined {
-		return this.tryGetRuleContext(0, Package_addressContext);
+	public packageAddress(): PackageAddressContext | undefined {
+		return this.tryGetRuleContext(0, PackageAddressContext);
 	}
-	public component_address(): Component_addressContext | undefined {
-		return this.tryGetRuleContext(0, Component_addressContext);
+	public componentAddress(): ComponentAddressContext | undefined {
+		return this.tryGetRuleContext(0, ComponentAddressContext);
 	}
-	public resource_address(): Resource_addressContext | undefined {
-		return this.tryGetRuleContext(0, Resource_addressContext);
+	public resourceAddress(): ResourceAddressContext | undefined {
+		return this.tryGetRuleContext(0, ResourceAddressContext);
 	}
 	public hash(): HashContext | undefined {
 		return this.tryGetRuleContext(0, HashContext);
@@ -5320,8 +5320,8 @@ export class ValueContext extends ParserRuleContext {
 	public non_fungible_id(): Non_fungible_idContext | undefined {
 		return this.tryGetRuleContext(0, Non_fungible_idContext);
 	}
-	public non_fungible_address(): Non_fungible_addressContext | undefined {
-		return this.tryGetRuleContext(0, Non_fungible_addressContext);
+	public non_fungibleAddress(): Non_fungibleAddressContext | undefined {
+		return this.tryGetRuleContext(0, Non_fungibleAddressContext);
 	}
 	public bytes(): BytesContext | undefined {
 		return this.tryGetRuleContext(0, BytesContext);
