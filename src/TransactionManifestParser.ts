@@ -158,22 +158,22 @@ export class TransactionManifestParser extends Parser {
 	public static readonly RULE_u32 = 11;
 	public static readonly RULE_u64 = 12;
 	public static readonly RULE_u128 = 13;
-	public static readonly RULE_safe_i8 = 14;
-	public static readonly RULE_safe_i16 = 15;
-	public static readonly RULE_safe_i32 = 16;
-	public static readonly RULE_safe_i64 = 17;
-	public static readonly RULE_safe_i128 = 18;
-	public static readonly RULE_safe_i256 = 19;
-	public static readonly RULE_safe_i384 = 20;
-	public static readonly RULE_safe_i512 = 21;
-	public static readonly RULE_safe_u8 = 22;
-	public static readonly RULE_safe_u16 = 23;
-	public static readonly RULE_safe_u32 = 24;
-	public static readonly RULE_safe_u64 = 25;
-	public static readonly RULE_safe_u128 = 26;
-	public static readonly RULE_safe_u256 = 27;
-	public static readonly RULE_safe_u384 = 28;
-	public static readonly RULE_safe_u512 = 29;
+	public static readonly RULE_safeI8 = 14;
+	public static readonly RULE_safeI16 = 15;
+	public static readonly RULE_safeI32 = 16;
+	public static readonly RULE_safeI64 = 17;
+	public static readonly RULE_safeI128 = 18;
+	public static readonly RULE_safeI256 = 19;
+	public static readonly RULE_safeI384 = 20;
+	public static readonly RULE_safeI512 = 21;
+	public static readonly RULE_safeU8 = 22;
+	public static readonly RULE_safeU16 = 23;
+	public static readonly RULE_safeU32 = 24;
+	public static readonly RULE_safeU64 = 25;
+	public static readonly RULE_safeU128 = 26;
+	public static readonly RULE_safeU256 = 27;
+	public static readonly RULE_safeU384 = 28;
+	public static readonly RULE_safeU512 = 29;
 	public static readonly RULE_string = 30;
 	public static readonly RULE_struct = 31;
 	public static readonly RULE_enum_ = 32;
@@ -195,22 +195,21 @@ export class TransactionManifestParser extends Parser {
 	public static readonly RULE_hash = 48;
 	public static readonly RULE_bucket = 49;
 	public static readonly RULE_proof = 50;
-	public static readonly RULE_non_fungible_id = 51;
-	public static readonly RULE_non_fungibleAddress = 52;
+	public static readonly RULE_nonFungible_id = 51;
+	public static readonly RULE_nonFungibleAddress = 52;
 	public static readonly RULE_bytes = 53;
 	public static readonly RULE_type = 54;
 	public static readonly RULE_value = 55;
 	// tslint:disable:no-trailing-whitespace
 	public static readonly ruleNames: string[] = [
 		"manifest", "manifestInstruction", "unit", "bool", "i8", "i16", "i32", 
-		"i64", "i128", "u8", "u16", "u32", "u64", "u128", "safe_i8", "safe_i16", 
-		"safe_i32", "safe_i64", "safe_i128", "safe_i256", "safe_i384", "safe_i512", 
-		"safe_u8", "safe_u16", "safe_u32", "safe_u64", "safe_u128", "safe_u256", 
-		"safe_u384", "safe_u512", "string", "struct", "enum_", "option", "some", 
-		"none", "ok", "err", "array", "tuple", "list", "set", "map", "decimal", 
-		"preciseDecimal", "packageAddress", "componentAddress", "resourceAddress", 
-		"hash", "bucket", "proof", "non_fungible_id", "non_fungibleAddress", "bytes", 
-		"type", "value",
+		"i64", "i128", "u8", "u16", "u32", "u64", "u128", "safeI8", "safeI16", 
+		"safeI32", "safeI64", "safeI128", "safeI256", "safeI384", "safeI512", 
+		"safeU8", "safeU16", "safeU32", "safeU64", "safeU128", "safeU256", "safeU384", 
+		"safeU512", "string", "struct", "enum_", "option", "some", "none", "ok", 
+		"err", "array", "tuple", "list", "set", "map", "decimal", "preciseDecimal", 
+		"packageAddress", "componentAddress", "resourceAddress", "hash", "bucket", 
+		"proof", "nonFungible_id", "nonFungibleAddress", "bytes", "type", "value",
 	];
 
 	private static readonly _LITERAL_NAMES: Array<string | undefined> = [
@@ -949,9 +948,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_i8(): Safe_i8Context {
-		let _localctx: Safe_i8Context = new Safe_i8Context(this._ctx, this.state);
-		this.enterRule(_localctx, 28, TransactionManifestParser.RULE_safe_i8);
+	public safeI8(): SafeI8Context {
+		let _localctx: SafeI8Context = new SafeI8Context(this._ctx, this.state);
+		this.enterRule(_localctx, 28, TransactionManifestParser.RULE_safeI8);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -974,9 +973,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_i16(): Safe_i16Context {
-		let _localctx: Safe_i16Context = new Safe_i16Context(this._ctx, this.state);
-		this.enterRule(_localctx, 30, TransactionManifestParser.RULE_safe_i16);
+	public safeI16(): SafeI16Context {
+		let _localctx: SafeI16Context = new SafeI16Context(this._ctx, this.state);
+		this.enterRule(_localctx, 30, TransactionManifestParser.RULE_safeI16);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -999,9 +998,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_i32(): Safe_i32Context {
-		let _localctx: Safe_i32Context = new Safe_i32Context(this._ctx, this.state);
-		this.enterRule(_localctx, 32, TransactionManifestParser.RULE_safe_i32);
+	public safeI32(): SafeI32Context {
+		let _localctx: SafeI32Context = new SafeI32Context(this._ctx, this.state);
+		this.enterRule(_localctx, 32, TransactionManifestParser.RULE_safeI32);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1024,9 +1023,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_i64(): Safe_i64Context {
-		let _localctx: Safe_i64Context = new Safe_i64Context(this._ctx, this.state);
-		this.enterRule(_localctx, 34, TransactionManifestParser.RULE_safe_i64);
+	public safeI64(): SafeI64Context {
+		let _localctx: SafeI64Context = new SafeI64Context(this._ctx, this.state);
+		this.enterRule(_localctx, 34, TransactionManifestParser.RULE_safeI64);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1049,9 +1048,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_i128(): Safe_i128Context {
-		let _localctx: Safe_i128Context = new Safe_i128Context(this._ctx, this.state);
-		this.enterRule(_localctx, 36, TransactionManifestParser.RULE_safe_i128);
+	public safeI128(): SafeI128Context {
+		let _localctx: SafeI128Context = new SafeI128Context(this._ctx, this.state);
+		this.enterRule(_localctx, 36, TransactionManifestParser.RULE_safeI128);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1074,9 +1073,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_i256(): Safe_i256Context {
-		let _localctx: Safe_i256Context = new Safe_i256Context(this._ctx, this.state);
-		this.enterRule(_localctx, 38, TransactionManifestParser.RULE_safe_i256);
+	public safeI256(): SafeI256Context {
+		let _localctx: SafeI256Context = new SafeI256Context(this._ctx, this.state);
+		this.enterRule(_localctx, 38, TransactionManifestParser.RULE_safeI256);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1099,9 +1098,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_i384(): Safe_i384Context {
-		let _localctx: Safe_i384Context = new Safe_i384Context(this._ctx, this.state);
-		this.enterRule(_localctx, 40, TransactionManifestParser.RULE_safe_i384);
+	public safeI384(): SafeI384Context {
+		let _localctx: SafeI384Context = new SafeI384Context(this._ctx, this.state);
+		this.enterRule(_localctx, 40, TransactionManifestParser.RULE_safeI384);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1124,9 +1123,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_i512(): Safe_i512Context {
-		let _localctx: Safe_i512Context = new Safe_i512Context(this._ctx, this.state);
-		this.enterRule(_localctx, 42, TransactionManifestParser.RULE_safe_i512);
+	public safeI512(): SafeI512Context {
+		let _localctx: SafeI512Context = new SafeI512Context(this._ctx, this.state);
+		this.enterRule(_localctx, 42, TransactionManifestParser.RULE_safeI512);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1149,9 +1148,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_u8(): Safe_u8Context {
-		let _localctx: Safe_u8Context = new Safe_u8Context(this._ctx, this.state);
-		this.enterRule(_localctx, 44, TransactionManifestParser.RULE_safe_u8);
+	public safeU8(): SafeU8Context {
+		let _localctx: SafeU8Context = new SafeU8Context(this._ctx, this.state);
+		this.enterRule(_localctx, 44, TransactionManifestParser.RULE_safeU8);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1174,9 +1173,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_u16(): Safe_u16Context {
-		let _localctx: Safe_u16Context = new Safe_u16Context(this._ctx, this.state);
-		this.enterRule(_localctx, 46, TransactionManifestParser.RULE_safe_u16);
+	public safeU16(): SafeU16Context {
+		let _localctx: SafeU16Context = new SafeU16Context(this._ctx, this.state);
+		this.enterRule(_localctx, 46, TransactionManifestParser.RULE_safeU16);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1199,9 +1198,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_u32(): Safe_u32Context {
-		let _localctx: Safe_u32Context = new Safe_u32Context(this._ctx, this.state);
-		this.enterRule(_localctx, 48, TransactionManifestParser.RULE_safe_u32);
+	public safeU32(): SafeU32Context {
+		let _localctx: SafeU32Context = new SafeU32Context(this._ctx, this.state);
+		this.enterRule(_localctx, 48, TransactionManifestParser.RULE_safeU32);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1224,9 +1223,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_u64(): Safe_u64Context {
-		let _localctx: Safe_u64Context = new Safe_u64Context(this._ctx, this.state);
-		this.enterRule(_localctx, 50, TransactionManifestParser.RULE_safe_u64);
+	public safeU64(): SafeU64Context {
+		let _localctx: SafeU64Context = new SafeU64Context(this._ctx, this.state);
+		this.enterRule(_localctx, 50, TransactionManifestParser.RULE_safeU64);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1249,9 +1248,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_u128(): Safe_u128Context {
-		let _localctx: Safe_u128Context = new Safe_u128Context(this._ctx, this.state);
-		this.enterRule(_localctx, 52, TransactionManifestParser.RULE_safe_u128);
+	public safeU128(): SafeU128Context {
+		let _localctx: SafeU128Context = new SafeU128Context(this._ctx, this.state);
+		this.enterRule(_localctx, 52, TransactionManifestParser.RULE_safeU128);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1274,9 +1273,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_u256(): Safe_u256Context {
-		let _localctx: Safe_u256Context = new Safe_u256Context(this._ctx, this.state);
-		this.enterRule(_localctx, 54, TransactionManifestParser.RULE_safe_u256);
+	public safeU256(): SafeU256Context {
+		let _localctx: SafeU256Context = new SafeU256Context(this._ctx, this.state);
+		this.enterRule(_localctx, 54, TransactionManifestParser.RULE_safeU256);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1299,9 +1298,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_u384(): Safe_u384Context {
-		let _localctx: Safe_u384Context = new Safe_u384Context(this._ctx, this.state);
-		this.enterRule(_localctx, 56, TransactionManifestParser.RULE_safe_u384);
+	public safeU384(): SafeU384Context {
+		let _localctx: SafeU384Context = new SafeU384Context(this._ctx, this.state);
+		this.enterRule(_localctx, 56, TransactionManifestParser.RULE_safeU384);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -1324,9 +1323,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public safe_u512(): Safe_u512Context {
-		let _localctx: Safe_u512Context = new Safe_u512Context(this._ctx, this.state);
-		this.enterRule(_localctx, 58, TransactionManifestParser.RULE_safe_u512);
+	public safeU512(): SafeU512Context {
+		let _localctx: SafeU512Context = new SafeU512Context(this._ctx, this.state);
+		this.enterRule(_localctx, 58, TransactionManifestParser.RULE_safeU512);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2280,9 +2279,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public non_fungible_id(): Non_fungible_idContext {
-		let _localctx: Non_fungible_idContext = new Non_fungible_idContext(this._ctx, this.state);
-		this.enterRule(_localctx, 102, TransactionManifestParser.RULE_non_fungible_id);
+	public nonFungible_id(): NonFungible_idContext {
+		let _localctx: NonFungible_idContext = new NonFungible_idContext(this._ctx, this.state);
+		this.enterRule(_localctx, 102, TransactionManifestParser.RULE_nonFungible_id);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2311,9 +2310,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public non_fungibleAddress(): Non_fungibleAddressContext {
-		let _localctx: Non_fungibleAddressContext = new Non_fungibleAddressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 104, TransactionManifestParser.RULE_non_fungibleAddress);
+	public nonFungibleAddress(): NonFungibleAddressContext {
+		let _localctx: NonFungibleAddressContext = new NonFungibleAddressContext(this._ctx, this.state);
+		this.enterRule(_localctx, 104, TransactionManifestParser.RULE_nonFungibleAddress);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2516,7 +2515,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 13);
 				{
 				this.state = 515;
-				this.safe_i8();
+				this.safeI8();
 				}
 				break;
 
@@ -2524,7 +2523,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 14);
 				{
 				this.state = 516;
-				this.safe_i16();
+				this.safeI16();
 				}
 				break;
 
@@ -2532,7 +2531,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 15);
 				{
 				this.state = 517;
-				this.safe_i32();
+				this.safeI32();
 				}
 				break;
 
@@ -2540,7 +2539,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 16);
 				{
 				this.state = 518;
-				this.safe_i64();
+				this.safeI64();
 				}
 				break;
 
@@ -2548,7 +2547,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 17);
 				{
 				this.state = 519;
-				this.safe_i128();
+				this.safeI128();
 				}
 				break;
 
@@ -2556,7 +2555,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 18);
 				{
 				this.state = 520;
-				this.safe_i256();
+				this.safeI256();
 				}
 				break;
 
@@ -2564,7 +2563,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 19);
 				{
 				this.state = 521;
-				this.safe_i384();
+				this.safeI384();
 				}
 				break;
 
@@ -2572,7 +2571,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 20);
 				{
 				this.state = 522;
-				this.safe_i512();
+				this.safeI512();
 				}
 				break;
 
@@ -2580,7 +2579,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 21);
 				{
 				this.state = 523;
-				this.safe_u8();
+				this.safeU8();
 				}
 				break;
 
@@ -2588,7 +2587,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 22);
 				{
 				this.state = 524;
-				this.safe_u16();
+				this.safeU16();
 				}
 				break;
 
@@ -2596,7 +2595,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 23);
 				{
 				this.state = 525;
-				this.safe_u32();
+				this.safeU32();
 				}
 				break;
 
@@ -2604,7 +2603,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 24);
 				{
 				this.state = 526;
-				this.safe_u64();
+				this.safeU64();
 				}
 				break;
 
@@ -2612,7 +2611,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 25);
 				{
 				this.state = 527;
-				this.safe_u128();
+				this.safeU128();
 				}
 				break;
 
@@ -2620,7 +2619,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 26);
 				{
 				this.state = 528;
-				this.safe_u256();
+				this.safeU256();
 				}
 				break;
 
@@ -2628,7 +2627,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 27);
 				{
 				this.state = 529;
-				this.safe_u384();
+				this.safeU384();
 				}
 				break;
 
@@ -2636,7 +2635,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 28);
 				{
 				this.state = 530;
-				this.safe_u512();
+				this.safeU512();
 				}
 				break;
 
@@ -2812,7 +2811,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 50);
 				{
 				this.state = 552;
-				this.non_fungible_id();
+				this.nonFungible_id();
 				}
 				break;
 
@@ -2820,7 +2819,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 51);
 				{
 				this.state = 553;
-				this.non_fungibleAddress();
+				this.nonFungibleAddress();
 				}
 				break;
 
@@ -3617,29 +3616,29 @@ export class U128Context extends ParserRuleContext {
 }
 
 
-export class Safe_i8Context extends ParserRuleContext {
+export class SafeI8Context extends ParserRuleContext {
 	public SAFE_I8_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_I8_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_i8; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeI8; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_i8) {
-			listener.enterSafe_i8(this);
+		if (listener.enterSafeI8) {
+			listener.enterSafeI8(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_i8) {
-			listener.exitSafe_i8(this);
+		if (listener.exitSafeI8) {
+			listener.exitSafeI8(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_i8) {
-			return visitor.visitSafe_i8(this);
+		if (visitor.visitSafeI8) {
+			return visitor.visitSafeI8(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3647,29 +3646,29 @@ export class Safe_i8Context extends ParserRuleContext {
 }
 
 
-export class Safe_i16Context extends ParserRuleContext {
+export class SafeI16Context extends ParserRuleContext {
 	public SAFE_I16_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_I16_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_i16; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeI16; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_i16) {
-			listener.enterSafe_i16(this);
+		if (listener.enterSafeI16) {
+			listener.enterSafeI16(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_i16) {
-			listener.exitSafe_i16(this);
+		if (listener.exitSafeI16) {
+			listener.exitSafeI16(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_i16) {
-			return visitor.visitSafe_i16(this);
+		if (visitor.visitSafeI16) {
+			return visitor.visitSafeI16(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3677,29 +3676,29 @@ export class Safe_i16Context extends ParserRuleContext {
 }
 
 
-export class Safe_i32Context extends ParserRuleContext {
+export class SafeI32Context extends ParserRuleContext {
 	public SAFE_I32_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_I32_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_i32; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeI32; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_i32) {
-			listener.enterSafe_i32(this);
+		if (listener.enterSafeI32) {
+			listener.enterSafeI32(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_i32) {
-			listener.exitSafe_i32(this);
+		if (listener.exitSafeI32) {
+			listener.exitSafeI32(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_i32) {
-			return visitor.visitSafe_i32(this);
+		if (visitor.visitSafeI32) {
+			return visitor.visitSafeI32(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3707,29 +3706,29 @@ export class Safe_i32Context extends ParserRuleContext {
 }
 
 
-export class Safe_i64Context extends ParserRuleContext {
+export class SafeI64Context extends ParserRuleContext {
 	public SAFE_I64_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_I64_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_i64; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeI64; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_i64) {
-			listener.enterSafe_i64(this);
+		if (listener.enterSafeI64) {
+			listener.enterSafeI64(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_i64) {
-			listener.exitSafe_i64(this);
+		if (listener.exitSafeI64) {
+			listener.exitSafeI64(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_i64) {
-			return visitor.visitSafe_i64(this);
+		if (visitor.visitSafeI64) {
+			return visitor.visitSafeI64(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3737,29 +3736,29 @@ export class Safe_i64Context extends ParserRuleContext {
 }
 
 
-export class Safe_i128Context extends ParserRuleContext {
+export class SafeI128Context extends ParserRuleContext {
 	public SAFE_I128_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_I128_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_i128; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeI128; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_i128) {
-			listener.enterSafe_i128(this);
+		if (listener.enterSafeI128) {
+			listener.enterSafeI128(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_i128) {
-			listener.exitSafe_i128(this);
+		if (listener.exitSafeI128) {
+			listener.exitSafeI128(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_i128) {
-			return visitor.visitSafe_i128(this);
+		if (visitor.visitSafeI128) {
+			return visitor.visitSafeI128(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3767,29 +3766,29 @@ export class Safe_i128Context extends ParserRuleContext {
 }
 
 
-export class Safe_i256Context extends ParserRuleContext {
+export class SafeI256Context extends ParserRuleContext {
 	public SAFE_I256_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_I256_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_i256; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeI256; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_i256) {
-			listener.enterSafe_i256(this);
+		if (listener.enterSafeI256) {
+			listener.enterSafeI256(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_i256) {
-			listener.exitSafe_i256(this);
+		if (listener.exitSafeI256) {
+			listener.exitSafeI256(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_i256) {
-			return visitor.visitSafe_i256(this);
+		if (visitor.visitSafeI256) {
+			return visitor.visitSafeI256(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3797,29 +3796,29 @@ export class Safe_i256Context extends ParserRuleContext {
 }
 
 
-export class Safe_i384Context extends ParserRuleContext {
+export class SafeI384Context extends ParserRuleContext {
 	public SAFE_I384_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_I384_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_i384; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeI384; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_i384) {
-			listener.enterSafe_i384(this);
+		if (listener.enterSafeI384) {
+			listener.enterSafeI384(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_i384) {
-			listener.exitSafe_i384(this);
+		if (listener.exitSafeI384) {
+			listener.exitSafeI384(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_i384) {
-			return visitor.visitSafe_i384(this);
+		if (visitor.visitSafeI384) {
+			return visitor.visitSafeI384(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3827,29 +3826,29 @@ export class Safe_i384Context extends ParserRuleContext {
 }
 
 
-export class Safe_i512Context extends ParserRuleContext {
+export class SafeI512Context extends ParserRuleContext {
 	public SAFE_I512_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_I512_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_i512; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeI512; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_i512) {
-			listener.enterSafe_i512(this);
+		if (listener.enterSafeI512) {
+			listener.enterSafeI512(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_i512) {
-			listener.exitSafe_i512(this);
+		if (listener.exitSafeI512) {
+			listener.exitSafeI512(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_i512) {
-			return visitor.visitSafe_i512(this);
+		if (visitor.visitSafeI512) {
+			return visitor.visitSafeI512(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3857,29 +3856,29 @@ export class Safe_i512Context extends ParserRuleContext {
 }
 
 
-export class Safe_u8Context extends ParserRuleContext {
+export class SafeU8Context extends ParserRuleContext {
 	public SAFE_U8_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_U8_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_u8; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeU8; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_u8) {
-			listener.enterSafe_u8(this);
+		if (listener.enterSafeU8) {
+			listener.enterSafeU8(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_u8) {
-			listener.exitSafe_u8(this);
+		if (listener.exitSafeU8) {
+			listener.exitSafeU8(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_u8) {
-			return visitor.visitSafe_u8(this);
+		if (visitor.visitSafeU8) {
+			return visitor.visitSafeU8(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3887,29 +3886,29 @@ export class Safe_u8Context extends ParserRuleContext {
 }
 
 
-export class Safe_u16Context extends ParserRuleContext {
+export class SafeU16Context extends ParserRuleContext {
 	public SAFE_U16_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_U16_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_u16; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeU16; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_u16) {
-			listener.enterSafe_u16(this);
+		if (listener.enterSafeU16) {
+			listener.enterSafeU16(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_u16) {
-			listener.exitSafe_u16(this);
+		if (listener.exitSafeU16) {
+			listener.exitSafeU16(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_u16) {
-			return visitor.visitSafe_u16(this);
+		if (visitor.visitSafeU16) {
+			return visitor.visitSafeU16(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3917,29 +3916,29 @@ export class Safe_u16Context extends ParserRuleContext {
 }
 
 
-export class Safe_u32Context extends ParserRuleContext {
+export class SafeU32Context extends ParserRuleContext {
 	public SAFE_U32_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_U32_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_u32; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeU32; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_u32) {
-			listener.enterSafe_u32(this);
+		if (listener.enterSafeU32) {
+			listener.enterSafeU32(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_u32) {
-			listener.exitSafe_u32(this);
+		if (listener.exitSafeU32) {
+			listener.exitSafeU32(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_u32) {
-			return visitor.visitSafe_u32(this);
+		if (visitor.visitSafeU32) {
+			return visitor.visitSafeU32(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3947,29 +3946,29 @@ export class Safe_u32Context extends ParserRuleContext {
 }
 
 
-export class Safe_u64Context extends ParserRuleContext {
+export class SafeU64Context extends ParserRuleContext {
 	public SAFE_U64_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_U64_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_u64; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeU64; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_u64) {
-			listener.enterSafe_u64(this);
+		if (listener.enterSafeU64) {
+			listener.enterSafeU64(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_u64) {
-			listener.exitSafe_u64(this);
+		if (listener.exitSafeU64) {
+			listener.exitSafeU64(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_u64) {
-			return visitor.visitSafe_u64(this);
+		if (visitor.visitSafeU64) {
+			return visitor.visitSafeU64(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -3977,29 +3976,29 @@ export class Safe_u64Context extends ParserRuleContext {
 }
 
 
-export class Safe_u128Context extends ParserRuleContext {
+export class SafeU128Context extends ParserRuleContext {
 	public SAFE_U128_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_U128_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_u128; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeU128; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_u128) {
-			listener.enterSafe_u128(this);
+		if (listener.enterSafeU128) {
+			listener.enterSafeU128(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_u128) {
-			listener.exitSafe_u128(this);
+		if (listener.exitSafeU128) {
+			listener.exitSafeU128(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_u128) {
-			return visitor.visitSafe_u128(this);
+		if (visitor.visitSafeU128) {
+			return visitor.visitSafeU128(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -4007,29 +4006,29 @@ export class Safe_u128Context extends ParserRuleContext {
 }
 
 
-export class Safe_u256Context extends ParserRuleContext {
+export class SafeU256Context extends ParserRuleContext {
 	public SAFE_U256_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_U256_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_u256; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeU256; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_u256) {
-			listener.enterSafe_u256(this);
+		if (listener.enterSafeU256) {
+			listener.enterSafeU256(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_u256) {
-			listener.exitSafe_u256(this);
+		if (listener.exitSafeU256) {
+			listener.exitSafeU256(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_u256) {
-			return visitor.visitSafe_u256(this);
+		if (visitor.visitSafeU256) {
+			return visitor.visitSafeU256(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -4037,29 +4036,29 @@ export class Safe_u256Context extends ParserRuleContext {
 }
 
 
-export class Safe_u384Context extends ParserRuleContext {
+export class SafeU384Context extends ParserRuleContext {
 	public SAFE_U384_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_U384_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_u384; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeU384; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_u384) {
-			listener.enterSafe_u384(this);
+		if (listener.enterSafeU384) {
+			listener.enterSafeU384(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_u384) {
-			listener.exitSafe_u384(this);
+		if (listener.exitSafeU384) {
+			listener.exitSafeU384(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_u384) {
-			return visitor.visitSafe_u384(this);
+		if (visitor.visitSafeU384) {
+			return visitor.visitSafeU384(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -4067,29 +4066,29 @@ export class Safe_u384Context extends ParserRuleContext {
 }
 
 
-export class Safe_u512Context extends ParserRuleContext {
+export class SafeU512Context extends ParserRuleContext {
 	public SAFE_U512_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.SAFE_U512_LITERAL, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_safe_u512; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_safeU512; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterSafe_u512) {
-			listener.enterSafe_u512(this);
+		if (listener.enterSafeU512) {
+			listener.enterSafeU512(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitSafe_u512) {
-			listener.exitSafe_u512(this);
+		if (listener.exitSafeU512) {
+			listener.exitSafeU512(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitSafe_u512) {
-			return visitor.visitSafe_u512(this);
+		if (visitor.visitSafeU512) {
+			return visitor.visitSafeU512(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -4988,7 +4987,7 @@ export class ProofContext extends ParserRuleContext {
 }
 
 
-export class Non_fungible_idContext extends ParserRuleContext {
+export class NonFungible_idContext extends ParserRuleContext {
 	public NON_FUNGIBLE_ID_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE, 0); }
 	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -4997,23 +4996,23 @@ export class Non_fungible_idContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_non_fungible_id; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_nonFungible_id; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterNon_fungible_id) {
-			listener.enterNon_fungible_id(this);
+		if (listener.enterNonFungible_id) {
+			listener.enterNonFungible_id(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitNon_fungible_id) {
-			listener.exitNon_fungible_id(this);
+		if (listener.exitNonFungible_id) {
+			listener.exitNonFungible_id(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitNon_fungible_id) {
-			return visitor.visitNon_fungible_id(this);
+		if (visitor.visitNonFungible_id) {
+			return visitor.visitNonFungible_id(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -5021,7 +5020,7 @@ export class Non_fungible_idContext extends ParserRuleContext {
 }
 
 
-export class Non_fungibleAddressContext extends ParserRuleContext {
+export class NonFungibleAddressContext extends ParserRuleContext {
 	public NON_FUNGIBLE_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE, 0); }
 	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -5030,23 +5029,23 @@ export class Non_fungibleAddressContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_non_fungibleAddress; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_nonFungibleAddress; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterNon_fungibleAddress) {
-			listener.enterNon_fungibleAddress(this);
+		if (listener.enterNonFungibleAddress) {
+			listener.enterNonFungibleAddress(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitNon_fungibleAddress) {
-			listener.exitNon_fungibleAddress(this);
+		if (listener.exitNonFungibleAddress) {
+			listener.exitNonFungibleAddress(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitNon_fungibleAddress) {
-			return visitor.visitNon_fungibleAddress(this);
+		if (visitor.visitNonFungibleAddress) {
+			return visitor.visitNonFungibleAddress(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -5206,53 +5205,53 @@ export class ValueContext extends ParserRuleContext {
 	public u128(): U128Context | undefined {
 		return this.tryGetRuleContext(0, U128Context);
 	}
-	public safe_i8(): Safe_i8Context | undefined {
-		return this.tryGetRuleContext(0, Safe_i8Context);
+	public safeI8(): SafeI8Context | undefined {
+		return this.tryGetRuleContext(0, SafeI8Context);
 	}
-	public safe_i16(): Safe_i16Context | undefined {
-		return this.tryGetRuleContext(0, Safe_i16Context);
+	public safeI16(): SafeI16Context | undefined {
+		return this.tryGetRuleContext(0, SafeI16Context);
 	}
-	public safe_i32(): Safe_i32Context | undefined {
-		return this.tryGetRuleContext(0, Safe_i32Context);
+	public safeI32(): SafeI32Context | undefined {
+		return this.tryGetRuleContext(0, SafeI32Context);
 	}
-	public safe_i64(): Safe_i64Context | undefined {
-		return this.tryGetRuleContext(0, Safe_i64Context);
+	public safeI64(): SafeI64Context | undefined {
+		return this.tryGetRuleContext(0, SafeI64Context);
 	}
-	public safe_i128(): Safe_i128Context | undefined {
-		return this.tryGetRuleContext(0, Safe_i128Context);
+	public safeI128(): SafeI128Context | undefined {
+		return this.tryGetRuleContext(0, SafeI128Context);
 	}
-	public safe_i256(): Safe_i256Context | undefined {
-		return this.tryGetRuleContext(0, Safe_i256Context);
+	public safeI256(): SafeI256Context | undefined {
+		return this.tryGetRuleContext(0, SafeI256Context);
 	}
-	public safe_i384(): Safe_i384Context | undefined {
-		return this.tryGetRuleContext(0, Safe_i384Context);
+	public safeI384(): SafeI384Context | undefined {
+		return this.tryGetRuleContext(0, SafeI384Context);
 	}
-	public safe_i512(): Safe_i512Context | undefined {
-		return this.tryGetRuleContext(0, Safe_i512Context);
+	public safeI512(): SafeI512Context | undefined {
+		return this.tryGetRuleContext(0, SafeI512Context);
 	}
-	public safe_u8(): Safe_u8Context | undefined {
-		return this.tryGetRuleContext(0, Safe_u8Context);
+	public safeU8(): SafeU8Context | undefined {
+		return this.tryGetRuleContext(0, SafeU8Context);
 	}
-	public safe_u16(): Safe_u16Context | undefined {
-		return this.tryGetRuleContext(0, Safe_u16Context);
+	public safeU16(): SafeU16Context | undefined {
+		return this.tryGetRuleContext(0, SafeU16Context);
 	}
-	public safe_u32(): Safe_u32Context | undefined {
-		return this.tryGetRuleContext(0, Safe_u32Context);
+	public safeU32(): SafeU32Context | undefined {
+		return this.tryGetRuleContext(0, SafeU32Context);
 	}
-	public safe_u64(): Safe_u64Context | undefined {
-		return this.tryGetRuleContext(0, Safe_u64Context);
+	public safeU64(): SafeU64Context | undefined {
+		return this.tryGetRuleContext(0, SafeU64Context);
 	}
-	public safe_u128(): Safe_u128Context | undefined {
-		return this.tryGetRuleContext(0, Safe_u128Context);
+	public safeU128(): SafeU128Context | undefined {
+		return this.tryGetRuleContext(0, SafeU128Context);
 	}
-	public safe_u256(): Safe_u256Context | undefined {
-		return this.tryGetRuleContext(0, Safe_u256Context);
+	public safeU256(): SafeU256Context | undefined {
+		return this.tryGetRuleContext(0, SafeU256Context);
 	}
-	public safe_u384(): Safe_u384Context | undefined {
-		return this.tryGetRuleContext(0, Safe_u384Context);
+	public safeU384(): SafeU384Context | undefined {
+		return this.tryGetRuleContext(0, SafeU384Context);
 	}
-	public safe_u512(): Safe_u512Context | undefined {
-		return this.tryGetRuleContext(0, Safe_u512Context);
+	public safeU512(): SafeU512Context | undefined {
+		return this.tryGetRuleContext(0, SafeU512Context);
 	}
 	public string(): StringContext | undefined {
 		return this.tryGetRuleContext(0, StringContext);
@@ -5317,11 +5316,11 @@ export class ValueContext extends ParserRuleContext {
 	public proof(): ProofContext | undefined {
 		return this.tryGetRuleContext(0, ProofContext);
 	}
-	public non_fungible_id(): Non_fungible_idContext | undefined {
-		return this.tryGetRuleContext(0, Non_fungible_idContext);
+	public nonFungible_id(): NonFungible_idContext | undefined {
+		return this.tryGetRuleContext(0, NonFungible_idContext);
 	}
-	public non_fungibleAddress(): Non_fungibleAddressContext | undefined {
-		return this.tryGetRuleContext(0, Non_fungibleAddressContext);
+	public nonFungibleAddress(): NonFungibleAddressContext | undefined {
+		return this.tryGetRuleContext(0, NonFungibleAddressContext);
 	}
 	public bytes(): BytesContext | undefined {
 		return this.tryGetRuleContext(0, BytesContext);

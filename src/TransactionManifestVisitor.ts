@@ -17,22 +17,22 @@ import { U16Context } from "./TransactionManifestParser";
 import { U32Context } from "./TransactionManifestParser";
 import { U64Context } from "./TransactionManifestParser";
 import { U128Context } from "./TransactionManifestParser";
-import { Safe_i8Context } from "./TransactionManifestParser";
-import { Safe_i16Context } from "./TransactionManifestParser";
-import { Safe_i32Context } from "./TransactionManifestParser";
-import { Safe_i64Context } from "./TransactionManifestParser";
-import { Safe_i128Context } from "./TransactionManifestParser";
-import { Safe_i256Context } from "./TransactionManifestParser";
-import { Safe_i384Context } from "./TransactionManifestParser";
-import { Safe_i512Context } from "./TransactionManifestParser";
-import { Safe_u8Context } from "./TransactionManifestParser";
-import { Safe_u16Context } from "./TransactionManifestParser";
-import { Safe_u32Context } from "./TransactionManifestParser";
-import { Safe_u64Context } from "./TransactionManifestParser";
-import { Safe_u128Context } from "./TransactionManifestParser";
-import { Safe_u256Context } from "./TransactionManifestParser";
-import { Safe_u384Context } from "./TransactionManifestParser";
-import { Safe_u512Context } from "./TransactionManifestParser";
+import { SafeI8Context } from "./TransactionManifestParser";
+import { SafeI16Context } from "./TransactionManifestParser";
+import { SafeI32Context } from "./TransactionManifestParser";
+import { SafeI64Context } from "./TransactionManifestParser";
+import { SafeI128Context } from "./TransactionManifestParser";
+import { SafeI256Context } from "./TransactionManifestParser";
+import { SafeI384Context } from "./TransactionManifestParser";
+import { SafeI512Context } from "./TransactionManifestParser";
+import { SafeU8Context } from "./TransactionManifestParser";
+import { SafeU16Context } from "./TransactionManifestParser";
+import { SafeU32Context } from "./TransactionManifestParser";
+import { SafeU64Context } from "./TransactionManifestParser";
+import { SafeU128Context } from "./TransactionManifestParser";
+import { SafeU256Context } from "./TransactionManifestParser";
+import { SafeU384Context } from "./TransactionManifestParser";
+import { SafeU512Context } from "./TransactionManifestParser";
 import { StringContext } from "./TransactionManifestParser";
 import { StructContext } from "./TransactionManifestParser";
 import { Enum_Context } from "./TransactionManifestParser";
@@ -54,8 +54,8 @@ import { ResourceAddressContext } from "./TransactionManifestParser";
 import { HashContext } from "./TransactionManifestParser";
 import { BucketContext } from "./TransactionManifestParser";
 import { ProofContext } from "./TransactionManifestParser";
-import { Non_fungible_idContext } from "./TransactionManifestParser";
-import { Non_fungibleAddressContext } from "./TransactionManifestParser";
+import { NonFungible_idContext } from "./TransactionManifestParser";
+import { NonFungibleAddressContext } from "./TransactionManifestParser";
 import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
@@ -168,116 +168,116 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	visitU128?: (ctx: U128Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_i8`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeI8`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_i8?: (ctx: Safe_i8Context) => Result;
+	visitSafeI8?: (ctx: SafeI8Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_i16`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeI16`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_i16?: (ctx: Safe_i16Context) => Result;
+	visitSafeI16?: (ctx: SafeI16Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_i32`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeI32`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_i32?: (ctx: Safe_i32Context) => Result;
+	visitSafeI32?: (ctx: SafeI32Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_i64`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeI64`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_i64?: (ctx: Safe_i64Context) => Result;
+	visitSafeI64?: (ctx: SafeI64Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_i128`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeI128`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_i128?: (ctx: Safe_i128Context) => Result;
+	visitSafeI128?: (ctx: SafeI128Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_i256`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeI256`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_i256?: (ctx: Safe_i256Context) => Result;
+	visitSafeI256?: (ctx: SafeI256Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_i384`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeI384`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_i384?: (ctx: Safe_i384Context) => Result;
+	visitSafeI384?: (ctx: SafeI384Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_i512`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeI512`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_i512?: (ctx: Safe_i512Context) => Result;
+	visitSafeI512?: (ctx: SafeI512Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_u8`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeU8`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_u8?: (ctx: Safe_u8Context) => Result;
+	visitSafeU8?: (ctx: SafeU8Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_u16`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeU16`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_u16?: (ctx: Safe_u16Context) => Result;
+	visitSafeU16?: (ctx: SafeU16Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_u32`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeU32`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_u32?: (ctx: Safe_u32Context) => Result;
+	visitSafeU32?: (ctx: SafeU32Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_u64`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeU64`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_u64?: (ctx: Safe_u64Context) => Result;
+	visitSafeU64?: (ctx: SafeU64Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_u128`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeU128`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_u128?: (ctx: Safe_u128Context) => Result;
+	visitSafeU128?: (ctx: SafeU128Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_u256`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeU256`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_u256?: (ctx: Safe_u256Context) => Result;
+	visitSafeU256?: (ctx: SafeU256Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_u384`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeU384`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_u384?: (ctx: Safe_u384Context) => Result;
+	visitSafeU384?: (ctx: SafeU384Context) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safe_u512`.
+	 * Visit a parse tree produced by `TransactionManifestParser.safeU512`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitSafe_u512?: (ctx: Safe_u512Context) => Result;
+	visitSafeU512?: (ctx: SafeU512Context) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.string`.
@@ -427,18 +427,18 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	visitProof?: (ctx: ProofContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.non_fungible_id`.
+	 * Visit a parse tree produced by `TransactionManifestParser.nonFungible_id`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitNon_fungible_id?: (ctx: Non_fungible_idContext) => Result;
+	visitNonFungible_id?: (ctx: NonFungible_idContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.non_fungibleAddress`.
+	 * Visit a parse tree produced by `TransactionManifestParser.nonFungibleAddress`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitNon_fungibleAddress?: (ctx: Non_fungibleAddressContext) => Result;
+	visitNonFungibleAddress?: (ctx: NonFungibleAddressContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.bytes`.

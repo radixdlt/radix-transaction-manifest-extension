@@ -184,7 +184,7 @@ async function activate(context) {
     const updateDiagnostics = (document) => {
         let diagnostics = [];
         diagnostics.push(...getDiagnosticsWithLexerAndParserErrors(document));
-        diagnostics.push(...getIdValidatorErrors(document));
+        diagnostics.push(...getIdValidatorDiagnostics(document));
         diagnosticCollection.set(document.uri, diagnostics);
     };
     const getDiagnosticsWithLexerAndParserErrors = (document) => {
@@ -203,7 +203,7 @@ async function activate(context) {
         let errors = errorListener.getErrors();
         return errors.map((error) => new vscode.Diagnostic(error.range, error.message, vscode.DiagnosticSeverity.Error));
     };
-    const getIdValidatorErrors = (document) => {
+    const getIdValidatorDiagnostics = (document) => {
         let documentContents = document.getText();
         let charStream = antlr4ts_1.CharStreams.fromString(documentContents);
         let lexer = new TransactionManifestLexer_1.TransactionManifestLexer(charStream);

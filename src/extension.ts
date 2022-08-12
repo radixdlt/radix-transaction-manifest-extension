@@ -261,7 +261,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	const updateDiagnostics = (document: vscode.TextDocument) => {
 		let diagnostics: vscode.Diagnostic[] = [];
 		diagnostics.push(...getDiagnosticsWithLexerAndParserErrors(document));
-		diagnostics.push(...getIdValidatorErrors(document));
+		diagnostics.push(...getIdValidatorDiagnostics(document));
 		diagnosticCollection.set(document.uri, diagnostics);
 	};
 
@@ -298,7 +298,7 @@ export async function activate(context: vscode.ExtensionContext) {
 		);
 	};
 
-	const getIdValidatorErrors = (document: vscode.TextDocument): vscode.Diagnostic[] => {
+	const getIdValidatorDiagnostics = (document: vscode.TextDocument): vscode.Diagnostic[] => {
 		let documentContents: string = document.getText();
 
 		let charStream: CharStream = CharStreams.fromString(documentContents);
