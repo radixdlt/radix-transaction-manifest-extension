@@ -1,14 +1,21 @@
 {
 	"name": "radix-transaction-manifest-support",
 	"displayName": "Radix Transaction Manifest Support",
-	"description": "This extension provides support for Radix transaction manifests.",
+	"description": "This extension adds support for Radix's transaction manifests adding features such as an Id validator, syntax errors, formatting, and other features.",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.70.0"
+		"vscode": "^1.68.0"
 	},
+	"author": {
+        "name": "RadixDLT"
+    },
 	"categories": [
-		"Other"
+		"Programming Languages",
+		"Formatters",
+		"Linters"
 	],
+	"license": "Apache",
+	"icon": "https://assets-global.website-files.com/6053f7fca5bf627283b582c2/6266da31549a9386481173ed_Scrypto-Icon-Round%403x.png",
 	"activationEvents": [
 		"onLanguage:rtm"
 	],
