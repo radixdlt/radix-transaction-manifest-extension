@@ -1,6 +1,5 @@
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
-
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
 import { ManifestContext } from "./TransactionManifestParser";
@@ -59,7 +58,6 @@ import { NonFungibleAddressContext } from "./TransactionManifestParser";
 import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
-
 
 /**
  * This interface defines a complete listener for a parse tree produced by
@@ -682,4 +680,3 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 */
 	exitValue?: (ctx: ValueContext) => void;
 }
-

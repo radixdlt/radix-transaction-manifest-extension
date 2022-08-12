@@ -46,7 +46,9 @@ export async function activate(context: vscode.ExtensionContext) {
 		return address;
 	};
 
-	const internalUpdateDefaultAccountAddress = (address: string | undefined) => {
+	const internalUpdateDefaultAccountAddress = (
+		address: string | undefined
+	) => {
 		console.log("Performing an internal update");
 		defaultAccountAddress = address;
 		updateDefaultAccountButtonText(address);
@@ -56,10 +58,13 @@ export async function activate(context: vscode.ExtensionContext) {
 		accountAddress: string | undefined
 	) => {
 		defaultAccountButton.text = accountAddress
-			? `$(account) ${accountAddress.slice(0, 7)}...${accountAddress.slice(
-				accountAddress.length - 7,
-				accountAddress.length
-			)}`
+			? `$(account) ${accountAddress.slice(
+					0,
+					7
+			  )}...${accountAddress.slice(
+					accountAddress.length - 7,
+					accountAddress.length
+			  )}`
 			: "No Default Account";
 	};
 
@@ -107,13 +112,14 @@ export async function activate(context: vscode.ExtensionContext) {
 				currentAccountAddress = currentDefaultAccount;
 				responseToUser = "Address copied to clipboard";
 			} else {
-				let resimNewAccountResponse: string = await resimUtils.executeShell(
-					"resim new-account"
-				);
-				currentAccountAddress = resimUtils.extractAccountAddressesFromString(
-					resimNewAccountResponse
-				)![0];
-				responseToUser = "New account created and address copied to clipboard";
+				let resimNewAccountResponse: string =
+					await resimUtils.executeShell("resim new-account");
+				currentAccountAddress =
+					resimUtils.extractAccountAddressesFromString(
+						resimNewAccountResponse
+					)![0];
+				responseToUser =
+					"New account created and address copied to clipboard";
 			}
 
 			internalUpdateDefaultAccountAddress(currentAccountAddress);
@@ -153,14 +159,14 @@ export async function activate(context: vscode.ExtensionContext) {
 			// Getting the entire document as a string which will then be fed into the antlr parser to make sense of it.
 			let documentContents: string = document.getText();
 
-			let charStream: CharStream = CharStreams.fromString(documentContents);
+			let charStream: CharStream =
+				CharStreams.fromString(documentContents);
 			let lexer: TransactionManifestLexer = new TransactionManifestLexer(
 				charStream
 			);
 			let tokenStream: CommonTokenStream = new CommonTokenStream(lexer);
-			let parser: TransactionManifestParser = new TransactionManifestParser(
-				tokenStream
-			);
+			let parser: TransactionManifestParser =
+				new TransactionManifestParser(tokenStream);
 			let tree = parser.manifest();
 
 			const listener: TransactionManifestListener =
@@ -179,7 +185,9 @@ export async function activate(context: vscode.ExtensionContext) {
 					.split(/[\s|\n|\r|\t]/)
 					.filter((x) => !(x.trim().length === 0))
 					.join("\n\t");
-				textEdits.push(new vscode.TextEdit(range, formattedInstruction));
+				textEdits.push(
+					new vscode.TextEdit(range, formattedInstruction)
+				);
 
 				console.log("Formatting the instruction", instruction);
 			}
@@ -201,7 +209,9 @@ export async function activate(context: vscode.ExtensionContext) {
 			// this makes the process of determining what to show miles easier.
 
 			let hoverResponse: vscode.Hover | undefined = undefined;
-			let charStream: CharStream = CharStreams.fromString(document.getText());
+			let charStream: CharStream = CharStreams.fromString(
+				document.getText()
+			);
 			let lexer: TransactionManifestLexer = new TransactionManifestLexer(
 				charStream
 			);
@@ -215,7 +225,8 @@ export async function activate(context: vscode.ExtensionContext) {
 				if (
 					token.line - 1 === position.line &&
 					token.charPositionInLine <= position.character &&
-					token.charPositionInLine + tokenLength + 1 >= position.character
+					token.charPositionInLine + tokenLength + 1 >=
+						position.character
 				) {
 					hoveredOverToken = token;
 					break;
@@ -265,12 +276,15 @@ export async function activate(context: vscode.ExtensionContext) {
 		diagnosticCollection.set(document.uri, diagnostics);
 	};
 
-	const getDiagnosticsWithLexerAndParserErrors = (document: vscode.TextDocument): vscode.Diagnostic[] => {
+	const getDiagnosticsWithLexerAndParserErrors = (
+		document: vscode.TextDocument
+	): vscode.Diagnostic[] => {
 		// Lex and parse the contents of the document and then emit the errors encountered.
 		let documentContents: string = document.getText();
 
 		let charStream: CharStream = CharStreams.fromString(documentContents);
-		const errorListener: ManifestErrorListener = new ManifestErrorListener();
+		const errorListener: ManifestErrorListener =
+			new ManifestErrorListener();
 
 		let lexer: TransactionManifestLexer = new TransactionManifestLexer(
 			charStream
@@ -298,19 +312,25 @@ export async function activate(context: vscode.ExtensionContext) {
 		);
 	};
 
-	const getIdValidatorDiagnostics = (document: vscode.TextDocument): vscode.Diagnostic[] => {
+	const getIdValidatorDiagnostics = (
+		document: vscode.TextDocument
+	): vscode.Diagnostic[] => {
 		let documentContents: string = document.getText();
 
 		let charStream: CharStream = CharStreams.fromString(documentContents);
-		let lexer: TransactionManifestLexer = new TransactionManifestLexer(charStream);
+		let lexer: TransactionManifestLexer = new TransactionManifestLexer(
+			charStream
+		);
 		let tokenStream: CommonTokenStream = new CommonTokenStream(lexer);
-		let parser: TransactionManifestParser = new TransactionManifestParser(tokenStream);
+		let parser: TransactionManifestParser = new TransactionManifestParser(
+			tokenStream
+		);
 
 		const listener: ManifestIdValidator = new ManifestIdValidator(document);
 		let tree = parser.manifest();
 		// @ts-ignore
 		ParseTreeWalker.DEFAULT.walk(listener, tree);
-		
+
 		return listener.getDiagnostics();
 	};
 

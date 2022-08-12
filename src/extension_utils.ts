@@ -12,19 +12,19 @@ import * as vscode from "vscode";
  * @returns The terminal
  */
 export function getTerminal(terminalName: string): vscode.Terminal {
-  let terminals: readonly vscode.Terminal[] = vscode.window.terminals;
-  let matchingNameIndex: number = terminals
-    .map((x) => x.name === terminalName)
-    .indexOf(true);
+	let terminals: readonly vscode.Terminal[] = vscode.window.terminals;
+	let matchingNameIndex: number = terminals
+		.map((x) => x.name === terminalName)
+		.indexOf(true);
 
-  let terminal: vscode.Terminal;
-  if (matchingNameIndex === -1) {
-    terminal = vscode.window.createTerminal(terminalName);
-  } else {
-    terminal = terminals[matchingNameIndex];
-  }
+	let terminal: vscode.Terminal;
+	if (matchingNameIndex === -1) {
+		terminal = vscode.window.createTerminal(terminalName);
+	} else {
+		terminal = terminals[matchingNameIndex];
+	}
 
-  return terminal;
+	return terminal;
 }
 
 /**
@@ -32,5 +32,5 @@ export function getTerminal(terminalName: string): vscode.Terminal {
  * function is made to be primarily used for the printing representation of the range.
  */
 export function rangeToString(range: vscode.Range): string {
-  return `(${range.start.line}, ${range.start.character}) (${range.end.line}, ${range.end.character})`;
+	return `(${range.start.line}, ${range.start.character}) (${range.end.line}, ${range.end.character})`;
 }

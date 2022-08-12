@@ -6,13 +6,17 @@ import * as cp from "child_process";
  * Gets the current default account address. Returns `undefined` if the is no default account.
  */
 export async function getDefaultAccountAddress(): Promise<string | undefined> {
-  return new Promise<string | undefined>(async (resolve, _reject) => {
-    let showConfigsResult: string = await executeShell("resim show-configs");
-    let accountAddresses: string[] | undefined =
-      extractAccountAddressesFromString(showConfigsResult);
+	return new Promise<string | undefined>(async (resolve, _reject) => {
+		let showConfigsResult: string = await executeShell(
+			"resim show-configs"
+		);
+		let accountAddresses: string[] | undefined =
+			extractAccountAddressesFromString(showConfigsResult);
 
-    return accountAddresses ? resolve(accountAddresses[0]) : resolve(undefined);
-  });
+		return accountAddresses
+			? resolve(accountAddresses[0])
+			: resolve(undefined);
+	});
 }
 
 /**
@@ -22,13 +26,13 @@ export async function getDefaultAccountAddress(): Promise<string | undefined> {
  * @param string
  */
 export function extractAccountAddressesFromString(
-  string: string
+	string: string
 ): string[] | undefined {
-  // Since all account addresses are encoded in bech32 which is of known HRP (beginning), length, and charset, we can
-  // define a regex expression to match that and return it.
-  let regex: string = "(account_sim1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{50})";
-  let matches: string[] | null = string.match(regex);
-  return matches ? matches : undefined;
+	// Since all account addresses are encoded in bech32 which is of known HRP (beginning), length, and charset, we can
+	// define a regex expression to match that and return it.
+	let regex: string = "(account_sim1[qpzry9x8gf2tvdw0s3jn54khce6mua7l]{50})";
+	let matches: string[] | null = string.match(regex);
+	return matches ? matches : undefined;
 }
 
 /**
@@ -42,9 +46,9 @@ export function extractAccountAddressesFromString(
  * ```
  */
 export function executeShell(command: string): Promise<string> {
-  return new Promise<string>((resolve, reject) => {
-    cp.exec(command, (err, out) => {
-      return err ? reject(err) : resolve(out);
-    });
-  });
+	return new Promise<string>((resolve, reject) => {
+		cp.exec(command, (err, out) => {
+			return err ? reject(err) : resolve(out);
+		});
+	});
 }

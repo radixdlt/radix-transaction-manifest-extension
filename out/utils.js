@@ -12,16 +12,17 @@ const vscode = require("vscode");
  * @returns The terminal
  */
 function getTerminal(terminalName) {
-    let terminals = vscode.window.terminals;
-    let matchingNameIndex = terminals.map((x) => x.name === terminalName).indexOf(true);
-    let terminal;
-    if (matchingNameIndex === -1) {
-        terminal = vscode.window.createTerminal(terminalName);
-    }
-    else {
-        terminal = terminals[matchingNameIndex];
-    }
-    return terminal;
+	let terminals = vscode.window.terminals;
+	let matchingNameIndex = terminals
+		.map((x) => x.name === terminalName)
+		.indexOf(true);
+	let terminal;
+	if (matchingNameIndex === -1) {
+		terminal = vscode.window.createTerminal(terminalName);
+	} else {
+		terminal = terminals[matchingNameIndex];
+	}
+	return terminal;
 }
 exports.getTerminal = getTerminal;
 //# sourceMappingURL=utils.js.map

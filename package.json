@@ -1,96 +1,96 @@
 {
-    "name": "radix-transaction-manifest-support",
-    "displayName": "Radix Transaction Manifest Support",
-    "description": "This extension provides support for Radix transaction manifests.",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.70.0"
-    },
-    "categories": [
-        "Other"
-    ],
-    "activationEvents": [
-        "onLanguage:rtm"
-    ],
-    "main": "./out/extension.js",
-    "contributes": {
-        "languages": [
-            {
-                "id": "rtm",
-                "aliases": [
-                    "Radix Transaction Manifest",
-                    "rtm"
-                ],
-                "extensions": [
-                    ".rtm"
-                ],
-                "configuration": "./language-configuration.json",
-                "icon": {
-                    "light": "images/icon.png",
-                    "dark": "images/icon.png"
-                }
-            }
-        ],
-        "grammars": [
-            {
-                "language": "rtm",
-                "scopeName": "source.rtm",
-                "path": "./syntaxes/rtm.tmLanguage.json"
-            }
-        ],
-        "commands": [
-            {
-                "command": "extension.runManifest",
-                "title": "Radix Transaction Manifest: Run the currently open transaction manifest",
-                "icon": "$(play)"
-            },
-            {
-                "command": "extension.defaultAccount",
-                "title": "Radix Transaction Manifest: Copy default account address to clipboard"
-            },
-            {
-                "command": "extension.newAccount",
-                "title": "Radix Transaction Manifest: Create a new account",
-                "icon": "$(person)"
-            }
-        ],
-        "menus": {
-            "editor/title/run": [
-                {
-                    "command": "extension.runManifest",
-                    "when": "editorLangId ==  rtm",
-                    "group": "navigation@0"
-                }
-            ]
-        }
-    },
-    "scripts": {
-        "vscode:prepublish": "yarn run compile",
-        "compile": "tsc -p ./",
-        "watch": "tsc -watch -p ./",
-        "pretest": "yarn run compile && yarn run lint",
-        "lint": "eslint src --ext ts",
-        "test": "node ./out/test/runTest.js",
-        "antlr4ts": "antlr4ts -visitor src/TransactionManifest.g4"
-    },
-    "devDependencies": {
-        "@types/glob": "^7.2.0",
-        "@types/mocha": "^9.1.1",
-        "@types/node": "16.x",
-        "@types/vscode": "^1.70.0",
-        "@typescript-eslint/eslint-plugin": "^5.31.0",
-        "@typescript-eslint/parser": "^5.31.0",
-        "@vscode/test-electron": "^2.1.5",
-        "antlr4ts-cli": "^0.5.0-alpha.4",
-        "eslint": "^8.20.0",
-        "glob": "^8.0.3",
-        "mocha": "^10.0.0",
-        "typescript": "^4.7.4"
-    },
-    "dependencies": {
-        "antlr4ts": "^0.5.0-alpha.4",
-        "child_process": "^1.0.2",
-        "vscode-jsonrpc": "^8.0.2",
-        "vscode-languageclient": "^8.0.2"
-    }
+	"name": "radix-transaction-manifest-support",
+	"displayName": "Radix Transaction Manifest Support",
+	"description": "This extension provides support for Radix transaction manifests.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:rtm"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "rtm",
+				"aliases": [
+					"Radix Transaction Manifest",
+					"rtm"
+				],
+				"extensions": [
+					".rtm"
+				],
+				"configuration": "./language-configuration.json",
+				"icon": {
+					"light": "images/icon.png",
+					"dark": "images/icon.png"
+				}
+			}
+		],
+		"grammars": [
+			{
+				"language": "rtm",
+				"scopeName": "source.rtm",
+				"path": "./syntaxes/rtm.tmLanguage.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "extension.runManifest",
+				"title": "Radix Transaction Manifest: Run the currently open transaction manifest",
+				"icon": "$(play)"
+			},
+			{
+				"command": "extension.defaultAccount",
+				"title": "Radix Transaction Manifest: Copy default account address to clipboard"
+			},
+			{
+				"command": "extension.newAccount",
+				"title": "Radix Transaction Manifest: Create a new account",
+				"icon": "$(person)"
+			}
+		],
+		"menus": {
+			"editor/title/run": [
+				{
+					"command": "extension.runManifest",
+					"when": "editorLangId ==  rtm",
+					"group": "navigation@0"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js",
+		"antlr4ts": "antlr4ts -visitor src/TransactionManifest.g4"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.1",
+		"@types/node": "16.x",
+		"@types/vscode": "^1.70.0",
+		"@typescript-eslint/eslint-plugin": "^5.31.0",
+		"@typescript-eslint/parser": "^5.31.0",
+		"@vscode/test-electron": "^2.1.5",
+		"antlr4ts-cli": "^0.5.0-alpha.4",
+		"eslint": "^8.20.0",
+		"glob": "^8.0.3",
+		"mocha": "^10.0.0",
+		"typescript": "^4.7.4"
+	},
+	"dependencies": {
+		"antlr4ts": "^0.5.0-alpha.4",
+		"child_process": "^1.0.2",
+		"vscode-jsonrpc": "^8.0.2",
+		"vscode-languageclient": "^8.0.2"
+	}
 }

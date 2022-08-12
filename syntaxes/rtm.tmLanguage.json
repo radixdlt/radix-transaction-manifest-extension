@@ -3,14 +3,14 @@
 	"name": "Radix Transaction Manifest",
 	"patterns": [
 		{
-            "match": "#.*",
-            "name": "comment.line.number-sign.rtm"
-        },
+			"match": "#.*",
+			"name": "comment.line.number-sign.rtm"
+		},
 		{
-            "begin": "\"",
-            "end": "\"",
-            "name": "string.quoted.double.rtm"
-        },
+			"begin": "\"",
+			"end": "\"",
+			"name": "string.quoted.double.rtm"
+		},
 		{
 			"match": "([A-Z][a-z]+)|([A-Z][0-9]+)",
 			"name": "entity.name.function.rtm"
@@ -27,7 +27,6 @@
 			"match": "(true)|(false)",
 			"name": "constant.language.rtm"
 		}
-		
 	],
 	"scopeName": "source.rtm"
 }

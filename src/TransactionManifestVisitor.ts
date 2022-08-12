@@ -1,6 +1,5 @@
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
-
 import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 
 import { ManifestContext } from "./TransactionManifestParser";
@@ -60,7 +59,6 @@ import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
 
-
 /**
  * This interface defines a complete generic visitor for a parse tree produced
  * by `TransactionManifestParser`.
@@ -68,7 +66,8 @@ import { ValueContext } from "./TransactionManifestParser";
  * @param <Result> The return type of the visit operation. Use `void` for
  * operations with no return type.
  */
-export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Result> {
+export interface TransactionManifestVisitor<Result>
+	extends ParseTreeVisitor<Result> {
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.manifest`.
 	 * @param ctx the parse tree
@@ -461,4 +460,3 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	 */
 	visitValue?: (ctx: ValueContext) => Result;
 }
-
