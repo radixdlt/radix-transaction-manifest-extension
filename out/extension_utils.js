@@ -12,17 +12,18 @@ const vscode = require("vscode");
  * @returns The terminal
  */
 function getTerminal(terminalName) {
-	let terminals = vscode.window.terminals;
-	let matchingNameIndex = terminals
-		.map((x) => x.name === terminalName)
-		.indexOf(true);
-	let terminal;
-	if (matchingNameIndex === -1) {
-		terminal = vscode.window.createTerminal(terminalName);
-	} else {
-		terminal = terminals[matchingNameIndex];
-	}
-	return terminal;
+    let terminals = vscode.window.terminals;
+    let matchingNameIndex = terminals
+        .map((x) => x.name === terminalName)
+        .indexOf(true);
+    let terminal;
+    if (matchingNameIndex === -1) {
+        terminal = vscode.window.createTerminal(terminalName);
+    }
+    else {
+        terminal = terminals[matchingNameIndex];
+    }
+    return terminal;
 }
 exports.getTerminal = getTerminal;
 /**
@@ -30,7 +31,7 @@ exports.getTerminal = getTerminal;
  * function is made to be primarily used for the printing representation of the range.
  */
 function rangeToString(range) {
-	return `(${range.start.line}, ${range.start.character}) (${range.end.line}, ${range.end.character})`;
+    return `(${range.start.line}, ${range.start.character}) (${range.end.line}, ${range.end.character})`;
 }
 exports.rangeToString = rangeToString;
 //# sourceMappingURL=extension_utils.js.map

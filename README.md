@@ -1,4 +1,4 @@
-# radix-transaction-manifest-support README
+<!-- # radix-transaction-manifest-support README
 
 This is the README for your extension "radix-transaction-manifest-support". After writing up a brief description, we recommend including the following sections.
 
@@ -68,4 +68,13 @@ You can author your README using Visual Studio Code. Here are some useful editor
 -   [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 -   [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Enjoy!** -->
+
+
+# Radix Transaction Manifest Support
+
+<p align="center">
+  <img height="100" src="https://assets-global.website-files.com/6053f7fca5bf627283b582c2/6266da320e7722355749595b_Scrypto-Icon-Round.png">
+</p>
+
+Todo: Add a readme file
