@@ -1,4 +1,5 @@
-// Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
+// Generated from src/antlr/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
+
 
 import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 
@@ -16,22 +17,6 @@ import { U16Context } from "./TransactionManifestParser";
 import { U32Context } from "./TransactionManifestParser";
 import { U64Context } from "./TransactionManifestParser";
 import { U128Context } from "./TransactionManifestParser";
-import { SafeI8Context } from "./TransactionManifestParser";
-import { SafeI16Context } from "./TransactionManifestParser";
-import { SafeI32Context } from "./TransactionManifestParser";
-import { SafeI64Context } from "./TransactionManifestParser";
-import { SafeI128Context } from "./TransactionManifestParser";
-import { SafeI256Context } from "./TransactionManifestParser";
-import { SafeI384Context } from "./TransactionManifestParser";
-import { SafeI512Context } from "./TransactionManifestParser";
-import { SafeU8Context } from "./TransactionManifestParser";
-import { SafeU16Context } from "./TransactionManifestParser";
-import { SafeU32Context } from "./TransactionManifestParser";
-import { SafeU64Context } from "./TransactionManifestParser";
-import { SafeU128Context } from "./TransactionManifestParser";
-import { SafeU256Context } from "./TransactionManifestParser";
-import { SafeU384Context } from "./TransactionManifestParser";
-import { SafeU512Context } from "./TransactionManifestParser";
 import { StringContext } from "./TransactionManifestParser";
 import { StructContext } from "./TransactionManifestParser";
 import { Enum_Context } from "./TransactionManifestParser";
@@ -59,6 +44,7 @@ import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
 
+
 /**
  * This interface defines a complete generic visitor for a parse tree produced
  * by `TransactionManifestParser`.
@@ -66,8 +52,7 @@ import { ValueContext } from "./TransactionManifestParser";
  * @param <Result> The return type of the visit operation. Use `void` for
  * operations with no return type.
  */
-export interface TransactionManifestVisitor<Result>
-	extends ParseTreeVisitor<Result> {
+export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Result> {
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.manifest`.
 	 * @param ctx the parse tree
@@ -165,118 +150,6 @@ export interface TransactionManifestVisitor<Result>
 	 * @return the visitor result
 	 */
 	visitU128?: (ctx: U128Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeI8`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeI8?: (ctx: SafeI8Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeI16`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeI16?: (ctx: SafeI16Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeI32`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeI32?: (ctx: SafeI32Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeI64`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeI64?: (ctx: SafeI64Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeI128`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeI128?: (ctx: SafeI128Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeI256`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeI256?: (ctx: SafeI256Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeI384`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeI384?: (ctx: SafeI384Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeI512`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeI512?: (ctx: SafeI512Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeU8`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeU8?: (ctx: SafeU8Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeU16`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeU16?: (ctx: SafeU16Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeU32`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeU32?: (ctx: SafeU32Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeU64`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeU64?: (ctx: SafeU64Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeU128`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeU128?: (ctx: SafeU128Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeU256`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeU256?: (ctx: SafeU256Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeU384`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeU384?: (ctx: SafeU384Context) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.safeU512`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSafeU512?: (ctx: SafeU512Context) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.string`.
@@ -460,3 +333,4 @@ export interface TransactionManifestVisitor<Result>
 	 */
 	visitValue?: (ctx: ValueContext) => Result;
 }
+

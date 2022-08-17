@@ -86,7 +86,7 @@
 		"pretest": "yarn run compile && yarn run lint",
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js",
-		"antlr4ts": "antlr4ts -visitor src/TransactionManifest.g4"
+		"antlr4ts": "antlr4ts -visitor src/antlr/TransactionManifest.g4 -o src/antlr/; mv src/antlr/src/* src/antlr/; rm -rf src/antlr/src/"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.2.0",
