@@ -104,22 +104,6 @@ u16                 :   U16_LITERAL ;
 u32                 :   U32_LITERAL ;
 u64                 :   U64_LITERAL ;
 u128                :   U128_LITERAL ;
-safeI8              :   SAFE_I8_LITERAL ;
-safeI16             :   SAFE_I16_LITERAL ;
-safeI32             :   SAFE_I32_LITERAL ;
-safeI64             :   SAFE_I64_LITERAL ;
-safeI128            :   SAFE_I128_LITERAL ;
-safeI256            :   SAFE_I256_LITERAL ;
-safeI384            :   SAFE_I384_LITERAL ;
-safeI512            :   SAFE_I512_LITERAL ;
-safeU8              :   SAFE_U8_LITERAL ;
-safeU16             :   SAFE_U16_LITERAL ;
-safeU32             :   SAFE_U32_LITERAL ;
-safeU64             :   SAFE_U64_LITERAL ;
-safeU128            :   SAFE_U128_LITERAL ;
-safeU256            :   SAFE_U256_LITERAL ;
-safeU384            :   SAFE_U384_LITERAL ;
-safeU512            :   SAFE_U512_LITERAL ;
 string              :   STRING_LITERAL ;
 struct              :   STRUCT_TYPE OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
 enum_               :   ENUM_TYPE OPEN_PARENTHESIS (string COMMA (value (COMMA value)*)?) CLOED_PARENTHESIS ;
@@ -158,22 +142,6 @@ type
     | U32_TYPE
     | U64_TYPE
     | U128_TYPE
-    | SAFE_I8_TYPE
-    | SAFE_I16_TYPE
-    | SAFE_I32_TYPE
-    | SAFE_I64_TYPE
-    | SAFE_I128_TYPE
-    | SAFE_I256_TYPE
-    | SAFE_I384_TYPE
-    | SAFE_I512_TYPE
-    | SAFE_U8_TYPE
-    | SAFE_U16_TYPE
-    | SAFE_U32_TYPE
-    | SAFE_U64_TYPE
-    | SAFE_U128_TYPE
-    | SAFE_U384_TYPE
-    | SAFE_U256_TYPE
-    | SAFE_U512_TYPE
     | STRING_TYPE
     | STRUCT_TYPE
     | ENUM_TYPE
@@ -214,22 +182,6 @@ value
     | u32
     | u64
     | u128
-    | safeI8
-    | safeI16
-    | safeI32
-    | safeI64
-    | safeI128
-    | safeI256
-    | safeI384
-    | safeI512
-    | safeU8
-    | safeU16
-    | safeU32
-    | safeU64
-    | safeU128
-    | safeU256
-    | safeU384
-    | safeU512
     | string
     | struct
     | enum_
@@ -272,23 +224,6 @@ U32_LITERAL                         : NUMBER 'u32' ;
 U64_LITERAL                         : NUMBER 'u64' ; 
 U128_LITERAL                        : NUMBER 'u128' ; 
 
-SAFE_I8_LITERAL                     : NUMBER 'si8' ;
-SAFE_I16_LITERAL                    : NUMBER 'si16' ; 
-SAFE_I32_LITERAL                    : NUMBER 'si32' ; 
-SAFE_I64_LITERAL                    : NUMBER 'si64' ; 
-SAFE_I128_LITERAL                   : NUMBER 'si128' ; 
-SAFE_I256_LITERAL                   : NUMBER 'si256' ; 
-SAFE_I384_LITERAL                   : NUMBER 'si384' ; 
-SAFE_I512_LITERAL                   : NUMBER 'si512' ; 
-SAFE_U8_LITERAL                     : NUMBER 'su8' ;
-SAFE_U16_LITERAL                    : NUMBER 'su16' ; 
-SAFE_U32_LITERAL                    : NUMBER 'su32' ; 
-SAFE_U64_LITERAL                    : NUMBER 'su64' ; 
-SAFE_U128_LITERAL                   : NUMBER 'su128' ; 
-SAFE_U384_LITERAL                   : NUMBER 'su384' ; 
-SAFE_U256_LITERAL                   : NUMBER 'su256' ; 
-SAFE_U512_LITERAL                   : NUMBER 'su512' ; 
-
 TRUE                                : 'true' ;
 FALSE                               : 'false' ;
 
@@ -304,22 +239,6 @@ U16_TYPE                            : 'U16' ;
 U32_TYPE                            : 'U32' ;
 U64_TYPE                            : 'U64' ;
 U128_TYPE                           : 'U128' ;
-SAFE_I8_TYPE                        : 'SafeI8' ;
-SAFE_I16_TYPE                       : 'SafeI16' ; 
-SAFE_I32_TYPE                       : 'SafeI32' ; 
-SAFE_I64_TYPE                       : 'SafeI64' ; 
-SAFE_I128_TYPE                      : 'SafeI128' ; 
-SAFE_I256_TYPE                      : 'SafeI256' ; 
-SAFE_I384_TYPE                      : 'SafeI384' ; 
-SAFE_I512_TYPE                      : 'SafeI512' ; 
-SAFE_U8_TYPE                        : 'SafeU8' ;
-SAFE_U16_TYPE                       : 'SafeU16' ; 
-SAFE_U32_TYPE                       : 'SafeU32' ; 
-SAFE_U64_TYPE                       : 'SafeU64' ; 
-SAFE_U128_TYPE                      : 'SafeU128' ; 
-SAFE_U384_TYPE                      : 'SafeU384' ; 
-SAFE_U256_TYPE                      : 'SafeU256' ; 
-SAFE_U512_TYPE                      : 'SafeU512' ; 
 STRING_TYPE                         : 'String' ;
 STRUCT_TYPE                         : 'Struct' ;
 ENUM_TYPE                           : 'Enum' ;

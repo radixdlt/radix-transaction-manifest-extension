@@ -16,7 +16,6 @@
 		"Linters"
 	],
 	"license": "Apache",
-	"icon": "https://assets-global.website-files.com/6053f7fca5bf627283b582c2/6266da31549a9386481173ed_Scrypto-Icon-Round%403x.png",
 	"activationEvents": [
 		"onLanguage:rtm"
 	],
