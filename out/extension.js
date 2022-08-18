@@ -33,6 +33,8 @@ async function activate(_) {
         let diagnostics = [];
         diagnostics.push(...(new diagnostic_providers_1.AddressesDiagnosticProvider(document).getDiagnostics()));
         diagnostics.push(...(new diagnostic_providers_1.NumbersDiagnosticsProvider(document).getDiagnostics()));
+        diagnostics.push(...(new diagnostic_providers_1.ParsingDiagnosticsProvider(document).getDiagnostics()));
+        diagnostics.push(...(new diagnostic_providers_1.LexerDiagnosticsProvider(document).getDiagnostics()));
         return diagnostics;
     };
     /**

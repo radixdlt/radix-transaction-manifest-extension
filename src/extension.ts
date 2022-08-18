@@ -1,6 +1,6 @@
 "use strict";
 
-import { AddressesDiagnosticProvider, NumbersDiagnosticsProvider } from './diagnostic_providers';
+import { AddressesDiagnosticProvider, NumbersDiagnosticsProvider, ParsingDiagnosticsProvider, LexerDiagnosticsProvider } from './diagnostic_providers';
 import * as vscode from 'vscode';
 
 let diagnosticCollection: vscode.DiagnosticCollection = vscode.languages.createDiagnosticCollection("rtm");
@@ -41,6 +41,8 @@ export async function activate(_: vscode.ExtensionContext) {
         
         diagnostics.push(...(new AddressesDiagnosticProvider(document).getDiagnostics()));
         diagnostics.push(...(new NumbersDiagnosticsProvider(document).getDiagnostics()));
+        diagnostics.push(...(new ParsingDiagnosticsProvider(document).getDiagnostics()));
+        diagnostics.push(...(new LexerDiagnosticsProvider(document).getDiagnostics()));
 
         return diagnostics;
     };
