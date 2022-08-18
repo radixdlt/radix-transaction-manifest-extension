@@ -8,8 +8,8 @@
 		"vscode": "^1.70.0"
 	},
 	"author": {
-        "name": "RadixDLT"
-    },
+		"name": "RadixDLT"
+	},
 	"categories": [
 		"Programming Languages",
 		"Formatters",
@@ -20,13 +20,13 @@
 		"onLanguage:rtm"
 	],
 	"homepage": "https://github.com/radixdlt/radix-transaction-manifest-extension",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/radixdlt/radix-transaction-manifest-extension"
-    },
-    "bugs": {
-        "url": "https://github.com/radixdlt/radix-transaction-manifest-extension/issues"
-    },
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/radixdlt/radix-transaction-manifest-extension"
+	},
+	"bugs": {
+		"url": "https://github.com/radixdlt/radix-transaction-manifest-extension/issues"
+	},
 	"main": "./out/extension.js",
 	"contributes": {
 		"languages": [
@@ -85,10 +85,11 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "yarn run compile && yarn run lint",
 		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js",
-		"antlr4ts": "antlr4ts -visitor src/antlr/TransactionManifest.g4 -o src/antlr/; mv src/antlr/src/* src/antlr/; rm -rf src/antlr/src/"
+		"test": "node ./out/tests/runTest.js",
+		"antlr4ts": "rm -rf src/antlr; mkdir src/antlr; antlr4ts -visitor src/TransactionManifest.g4 -o antlr; mv -v ./antlr/src/* src/antlr/ ; rm -rf antlr"
 	},
 	"devDependencies": {
+		"@types/chai": "^4.3.3",
 		"@types/glob": "^7.2.0",
 		"@types/mocha": "^9.1.1",
 		"@types/node": "16.x",
@@ -97,13 +98,16 @@
 		"@typescript-eslint/parser": "^5.31.0",
 		"@vscode/test-electron": "^2.1.5",
 		"antlr4ts-cli": "^0.5.0-alpha.4",
+		"chai": "^4.3.6",
 		"eslint": "^8.20.0",
 		"glob": "^8.0.3",
 		"mocha": "^10.0.0",
+		"ts-node": "^10.9.1",
 		"typescript": "^4.7.4"
 	},
 	"dependencies": {
 		"antlr4ts": "^0.5.0-alpha.4",
+		"bech32": "^2.0.0",
 		"child_process": "^1.0.2",
 		"vscode-jsonrpc": "^8.0.2",
 		"vscode-languageclient": "^8.0.2"
