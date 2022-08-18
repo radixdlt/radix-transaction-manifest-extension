@@ -1,4 +1,4 @@
-// Generated from /Users/omarabdulla/Radix/radix-transaction-manifest-support/src/TransactionManifest.g4 by ANTLR 4.9.2
+// Generated from /Users/omarabdulla/Desktop/radix-transaction-manifest-extension/src/TransactionManifest.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -44,7 +44,7 @@ public class TransactionManifestParser extends Parser {
 		RULE_tuple = 23, RULE_list = 24, RULE_set = 25, RULE_map = 26, RULE_decimal = 27, 
 		RULE_preciseDecimal = 28, RULE_packageAddress = 29, RULE_componentAddress = 30, 
 		RULE_resourceAddress = 31, RULE_hash = 32, RULE_bucket = 33, RULE_proof = 34, 
-		RULE_nonFungible_id = 35, RULE_nonFungibleAddress = 36, RULE_bytes = 37, 
+		RULE_nonFungibleId = 35, RULE_nonFungibleAddress = 36, RULE_bytes = 37, 
 		RULE_type = 38, RULE_value = 39;
 	private static String[] makeRuleNames() {
 		return new String[] {
@@ -52,7 +52,7 @@ public class TransactionManifestParser extends Parser {
 			"i64", "i128", "u8", "u16", "u32", "u64", "u128", "string", "struct", 
 			"enum_", "option", "some", "none", "ok", "err", "array", "tuple", "list", 
 			"set", "map", "decimal", "preciseDecimal", "packageAddress", "componentAddress", 
-			"resourceAddress", "hash", "bucket", "proof", "nonFungible_id", "nonFungibleAddress", 
+			"resourceAddress", "hash", "bucket", "proof", "nonFungibleId", "nonFungibleAddress", 
 			"bytes", "type", "value"
 		};
 	}
@@ -2120,20 +2120,20 @@ public class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 
-	public static class NonFungible_idContext extends ParserRuleContext {
+	public static class NonFungibleIdContext extends ParserRuleContext {
 		public TerminalNode NON_FUNGIBLE_ID_TYPE() { return getToken(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE, 0); }
 		public TerminalNode OPEN_PARENTHESIS() { return getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 		public TerminalNode STRING_LITERAL() { return getToken(TransactionManifestParser.STRING_LITERAL, 0); }
 		public TerminalNode CLOED_PARENTHESIS() { return getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-		public NonFungible_idContext(ParserRuleContext parent, int invokingState) {
+		public NonFungibleIdContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_nonFungible_id; }
+		@Override public int getRuleIndex() { return RULE_nonFungibleId; }
 	}
 
-	public final NonFungible_idContext nonFungible_id() throws RecognitionException {
-		NonFungible_idContext _localctx = new NonFungible_idContext(_ctx, getState());
-		enterRule(_localctx, 70, RULE_nonFungible_id);
+	public final NonFungibleIdContext nonFungibleId() throws RecognitionException {
+		NonFungibleIdContext _localctx = new NonFungibleIdContext(_ctx, getState());
+		enterRule(_localctx, 70, RULE_nonFungibleId);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -2408,8 +2408,8 @@ public class TransactionManifestParser extends Parser {
 		public ProofContext proof() {
 			return getRuleContext(ProofContext.class,0);
 		}
-		public NonFungible_idContext nonFungible_id() {
-			return getRuleContext(NonFungible_idContext.class,0);
+		public NonFungibleIdContext nonFungibleId() {
+			return getRuleContext(NonFungibleIdContext.class,0);
 		}
 		public NonFungibleAddressContext nonFungibleAddress() {
 			return getRuleContext(NonFungibleAddressContext.class,0);
@@ -2665,7 +2665,7 @@ public class TransactionManifestParser extends Parser {
 				enterOuterAlt(_localctx, 34);
 				{
 				setState(472);
-				nonFungible_id();
+				nonFungibleId();
 				}
 				break;
 			case 35:

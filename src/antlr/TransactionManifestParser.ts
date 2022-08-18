@@ -147,7 +147,7 @@ export class TransactionManifestParser extends Parser {
 	public static readonly RULE_hash = 32;
 	public static readonly RULE_bucket = 33;
 	public static readonly RULE_proof = 34;
-	public static readonly RULE_nonFungible_id = 35;
+	public static readonly RULE_nonFungibleId = 35;
 	public static readonly RULE_nonFungibleAddress = 36;
 	public static readonly RULE_bytes = 37;
 	public static readonly RULE_type = 38;
@@ -158,7 +158,7 @@ export class TransactionManifestParser extends Parser {
 		"i64", "i128", "u8", "u16", "u32", "u64", "u128", "string", "struct", 
 		"enum_", "option", "some", "none", "ok", "err", "array", "tuple", "list", 
 		"set", "map", "decimal", "preciseDecimal", "packageAddress", "componentAddress", 
-		"resourceAddress", "hash", "bucket", "proof", "nonFungible_id", "nonFungibleAddress", 
+		"resourceAddress", "hash", "bucket", "proof", "nonFungibleId", "nonFungibleAddress", 
 		"bytes", "type", "value",
 	];
 
@@ -1817,9 +1817,9 @@ export class TransactionManifestParser extends Parser {
 		return _localctx;
 	}
 	// @RuleVersion(0)
-	public nonFungible_id(): NonFungible_idContext {
-		let _localctx: NonFungible_idContext = new NonFungible_idContext(this._ctx, this.state);
-		this.enterRule(_localctx, 70, TransactionManifestParser.RULE_nonFungible_id);
+	public nonFungibleId(): NonFungibleIdContext {
+		let _localctx: NonFungibleIdContext = new NonFungibleIdContext(this._ctx, this.state);
+		this.enterRule(_localctx, 70, TransactionManifestParser.RULE_nonFungibleId);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
@@ -2221,7 +2221,7 @@ export class TransactionManifestParser extends Parser {
 				this.enterOuterAlt(_localctx, 34);
 				{
 				this.state = 472;
-				this.nonFungible_id();
+				this.nonFungibleId();
 				}
 				break;
 
@@ -3883,7 +3883,7 @@ export class ProofContext extends ParserRuleContext {
 }
 
 
-export class NonFungible_idContext extends ParserRuleContext {
+export class NonFungibleIdContext extends ParserRuleContext {
 	public NON_FUNGIBLE_ID_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE, 0); }
 	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
 	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -3892,23 +3892,23 @@ export class NonFungible_idContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_nonFungible_id; }
+	public get ruleIndex(): number { return TransactionManifestParser.RULE_nonFungibleId; }
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
-		if (listener.enterNonFungible_id) {
-			listener.enterNonFungible_id(this);
+		if (listener.enterNonFungibleId) {
+			listener.enterNonFungibleId(this);
 		}
 	}
 	// @Override
 	public exitRule(listener: TransactionManifestListener): void {
-		if (listener.exitNonFungible_id) {
-			listener.exitNonFungible_id(this);
+		if (listener.exitNonFungibleId) {
+			listener.exitNonFungibleId(this);
 		}
 	}
 	// @Override
 	public accept<Result>(visitor: TransactionManifestVisitor<Result>): Result {
-		if (visitor.visitNonFungible_id) {
-			return visitor.visitNonFungible_id(this);
+		if (visitor.visitNonFungibleId) {
+			return visitor.visitNonFungibleId(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -4148,8 +4148,8 @@ export class ValueContext extends ParserRuleContext {
 	public proof(): ProofContext | undefined {
 		return this.tryGetRuleContext(0, ProofContext);
 	}
-	public nonFungible_id(): NonFungible_idContext | undefined {
-		return this.tryGetRuleContext(0, NonFungible_idContext);
+	public nonFungibleId(): NonFungibleIdContext | undefined {
+		return this.tryGetRuleContext(0, NonFungibleIdContext);
 	}
 	public nonFungibleAddress(): NonFungibleAddressContext | undefined {
 		return this.tryGetRuleContext(0, NonFungibleAddressContext);

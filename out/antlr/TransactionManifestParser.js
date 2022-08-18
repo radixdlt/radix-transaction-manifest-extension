@@ -1,7 +1,7 @@
 "use strict";
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ValueContext = exports.TypeContext = exports.BytesContext = exports.NonFungibleAddressContext = exports.NonFungible_idContext = exports.ProofContext = exports.BucketContext = exports.HashContext = exports.ResourceAddressContext = exports.ComponentAddressContext = exports.PackageAddressContext = exports.PreciseDecimalContext = exports.DecimalContext = exports.MapContext = exports.SetContext = exports.ListContext = exports.TupleContext = exports.ArrayContext = exports.ErrContext = exports.OkContext = exports.NoneContext = exports.SomeContext = exports.OptionContext = exports.Enum_Context = exports.StructContext = exports.StringContext = exports.U128Context = exports.U64Context = exports.U32Context = exports.U16Context = exports.U8Context = exports.I128Context = exports.I64Context = exports.I32Context = exports.I16Context = exports.I8Context = exports.BoolContext = exports.UnitContext = exports.ManifestInstructionContext = exports.ManifestContext = exports.TransactionManifestParser = void 0;
+exports.ValueContext = exports.TypeContext = exports.BytesContext = exports.NonFungibleAddressContext = exports.NonFungibleIdContext = exports.ProofContext = exports.BucketContext = exports.HashContext = exports.ResourceAddressContext = exports.ComponentAddressContext = exports.PackageAddressContext = exports.PreciseDecimalContext = exports.DecimalContext = exports.MapContext = exports.SetContext = exports.ListContext = exports.TupleContext = exports.ArrayContext = exports.ErrContext = exports.OkContext = exports.NoneContext = exports.SomeContext = exports.OptionContext = exports.Enum_Context = exports.StructContext = exports.StringContext = exports.U128Context = exports.U64Context = exports.U32Context = exports.U16Context = exports.U8Context = exports.I128Context = exports.I64Context = exports.I32Context = exports.I16Context = exports.I8Context = exports.BoolContext = exports.UnitContext = exports.ManifestInstructionContext = exports.ManifestContext = exports.TransactionManifestParser = void 0;
 const ATNDeserializer_1 = require("antlr4ts/atn/ATNDeserializer");
 const FailedPredicateException_1 = require("antlr4ts/FailedPredicateException");
 const NoViableAltException_1 = require("antlr4ts/NoViableAltException");
@@ -1651,9 +1651,9 @@ class TransactionManifestParser extends Parser_1.Parser {
         return _localctx;
     }
     // @RuleVersion(0)
-    nonFungible_id() {
-        let _localctx = new NonFungible_idContext(this._ctx, this.state);
-        this.enterRule(_localctx, 70, TransactionManifestParser.RULE_nonFungible_id);
+    nonFungibleId() {
+        let _localctx = new NonFungibleIdContext(this._ctx, this.state);
+        this.enterRule(_localctx, 70, TransactionManifestParser.RULE_nonFungibleId);
         try {
             this.enterOuterAlt(_localctx, 1);
             {
@@ -2026,7 +2026,7 @@ class TransactionManifestParser extends Parser_1.Parser {
                     this.enterOuterAlt(_localctx, 34);
                     {
                         this.state = 472;
-                        this.nonFungible_id();
+                        this.nonFungibleId();
                     }
                     break;
                 case 35:
@@ -2187,7 +2187,7 @@ TransactionManifestParser.RULE_resourceAddress = 31;
 TransactionManifestParser.RULE_hash = 32;
 TransactionManifestParser.RULE_bucket = 33;
 TransactionManifestParser.RULE_proof = 34;
-TransactionManifestParser.RULE_nonFungible_id = 35;
+TransactionManifestParser.RULE_nonFungibleId = 35;
 TransactionManifestParser.RULE_nonFungibleAddress = 36;
 TransactionManifestParser.RULE_bytes = 37;
 TransactionManifestParser.RULE_type = 38;
@@ -2198,7 +2198,7 @@ TransactionManifestParser.ruleNames = [
     "i64", "i128", "u8", "u16", "u32", "u64", "u128", "string", "struct",
     "enum_", "option", "some", "none", "ok", "err", "array", "tuple", "list",
     "set", "map", "decimal", "preciseDecimal", "packageAddress", "componentAddress",
-    "resourceAddress", "hash", "bucket", "proof", "nonFungible_id", "nonFungibleAddress",
+    "resourceAddress", "hash", "bucket", "proof", "nonFungibleId", "nonFungibleAddress",
     "bytes", "type", "value",
 ];
 TransactionManifestParser._LITERAL_NAMES = [
@@ -3830,7 +3830,7 @@ class ProofContext extends ParserRuleContext_1.ParserRuleContext {
     }
 }
 exports.ProofContext = ProofContext;
-class NonFungible_idContext extends ParserRuleContext_1.ParserRuleContext {
+class NonFungibleIdContext extends ParserRuleContext_1.ParserRuleContext {
     NON_FUNGIBLE_ID_TYPE() { return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE, 0); }
     OPEN_PARENTHESIS() { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
     STRING_LITERAL() { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
@@ -3839,30 +3839,30 @@ class NonFungible_idContext extends ParserRuleContext_1.ParserRuleContext {
         super(parent, invokingState);
     }
     // @Override
-    get ruleIndex() { return TransactionManifestParser.RULE_nonFungible_id; }
+    get ruleIndex() { return TransactionManifestParser.RULE_nonFungibleId; }
     // @Override
     enterRule(listener) {
-        if (listener.enterNonFungible_id) {
-            listener.enterNonFungible_id(this);
+        if (listener.enterNonFungibleId) {
+            listener.enterNonFungibleId(this);
         }
     }
     // @Override
     exitRule(listener) {
-        if (listener.exitNonFungible_id) {
-            listener.exitNonFungible_id(this);
+        if (listener.exitNonFungibleId) {
+            listener.exitNonFungibleId(this);
         }
     }
     // @Override
     accept(visitor) {
-        if (visitor.visitNonFungible_id) {
-            return visitor.visitNonFungible_id(this);
+        if (visitor.visitNonFungibleId) {
+            return visitor.visitNonFungibleId(this);
         }
         else {
             return visitor.visitChildren(this);
         }
     }
 }
-exports.NonFungible_idContext = NonFungible_idContext;
+exports.NonFungibleIdContext = NonFungibleIdContext;
 class NonFungibleAddressContext extends ParserRuleContext_1.ParserRuleContext {
     NON_FUNGIBLE_ADDRESS_TYPE() { return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE, 0); }
     OPEN_PARENTHESIS() { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
@@ -4095,8 +4095,8 @@ class ValueContext extends ParserRuleContext_1.ParserRuleContext {
     proof() {
         return this.tryGetRuleContext(0, ProofContext);
     }
-    nonFungible_id() {
-        return this.tryGetRuleContext(0, NonFungible_idContext);
+    nonFungibleId() {
+        return this.tryGetRuleContext(0, NonFungibleIdContext);
     }
     nonFungibleAddress() {
         return this.tryGetRuleContext(0, NonFungibleAddressContext);

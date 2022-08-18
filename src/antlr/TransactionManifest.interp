@@ -208,7 +208,7 @@ resourceAddress
 hash
 bucket
 proof
-nonFungible_id
+nonFungibleId
 nonFungibleAddress
 bytes
 type

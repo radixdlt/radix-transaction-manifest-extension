@@ -125,7 +125,7 @@ resourceAddress     :   RESOURCE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CL
 hash                :   HASH_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 bucket              :   BUCKET_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
 proof               :   PROOF_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
-nonFungible_id      :   NON_FUNGIBLE_ID_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ; // Might need to revise this.
+nonFungibleId       :   NON_FUNGIBLE_ID_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ; // Might need to revise this.
 nonFungibleAddress  :   NON_FUNGIBLE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 bytes               :   BYTES_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 
@@ -203,7 +203,7 @@ value
     | hash
     | bucket
     | proof
-    | nonFungible_id
+    | nonFungibleId
     | nonFungibleAddress
     | bytes
     ;

@@ -38,7 +38,7 @@ import { ResourceAddressContext } from "./TransactionManifestParser";
 import { HashContext } from "./TransactionManifestParser";
 import { BucketContext } from "./TransactionManifestParser";
 import { ProofContext } from "./TransactionManifestParser";
-import { NonFungible_idContext } from "./TransactionManifestParser";
+import { NonFungibleIdContext } from "./TransactionManifestParser";
 import { NonFungibleAddressContext } from "./TransactionManifestParser";
 import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
@@ -436,15 +436,15 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitProof?: (ctx: ProofContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.nonFungible_id`.
+	 * Enter a parse tree produced by `TransactionManifestParser.nonFungibleId`.
 	 * @param ctx the parse tree
 	 */
-	enterNonFungible_id?: (ctx: NonFungible_idContext) => void;
+	enterNonFungibleId?: (ctx: NonFungibleIdContext) => void;
 	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.nonFungible_id`.
+	 * Exit a parse tree produced by `TransactionManifestParser.nonFungibleId`.
 	 * @param ctx the parse tree
 	 */
-	exitNonFungible_id?: (ctx: NonFungible_idContext) => void;
+	exitNonFungibleId?: (ctx: NonFungibleIdContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.nonFungibleAddress`.

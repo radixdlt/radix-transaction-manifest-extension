@@ -38,7 +38,7 @@ import { ResourceAddressContext } from "./TransactionManifestParser";
 import { HashContext } from "./TransactionManifestParser";
 import { BucketContext } from "./TransactionManifestParser";
 import { ProofContext } from "./TransactionManifestParser";
-import { NonFungible_idContext } from "./TransactionManifestParser";
+import { NonFungibleIdContext } from "./TransactionManifestParser";
 import { NonFungibleAddressContext } from "./TransactionManifestParser";
 import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
@@ -299,11 +299,11 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	visitProof?: (ctx: ProofContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.nonFungible_id`.
+	 * Visit a parse tree produced by `TransactionManifestParser.nonFungibleId`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitNonFungible_id?: (ctx: NonFungible_idContext) => Result;
+	visitNonFungibleId?: (ctx: NonFungibleIdContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.nonFungibleAddress`.
