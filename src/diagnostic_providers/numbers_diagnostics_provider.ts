@@ -108,13 +108,51 @@ export default class NumbersDiagnosticsProvider extends DiagnosticsProvider impl
      * Adds diagnostics for a number given its type
      */
     private addNumberDiagnostics(context: ManifestNumber) {
+        let number: number = this.getNumber(context);
+        let numberRules: NumberRules = this.getNumberRules(context);
 
+        if (number < numberRules.minimum) {
+            this.addDiagnostic(context, `Below Minimum: This type has a minimum of ${numberRules.minimum} but the number given has a value of ${number}`, vscode.DiagnosticSeverity.Error);
+            return;
+        }
+        if (number > numberRules.maximum) {
+            this.addDiagnostic(context, `Above Maximum: This type has a maximum of ${numberRules.maximum} but the number given has a value of ${number}`, vscode.DiagnosticSeverity.Error);
+            return;
+        }
+
+        let numberOfDecimalPoints: number;
+        let splittedNumberString: string[] = number.toString().split('.');
+        if (splittedNumberString.length === 2) {
+            numberOfDecimalPoints = splittedNumberString[1].length;
+        } else {
+            numberOfDecimalPoints = 0;
+        }
+
+        if (numberOfDecimalPoints > numberRules.decimalPlaces) {
+            this.addDiagnostic(context, `Invalid Decimal Points: This type allows for a maximum number of decimal points of ${numberRules.decimalPlaces} but there were ${numberOfDecimalPoints} in the number.`, vscode.DiagnosticSeverity.Error);
+            return;
+        }
     }
 
+    /**
+     * Takes an antlr number context and converts it to the underlying number.
+     */
     private getNumber(context: ManifestNumber): number {
-        return 0;
+        if (context instanceof U8Context || context instanceof U16Context || context instanceof U32Context || context instanceof U64Context || context instanceof U128Context) {
+            return parseInt(context.children![0].toString().split('u')[0]);
+        } else if (context instanceof I8Context || context instanceof I16Context || context instanceof I32Context || context instanceof I64Context || context instanceof I128Context) {
+            return parseInt(context.children![0].toString().split('i')[0]);
+        } else if (context instanceof DecimalContext || context instanceof PreciseDecimalContext) {
+            return parseFloat(context.children![2].toString().slice(1, -1));
+        } else {
+            throw new Error("Should never be able to get here.");
+        }
     }
 
+    /**
+     * Gets the rule corresponding to a specific numeric type. These are the rules that the number will be validated 
+     * against.
+     */
     private getNumberRules(context: ManifestNumber): NumberRules {
         // Unsigned Numbers
         if (context instanceof U8Context) {

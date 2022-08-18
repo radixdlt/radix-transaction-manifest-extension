@@ -32,6 +32,7 @@ async function activate(_) {
     const getDiagnostics = (document) => {
         let diagnostics = [];
         diagnostics.push(...(new diagnostic_providers_1.AddressesDiagnosticProvider(document).getDiagnostics()));
+        diagnostics.push(...(new diagnostic_providers_1.NumbersDiagnosticsProvider(document).getDiagnostics()));
         return diagnostics;
     };
     /**
