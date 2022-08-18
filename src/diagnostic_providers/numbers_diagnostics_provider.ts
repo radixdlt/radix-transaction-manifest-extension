@@ -108,7 +108,14 @@ export default class NumbersDiagnosticsProvider extends DiagnosticsProvider impl
      * Adds diagnostics for a number given its type
      */
     private addNumberDiagnostics(context: ManifestNumber) {
-        let number: number = this.getNumber(context);
+        let unparsedNumberString: string = this.getNumberString(context);
+        console.log(unparsedNumberString);
+        if (Number.isNaN(Number(unparsedNumberString))) {
+            this.addDiagnostic(context, `Invalid Number: The number "${unparsedNumberString}" is not a valid number`, vscode.DiagnosticSeverity.Error);
+            return;
+        }
+        
+        let number: number = parseFloat(unparsedNumberString);
         let numberRules: NumberRules = this.getNumberRules(context);
 
         if (number < numberRules.minimum) {
@@ -137,13 +144,13 @@ export default class NumbersDiagnosticsProvider extends DiagnosticsProvider impl
     /**
      * Takes an antlr number context and converts it to the underlying number.
      */
-    private getNumber(context: ManifestNumber): number {
+    private getNumberString(context: ManifestNumber): string {
         if (context instanceof U8Context || context instanceof U16Context || context instanceof U32Context || context instanceof U64Context || context instanceof U128Context) {
-            return parseInt(context.children![0].toString().split('u')[0]);
+            return context.children![0].toString().split('u')[0];
         } else if (context instanceof I8Context || context instanceof I16Context || context instanceof I32Context || context instanceof I64Context || context instanceof I128Context) {
-            return parseInt(context.children![0].toString().split('i')[0]);
+            return context.children![0].toString().split('i')[0];
         } else if (context instanceof DecimalContext || context instanceof PreciseDecimalContext) {
-            return parseFloat(context.children![2].toString().slice(1, -1));
+            return context.children![2].toString().slice(1, -1);
         } else {
             throw new Error("Should never be able to get here.");
         }

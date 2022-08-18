@@ -24,7 +24,7 @@ class DiagnosticsProvider {
         let start = context._start;
         let stop = context._stop;
         if (stop) {
-            let range = new vscode.Range(start.line - 1, start.charPositionInLine, stop.line - 1, stop.charPositionInLine);
+            let range = new vscode.Range(start.line - 1, start.charPositionInLine, stop.line - 1, stop.charPositionInLine + 1);
             this.diagnostics.push(new vscode.Diagnostic(range, message, severity));
         }
         else {

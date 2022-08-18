@@ -70,7 +70,13 @@ class NumbersDiagnosticsProvider extends diagnostics_provider_1.default {
      * Adds diagnostics for a number given its type
      */
     addNumberDiagnostics(context) {
-        let number = this.getNumber(context);
+        let unparsedNumberString = this.getNumberString(context);
+        console.log(unparsedNumberString);
+        if (Number.isNaN(Number(unparsedNumberString))) {
+            this.addDiagnostic(context, `Invalid Number: The number "${unparsedNumberString}" is not a valid number`, vscode.DiagnosticSeverity.Error);
+            return;
+        }
+        let number = parseFloat(unparsedNumberString);
         let numberRules = this.getNumberRules(context);
         if (number < numberRules.minimum) {
             this.addDiagnostic(context, `Below Minimum: This type has a minimum of ${numberRules.minimum} but the number given has a value of ${number}`, vscode.DiagnosticSeverity.Error);
@@ -96,15 +102,15 @@ class NumbersDiagnosticsProvider extends diagnostics_provider_1.default {
     /**
      * Takes an antlr number context and converts it to the underlying number.
      */
-    getNumber(context) {
+    getNumberString(context) {
         if (context instanceof TransactionManifestParser_1.U8Context || context instanceof TransactionManifestParser_1.U16Context || context instanceof TransactionManifestParser_1.U32Context || context instanceof TransactionManifestParser_1.U64Context || context instanceof TransactionManifestParser_1.U128Context) {
-            return parseInt(context.children[0].toString().split('u')[0]);
+            return context.children[0].toString().split('u')[0];
         }
         else if (context instanceof TransactionManifestParser_1.I8Context || context instanceof TransactionManifestParser_1.I16Context || context instanceof TransactionManifestParser_1.I32Context || context instanceof TransactionManifestParser_1.I64Context || context instanceof TransactionManifestParser_1.I128Context) {
-            return parseInt(context.children[0].toString().split('i')[0]);
+            return context.children[0].toString().split('i')[0];
         }
         else if (context instanceof TransactionManifestParser_1.DecimalContext || context instanceof TransactionManifestParser_1.PreciseDecimalContext) {
-            return parseFloat(context.children[2].toString().slice(1, -1));
+            return context.children[2].toString().slice(1, -1);
         }
         else {
             throw new Error("Should never be able to get here.");

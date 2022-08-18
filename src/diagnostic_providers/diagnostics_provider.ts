@@ -45,7 +45,7 @@ export default abstract class DiagnosticsProvider {
                 start.line - 1,
                 start.charPositionInLine,
                 stop.line - 1,
-                stop.charPositionInLine,
+                stop.charPositionInLine + 1,
             );
             this.diagnostics.push(new vscode.Diagnostic(range, message, severity));
         } else {
