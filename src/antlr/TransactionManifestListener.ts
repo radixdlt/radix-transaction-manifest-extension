@@ -5,6 +5,27 @@ import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
 import { ManifestContext } from "./TransactionManifestParser";
 import { ManifestInstructionContext } from "./TransactionManifestParser";
+import { CallFunctionContext } from "./TransactionManifestParser";
+import { CallMethodContext } from "./TransactionManifestParser";
+import { CallMethodWithAllResourcesContext } from "./TransactionManifestParser";
+import { TakeFromWorkTopContext } from "./TransactionManifestParser";
+import { TakeFromWorktopByAmountContext } from "./TransactionManifestParser";
+import { TakeFromWorktopByIdsContext } from "./TransactionManifestParser";
+import { ReturnToWorktopContext } from "./TransactionManifestParser";
+import { AssertWorktopContainsContext } from "./TransactionManifestParser";
+import { AssertWorktopContainsByAmountContext } from "./TransactionManifestParser";
+import { AssertWorktopContainsByIdsContext } from "./TransactionManifestParser";
+import { PopFromAuthZoneContext } from "./TransactionManifestParser";
+import { PushToAuthZoneContext } from "./TransactionManifestParser";
+import { CreateProofFromAuthZoneContext } from "./TransactionManifestParser";
+import { CreateProofFromAuthZoneByAmountContext } from "./TransactionManifestParser";
+import { CreateProofFromAuthZoneByIdsContext } from "./TransactionManifestParser";
+import { CreateProofFromBucketContext } from "./TransactionManifestParser";
+import { CloneProofContext } from "./TransactionManifestParser";
+import { DropProofContext } from "./TransactionManifestParser";
+import { DropAllProofsContext } from "./TransactionManifestParser";
+import { ClearAuthZoneContext } from "./TransactionManifestParser";
+import { PublishPackageContext } from "./TransactionManifestParser";
 import { UnitContext } from "./TransactionManifestParser";
 import { BoolContext } from "./TransactionManifestParser";
 import { I8Context } from "./TransactionManifestParser";
@@ -71,6 +92,237 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitManifestInstruction?: (ctx: ManifestInstructionContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.callFunction`.
+	 * @param ctx the parse tree
+	 */
+	enterCallFunction?: (ctx: CallFunctionContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.callFunction`.
+	 * @param ctx the parse tree
+	 */
+	exitCallFunction?: (ctx: CallFunctionContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.callMethod`.
+	 * @param ctx the parse tree
+	 */
+	enterCallMethod?: (ctx: CallMethodContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.callMethod`.
+	 * @param ctx the parse tree
+	 */
+	exitCallMethod?: (ctx: CallMethodContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.callMethodWithAllResources`.
+	 * @param ctx the parse tree
+	 */
+	enterCallMethodWithAllResources?: (ctx: CallMethodWithAllResourcesContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.callMethodWithAllResources`.
+	 * @param ctx the parse tree
+	 */
+	exitCallMethodWithAllResources?: (ctx: CallMethodWithAllResourcesContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorkTop`.
+	 * @param ctx the parse tree
+	 */
+	enterTakeFromWorkTop?: (ctx: TakeFromWorkTopContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.takeFromWorkTop`.
+	 * @param ctx the parse tree
+	 */
+	exitTakeFromWorkTop?: (ctx: TakeFromWorkTopContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.
+	 * @param ctx the parse tree
+	 */
+	enterTakeFromWorktopByAmount?: (ctx: TakeFromWorktopByAmountContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.
+	 * @param ctx the parse tree
+	 */
+	exitTakeFromWorktopByAmount?: (ctx: TakeFromWorktopByAmountContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorktopByIds`.
+	 * @param ctx the parse tree
+	 */
+	enterTakeFromWorktopByIds?: (ctx: TakeFromWorktopByIdsContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.takeFromWorktopByIds`.
+	 * @param ctx the parse tree
+	 */
+	exitTakeFromWorktopByIds?: (ctx: TakeFromWorktopByIdsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.returnToWorktop`.
+	 * @param ctx the parse tree
+	 */
+	enterReturnToWorktop?: (ctx: ReturnToWorktopContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.returnToWorktop`.
+	 * @param ctx the parse tree
+	 */
+	exitReturnToWorktop?: (ctx: ReturnToWorktopContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.assertWorktopContains`.
+	 * @param ctx the parse tree
+	 */
+	enterAssertWorktopContains?: (ctx: AssertWorktopContainsContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.assertWorktopContains`.
+	 * @param ctx the parse tree
+	 */
+	exitAssertWorktopContains?: (ctx: AssertWorktopContainsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.assertWorktopContainsByAmount`.
+	 * @param ctx the parse tree
+	 */
+	enterAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByAmount`.
+	 * @param ctx the parse tree
+	 */
+	exitAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
+	 * @param ctx the parse tree
+	 */
+	enterAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
+	 * @param ctx the parse tree
+	 */
+	exitAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.popFromAuthZone`.
+	 * @param ctx the parse tree
+	 */
+	enterPopFromAuthZone?: (ctx: PopFromAuthZoneContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.popFromAuthZone`.
+	 * @param ctx the parse tree
+	 */
+	exitPopFromAuthZone?: (ctx: PopFromAuthZoneContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.pushToAuthZone`.
+	 * @param ctx the parse tree
+	 */
+	enterPushToAuthZone?: (ctx: PushToAuthZoneContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.pushToAuthZone`.
+	 * @param ctx the parse tree
+	 */
+	exitPushToAuthZone?: (ctx: PushToAuthZoneContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZone`.
+	 * @param ctx the parse tree
+	 */
+	enterCreateProofFromAuthZone?: (ctx: CreateProofFromAuthZoneContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZone`.
+	 * @param ctx the parse tree
+	 */
+	exitCreateProofFromAuthZone?: (ctx: CreateProofFromAuthZoneContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
+	 * @param ctx the parse tree
+	 */
+	enterCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
+	 * @param ctx the parse tree
+	 */
+	exitCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
+	 * @param ctx the parse tree
+	 */
+	enterCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
+	 * @param ctx the parse tree
+	 */
+	exitCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromBucket`.
+	 * @param ctx the parse tree
+	 */
+	enterCreateProofFromBucket?: (ctx: CreateProofFromBucketContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromBucket`.
+	 * @param ctx the parse tree
+	 */
+	exitCreateProofFromBucket?: (ctx: CreateProofFromBucketContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.cloneProof`.
+	 * @param ctx the parse tree
+	 */
+	enterCloneProof?: (ctx: CloneProofContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.cloneProof`.
+	 * @param ctx the parse tree
+	 */
+	exitCloneProof?: (ctx: CloneProofContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.dropProof`.
+	 * @param ctx the parse tree
+	 */
+	enterDropProof?: (ctx: DropProofContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.dropProof`.
+	 * @param ctx the parse tree
+	 */
+	exitDropProof?: (ctx: DropProofContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.dropAllProofs`.
+	 * @param ctx the parse tree
+	 */
+	enterDropAllProofs?: (ctx: DropAllProofsContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.dropAllProofs`.
+	 * @param ctx the parse tree
+	 */
+	exitDropAllProofs?: (ctx: DropAllProofsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.clearAuthZone`.
+	 * @param ctx the parse tree
+	 */
+	enterClearAuthZone?: (ctx: ClearAuthZoneContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.clearAuthZone`.
+	 * @param ctx the parse tree
+	 */
+	exitClearAuthZone?: (ctx: ClearAuthZoneContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.publishPackage`.
+	 * @param ctx the parse tree
+	 */
+	enterPublishPackage?: (ctx: PublishPackageContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.publishPackage`.
+	 * @param ctx the parse tree
+	 */
+	exitPublishPackage?: (ctx: PublishPackageContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.unit`.

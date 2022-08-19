@@ -5,6 +5,27 @@ import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 
 import { ManifestContext } from "./TransactionManifestParser";
 import { ManifestInstructionContext } from "./TransactionManifestParser";
+import { CallFunctionContext } from "./TransactionManifestParser";
+import { CallMethodContext } from "./TransactionManifestParser";
+import { CallMethodWithAllResourcesContext } from "./TransactionManifestParser";
+import { TakeFromWorkTopContext } from "./TransactionManifestParser";
+import { TakeFromWorktopByAmountContext } from "./TransactionManifestParser";
+import { TakeFromWorktopByIdsContext } from "./TransactionManifestParser";
+import { ReturnToWorktopContext } from "./TransactionManifestParser";
+import { AssertWorktopContainsContext } from "./TransactionManifestParser";
+import { AssertWorktopContainsByAmountContext } from "./TransactionManifestParser";
+import { AssertWorktopContainsByIdsContext } from "./TransactionManifestParser";
+import { PopFromAuthZoneContext } from "./TransactionManifestParser";
+import { PushToAuthZoneContext } from "./TransactionManifestParser";
+import { CreateProofFromAuthZoneContext } from "./TransactionManifestParser";
+import { CreateProofFromAuthZoneByAmountContext } from "./TransactionManifestParser";
+import { CreateProofFromAuthZoneByIdsContext } from "./TransactionManifestParser";
+import { CreateProofFromBucketContext } from "./TransactionManifestParser";
+import { CloneProofContext } from "./TransactionManifestParser";
+import { DropProofContext } from "./TransactionManifestParser";
+import { DropAllProofsContext } from "./TransactionManifestParser";
+import { ClearAuthZoneContext } from "./TransactionManifestParser";
+import { PublishPackageContext } from "./TransactionManifestParser";
 import { UnitContext } from "./TransactionManifestParser";
 import { BoolContext } from "./TransactionManifestParser";
 import { I8Context } from "./TransactionManifestParser";
@@ -66,6 +87,153 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	 * @return the visitor result
 	 */
 	visitManifestInstruction?: (ctx: ManifestInstructionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.callFunction`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCallFunction?: (ctx: CallFunctionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.callMethod`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCallMethod?: (ctx: CallMethodContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.callMethodWithAllResources`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCallMethodWithAllResources?: (ctx: CallMethodWithAllResourcesContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorkTop`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTakeFromWorkTop?: (ctx: TakeFromWorkTopContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTakeFromWorktopByAmount?: (ctx: TakeFromWorktopByAmountContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktopByIds`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitTakeFromWorktopByIds?: (ctx: TakeFromWorktopByIdsContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.returnToWorktop`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitReturnToWorktop?: (ctx: ReturnToWorktopContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.assertWorktopContains`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssertWorktopContains?: (ctx: AssertWorktopContainsContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByAmount`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.popFromAuthZone`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPopFromAuthZone?: (ctx: PopFromAuthZoneContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.pushToAuthZone`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPushToAuthZone?: (ctx: PushToAuthZoneContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromAuthZone`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCreateProofFromAuthZone?: (ctx: CreateProofFromAuthZoneContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromBucket`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCreateProofFromBucket?: (ctx: CreateProofFromBucketContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.cloneProof`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCloneProof?: (ctx: CloneProofContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.dropProof`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDropProof?: (ctx: DropProofContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.dropAllProofs`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDropAllProofs?: (ctx: DropAllProofsContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.clearAuthZone`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClearAuthZone?: (ctx: ClearAuthZoneContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.publishPackage`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPublishPackage?: (ctx: PublishPackageContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.unit`.

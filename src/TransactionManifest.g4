@@ -9,88 +9,129 @@ manifest
     ;
 
 manifestInstruction
-    :   CALL_FUNCTION
-            packageAddress      // Address of the package
-            string              // blueprint name
-            string              // function name
-            value*              // arguments
-            SEMICOLON
-    |   CALL_METHOD
-            componentAddress    // Address of the component
-            string              // method name
-            value*              // arguments
-            SEMICOLON
-    |   CALL_METHOD_WITH_ALL_RESOURCES
-            componentAddress    // Address of the component
-            string              // method name
-            SEMICOLON
-    |   TAKE_FROM_WORKTOP
-            resourceAddress     // The resource address to take
-            bucket              // The bucket that the resource will go into
-            SEMICOLON
-    |   TAKE_FROM_WORKTOP_BY_AMOUNT
-            decimal             // Amount to take
-            resourceAddress     // The resource address to take
-            bucket              // The bucket that the resource will go into
-            SEMICOLON
-    |   TAKE_FROM_WORKTOP_BY_IDS
-            set                 // Set of IDs to take
-            resourceAddress     // The resource address to take
-            bucket              // The bucket that the resource will go into
-            SEMICOLON
-    |   RETURN_TO_WORKTOP
-            bucket              // The bucket to return
-            SEMICOLON
-    |   ASSERT_WORKTOP_CONTAINS
-            resourceAddress     // The resource address to assert
-            SEMICOLON
-    |   ASSERT_WORKTOP_CONTAINS_BY_AMOUNT
-            decimal             // Amount to assert
-            resourceAddress     // The resource address to assert
-            SEMICOLON
-    |   ASSERT_WORKTOP_CONTAINS_BY_IDS
-            set                 // Set of IDs to assert
-            resourceAddress     // The resource address to assert
-            SEMICOLON
-    |   POP_FROM_AUTH_ZONE
-            proof               // A named proof where the popped proof goes
-            SEMICOLON
-    |   PUSH_TO_AUTH_ZONE
-            proof               // The proof to push to the auth zone
-            SEMICOLON
-    |   CREATE_PROOF_FROM_AUTH_ZONE
-            resourceAddress     // The resource address to take
-            proof               // The named proof that the created proof will be stored in
-            SEMICOLON
-    |   CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT
-            decimal             // Amount to take
-            resourceAddress     // The resource address to take
-            proof               // The named proof that the created proof will be stored in
-            SEMICOLON
-    |   CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS
-            set                 // Set of IDs to take
-            resourceAddress     // The resource address to take
-            proof               // The named proof that the created proof will be stored in
-            SEMICOLON   
-    |   CREATE_PROOF_FROM_BUCKET
-            bucket              // The bucket to create a proof from
-            proof               // The named proof that the proof will be stored in
-            SEMICOLON
-    |   CLONE_PROOF
-            proof               // Proof to clone       
-            proof               // Cloned proof
-            SEMICOLON
-    |   DROP_PROOF
-            proof               // Proof to drop
-            SEMICOLON       
-    |   DROP_ALL_PROOFS
-            SEMICOLON
-    |   CLEAR_AUTHZONE
-            SEMICOLON
-    |   PUBLISH_PACKAGE
-            bytes               // The bytes of the package to publish
-            SEMICOLON
+    :   callFunction
+    |   callMethod
+    |   callMethodWithAllResources
+    
+    |   takeFromWorkTop
+    |   takeFromWorktopByAmount
+    |   takeFromWorktopByIds
+    
+    |   assertWorktopContains
+    |   assertWorktopContainsByAmount
+    |   assertWorktopContainsByIds
+
+    |   popFromAuthZone
+    |   pushToAuthZone
+
+    |   createProofFromAuthZone
+    |   createProofFromAuthZoneByAmount
+    |   createProofFromAuthZoneByIds
+
+    |   createProofFromBucket
+    |   cloneProof
+    |   dropProof
+    |   dropAllProofs
+    |   clearAuthZone
+
+    |   publishPackage
     ;
+
+// Instructions
+
+callFunction : CALL_FUNCTION
+        packageAddress      // Address of the package
+        string              // blueprint name
+        string              // function name
+        value*              // arguments
+        SEMICOLON ;
+
+callMethod : CALL_METHOD
+        componentAddress    // Address of the component
+        string              // method name
+        value*              // arguments
+        SEMICOLON ;
+
+callMethodWithAllResources : CALL_METHOD_WITH_ALL_RESOURCES
+        componentAddress    // Address of the component
+        string              // method name
+        SEMICOLON ;
+
+takeFromWorkTop : TAKE_FROM_WORKTOP
+        resourceAddress     // The resource address to take
+        bucket              // The bucket that the resource will go into
+        SEMICOLON ; 
+takeFromWorktopByAmount : TAKE_FROM_WORKTOP_BY_AMOUNT
+        decimal             // Amount to take
+        resourceAddress     // The resource address to take
+        bucket              // The bucket that the resource will go into
+        SEMICOLON ; 
+takeFromWorktopByIds : TAKE_FROM_WORKTOP_BY_IDS
+        set                 // Set of IDs to take
+        resourceAddress     // The resource address to take
+        bucket              // The bucket that the resource will go into
+        SEMICOLON ; 
+
+returnToWorktop : RETURN_TO_WORKTOP
+        bucket              // The bucket to return
+        SEMICOLON ; 
+
+assertWorktopContains : ASSERT_WORKTOP_CONTAINS
+        resourceAddress     // The resource address to assert
+        SEMICOLON ; 
+assertWorktopContainsByAmount : ASSERT_WORKTOP_CONTAINS_BY_AMOUNT
+        decimal             // Amount to assert
+        resourceAddress     // The resource address to assert
+        SEMICOLON ; 
+assertWorktopContainsByIds : ASSERT_WORKTOP_CONTAINS_BY_IDS
+        set                 // Set of IDs to assert
+        resourceAddress     // The resource address to assert
+        SEMICOLON ; 
+
+popFromAuthZone : POP_FROM_AUTH_ZONE
+        proof               // A named proof where the popped proof goes
+        SEMICOLON ; 
+pushToAuthZone : PUSH_TO_AUTH_ZONE
+        proof               // The proof to push to the auth zone
+        SEMICOLON ; 
+
+createProofFromAuthZone : CREATE_PROOF_FROM_AUTH_ZONE
+        resourceAddress     // The resource address to take
+        proof               // The named proof that the created proof will be stored in
+        SEMICOLON ; 
+createProofFromAuthZoneByAmount : CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT
+        decimal             // Amount to take
+        resourceAddress     // The resource address to take
+        proof               // The named proof that the created proof will be stored in
+        SEMICOLON ; 
+createProofFromAuthZoneByIds : CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS
+        set                 // Set of IDs to take
+        resourceAddress     // The resource address to take
+        proof               // The named proof that the created proof will be stored in
+        SEMICOLON ;
+
+createProofFromBucket : CREATE_PROOF_FROM_BUCKET
+        bucket              // The bucket to create a proof from
+        proof               // The named proof that the proof will be stored in
+        SEMICOLON ; 
+
+cloneProof : CLONE_PROOF
+        proof               // Proof to clone       
+        proof               // Cloned proof
+        SEMICOLON ; 
+dropProof : DROP_PROOF
+        proof               // Proof to drop
+        SEMICOLON ;
+dropAllProofs : DROP_ALL_PROOFS
+        SEMICOLON ;
+clearAuthZone : CLEAR_AUTHZONE
+        SEMICOLON ;
+
+publishPackage : PUBLISH_PACKAGE
+        bytes               // The bytes of the package to publish
+        SEMICOLON ; 
+
+// Argument types
 
 unit                :   '()' ;
 bool                :   BOOL_LITERAL ;
