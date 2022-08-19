@@ -1,6 +1,6 @@
 "use strict";
 
-import { ANTLRErrorListener, CharStream, CharStreams, CommonToken, CommonTokenStream, ParserRuleContext, RecognitionException, Recognizer } from "antlr4ts";
+import { ANTLRErrorListener, CharStream, CharStreams, CommonToken, CommonTokenStream, RecognitionException, Recognizer } from "antlr4ts";
 import { TransactionManifestLexer } from "../antlr/TransactionManifestLexer";
 import { TransactionManifestParser } from "../antlr/TransactionManifestParser";
 

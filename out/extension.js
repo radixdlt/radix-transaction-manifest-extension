@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = void 0;
 const diagnostic_providers_1 = require("./diagnostic_providers");
+const formatting_providers_1 = require("./formatting_providers");
 const vscode = require("vscode");
 let diagnosticCollection = vscode.languages.createDiagnosticCollection("rtm");
 async function activate(_) {
@@ -52,6 +53,10 @@ async function activate(_) {
     const removeAllDiagnostics = (document) => {
         diagnosticCollection.set(document.uri, []);
     };
+    // =====================
+    // Formatting Providers 
+    // =====================
+    vscode.languages.registerDocumentFormattingEditProvider("rtm", new formatting_providers_1.BasicFormattingProvider());
 }
 exports.activate = activate;
 //# sourceMappingURL=extension.js.map

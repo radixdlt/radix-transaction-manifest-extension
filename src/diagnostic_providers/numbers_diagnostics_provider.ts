@@ -1,12 +1,11 @@
 "use strict";
 
-import { ComponentAddressContext, DecimalContext, I128Context, I16Context, I32Context, I64Context, I8Context, PackageAddressContext, PreciseDecimalContext, ResourceAddressContext, TransactionManifestParser, U128Context, U16Context, U32Context, U64Context, U8Context } from "../antlr/TransactionManifestParser";
+import { DecimalContext, I128Context, I16Context, I32Context, I64Context, I8Context, PreciseDecimalContext, TransactionManifestParser, U128Context, U16Context, U32Context, U64Context, U8Context } from "../antlr/TransactionManifestParser";
 import { TransactionManifestListener } from "../antlr/TransactionManifestListener";
 import { TransactionManifestLexer } from "../antlr/TransactionManifestLexer";
 import { CharStream, CharStreams, CommonTokenStream } from "antlr4ts";
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
-import { ParseTree } from "antlr4ts/tree/ParseTree";
 
 import DiagnosticsProvider from "./diagnostics_provider";
 

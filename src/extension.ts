@@ -1,6 +1,7 @@
 "use strict";
 
 import { AddressesDiagnosticProvider, NumbersDiagnosticsProvider, ParsingDiagnosticsProvider, LexerDiagnosticsProvider, GeneralDiagnosticsProvider, IdValidationDiagnosticsProvider } from './diagnostic_providers';
+import { BasicFormattingProvider } from './formatting_providers';
 import * as vscode from 'vscode';
 
 let diagnosticCollection: vscode.DiagnosticCollection = vscode.languages.createDiagnosticCollection("rtm");
@@ -63,4 +64,10 @@ export async function activate(_: vscode.ExtensionContext) {
     const removeAllDiagnostics  = (document: vscode.TextDocument) => {
         diagnosticCollection.set(document.uri, []);
     };
+
+    // =====================
+    // Formatting Providers 
+    // =====================
+
+    vscode.languages.registerDocumentFormattingEditProvider("rtm", new BasicFormattingProvider());
 }

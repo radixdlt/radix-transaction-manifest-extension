@@ -41,7 +41,7 @@ export default class AddressesDiagnosticProvider extends DiagnosticsProvider imp
     // =========================================================
 
     enterComponentAddress(context: ComponentAddressContext) {
-    this.addAddressDiagnostics(context);
+        this.addAddressDiagnostics(context);
     }
 
     enterPackageAddress(context: PackageAddressContext) {
