@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const TransactionManifestParser_1 = require("../antlr/TransactionManifestParser");
+const TransactionManifestLexer_1 = require("../antlr/TransactionManifestLexer");
 const antlr4ts_1 = require("antlr4ts");
 const ParseTreeWalker_1 = require("antlr4ts/tree/ParseTreeWalker");
 const diagnostics_provider_1 = require("./diagnostics_provider");
 const vscode = require("vscode");
-const TransactionManifestLexer_1 = require("../antlr/TransactionManifestLexer");
 /**
  * A diagnostics provider that analyzes the movements of buckets and proofs throughout the manifest file.
  */
@@ -24,6 +24,13 @@ class IdValidationDiagnosticsProvider extends diagnostics_provider_1.default {
         let parser = new TransactionManifestParser_1.TransactionManifestParser(tokenStream);
         let tree = parser.manifest();
         ParseTreeWalker_1.ParseTreeWalker.DEFAULT.walk(this, tree);
+        // At this point, parsing and lexing has finished. Check if there are any remaining buckets and proofs that
+        // have not been dealt with. If there is, then provide an error for those.
+        for (var [scryptoObject, scryptoObjectContext] of this.scryptoObjectDefinitions) {
+            if (scryptoObject.getType() === ScryptoObjectType.bucket) {
+                this.addDiagnostic(scryptoObjectContext, "Dangling Bucket: This bucket is not deposited or used anywhere in the transaction and will lead the transaction to fail.", vscode.DiagnosticSeverity.Error);
+            }
+        }
     }
     // =========================================================
     // Method implementation from `TransactionManifestListener`

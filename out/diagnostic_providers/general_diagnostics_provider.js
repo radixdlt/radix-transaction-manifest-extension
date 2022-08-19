@@ -41,8 +41,11 @@ class GeneralDiagnosticsProvider extends diagnostics_provider_1.default {
     }
     enterNonFungibleAddress(context) {
         let nonFungibleAddress = context.children[2].toString().slice(1, -1);
-        let _resourceAddress = nonFungibleAddress.slice(0, 27);
+        let resourceAddress = nonFungibleAddress.slice(0, 27);
         let nonFungibleId = nonFungibleAddress.slice(27, nonFungibleAddress.length);
+        if (!resourceAddress.startsWith('00') || !this.isHex(resourceAddress)) {
+            this.addDiagnostic(context, "Invalid Resource Address: The resource address portion of the NonFungibleAddress does not seem to be correct.", vscode.DiagnosticSeverity.Error);
+        }
         if (!this.isHex(nonFungibleId)) {
             this.addDiagnostic(context, "Invalid Hex: This NonFungibleId is not a valid hexadecimal number", vscode.DiagnosticSeverity.Error);
             return;

@@ -1,15 +1,15 @@
 "use strict";
 
-import { BucketContext, BytesContext, CallFunctionContext, CallMethodContext, CallMethodWithAllResourcesContext, CloneProofContext, CreateProofFromAuthZoneByAmountContext, CreateProofFromAuthZoneByIdsContext, CreateProofFromAuthZoneContext, CreateProofFromBucketContext, DropAllProofsContext, DropProofContext, NonFungibleAddressContext, NonFungibleIdContext, PopFromAuthZoneContext, ProofContext, PushToAuthZoneContext, ReturnToWorktopContext, TakeFromWorktopByAmountContext, TakeFromWorktopByIdsContext, TakeFromWorktopContext, TransactionManifestParser, U64Context } from "../antlr/TransactionManifestParser";
+import { BucketContext, CallFunctionContext, CallMethodContext, CallMethodWithAllResourcesContext, CloneProofContext, CreateProofFromAuthZoneByAmountContext, CreateProofFromAuthZoneByIdsContext, CreateProofFromAuthZoneContext, CreateProofFromBucketContext, DropAllProofsContext, DropProofContext, PopFromAuthZoneContext, ProofContext, PushToAuthZoneContext, ReturnToWorktopContext, TakeFromWorktopByAmountContext, TakeFromWorktopByIdsContext, TakeFromWorktopContext, TransactionManifestParser, } from "../antlr/TransactionManifestParser";
 import { TransactionManifestListener } from "../antlr/TransactionManifestListener";
+import { TransactionManifestLexer } from "../antlr/TransactionManifestLexer";
 import { CharStream, CharStreams, CommonTokenStream } from "antlr4ts";
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
+import { ParseTree } from "antlr4ts/tree/ParseTree";
 
 import DiagnosticsProvider from "./diagnostics_provider";
 import * as vscode from 'vscode';
-import { TransactionManifestLexer } from "../antlr/TransactionManifestLexer";
-import { ParseTree } from "antlr4ts/tree/ParseTree";
 
 type ScryptoObjectContext = BucketContext | ProofContext;
 
@@ -30,6 +30,14 @@ export default class IdValidationDiagnosticsProvider extends DiagnosticsProvider
         let parser: TransactionManifestParser = new TransactionManifestParser(tokenStream);
         let tree = parser.manifest();
         ParseTreeWalker.DEFAULT.walk(this as ParseTreeListener, tree);
+        
+        // At this point, parsing and lexing has finished. Check if there are any remaining buckets and proofs that
+        // have not been dealt with. If there is, then provide an error for those.
+        for (var [scryptoObject, scryptoObjectContext] of this.scryptoObjectDefinitions) {
+            if (scryptoObject.getType() === ScryptoObjectType.bucket) {
+                this.addDiagnostic(scryptoObjectContext, "Dangling Bucket: This bucket is not deposited or used anywhere in the transaction and will lead the transaction to fail.", vscode.DiagnosticSeverity.Error);
+            }
+        }
     }
     
     // =========================================================
