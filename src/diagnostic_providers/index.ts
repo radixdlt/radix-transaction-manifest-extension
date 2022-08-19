@@ -1,5 +1,6 @@
 "use strict";
 
+export { default as IdValidationDiagnosticsProvider } from './id_validation_diagnostics_provider';
 export { default as AddressesDiagnosticProvider } from "./addresses_diagnostics_provider";
 export { default as NumbersDiagnosticsProvider } from './numbers_diagnostics_provider';
 export { default as ParsingDiagnosticsProvider } from './parsing_diagnostics_provider';

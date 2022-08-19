@@ -36,6 +36,7 @@ async function activate(_) {
         diagnostics.push(...(new diagnostic_providers_1.ParsingDiagnosticsProvider(document).getDiagnostics()));
         diagnostics.push(...(new diagnostic_providers_1.LexerDiagnosticsProvider(document).getDiagnostics()));
         diagnostics.push(...(new diagnostic_providers_1.GeneralDiagnosticsProvider(document).getDiagnostics()));
+        diagnostics.push(...(new diagnostic_providers_1.IdValidationDiagnosticsProvider(document).getDiagnostics()));
         return diagnostics;
     };
     /**

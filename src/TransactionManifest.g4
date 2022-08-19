@@ -13,7 +13,8 @@ manifestInstruction
     |   callMethod
     |   callMethodWithAllResources
     
-    |   takeFromWorkTop
+    |   returnToWorktop
+    |   takeFromWorktop
     |   takeFromWorktopByAmount
     |   takeFromWorktopByIds
     
@@ -57,7 +58,7 @@ callMethodWithAllResources : CALL_METHOD_WITH_ALL_RESOURCES
         string              // method name
         SEMICOLON ;
 
-takeFromWorkTop : TAKE_FROM_WORKTOP
+takeFromWorktop : TAKE_FROM_WORKTOP
         resourceAddress     // The resource address to take
         bucket              // The bucket that the resource will go into
         SEMICOLON ; 

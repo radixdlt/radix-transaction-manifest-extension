@@ -109,7 +109,6 @@ export default class NumbersDiagnosticsProvider extends DiagnosticsProvider impl
      */
     private addNumberDiagnostics(context: ManifestNumber) {
         let unparsedNumberString: string = this.getNumberString(context);
-        console.log(unparsedNumberString);
         if (Number.isNaN(Number(unparsedNumberString))) {
             this.addDiagnostic(context, `Invalid Number: The number "${unparsedNumberString}" is not a valid number`, vscode.DiagnosticSeverity.Error);
             return;

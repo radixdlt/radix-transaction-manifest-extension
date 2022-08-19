@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GeneralDiagnosticsProvider = exports.LexerDiagnosticsProvider = exports.ParsingDiagnosticsProvider = exports.NumbersDiagnosticsProvider = exports.AddressesDiagnosticProvider = void 0;
+exports.GeneralDiagnosticsProvider = exports.LexerDiagnosticsProvider = exports.ParsingDiagnosticsProvider = exports.NumbersDiagnosticsProvider = exports.AddressesDiagnosticProvider = exports.IdValidationDiagnosticsProvider = void 0;
+var id_validation_diagnostics_provider_1 = require("./id_validation_diagnostics_provider");
+Object.defineProperty(exports, "IdValidationDiagnosticsProvider", { enumerable: true, get: function () { return id_validation_diagnostics_provider_1.default; } });
 var addresses_diagnostics_provider_1 = require("./addresses_diagnostics_provider");
 Object.defineProperty(exports, "AddressesDiagnosticProvider", { enumerable: true, get: function () { return addresses_diagnostics_provider_1.default; } });
 var numbers_diagnostics_provider_1 = require("./numbers_diagnostics_provider");

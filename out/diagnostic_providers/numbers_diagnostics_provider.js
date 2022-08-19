@@ -71,7 +71,6 @@ class NumbersDiagnosticsProvider extends diagnostics_provider_1.default {
      */
     addNumberDiagnostics(context) {
         let unparsedNumberString = this.getNumberString(context);
-        console.log(unparsedNumberString);
         if (Number.isNaN(Number(unparsedNumberString))) {
             this.addDiagnostic(context, `Invalid Number: The number "${unparsedNumberString}" is not a valid number`, vscode.DiagnosticSeverity.Error);
             return;

@@ -8,7 +8,7 @@ import { ManifestInstructionContext } from "./TransactionManifestParser";
 import { CallFunctionContext } from "./TransactionManifestParser";
 import { CallMethodContext } from "./TransactionManifestParser";
 import { CallMethodWithAllResourcesContext } from "./TransactionManifestParser";
-import { TakeFromWorkTopContext } from "./TransactionManifestParser";
+import { TakeFromWorktopContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByAmountContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByIdsContext } from "./TransactionManifestParser";
 import { ReturnToWorktopContext } from "./TransactionManifestParser";
@@ -110,11 +110,11 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	visitCallMethodWithAllResources?: (ctx: CallMethodWithAllResourcesContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorkTop`.
+	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktop`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitTakeFromWorkTop?: (ctx: TakeFromWorkTopContext) => Result;
+	visitTakeFromWorktop?: (ctx: TakeFromWorktopContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.

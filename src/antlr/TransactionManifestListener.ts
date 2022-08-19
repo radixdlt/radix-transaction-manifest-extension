@@ -8,7 +8,7 @@ import { ManifestInstructionContext } from "./TransactionManifestParser";
 import { CallFunctionContext } from "./TransactionManifestParser";
 import { CallMethodContext } from "./TransactionManifestParser";
 import { CallMethodWithAllResourcesContext } from "./TransactionManifestParser";
-import { TakeFromWorkTopContext } from "./TransactionManifestParser";
+import { TakeFromWorktopContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByAmountContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByIdsContext } from "./TransactionManifestParser";
 import { ReturnToWorktopContext } from "./TransactionManifestParser";
@@ -127,15 +127,15 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitCallMethodWithAllResources?: (ctx: CallMethodWithAllResourcesContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorkTop`.
+	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorktop`.
 	 * @param ctx the parse tree
 	 */
-	enterTakeFromWorkTop?: (ctx: TakeFromWorkTopContext) => void;
+	enterTakeFromWorktop?: (ctx: TakeFromWorktopContext) => void;
 	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.takeFromWorkTop`.
+	 * Exit a parse tree produced by `TransactionManifestParser.takeFromWorktop`.
 	 * @param ctx the parse tree
 	 */
-	exitTakeFromWorkTop?: (ctx: TakeFromWorkTopContext) => void;
+	exitTakeFromWorktop?: (ctx: TakeFromWorktopContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.
