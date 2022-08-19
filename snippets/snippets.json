@@ -145,19 +145,19 @@
         "scope": "scope.rtm",
         "prefix": "WITHDRAW_FROM_ACCOUNT",
         "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw\" ResourceAddress(\"${2:Resource to Withdraw}\");",
-        "description": "Creates a proof from the Auth Zone."
+        "description": "Withdraws funds from an account."
     },
     "Withdraw from Account by Amount": {
         "scope": "scope.rtm",
         "prefix": "WITHDRAW_FROM_ACCOUNT_BY_AMOUNT",
         "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw_by_amount\" Decimal(\"${2:Amount}\") ResourceAddress(\"${3:Resource to Withdraw}\");",
-        "description": "Creates a proof from the Auth Zone."
+        "description": "Withdraws funds from an account."
     },
     "Withdraw from Account by Ids": {
         "scope": "scope.rtm",
         "prefix": "WITHDRAW_FROM_ACCOUNT_BY_IDS",
         "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw_by_ids\" Set<NonFungibleId>(NonFungibleId(\"${2:id}\")) ResourceAddress(\"${3:Resource to Withdraw}\");",
-        "description": "Creates a proof from the Auth Zone."
+        "description": "Withdraws funds from an account."
     },
 
     // =============
