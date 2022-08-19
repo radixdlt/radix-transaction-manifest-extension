@@ -147,7 +147,7 @@ u32                 :   U32_LITERAL ;
 u64                 :   U64_LITERAL ;
 u128                :   U128_LITERAL ;
 string              :   STRING_LITERAL ;
-struct              :   STRUCT_TYPE OPEN_PARENTHESIS ((value COMMA)*)? CLOED_PARENTHESIS ;
+struct              :   STRUCT_TYPE OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
 enum_               :   ENUM_TYPE OPEN_PARENTHESIS (string COMMA (value (COMMA value)*)?) CLOED_PARENTHESIS ;
 option              :   ( some | none ) ;
 some                :   SOME_TYPE OPEN_PARENTHESIS (value (COMMA value)*) CLOED_PARENTHESIS ;

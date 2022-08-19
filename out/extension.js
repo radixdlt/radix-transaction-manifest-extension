@@ -9,6 +9,11 @@ async function activate(_) {
     // ================
     // Document Events
     // ================
+    vscode.workspace.onDidChangeTextDocument((event) => {
+        if (event.document.languageId === "rtm" && event.document.uri.scheme === "file") {
+            updateDiagnostics(event.document);
+        }
+    });
     vscode.workspace.onDidSaveTextDocument((document) => {
         if (document.languageId === "rtm" && document.uri.scheme === "file") {
             updateDiagnostics(document);

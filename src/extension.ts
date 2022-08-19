@@ -12,6 +12,12 @@ export async function activate(_: vscode.ExtensionContext) {
     // Document Events
     // ================
 
+    vscode.workspace.onDidChangeTextDocument((event: vscode.TextDocumentChangeEvent) => {
+        if (event.document.languageId === "rtm" && event.document.uri.scheme === "file") {
+			updateDiagnostics(event.document);
+		}
+    });
+
     vscode.workspace.onDidSaveTextDocument((document: vscode.TextDocument) => {
 		if (document.languageId === "rtm" && document.uri.scheme === "file") {
 			updateDiagnostics(document);

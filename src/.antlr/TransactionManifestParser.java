@@ -1761,19 +1761,21 @@ public class TransactionManifestParser extends Parser {
 			match(OPEN_PARENTHESIS);
 			setState(301);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
-			case 1:
+			_la = _input.LA(1);
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << BOOL_LITERAL) | (1L << I8_LITERAL) | (1L << I16_LITERAL) | (1L << I32_LITERAL) | (1L << I64_LITERAL) | (1L << I128_LITERAL) | (1L << U8_LITERAL) | (1L << U16_LITERAL) | (1L << U32_LITERAL) | (1L << U64_LITERAL) | (1L << U128_LITERAL) | (1L << STRUCT_TYPE) | (1L << ENUM_TYPE) | (1L << SOME_TYPE) | (1L << NONE_TYPE) | (1L << OK_TYPE) | (1L << ERR_TYPE) | (1L << ARRAY_TYPE) | (1L << TUPLE_TYPE) | (1L << LIST_TYPE) | (1L << SET_TYPE) | (1L << MAP_TYPE) | (1L << DECIMAL_TYPE) | (1L << PRECISE_DECIMAL_TYPE) | (1L << PACKAGE_ADDRESS_TYPE) | (1L << COMPONENT_ADDRESS_TYPE) | (1L << RESOURCE_ADDRESS_TYPE) | (1L << HASH_TYPE) | (1L << BUCKET_TYPE) | (1L << PROOF_TYPE) | (1L << NON_FUNGIBLE_ID_TYPE) | (1L << NON_FUNGIBLE_ADDRESS_TYPE) | (1L << BYTES_TYPE))) != 0) || _la==STRING_LITERAL) {
 				{
+				setState(293);
+				value();
 				setState(298);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__0) | (1L << BOOL_LITERAL) | (1L << I8_LITERAL) | (1L << I16_LITERAL) | (1L << I32_LITERAL) | (1L << I64_LITERAL) | (1L << I128_LITERAL) | (1L << U8_LITERAL) | (1L << U16_LITERAL) | (1L << U32_LITERAL) | (1L << U64_LITERAL) | (1L << U128_LITERAL) | (1L << STRUCT_TYPE) | (1L << ENUM_TYPE) | (1L << SOME_TYPE) | (1L << NONE_TYPE) | (1L << OK_TYPE) | (1L << ERR_TYPE) | (1L << ARRAY_TYPE) | (1L << TUPLE_TYPE) | (1L << LIST_TYPE) | (1L << SET_TYPE) | (1L << MAP_TYPE) | (1L << DECIMAL_TYPE) | (1L << PRECISE_DECIMAL_TYPE) | (1L << PACKAGE_ADDRESS_TYPE) | (1L << COMPONENT_ADDRESS_TYPE) | (1L << RESOURCE_ADDRESS_TYPE) | (1L << HASH_TYPE) | (1L << BUCKET_TYPE) | (1L << PROOF_TYPE) | (1L << NON_FUNGIBLE_ID_TYPE) | (1L << NON_FUNGIBLE_ADDRESS_TYPE) | (1L << BYTES_TYPE))) != 0) || _la==STRING_LITERAL) {
+				while (_la==COMMA) {
 					{
 					{
-					setState(293);
-					value();
 					setState(294);
 					match(COMMA);
+					setState(295);
+					value();
 					}
 					}
 					setState(300);
@@ -1781,8 +1783,8 @@ public class TransactionManifestParser extends Parser {
 					_la = _input.LA(1);
 				}
 				}
-				break;
 			}
+
 			setState(303);
 			match(CLOED_PARENTHESIS);
 			}
@@ -3563,11 +3565,11 @@ public class TransactionManifestParser extends Parser {
 		"\7\n\2\2\u011a?\3\2\2\2\u011b\u011c\7\13\2\2\u011cA\3\2\2\2\u011d\u011e"+
 		"\7\f\2\2\u011eC\3\2\2\2\u011f\u0120\7\r\2\2\u0120E\3\2\2\2\u0121\u0122"+
 		"\7\16\2\2\u0122G\3\2\2\2\u0123\u0124\7Q\2\2\u0124I\3\2\2\2\u0125\u0126"+
-		"\7\36\2\2\u0126\u012f\7\66\2\2\u0127\u0128\5z>\2\u0128\u0129\7:\2\2\u0129"+
-		"\u012b\3\2\2\2\u012a\u0127\3\2\2\2\u012b\u012e\3\2\2\2\u012c\u012a\3\2"+
-		"\2\2\u012c\u012d\3\2\2\2\u012d\u0130\3\2\2\2\u012e\u012c\3\2\2\2\u012f"+
-		"\u012c\3\2\2\2\u012f\u0130\3\2\2\2\u0130\u0131\3\2\2\2\u0131\u0132\7\67"+
-		"\2\2\u0132K\3\2\2\2\u0133\u0134\7\37\2\2\u0134\u0135\7\66\2\2\u0135\u0136"+
+		"\7\36\2\2\u0126\u012f\7\66\2\2\u0127\u012c\5z>\2\u0128\u0129\7:\2\2\u0129"+
+		"\u012b\5z>\2\u012a\u0128\3\2\2\2\u012b\u012e\3\2\2\2\u012c\u012a\3\2\2"+
+		"\2\u012c\u012d\3\2\2\2\u012d\u0130\3\2\2\2\u012e\u012c\3\2\2\2\u012f\u0127"+
+		"\3\2\2\2\u012f\u0130\3\2\2\2\u0130\u0131\3\2\2\2\u0131\u0132\7\67\2\2"+
+		"\u0132K\3\2\2\2\u0133\u0134\7\37\2\2\u0134\u0135\7\66\2\2\u0135\u0136"+
 		"\5H%\2\u0136\u013f\7:\2\2\u0137\u013c\5z>\2\u0138\u0139\7:\2\2\u0139\u013b"+
 		"\5z>\2\u013a\u0138\3\2\2\2\u013b\u013e\3\2\2\2\u013c\u013a\3\2\2\2\u013c"+
 		"\u013d\3\2\2\2\u013d\u0140\3\2\2\2\u013e\u013c\3\2\2\2\u013f\u0137\3\2"+
