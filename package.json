@@ -29,6 +29,12 @@
 	},
 	"main": "./out/extension.js",
 	"contributes": {
+		"snippets": [
+			{
+				"language": "rtm",
+				"path": "./snippets/snippets.json"
+			}
+		],
 		"languages": [
 			{
 				"id": "rtm",

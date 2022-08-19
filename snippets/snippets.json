@@ -1,0 +1,120 @@
+{
+    // =====================    
+    // Instruction Snippets
+    // =====================
+    "Take From Worktop": {
+        "scope": "scope.rtm",
+        "prefix": "TAKE_FROM_WORKTOP",
+        "body": "TAKE_FROM_WORKTOP ResourceAddress(\"$1\") Bucket(\"${2:Bucket Name}\");",
+        "description": "Takes resources from the worktop and into a bucket."
+    },
+    "Take From Worktop by Amount": {
+        "scope": "scope.rtm",
+        "prefix": "TAKE_FROM_WORKTOP_BY_AMOUNT",
+        "body": "TAKE_FROM_WORKTOP_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\") Bucket(\"${3:Bucket Name}\");",
+        "description": "Takes resources from the worktop and into a bucket."
+    },
+    "Take From Worktop by Ids": {
+        "scope": "scope.rtm",
+        "prefix": "TAKE_FROM_WORKTOP_BY_IDS",
+        "body": "TAKE_FROM_WORKTOP_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\") Bucket(\"${3:Bucket Name}\");",
+        "description": "Takes resources from the worktop and into a bucket."
+    },
+    
+    "Return to Worktop": {
+        "scope": "scope.rtm",
+        "prefix": "RETURN_TO_WORKTOP",
+        "body": "RETURN_TO_WORKTOP Bucket(\"${1:Bucket Name}\");",
+        "description": "Returns a bucket to the transaction worktop."
+    },
+
+    "Assert Worktop Contains": {
+        "scope": "scope.rtm",
+        "prefix": "ASSERT_WORKTOP_CONTAINS",
+        "body": "ASSERT_WORKTOP_CONTAINS ResourceAddress(\"$1\");",
+        "description": "Asserts that the transaction worktop contains some resource."
+    },
+    "Assert Worktop Contains by Amount": {
+        "scope": "scope.rtm",
+        "prefix": "ASSERT_WORKTOP_CONTAINS_BY_AMOUNT",
+        "body": "ASSERT_WORKTOP_CONTAINS_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\");",
+        "description": "Asserts that the transaction worktop contains some resource."
+    },
+    "Assert Worktop Contains by Ids": {
+        "scope": "scope.rtm",
+        "prefix": "ASSERT_WORKTOP_CONTAINS_BY_IDS",
+        "body": "ASSERT_WORKTOP_CONTAINS_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\");",
+        "description": "Asserts that the transaction worktop contains some resource."
+    },
+
+    "Pop from Auth Zone": {
+        "scope": "scope.rtm",
+        "prefix": "POP_FROM_AUTH_ZONE",
+        "body": "POP_FROM_AUTH_ZONE Proof(\"${1:Proof Name}\");",
+        "description": "Pops a proof from the Auth Zone."
+    },
+    "Push to Auth Zone": {
+        "scope": "scope.rtm",
+        "prefix": "PUSH_TO_AUTH_ZONE",
+        "body": "PUSH_TO_AUTH_ZONE Proof(\"${1:Proof Name}\");",
+        "description": "Pushes a proof to the auth zone."
+    },
+
+    "Create Proof from Auth Zone": {
+        "scope": "scope.rtm",
+        "prefix": "CREATE_PROOF_FROM_AUTH_ZONE",
+        "body": "CREATE_PROOF_FROM_AUTH_ZONE ResourceAddress(\"$1\") Proof(\"${2:Proof Name}\");",
+        "description": "Creates a proof from the Auth Zone."
+    },
+    "Create Proof from Auth Zone by Amount": {
+        "scope": "scope.rtm",
+        "prefix": "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT",
+        "body": "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\") Proof(\"${3:Proof Name}\");",
+        "description": "Creates a proof from the Auth Zone."
+    },
+    "Create Proof from Auth Zone by Ids": {
+        "scope": "scope.rtm",
+        "prefix": "CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS",
+        "body": "CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\") Proof(\"${3:Proof Name}\");",
+        "description": "Creates a proof from the Auth Zone."
+    },
+    
+    "Create Proof from Bucket": {
+        "scope": "scope.rtm",
+        "prefix": "CREATE_PROOF_FROM_BUCKET",
+        "body": "CREATE_PROOF_FROM_BUCKET Bucket(\"${1:Bucket Name}\") Proof(\"${2:Proof Name}\");",
+        "description": "Creates a proof from Bucket."
+    },
+    
+    "Clone Proof": {
+        "scope": "scope.rtm",
+        "prefix": "CLONE_PROOF",
+        "body": "CLONE_PROOF Proof(\"${1:Original Proof Name}\") Proof(\"${2:New Proof Name}\");",
+        "description": "Clones an existing proof."
+    },
+    "Drop Proof": {
+        "scope": "scope.rtm",
+        "prefix": "DROP_PROOF",
+        "body": "DROP_PROOF Proof(\"${1:Proof Name}\");",
+        "description": "Drops a Proof."
+    },
+    "Drop All Proof": {
+        "scope": "scope.rtm",
+        "prefix": "DROP_ALL_PROOF",
+        "body": "DROP_ALL_PROOF;",
+        "description": "Drops all Proofs."
+    },
+    "Clear Auth Zone": {
+        "scope": "scope.rtm",
+        "prefix": "CLEAR_AUTH_ZONE",
+        "body": "CLEAR_AUTH_ZONE;",
+        "description": "Drops all proofs from the Auth Zone."
+    },
+    
+    "Publish Package": {
+        "scope": "scope.rtm",
+        "prefix": "PUBLISH_PACKAGE",
+        "body": "PUBLISH_PACKAGE Bytes(\"${1:Package Blob}\");",
+        "description": "Publishes a package."
+    },
+}

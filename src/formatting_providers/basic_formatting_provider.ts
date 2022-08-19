@@ -8,8 +8,6 @@ import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
 import { CharStream, CharStreams, CommonTokenStream, ParserRuleContext, Token } from "antlr4ts";
 
 import * as vscode from 'vscode';
-import { ParseTree } from "antlr4ts/tree/ParseTree";
-import { TerminalNode } from "antlr4ts/tree/TerminalNode";
 
 export default class BasicFormattingProvider implements vscode.DocumentFormattingEditProvider, TransactionManifestListener {
     instructions: ManifestInstructionContext[] = [];
