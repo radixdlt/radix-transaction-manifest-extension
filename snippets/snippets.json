@@ -2,6 +2,19 @@
     // =====================    
     // Instruction Snippets
     // =====================
+    "Call Method": {
+        "scope": "scope.rtm",
+        "prefix": "CALL_METHOD",
+        "body": "CALL_METHOD ComponentAddress(\"$1\") \"${2:Method Name}\" \"${3:args}\";",
+        "description": "Calls a method on a component."
+    },
+    "Call Function": {
+        "scope": "scope.rtm",
+        "prefix": "CALL_FUNCTION",
+        "body": "CALL_FUNCTION PackageAddress(\"$1\") \"${2:Blueprint Name}\" \"${3:Function Name}\" \"${4:args}\";",
+        "description": "Calls a function on a blueprint."
+    },
+
     "Take From Worktop": {
         "scope": "scope.rtm",
         "prefix": "TAKE_FROM_WORKTOP",
@@ -117,4 +130,146 @@
         "body": "PUBLISH_PACKAGE Bytes(\"${1:Package Blob}\");",
         "description": "Publishes a package."
     },
+
+    // ==================
+    // Common Operations
+    // ==================
+    "Lock Fee": {
+        "scope": "scope.rtm",
+        "prefix": "LOCK_FEE",
+        "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"lock_fee\" Decimal(\"${2:Fee to Lock}\");",
+        "description": "Locks a fee for the transaction."
+    },
+
+    "Withdraw from Account": {
+        "scope": "scope.rtm",
+        "prefix": "WITHDRAW_FROM_ACCOUNT",
+        "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw\" ResourceAddress(\"${2:Resource to Withdraw}\");",
+        "description": "Creates a proof from the Auth Zone."
+    },
+    "Withdraw from Account by Amount": {
+        "scope": "scope.rtm",
+        "prefix": "WITHDRAW_FROM_ACCOUNT_BY_AMOUNT",
+        "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw_by_amount\" Decimal(\"${2:Amount}\") ResourceAddress(\"${3:Resource to Withdraw}\");",
+        "description": "Creates a proof from the Auth Zone."
+    },
+    "Withdraw from Account by Ids": {
+        "scope": "scope.rtm",
+        "prefix": "WITHDRAW_FROM_ACCOUNT_BY_IDS",
+        "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw_by_ids\" Set<NonFungibleId>(NonFungibleId(\"${2:id}\")) ResourceAddress(\"${3:Resource to Withdraw}\");",
+        "description": "Creates a proof from the Auth Zone."
+    },
+
+    // =============
+    // Common Types
+    // =============
+
+    "Bytes": {
+        "scope": "scope.rtm",
+        "prefix": "Bytes",
+        "body": "Bytes(\"${1:Bytes Hex}\")"
+    },
+    "Hash": {
+        "scope": "scope.rtm",
+        "prefix": "Hash",
+        "body": "Hash(\"${1:Hash Hex}\")"
+    },
+
+    "NonFungibleAddress": {
+        "scope": "scope.rtm",
+        "prefix": "NonFungibleAddress",
+        "body": "NonFungibleAddress(\"${1:NonFungibleAddress}\")"
+    },
+    "NonFungibleId": {
+        "scope": "scope.rtm",
+        "prefix": "NonFungibleId",
+        "body": "NonFungibleId(\"${1:NonFungibleId Hex}\")"
+    },
+    
+    "Bucket": {
+        "scope": "scope.rtm",
+        "prefix": "Bucket",
+        "body": "Bucket(\"${1:Bucket Name}\")"
+    },
+    "Proof": {
+        "scope": "scope.rtm",
+        "prefix": "Proof",
+        "body": "Proof(\"${1:Proof Name}\")"
+    },
+    
+    "ResourceAddress": {
+        "scope": "scope.rtm",
+        "prefix": "ResourceAddress",
+        "body": "ResourceAddress(\"${1:ResourceAddress}\")"
+    },
+    "ComponentAddress": {
+        "scope": "scope.rtm",
+        "prefix": "ComponentAddress",
+        "body": "ComponentAddress(\"${1:ComponentAddress}\")"
+    },
+    "PackageAddress": {
+        "scope": "scope.rtm",
+        "prefix": "PackageAddress",
+        "body": "PackageAddress(\"${1:PackageAddress}\")"
+    },
+    "Decimal": {
+        "scope": "scope.rtm",
+        "prefix": "Decimal",
+        "body": "Decimal(\"${1:number}\")"
+    },
+    "PreciseDecimal": {
+        "scope": "scope.rtm",
+        "prefix": "PreciseDecimal",
+        "body": "PreciseDecimal(\"${1:number}\")"
+    },
+    
+    "Map": {
+        "scope": "scope.rtm",
+        "prefix": "Map",
+        "body": "Map<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|},  ${2|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($3)"
+    },
+    "Set": {
+        "scope": "scope.rtm",
+        "prefix": "Set",
+        "body": "Set<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+    },
+    "List": {
+        "scope": "scope.rtm",
+        "prefix": "List",
+        "body": "List<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+    },
+    "Tuple": {
+        "scope": "scope.rtm",
+        "prefix": "Tuple",
+        "body": "Tuple<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+    },
+    "Array": {
+        "scope": "scope.rtm",
+        "prefix": "Array",
+        "body": "Array<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+    },
+    "Enum": {
+        "scope": "scope.rtm",
+        "prefix": "Enum",
+        "body": "Enum(\"${1:Variant Name}\", \"${2:Optional Values}\")"
+    },
+    "Struct": {
+        "scope": "scope.rtm",
+        "prefix": "Struct",
+        "body": "Struct(\"${1:Field 1 Value}\", \"${2:Field 2 Value}\")"
+    },
+    
+    // =================
+    // Useful Constants
+    // =================
+    "Radix Token": {
+        "scope": "scope.rtm",
+        "prefix": "RADIX_TOKEN",
+        "body": "resource_sim1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzqu57yag"
+    },
+    "System Component": {
+        "scope": "scope.rtm",
+        "prefix": "SYSTEM_COMPONENT",
+        "body": "component_sim1qgqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqgyhcl2"
+    }
 }
