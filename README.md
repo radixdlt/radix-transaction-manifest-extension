@@ -18,7 +18,7 @@ This Visual Studio Code extension adds a number of useful language IDE features 
 ## Diagnostics and Error Detection
 
 <p align="center">
-  <img height="600" src="./assets/images/dangling_bucket.png">
+  <img src="./assets/images/dangling_bucket.png">
 </p>
 
 This extension is able to detect a wide-array of errors in transaction manifests and provide warnings and errors when these errors are encountered. This is done through a number of `DiagnosticsProvider`s which provide diagnostics for different types of errors. The following is a list of the diagnostics providers currently available in the extension:
@@ -169,7 +169,7 @@ The extension comes with a number of snippets which make the process of writing 
 ## Syntax Highlighting and Formatting
 
 <p align="center">
-  <img height="600" src="./assets/images/syntax_highlighting.png">
+  <img src="./assets/images/syntax_highlighting.png">
 </p>
 
 The extension adds grammar and syntax rules for transaction manifest files which allows for syntax highlighting and native formatting integration with VS Code. 
