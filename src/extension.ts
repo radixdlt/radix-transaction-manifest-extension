@@ -4,10 +4,11 @@ import { AddressesDiagnosticProvider, NumbersDiagnosticsProvider, ParsingDiagnos
 import { BasicFormattingProvider } from './formatting_providers';
 import * as vscode from 'vscode';
 import { BasicHoverProvider } from './hover_providers';
+import { getTerminal } from './utils';
 
 let diagnosticCollection: vscode.DiagnosticCollection = vscode.languages.createDiagnosticCollection("rtm");
 
-export async function activate(_: vscode.ExtensionContext) {
+export async function activate(context: vscode.ExtensionContext) {
 
     // ================
     // Document Events
@@ -83,4 +84,31 @@ export async function activate(_: vscode.ExtensionContext) {
     // =====================
 
     vscode.languages.registerHoverProvider("rtm", new BasicHoverProvider());
+
+    // ===================================
+    // Custom Extension-provided Commands
+    // ===================================
+
+    const run = vscode.commands.registerCommand("extension.runManifest", () => {
+        let filePath: string | undefined = vscode.window.activeTextEditor?.document.fileName;
+        if (filePath) {
+            let currentTerminal: vscode.Terminal | undefined = getTerminal("Manifest Run");
+            if (currentTerminal) {
+                currentTerminal.dispose();
+            }
+
+            let terminal: vscode.Terminal = vscode.window.createTerminal('Manifest Run');
+            terminal.show(true);
+            terminal.sendText(`resim run "${filePath}"`);
+
+        } else {
+            vscode.window.showErrorMessage("File path is undefined");
+        }
+    });
+
+    // ============
+    // Disposables
+    // ============
+
+    context.subscriptions.push(run);
 }

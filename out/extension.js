@@ -5,8 +5,9 @@ const diagnostic_providers_1 = require("./diagnostic_providers");
 const formatting_providers_1 = require("./formatting_providers");
 const vscode = require("vscode");
 const hover_providers_1 = require("./hover_providers");
+const utils_1 = require("./utils");
 let diagnosticCollection = vscode.languages.createDiagnosticCollection("rtm");
-async function activate(_) {
+async function activate(context) {
     // ================
     // Document Events
     // ================
@@ -67,6 +68,28 @@ async function activate(_) {
     // Formatting Providers 
     // =====================
     vscode.languages.registerHoverProvider("rtm", new hover_providers_1.BasicHoverProvider());
+    // ===================================
+    // Custom Extension-provided Commands
+    // ===================================
+    const run = vscode.commands.registerCommand("extension.runManifest", () => {
+        let filePath = vscode.window.activeTextEditor?.document.fileName;
+        if (filePath) {
+            let currentTerminal = (0, utils_1.getTerminal)("Manifest Run");
+            if (currentTerminal) {
+                currentTerminal.dispose();
+            }
+            let terminal = vscode.window.createTerminal('Manifest Run');
+            terminal.show(true);
+            terminal.sendText(`resim run "${filePath}"`);
+        }
+        else {
+            vscode.window.showErrorMessage("File path is undefined");
+        }
+    });
+    // ============
+    // Disposables
+    // ============
+    context.subscriptions.push(run);
 }
 exports.activate = activate;
 //# sourceMappingURL=extension.js.map
