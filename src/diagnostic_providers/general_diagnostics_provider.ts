@@ -2,13 +2,13 @@
 
 import { BytesContext, NonFungibleAddressContext, NonFungibleIdContext, TransactionManifestParser } from "../antlr/TransactionManifestParser";
 import { TransactionManifestListener } from "../antlr/TransactionManifestListener";
+import { TransactionManifestLexer } from "../antlr/TransactionManifestLexer";
 import { CharStream, CharStreams, CommonTokenStream } from "antlr4ts";
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
 
 import DiagnosticsProvider from "./diagnostics_provider";
 import * as vscode from 'vscode';
-import { TransactionManifestLexer } from "../antlr/TransactionManifestLexer";
 
 /**
  * A diagnostics provider with general knowledge of the rules of manifest files. It can provide errors in the following

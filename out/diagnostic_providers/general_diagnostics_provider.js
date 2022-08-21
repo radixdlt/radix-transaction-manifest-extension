@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const TransactionManifestParser_1 = require("../antlr/TransactionManifestParser");
+const TransactionManifestLexer_1 = require("../antlr/TransactionManifestLexer");
 const antlr4ts_1 = require("antlr4ts");
 const ParseTreeWalker_1 = require("antlr4ts/tree/ParseTreeWalker");
 const diagnostics_provider_1 = require("./diagnostics_provider");
 const vscode = require("vscode");
-const TransactionManifestLexer_1 = require("../antlr/TransactionManifestLexer");
 /**
  * A diagnostics provider with general knowledge of the rules of manifest files. It can provide errors in the following
  * cases:

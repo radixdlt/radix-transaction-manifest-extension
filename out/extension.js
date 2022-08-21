@@ -4,6 +4,7 @@ exports.activate = void 0;
 const diagnostic_providers_1 = require("./diagnostic_providers");
 const formatting_providers_1 = require("./formatting_providers");
 const vscode = require("vscode");
+const hover_providers_1 = require("./hover_providers");
 let diagnosticCollection = vscode.languages.createDiagnosticCollection("rtm");
 async function activate(_) {
     // ================
@@ -62,6 +63,10 @@ async function activate(_) {
     // Formatting Providers 
     // =====================
     vscode.languages.registerDocumentFormattingEditProvider("rtm", new formatting_providers_1.BasicFormattingProvider());
+    // =====================
+    // Formatting Providers 
+    // =====================
+    vscode.languages.registerHoverProvider("rtm", new hover_providers_1.BasicHoverProvider());
 }
 exports.activate = activate;
 //# sourceMappingURL=extension.js.map

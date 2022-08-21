@@ -3,6 +3,7 @@
 import { AddressesDiagnosticProvider, NumbersDiagnosticsProvider, ParsingDiagnosticsProvider, LexerDiagnosticsProvider, GeneralDiagnosticsProvider, IdValidationDiagnosticsProvider } from './diagnostic_providers';
 import { BasicFormattingProvider } from './formatting_providers';
 import * as vscode from 'vscode';
+import { BasicHoverProvider } from './hover_providers';
 
 let diagnosticCollection: vscode.DiagnosticCollection = vscode.languages.createDiagnosticCollection("rtm");
 
@@ -76,4 +77,10 @@ export async function activate(_: vscode.ExtensionContext) {
     // =====================
 
     vscode.languages.registerDocumentFormattingEditProvider("rtm", new BasicFormattingProvider());
+
+    // =====================
+    // Formatting Providers 
+    // =====================
+
+    vscode.languages.registerHoverProvider("rtm", new BasicHoverProvider());
 }
