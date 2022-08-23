@@ -1,6 +1,5 @@
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
-
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
 import { ManifestContext } from "./TransactionManifestParser";
@@ -65,7 +64,6 @@ import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
 
-
 /**
  * This interface defines a complete listener for a parse tree produced by
  * `TransactionManifestParser`.
@@ -119,12 +117,16 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.callMethodWithAllResources`.
 	 * @param ctx the parse tree
 	 */
-	enterCallMethodWithAllResources?: (ctx: CallMethodWithAllResourcesContext) => void;
+	enterCallMethodWithAllResources?: (
+		ctx: CallMethodWithAllResourcesContext
+	) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.callMethodWithAllResources`.
 	 * @param ctx the parse tree
 	 */
-	exitCallMethodWithAllResources?: (ctx: CallMethodWithAllResourcesContext) => void;
+	exitCallMethodWithAllResources?: (
+		ctx: CallMethodWithAllResourcesContext
+	) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorktop`.
@@ -141,7 +143,9 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.
 	 * @param ctx the parse tree
 	 */
-	enterTakeFromWorktopByAmount?: (ctx: TakeFromWorktopByAmountContext) => void;
+	enterTakeFromWorktopByAmount?: (
+		ctx: TakeFromWorktopByAmountContext
+	) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.
 	 * @param ctx the parse tree
@@ -185,23 +189,31 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.assertWorktopContainsByAmount`.
 	 * @param ctx the parse tree
 	 */
-	enterAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => void;
+	enterAssertWorktopContainsByAmount?: (
+		ctx: AssertWorktopContainsByAmountContext
+	) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByAmount`.
 	 * @param ctx the parse tree
 	 */
-	exitAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => void;
+	exitAssertWorktopContainsByAmount?: (
+		ctx: AssertWorktopContainsByAmountContext
+	) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
 	 * @param ctx the parse tree
 	 */
-	enterAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => void;
+	enterAssertWorktopContainsByIds?: (
+		ctx: AssertWorktopContainsByIdsContext
+	) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
 	 * @param ctx the parse tree
 	 */
-	exitAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => void;
+	exitAssertWorktopContainsByIds?: (
+		ctx: AssertWorktopContainsByIdsContext
+	) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.popFromAuthZone`.
@@ -229,7 +241,9 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZone`.
 	 * @param ctx the parse tree
 	 */
-	enterCreateProofFromAuthZone?: (ctx: CreateProofFromAuthZoneContext) => void;
+	enterCreateProofFromAuthZone?: (
+		ctx: CreateProofFromAuthZoneContext
+	) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZone`.
 	 * @param ctx the parse tree
@@ -240,23 +254,31 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
 	 * @param ctx the parse tree
 	 */
-	enterCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => void;
+	enterCreateProofFromAuthZoneByAmount?: (
+		ctx: CreateProofFromAuthZoneByAmountContext
+	) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
 	 * @param ctx the parse tree
 	 */
-	exitCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => void;
+	exitCreateProofFromAuthZoneByAmount?: (
+		ctx: CreateProofFromAuthZoneByAmountContext
+	) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
 	 * @param ctx the parse tree
 	 */
-	enterCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => void;
+	enterCreateProofFromAuthZoneByIds?: (
+		ctx: CreateProofFromAuthZoneByIdsContext
+	) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
 	 * @param ctx the parse tree
 	 */
-	exitCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => void;
+	exitCreateProofFromAuthZoneByIds?: (
+		ctx: CreateProofFromAuthZoneByIdsContext
+	) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromBucket`.
@@ -742,4 +764,3 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 */
 	exitValue?: (ctx: ValueContext) => void;
 }
-

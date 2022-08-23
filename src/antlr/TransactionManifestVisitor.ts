@@ -1,6 +1,5 @@
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
-
 import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 
 import { ManifestContext } from "./TransactionManifestParser";
@@ -65,7 +64,6 @@ import { BytesContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
 
-
 /**
  * This interface defines a complete generic visitor for a parse tree produced
  * by `TransactionManifestParser`.
@@ -73,7 +71,8 @@ import { ValueContext } from "./TransactionManifestParser";
  * @param <Result> The return type of the visit operation. Use `void` for
  * operations with no return type.
  */
-export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Result> {
+export interface TransactionManifestVisitor<Result>
+	extends ParseTreeVisitor<Result> {
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.manifest`.
 	 * @param ctx the parse tree
@@ -107,7 +106,9 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitCallMethodWithAllResources?: (ctx: CallMethodWithAllResourcesContext) => Result;
+	visitCallMethodWithAllResources?: (
+		ctx: CallMethodWithAllResourcesContext
+	) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktop`.
@@ -121,7 +122,9 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitTakeFromWorktopByAmount?: (ctx: TakeFromWorktopByAmountContext) => Result;
+	visitTakeFromWorktopByAmount?: (
+		ctx: TakeFromWorktopByAmountContext
+	) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktopByIds`.
@@ -149,14 +152,18 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => Result;
+	visitAssertWorktopContainsByAmount?: (
+		ctx: AssertWorktopContainsByAmountContext
+	) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => Result;
+	visitAssertWorktopContainsByIds?: (
+		ctx: AssertWorktopContainsByIdsContext
+	) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.popFromAuthZone`.
@@ -177,21 +184,27 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitCreateProofFromAuthZone?: (ctx: CreateProofFromAuthZoneContext) => Result;
+	visitCreateProofFromAuthZone?: (
+		ctx: CreateProofFromAuthZoneContext
+	) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => Result;
+	visitCreateProofFromAuthZoneByAmount?: (
+		ctx: CreateProofFromAuthZoneByAmountContext
+	) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => Result;
+	visitCreateProofFromAuthZoneByIds?: (
+		ctx: CreateProofFromAuthZoneByIdsContext
+	) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromBucket`.
@@ -501,4 +514,3 @@ export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Res
 	 */
 	visitValue?: (ctx: ValueContext) => Result;
 }
-

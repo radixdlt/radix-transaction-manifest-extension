@@ -4,14 +4,13 @@
   <img height="100" src="https://assets-global.website-files.com/6053f7fca5bf627283b582c2/6266da320e7722355749595b_Scrypto-Icon-Round.png">
 </p>
 
-
 This Visual Studio Code extension adds a number of useful language IDE features to Radix Transaction Manifests. These features include:
 
-* Diagnostics and Error Detection.
-* Instruction Snippets.
-* Syntax Highlighting & Formatting.
-* Hover Information.
-* and more!
+-   Diagnostics and Error Detection.
+-   Instruction Snippets.
+-   Syntax Highlighting & Formatting.
+-   Hover Information.
+-   and more!
 
 # Features
 
@@ -23,17 +22,17 @@ This Visual Studio Code extension adds a number of useful language IDE features 
 
 This extension is able to detect a wide-array of errors in transaction manifests and provide warnings and errors when these errors are encountered. This is done through a number of `DiagnosticsProvider`s which provide diagnostics for different types of errors. The following is a list of the diagnostics providers currently available in the extension:
 
-* **ID Validation Diagnostics Provider:** statically analyzes the transaction manifest and keeps track of buckets and proofs as they come into existence and they get used up. This provider catches errors involving buckets and proofs that get used twice, get used before coming into existence, or are left dangling in the transaction worktop in the end of the transaction.
+-   **ID Validation Diagnostics Provider:** statically analyzes the transaction manifest and keeps track of buckets and proofs as they come into existence and they get used up. This provider catches errors involving buckets and proofs that get used twice, get used before coming into existence, or are left dangling in the transaction worktop in the end of the transaction.
 
-* **Lexing and Parsing Diagnostics Provider:** lexes and parses the transaction manifest and reports back any errors involving the syntax of the transaction manifest or unexpected tokens. This diagnostics provider catches errors such as a `CALL_METHOD` happening on a resource address instead of a component address.
+-   **Lexing and Parsing Diagnostics Provider:** lexes and parses the transaction manifest and reports back any errors involving the syntax of the transaction manifest or unexpected tokens. This diagnostics provider catches errors such as a `CALL_METHOD` happening on a resource address instead of a component address.
 
-* **Addressing Diagnostics Provider:** analyzes all instances of addresses checking for their correctness in relation to Bech32 and overall sensibility. As an example, this provider is able to catch errors where a `PackageAddress` is used but the string is of a component address. Additionally, addresses with invalid Bech32m encoding, invalid entity bytes, or unconforming network specifiers can be picked up by this diagnostics provider. 
+-   **Addressing Diagnostics Provider:** analyzes all instances of addresses checking for their correctness in relation to Bech32 and overall sensibility. As an example, this provider is able to catch errors where a `PackageAddress` is used but the string is of a component address. Additionally, addresses with invalid Bech32m encoding, invalid entity bytes, or unconforming network specifiers can be picked up by this diagnostics provider.
 
-* **Numbers Diagnostics Provider:** analyzes all numbers used in the transaction manifest checking the limits of each of the numbers and the number of decimal places allowed, this provider then picks up on all numbers that are in violation of their rules. As an example, this provider is what provides diagnostics when a number such as "1233u8" is in the manifest.
+-   **Numbers Diagnostics Provider:** analyzes all numbers used in the transaction manifest checking the limits of each of the numbers and the number of decimal places allowed, this provider then picks up on all numbers that are in violation of their rules. As an example, this provider is what provides diagnostics when a number such as "1233u8" is in the manifest.
 
-* **General Diagnostics Provider:** general or miscellaneous diagnostics on multiple parts of transaction manifests.
+-   **General Diagnostics Provider:** general or miscellaneous diagnostics on multiple parts of transaction manifests.
 
-Diagnostics providers are very modular and more diagnostics providers can be added later to add additional error reporting for other 
+Diagnostics providers are very modular and more diagnostics providers can be added later to add additional error reporting for other
 
 ## Instruction Snippets
 
@@ -172,7 +171,7 @@ The extension comes with a number of snippets which make the process of writing 
   <img src="./assets/images/syntax_highlighting.png">
 </p>
 
-The extension adds grammar and syntax rules for transaction manifest files which allows for syntax highlighting and native formatting integration with VS Code. 
+The extension adds grammar and syntax rules for transaction manifest files which allows for syntax highlighting and native formatting integration with VS Code.
 
 # Installation Guide
 
@@ -186,12 +185,12 @@ Each new version that releases of this extension comes with pre-packaged vsix fi
 
 1. Install the vsix files of the latest release from [here](https://github.com/radixdlt/radix-transaction-manifest-extension/releases).
 2. Open VS Code and go to the extensions tab.
-3. Click on the three dots at the top right of the extensions tab. 
+3. Click on the three dots at the top right of the extensions tab.
 4. Click on "install from VSIX" and select the file that you downloaded.
 
 ## Option 3: Building/Packaging from Source
 
 If you would like to build and package your own extension from source for the purpose of installing it, then follow the steps below:
 
-1. In your command line, run the command: `vsce package`. This packages the extension for you in a vsix file. 
-2. Follow the steps in "Option 2" above to install the vsix file you packaged. 
+1. In your command line, run the command: `vsce package`. This packages the extension for you in a vsix file.
+2. Follow the steps in "Option 2" above to install the vsix file you packaged.

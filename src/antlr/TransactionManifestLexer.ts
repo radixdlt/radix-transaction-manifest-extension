@@ -1,6 +1,5 @@
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
-
 import { ATN } from "antlr4ts/atn/ATN";
 import { ATNDeserializer } from "antlr4ts/atn/ATNDeserializer";
 import { CharStream } from "antlr4ts/CharStream";
@@ -13,7 +12,6 @@ import { Vocabulary } from "antlr4ts/Vocabulary";
 import { VocabularyImpl } from "antlr4ts/VocabularyImpl";
 
 import * as Utils from "antlr4ts/misc/Utils";
-
 
 export class TransactionManifestLexer extends Lexer {
 	public static readonly T__0 = 1;
@@ -103,76 +101,273 @@ export class TransactionManifestLexer extends Lexer {
 
 	// tslint:disable:no-trailing-whitespace
 	public static readonly channelNames: string[] = [
-		"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
+		"DEFAULT_TOKEN_CHANNEL",
+		"HIDDEN",
 	];
 
 	// tslint:disable:no-trailing-whitespace
-	public static readonly modeNames: string[] = [
-		"DEFAULT_MODE",
-	];
+	public static readonly modeNames: string[] = ["DEFAULT_MODE"];
 
 	public static readonly ruleNames: string[] = [
-		"T__0", "BOOL_LITERAL", "I8_LITERAL", "I16_LITERAL", "I32_LITERAL", "I64_LITERAL", 
-		"I128_LITERAL", "U8_LITERAL", "U16_LITERAL", "U32_LITERAL", "U64_LITERAL", 
-		"U128_LITERAL", "TRUE", "FALSE", "UNIT_TYPE", "BOOL_TYPE", "I8_TYPE", 
-		"I16_TYPE", "I32_TYPE", "I64_TYPE", "I128_TYPE", "U8_TYPE", "U16_TYPE", 
-		"U32_TYPE", "U64_TYPE", "U128_TYPE", "STRING_TYPE", "STRUCT_TYPE", "ENUM_TYPE", 
-		"OPTION_TYPE", "RESULT_TYPE", "SOME_TYPE", "NONE_TYPE", "OK_TYPE", "ERR_TYPE", 
-		"ARRAY_TYPE", "TUPLE_TYPE", "LIST_TYPE", "SET_TYPE", "MAP_TYPE", "DECIMAL_TYPE", 
-		"PRECISE_DECIMAL_TYPE", "PACKAGE_ADDRESS_TYPE", "COMPONENT_ADDRESS_TYPE", 
-		"RESOURCE_ADDRESS_TYPE", "HASH_TYPE", "BUCKET_TYPE", "PROOF_TYPE", "NON_FUNGIBLE_ID_TYPE", 
-		"NON_FUNGIBLE_ADDRESS_TYPE", "BYTES_TYPE", "OPEN_PARENTHESIS", "CLOED_PARENTHESIS", 
-		"LESS_THAN", "GREATER_THAN", "COMMA", "SEMICOLON", "TAKE_FROM_WORKTOP", 
-		"TAKE_FROM_WORKTOP_BY_AMOUNT", "TAKE_FROM_WORKTOP_BY_IDS", "ASSERT_WORKTOP_CONTAINS", 
-		"ASSERT_WORKTOP_CONTAINS_BY_AMOUNT", "ASSERT_WORKTOP_CONTAINS_BY_IDS", 
-		"RETURN_TO_WORKTOP", "POP_FROM_AUTH_ZONE", "PUSH_TO_AUTH_ZONE", "CLEAR_AUTHZONE", 
-		"CREATE_PROOF_FROM_AUTH_ZONE", "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT", 
-		"CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS", "CREATE_PROOF_FROM_BUCKET", "CLONE_PROOF", 
-		"DROP_PROOF", "DROP_ALL_PROOFS", "CALL_FUNCTION", "CALL_METHOD", "CALL_METHOD_WITH_ALL_RESOURCES", 
-		"PUBLISH_PACKAGE", "STRING_LITERAL", "DIGIT", "LETTER", "NUMBER", "WS", 
+		"T__0",
+		"BOOL_LITERAL",
+		"I8_LITERAL",
+		"I16_LITERAL",
+		"I32_LITERAL",
+		"I64_LITERAL",
+		"I128_LITERAL",
+		"U8_LITERAL",
+		"U16_LITERAL",
+		"U32_LITERAL",
+		"U64_LITERAL",
+		"U128_LITERAL",
+		"TRUE",
+		"FALSE",
+		"UNIT_TYPE",
+		"BOOL_TYPE",
+		"I8_TYPE",
+		"I16_TYPE",
+		"I32_TYPE",
+		"I64_TYPE",
+		"I128_TYPE",
+		"U8_TYPE",
+		"U16_TYPE",
+		"U32_TYPE",
+		"U64_TYPE",
+		"U128_TYPE",
+		"STRING_TYPE",
+		"STRUCT_TYPE",
+		"ENUM_TYPE",
+		"OPTION_TYPE",
+		"RESULT_TYPE",
+		"SOME_TYPE",
+		"NONE_TYPE",
+		"OK_TYPE",
+		"ERR_TYPE",
+		"ARRAY_TYPE",
+		"TUPLE_TYPE",
+		"LIST_TYPE",
+		"SET_TYPE",
+		"MAP_TYPE",
+		"DECIMAL_TYPE",
+		"PRECISE_DECIMAL_TYPE",
+		"PACKAGE_ADDRESS_TYPE",
+		"COMPONENT_ADDRESS_TYPE",
+		"RESOURCE_ADDRESS_TYPE",
+		"HASH_TYPE",
+		"BUCKET_TYPE",
+		"PROOF_TYPE",
+		"NON_FUNGIBLE_ID_TYPE",
+		"NON_FUNGIBLE_ADDRESS_TYPE",
+		"BYTES_TYPE",
+		"OPEN_PARENTHESIS",
+		"CLOED_PARENTHESIS",
+		"LESS_THAN",
+		"GREATER_THAN",
+		"COMMA",
+		"SEMICOLON",
+		"TAKE_FROM_WORKTOP",
+		"TAKE_FROM_WORKTOP_BY_AMOUNT",
+		"TAKE_FROM_WORKTOP_BY_IDS",
+		"ASSERT_WORKTOP_CONTAINS",
+		"ASSERT_WORKTOP_CONTAINS_BY_AMOUNT",
+		"ASSERT_WORKTOP_CONTAINS_BY_IDS",
+		"RETURN_TO_WORKTOP",
+		"POP_FROM_AUTH_ZONE",
+		"PUSH_TO_AUTH_ZONE",
+		"CLEAR_AUTHZONE",
+		"CREATE_PROOF_FROM_AUTH_ZONE",
+		"CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT",
+		"CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS",
+		"CREATE_PROOF_FROM_BUCKET",
+		"CLONE_PROOF",
+		"DROP_PROOF",
+		"DROP_ALL_PROOFS",
+		"CALL_FUNCTION",
+		"CALL_METHOD",
+		"CALL_METHOD_WITH_ALL_RESOURCES",
+		"PUBLISH_PACKAGE",
+		"STRING_LITERAL",
+		"DIGIT",
+		"LETTER",
+		"NUMBER",
+		"WS",
 		"COMMENT",
 	];
 
 	private static readonly _LITERAL_NAMES: Array<string | undefined> = [
-		undefined, "'()'", undefined, undefined, undefined, undefined, undefined, 
-		undefined, undefined, undefined, undefined, undefined, undefined, "'true'", 
-		"'false'", "'Unit'", "'Bool'", "'I8'", "'I16'", "'I32'", "'I64'", "'I128'", 
-		"'U8'", "'U16'", "'U32'", "'U64'", "'U128'", "'String'", "'Struct'", "'Enum'", 
-		"'Option'", "'Result'", "'Some'", "'None'", "'Ok'", "'Err'", "'Array'", 
-		"'Tuple'", "'List'", "'Set'", "'Map'", "'Decimal'", "'PreciseDecimal'", 
-		"'PackageAddress'", "'ComponentAddress'", "'ResourceAddress'", "'Hash'", 
-		"'Bucket'", "'Proof'", "'NonFungibleId'", "'NonFungibleAddress'", "'Bytes'", 
-		"'('", "')'", "'<'", "'>'", "','", "';'", "'TAKE_FROM_WORKTOP'", "'TAKE_FROM_WORKTOP_BY_AMOUNT'", 
-		"'TAKE_FROM_WORKTOP_BY_IDS'", "'ASSERT_WORKTOP_CONTAINS'", "'ASSERT_WORKTOP_CONTAINS_BY_AMOUNT'", 
-		"'ASSERT_WORKTOP_CONTAINS_BY_IDS'", "'RETURN_TO_WORKTOP'", "'POP_FROM_AUTH_ZONE'", 
-		"'PUSH_TO_AUTH_ZONE'", "'CLEAR_AUTHZONE'", "'CREATE_PROOF_FROM_AUTH_ZONE'", 
-		"'CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT'", "'CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS'", 
-		"'CREATE_PROOF_FROM_BUCKET'", "'CLONE_PROOF'", "'DROP_PROOF'", "'DROP_ALL_PROOFS'", 
-		"'CALL_FUNCTION'", "'CALL_METHOD'", "'CALL_METHOD_WITH_ALL_RESOURCES'", 
+		undefined,
+		"'()'",
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		"'true'",
+		"'false'",
+		"'Unit'",
+		"'Bool'",
+		"'I8'",
+		"'I16'",
+		"'I32'",
+		"'I64'",
+		"'I128'",
+		"'U8'",
+		"'U16'",
+		"'U32'",
+		"'U64'",
+		"'U128'",
+		"'String'",
+		"'Struct'",
+		"'Enum'",
+		"'Option'",
+		"'Result'",
+		"'Some'",
+		"'None'",
+		"'Ok'",
+		"'Err'",
+		"'Array'",
+		"'Tuple'",
+		"'List'",
+		"'Set'",
+		"'Map'",
+		"'Decimal'",
+		"'PreciseDecimal'",
+		"'PackageAddress'",
+		"'ComponentAddress'",
+		"'ResourceAddress'",
+		"'Hash'",
+		"'Bucket'",
+		"'Proof'",
+		"'NonFungibleId'",
+		"'NonFungibleAddress'",
+		"'Bytes'",
+		"'('",
+		"')'",
+		"'<'",
+		"'>'",
+		"','",
+		"';'",
+		"'TAKE_FROM_WORKTOP'",
+		"'TAKE_FROM_WORKTOP_BY_AMOUNT'",
+		"'TAKE_FROM_WORKTOP_BY_IDS'",
+		"'ASSERT_WORKTOP_CONTAINS'",
+		"'ASSERT_WORKTOP_CONTAINS_BY_AMOUNT'",
+		"'ASSERT_WORKTOP_CONTAINS_BY_IDS'",
+		"'RETURN_TO_WORKTOP'",
+		"'POP_FROM_AUTH_ZONE'",
+		"'PUSH_TO_AUTH_ZONE'",
+		"'CLEAR_AUTHZONE'",
+		"'CREATE_PROOF_FROM_AUTH_ZONE'",
+		"'CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT'",
+		"'CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS'",
+		"'CREATE_PROOF_FROM_BUCKET'",
+		"'CLONE_PROOF'",
+		"'DROP_PROOF'",
+		"'DROP_ALL_PROOFS'",
+		"'CALL_FUNCTION'",
+		"'CALL_METHOD'",
+		"'CALL_METHOD_WITH_ALL_RESOURCES'",
 		"'PUBLISH_PACKAGE'",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
-		undefined, undefined, "BOOL_LITERAL", "I8_LITERAL", "I16_LITERAL", "I32_LITERAL", 
-		"I64_LITERAL", "I128_LITERAL", "U8_LITERAL", "U16_LITERAL", "U32_LITERAL", 
-		"U64_LITERAL", "U128_LITERAL", "TRUE", "FALSE", "UNIT_TYPE", "BOOL_TYPE", 
-		"I8_TYPE", "I16_TYPE", "I32_TYPE", "I64_TYPE", "I128_TYPE", "U8_TYPE", 
-		"U16_TYPE", "U32_TYPE", "U64_TYPE", "U128_TYPE", "STRING_TYPE", "STRUCT_TYPE", 
-		"ENUM_TYPE", "OPTION_TYPE", "RESULT_TYPE", "SOME_TYPE", "NONE_TYPE", "OK_TYPE", 
-		"ERR_TYPE", "ARRAY_TYPE", "TUPLE_TYPE", "LIST_TYPE", "SET_TYPE", "MAP_TYPE", 
-		"DECIMAL_TYPE", "PRECISE_DECIMAL_TYPE", "PACKAGE_ADDRESS_TYPE", "COMPONENT_ADDRESS_TYPE", 
-		"RESOURCE_ADDRESS_TYPE", "HASH_TYPE", "BUCKET_TYPE", "PROOF_TYPE", "NON_FUNGIBLE_ID_TYPE", 
-		"NON_FUNGIBLE_ADDRESS_TYPE", "BYTES_TYPE", "OPEN_PARENTHESIS", "CLOED_PARENTHESIS", 
-		"LESS_THAN", "GREATER_THAN", "COMMA", "SEMICOLON", "TAKE_FROM_WORKTOP", 
-		"TAKE_FROM_WORKTOP_BY_AMOUNT", "TAKE_FROM_WORKTOP_BY_IDS", "ASSERT_WORKTOP_CONTAINS", 
-		"ASSERT_WORKTOP_CONTAINS_BY_AMOUNT", "ASSERT_WORKTOP_CONTAINS_BY_IDS", 
-		"RETURN_TO_WORKTOP", "POP_FROM_AUTH_ZONE", "PUSH_TO_AUTH_ZONE", "CLEAR_AUTHZONE", 
-		"CREATE_PROOF_FROM_AUTH_ZONE", "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT", 
-		"CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS", "CREATE_PROOF_FROM_BUCKET", "CLONE_PROOF", 
-		"DROP_PROOF", "DROP_ALL_PROOFS", "CALL_FUNCTION", "CALL_METHOD", "CALL_METHOD_WITH_ALL_RESOURCES", 
-		"PUBLISH_PACKAGE", "STRING_LITERAL", "DIGIT", "LETTER", "NUMBER", "WS", 
+		undefined,
+		undefined,
+		"BOOL_LITERAL",
+		"I8_LITERAL",
+		"I16_LITERAL",
+		"I32_LITERAL",
+		"I64_LITERAL",
+		"I128_LITERAL",
+		"U8_LITERAL",
+		"U16_LITERAL",
+		"U32_LITERAL",
+		"U64_LITERAL",
+		"U128_LITERAL",
+		"TRUE",
+		"FALSE",
+		"UNIT_TYPE",
+		"BOOL_TYPE",
+		"I8_TYPE",
+		"I16_TYPE",
+		"I32_TYPE",
+		"I64_TYPE",
+		"I128_TYPE",
+		"U8_TYPE",
+		"U16_TYPE",
+		"U32_TYPE",
+		"U64_TYPE",
+		"U128_TYPE",
+		"STRING_TYPE",
+		"STRUCT_TYPE",
+		"ENUM_TYPE",
+		"OPTION_TYPE",
+		"RESULT_TYPE",
+		"SOME_TYPE",
+		"NONE_TYPE",
+		"OK_TYPE",
+		"ERR_TYPE",
+		"ARRAY_TYPE",
+		"TUPLE_TYPE",
+		"LIST_TYPE",
+		"SET_TYPE",
+		"MAP_TYPE",
+		"DECIMAL_TYPE",
+		"PRECISE_DECIMAL_TYPE",
+		"PACKAGE_ADDRESS_TYPE",
+		"COMPONENT_ADDRESS_TYPE",
+		"RESOURCE_ADDRESS_TYPE",
+		"HASH_TYPE",
+		"BUCKET_TYPE",
+		"PROOF_TYPE",
+		"NON_FUNGIBLE_ID_TYPE",
+		"NON_FUNGIBLE_ADDRESS_TYPE",
+		"BYTES_TYPE",
+		"OPEN_PARENTHESIS",
+		"CLOED_PARENTHESIS",
+		"LESS_THAN",
+		"GREATER_THAN",
+		"COMMA",
+		"SEMICOLON",
+		"TAKE_FROM_WORKTOP",
+		"TAKE_FROM_WORKTOP_BY_AMOUNT",
+		"TAKE_FROM_WORKTOP_BY_IDS",
+		"ASSERT_WORKTOP_CONTAINS",
+		"ASSERT_WORKTOP_CONTAINS_BY_AMOUNT",
+		"ASSERT_WORKTOP_CONTAINS_BY_IDS",
+		"RETURN_TO_WORKTOP",
+		"POP_FROM_AUTH_ZONE",
+		"PUSH_TO_AUTH_ZONE",
+		"CLEAR_AUTHZONE",
+		"CREATE_PROOF_FROM_AUTH_ZONE",
+		"CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT",
+		"CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS",
+		"CREATE_PROOF_FROM_BUCKET",
+		"CLONE_PROOF",
+		"DROP_PROOF",
+		"DROP_ALL_PROOFS",
+		"CALL_FUNCTION",
+		"CALL_METHOD",
+		"CALL_METHOD_WITH_ALL_RESOURCES",
+		"PUBLISH_PACKAGE",
+		"STRING_LITERAL",
+		"DIGIT",
+		"LETTER",
+		"NUMBER",
+		"WS",
 		"COMMENT",
 	];
-	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(TransactionManifestLexer._LITERAL_NAMES, TransactionManifestLexer._SYMBOLIC_NAMES, []);
+	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(
+		TransactionManifestLexer._LITERAL_NAMES,
+		TransactionManifestLexer._SYMBOLIC_NAMES,
+		[]
+	);
 
 	// @Override
 	// @NotNull
@@ -181,26 +376,38 @@ export class TransactionManifestLexer extends Lexer {
 	}
 	// tslint:enable:no-trailing-whitespace
 
-
 	constructor(input: CharStream) {
 		super(input);
-		this._interp = new LexerATNSimulator(TransactionManifestLexer._ATN, this);
+		this._interp = new LexerATNSimulator(
+			TransactionManifestLexer._ATN,
+			this
+		);
 	}
 
 	// @Override
-	public get grammarFileName(): string { return "TransactionManifest.g4"; }
+	public get grammarFileName(): string {
+		return "TransactionManifest.g4";
+	}
 
 	// @Override
-	public get ruleNames(): string[] { return TransactionManifestLexer.ruleNames; }
+	public get ruleNames(): string[] {
+		return TransactionManifestLexer.ruleNames;
+	}
 
 	// @Override
-	public get serializedATN(): string { return TransactionManifestLexer._serializedATN; }
+	public get serializedATN(): string {
+		return TransactionManifestLexer._serializedATN;
+	}
 
 	// @Override
-	public get channelNames(): string[] { return TransactionManifestLexer.channelNames; }
+	public get channelNames(): string[] {
+		return TransactionManifestLexer.channelNames;
+	}
 
 	// @Override
-	public get modeNames(): string[] { return TransactionManifestLexer.modeNames; }
+	public get modeNames(): string[] {
+		return TransactionManifestLexer.modeNames;
+	}
 
 	private static readonly _serializedATNSegments: number = 2;
 	private static readonly _serializedATNSegment0: string =
@@ -210,8 +417,8 @@ export class TransactionManifestLexer extends Lexer {
 		"\t\r\x04\x0E\t\x0E\x04\x0F\t\x0F\x04\x10\t\x10\x04\x11\t\x11\x04\x12\t" +
 		"\x12\x04\x13\t\x13\x04\x14\t\x14\x04\x15\t\x15\x04\x16\t\x16\x04\x17\t" +
 		"\x17\x04\x18\t\x18\x04\x19\t\x19\x04\x1A\t\x1A\x04\x1B\t\x1B\x04\x1C\t" +
-		"\x1C\x04\x1D\t\x1D\x04\x1E\t\x1E\x04\x1F\t\x1F\x04 \t \x04!\t!\x04\"\t" +
-		"\"\x04#\t#\x04$\t$\x04%\t%\x04&\t&\x04\'\t\'\x04(\t(\x04)\t)\x04*\t*\x04" +
+		'\x1C\x04\x1D\t\x1D\x04\x1E\t\x1E\x04\x1F\t\x1F\x04 \t \x04!\t!\x04"\t' +
+		"\"\x04#\t#\x04$\t$\x04%\t%\x04&\t&\x04'\t'\x04(\t(\x04)\t)\x04*\t*\x04" +
 		"+\t+\x04,\t,\x04-\t-\x04.\t.\x04/\t/\x040\t0\x041\t1\x042\t2\x043\t3\x04" +
 		"4\t4\x045\t5\x046\t6\x047\t7\x048\t8\x049\t9\x04:\t:\x04;\t;\x04<\t<\x04" +
 		"=\t=\x04>\t>\x04?\t?\x04@\t@\x04A\tA\x04B\tB\x04C\tC\x04D\tD\x04E\tE\x04" +
@@ -232,9 +439,9 @@ export class TransactionManifestLexer extends Lexer {
 		"\x1B\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1C\x03\x1D\x03" +
 		"\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1E\x03\x1E\x03\x1E\x03" +
 		"\x1E\x03\x1E\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03" +
-		" \x03 \x03 \x03 \x03 \x03 \x03 \x03!\x03!\x03!\x03!\x03!\x03\"\x03\"\x03" +
-		"\"\x03\"\x03\"\x03#\x03#\x03#\x03$\x03$\x03$\x03$\x03%\x03%\x03%\x03%" +
-		"\x03%\x03%\x03&\x03&\x03&\x03&\x03&\x03&\x03\'\x03\'\x03\'\x03\'\x03\'" +
+		' \x03 \x03 \x03 \x03 \x03 \x03 \x03!\x03!\x03!\x03!\x03!\x03"\x03"\x03' +
+		'"\x03"\x03"\x03#\x03#\x03#\x03$\x03$\x03$\x03$\x03%\x03%\x03%\x03%' +
+		"\x03%\x03%\x03&\x03&\x03&\x03&\x03&\x03&\x03'\x03'\x03'\x03'\x03'" +
 		"\x03(\x03(\x03(\x03(\x03)\x03)\x03)\x03)\x03*\x03*\x03*\x03*\x03*\x03" +
 		"*\x03*\x03*\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x03" +
 		"+\x03+\x03+\x03+\x03,\x03,\x03,\x03,\x03,\x03,\x03,\x03,\x03,\x03,\x03" +
@@ -284,22 +491,22 @@ export class TransactionManifestLexer extends Lexer {
 		"T\x0ET\u03E4\x03T\x03T\x03U\x03U\x07U\u03EB\nU\fU\x0EU\u03EE\vU\x03U\x03" +
 		"U\x02\x02\x02V\x03\x02\x03\x05\x02\x04\x07\x02\x05\t\x02\x06\v\x02\x07" +
 		"\r\x02\b\x0F\x02\t\x11\x02\n\x13\x02\v\x15\x02\f\x17\x02\r\x19\x02\x0E" +
-		"\x1B\x02\x0F\x1D\x02\x10\x1F\x02\x11!\x02\x12#\x02\x13%\x02\x14\'\x02" +
+		"\x1B\x02\x0F\x1D\x02\x10\x1F\x02\x11!\x02\x12#\x02\x13%\x02\x14'\x02" +
 		"\x15)\x02\x16+\x02\x17-\x02\x18/\x02\x191\x02\x1A3\x02\x1B5\x02\x1C7\x02" +
-		"\x1D9\x02\x1E;\x02\x1F=\x02 ?\x02!A\x02\"C\x02#E\x02$G\x02%I\x02&K\x02" +
-		"\'M\x02(O\x02)Q\x02*S\x02+U\x02,W\x02-Y\x02.[\x02/]\x020_\x021a\x022c" +
+		'\x1D9\x02\x1E;\x02\x1F=\x02 ?\x02!A\x02"C\x02#E\x02$G\x02%I\x02&K\x02' +
+		"'M\x02(O\x02)Q\x02*S\x02+U\x02,W\x02-Y\x02.[\x02/]\x020_\x021a\x022c" +
 		"\x023e\x024g\x025i\x026k\x027m\x028o\x029q\x02:s\x02;u\x02<w\x02=y\x02" +
 		">{\x02?}\x02@\x7F\x02A\x81\x02B\x83\x02C\x85\x02D\x87\x02E\x89\x02F\x8B" +
 		"\x02G\x8D\x02H\x8F\x02I\x91\x02J\x93\x02K\x95\x02L\x97\x02M\x99\x02N\x9B" +
 		"\x02O\x9D\x02P\x9F\x02Q\xA1\x02R\xA3\x02S\xA5\x02T\xA7\x02U\xA9\x02V\x03" +
-		"\x02\t\x04\x02$$^^\x06\x02\f\f\x0F\x0F$$^^\x05\x02\"\"//aa\x03\x022;\x04" +
-		"\x02C\\c|\x05\x02\v\f\x0F\x0F\"\"\x04\x02\f\f\x0E\x0F\x02\u03F7\x02\x03" +
+		'\x02\t\x04\x02$$^^\x06\x02\f\f\x0F\x0F$$^^\x05\x02""//aa\x03\x022;\x04' +
+		'\x02C\\c|\x05\x02\v\f\x0F\x0F""\x04\x02\f\f\x0E\x0F\x02\u03F7\x02\x03' +
 		"\x03\x02\x02\x02\x02\x05\x03\x02\x02\x02\x02\x07\x03\x02\x02\x02\x02\t" +
 		"\x03\x02\x02\x02\x02\v\x03\x02\x02\x02\x02\r\x03\x02\x02\x02\x02\x0F\x03" +
 		"\x02\x02\x02\x02\x11\x03\x02\x02\x02\x02\x13\x03\x02\x02\x02\x02\x15\x03" +
 		"\x02\x02\x02\x02\x17\x03\x02\x02\x02\x02\x19\x03\x02\x02\x02\x02\x1B\x03" +
 		"\x02\x02\x02\x02\x1D\x03\x02\x02\x02\x02\x1F\x03\x02\x02\x02\x02!\x03" +
-		"\x02\x02\x02\x02#\x03\x02\x02\x02\x02%\x03\x02\x02\x02\x02\'\x03\x02\x02" +
+		"\x02\x02\x02\x02#\x03\x02\x02\x02\x02%\x03\x02\x02\x02\x02'\x03\x02\x02" +
 		"\x02\x02)\x03\x02\x02\x02\x02+\x03\x02\x02\x02\x02-\x03\x02\x02\x02\x02" +
 		"/\x03\x02\x02\x02\x021\x03\x02\x02\x02\x023\x03\x02\x02\x02\x025\x03\x02" +
 		"\x02\x02\x027\x03\x02\x02\x02\x029\x03\x02\x02\x02\x02;\x03\x02\x02\x02" +
@@ -325,7 +532,7 @@ export class TransactionManifestLexer extends Lexer {
 		"\x0F\xC5\x03\x02\x02\x02\x11\xCB\x03\x02\x02\x02\x13\xCF\x03\x02\x02\x02" +
 		"\x15\xD4\x03\x02\x02\x02\x17\xD9\x03\x02\x02\x02\x19\xDE\x03\x02\x02\x02" +
 		"\x1B\xE4\x03\x02\x02\x02\x1D\xE9\x03\x02\x02\x02\x1F\xEF\x03\x02\x02\x02" +
-		"!\xF4\x03\x02\x02\x02#\xF9\x03\x02\x02\x02%\xFC\x03\x02\x02\x02\'\u0100" +
+		"!\xF4\x03\x02\x02\x02#\xF9\x03\x02\x02\x02%\xFC\x03\x02\x02\x02'\u0100" +
 		"\x03\x02\x02\x02)\u0104\x03\x02\x02\x02+\u0108\x03\x02\x02\x02-\u010D" +
 		"\x03\x02\x02\x02/\u0110\x03\x02\x02\x021\u0114\x03\x02\x02\x023\u0118" +
 		"\x03\x02\x02\x025\u011C\x03\x02\x02\x027\u0121\x03\x02\x02\x029\u0128" +
@@ -372,7 +579,7 @@ export class TransactionManifestLexer extends Lexer {
 		"\x07u\x02\x02\xED\xEE\x07g\x02\x02\xEE\x1E\x03\x02\x02\x02\xEF\xF0\x07" +
 		"W\x02\x02\xF0\xF1\x07p\x02\x02\xF1\xF2\x07k\x02\x02\xF2\xF3\x07v\x02\x02" +
 		"\xF3 \x03\x02\x02\x02\xF4\xF5\x07D\x02\x02\xF5\xF6\x07q\x02\x02\xF6\xF7" +
-		"\x07q\x02\x02\xF7\xF8\x07n\x02\x02\xF8\"\x03\x02\x02\x02\xF9\xFA\x07K" +
+		'\x07q\x02\x02\xF7\xF8\x07n\x02\x02\xF8"\x03\x02\x02\x02\xF9\xFA\x07K' +
 		"\x02\x02\xFA\xFB\x07:\x02\x02\xFB$\x03\x02\x02\x02\xFC\xFD\x07K\x02\x02" +
 		"\xFD\xFE\x073\x02\x02\xFE\xFF\x078\x02\x02\xFF&\x03\x02\x02\x02\u0100" +
 		"\u0101\x07K\x02\x02\u0101\u0102\x075\x02\x02\u0102\u0103\x074\x02\x02" +
@@ -653,16 +860,16 @@ export class TransactionManifestLexer extends Lexer {
 			TransactionManifestLexer._serializedATNSegment0,
 			TransactionManifestLexer._serializedATNSegment1,
 		],
-		"",
+		""
 	);
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
 		if (!TransactionManifestLexer.__ATN) {
-			TransactionManifestLexer.__ATN = new ATNDeserializer().deserialize(Utils.toCharArray(TransactionManifestLexer._serializedATN));
+			TransactionManifestLexer.__ATN = new ATNDeserializer().deserialize(
+				Utils.toCharArray(TransactionManifestLexer._serializedATN)
+			);
 		}
 
 		return TransactionManifestLexer.__ATN;
 	}
-
 }
-

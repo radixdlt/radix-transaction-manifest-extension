@@ -1,82 +1,108 @@
 "use strict";
 
 import { TransactionManifestListener } from "../antlr/TransactionManifestListener";
-import { ManifestInstructionContext, TransactionManifestParser } from "../antlr/TransactionManifestParser";
+import {
+	ManifestInstructionContext,
+	TransactionManifestParser,
+} from "../antlr/TransactionManifestParser";
 import { TransactionManifestLexer } from "../antlr/TransactionManifestLexer";
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
-import { CharStream, CharStreams, CommonTokenStream, ParserRuleContext, Token } from "antlr4ts";
+import {
+	CharStream,
+	CharStreams,
+	CommonTokenStream,
+	ParserRuleContext,
+	Token,
+} from "antlr4ts";
 
-import * as vscode from 'vscode';
+import * as vscode from "vscode";
 
-export default class BasicFormattingProvider implements vscode.DocumentFormattingEditProvider, TransactionManifestListener {
-    instructions: ManifestInstructionContext[] = [];
+export default class BasicFormattingProvider
+	implements
+		vscode.DocumentFormattingEditProvider,
+		TransactionManifestListener
+{
+	instructions: ManifestInstructionContext[] = [];
 
-    // ===================================================
-    // Required `DocumentFormattingEditProvider` Methods.
-    // ===================================================
+	// ===================================================
+	// Required `DocumentFormattingEditProvider` Methods.
+	// ===================================================
 
-    provideDocumentFormattingEdits(
-        document: vscode.TextDocument, 
-        _options: vscode.FormattingOptions, 
-        _token: vscode.CancellationToken
-    ): vscode.TextEdit[] {
-        // Lex and Parse the document
-        let charStream: CharStream = CharStreams.fromString(document.getText());
-        let lexer: TransactionManifestLexer = new TransactionManifestLexer(charStream);
-        let tokenStream: CommonTokenStream = new CommonTokenStream(lexer);
-        let parser: TransactionManifestParser = new TransactionManifestParser(tokenStream);
-        let tree = parser.manifest();
-        ParseTreeWalker.DEFAULT.walk(this as ParseTreeListener, tree);
-        
-        // Analyze each instruction
-        let textEdits: vscode.TextEdit[] = [];
-        for (var instruction of this.instructions) {
-            let instructionStrings: string[] = [];
-            let finalInstruction: ParserRuleContext = instruction.children![0] as ParserRuleContext;
+	provideDocumentFormattingEdits(
+		document: vscode.TextDocument,
+		_options: vscode.FormattingOptions,
+		_token: vscode.CancellationToken
+	): vscode.TextEdit[] {
+		// Lex and Parse the document
+		let charStream: CharStream = CharStreams.fromString(document.getText());
+		let lexer: TransactionManifestLexer = new TransactionManifestLexer(
+			charStream
+		);
+		let tokenStream: CommonTokenStream = new CommonTokenStream(lexer);
+		let parser: TransactionManifestParser = new TransactionManifestParser(
+			tokenStream
+		);
+		let tree = parser.manifest();
+		ParseTreeWalker.DEFAULT.walk(this as ParseTreeListener, tree);
 
-            for (var child of finalInstruction.children!) {
-                if (child.text.trim() !== ';') {
-                    instructionStrings.push(child.text);
-                }
-            }
+		// Analyze each instruction
+		let textEdits: vscode.TextEdit[] = [];
+		for (var instruction of this.instructions) {
+			let instructionStrings: string[] = [];
+			let finalInstruction: ParserRuleContext =
+				instruction.children![0] as ParserRuleContext;
 
-            // Format the instruction
-            let instructionRange: vscode.Range | undefined = this.getContextRange(instruction);
-            if (instructionRange) {
-                textEdits.push(new vscode.TextEdit(instructionRange, instructionStrings.join('\n\t') + ';' ));
-            }
-        }
+			for (var child of finalInstruction.children!) {
+				if (child.text.trim() !== ";") {
+					instructionStrings.push(child.text);
+				}
+			}
 
-        // Return the resultant text edits
-        return textEdits;
-    }
+			// Format the instruction
+			let instructionRange: vscode.Range | undefined =
+				this.getContextRange(instruction);
+			if (instructionRange) {
+				textEdits.push(
+					new vscode.TextEdit(
+						instructionRange,
+						instructionStrings.join("\n\t") + ";"
+					)
+				);
+			}
+		}
 
-    // =========================================================
-    // Method implementation from `TransactionManifestListener`
-    // =========================================================
+		// Return the resultant text edits
+		return textEdits;
+	}
 
-    enterManifestInstruction(context: ManifestInstructionContext) {
-        this.instructions.push(context);
-    }
+	// =========================================================
+	// Method implementation from `TransactionManifestListener`
+	// =========================================================
 
-    // ==================================
-    // Helper Methods and Internal Logic
-    // ==================================
+	enterManifestInstruction(context: ManifestInstructionContext) {
+		this.instructions.push(context);
+	}
 
-    private getContextRange(context: ParserRuleContext): vscode.Range | undefined {
-        let start: Token = context._start;
-        let stop: Token | undefined = context._stop;
+	// ==================================
+	// Helper Methods and Internal Logic
+	// ==================================
 
-        if (stop) {
-            return new vscode.Range(
-                start.line - 1,
-                start.charPositionInLine,
-                stop.line - 1,
-                stop.charPositionInLine + 1,
-            );
-        } else {
-            return undefined;
-        }
-    }
+	private getContextRange(
+		context: ParserRuleContext
+	): vscode.Range | undefined {
+		let start: Token = context._start;
+		let stop: Token | undefined = context._stop;
+
+		if (stop) {
+			return new vscode.Range(
+				start.line - 1,
+				start.charPositionInLine,
+				stop.line - 1,
+				stop.charPositionInLine + 1
+			);
+		} else {
+			return undefined;
+		}
+	}
 }

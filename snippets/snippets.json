@@ -1,275 +1,275 @@
 {
-    // =====================    
-    // Instruction Snippets
-    // =====================
-    "Call Method": {
-        "scope": "scope.rtm",
-        "prefix": "CALL_METHOD",
-        "body": "CALL_METHOD ComponentAddress(\"$1\") \"${2:Method Name}\" \"${3:args}\";",
-        "description": "Calls a method on a component."
-    },
-    "Call Function": {
-        "scope": "scope.rtm",
-        "prefix": "CALL_FUNCTION",
-        "body": "CALL_FUNCTION PackageAddress(\"$1\") \"${2:Blueprint Name}\" \"${3:Function Name}\" \"${4:args}\";",
-        "description": "Calls a function on a blueprint."
-    },
+	// =====================
+	// Instruction Snippets
+	// =====================
+	"Call Method": {
+		"scope": "scope.rtm",
+		"prefix": "CALL_METHOD",
+		"body": "CALL_METHOD ComponentAddress(\"$1\") \"${2:Method Name}\" \"${3:args}\";",
+		"description": "Calls a method on a component."
+	},
+	"Call Function": {
+		"scope": "scope.rtm",
+		"prefix": "CALL_FUNCTION",
+		"body": "CALL_FUNCTION PackageAddress(\"$1\") \"${2:Blueprint Name}\" \"${3:Function Name}\" \"${4:args}\";",
+		"description": "Calls a function on a blueprint."
+	},
 
-    "Take From Worktop": {
-        "scope": "scope.rtm",
-        "prefix": "TAKE_FROM_WORKTOP",
-        "body": "TAKE_FROM_WORKTOP ResourceAddress(\"$1\") Bucket(\"${2:Bucket Name}\");",
-        "description": "Takes resources from the worktop and into a bucket."
-    },
-    "Take From Worktop by Amount": {
-        "scope": "scope.rtm",
-        "prefix": "TAKE_FROM_WORKTOP_BY_AMOUNT",
-        "body": "TAKE_FROM_WORKTOP_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\") Bucket(\"${3:Bucket Name}\");",
-        "description": "Takes resources from the worktop and into a bucket."
-    },
-    "Take From Worktop by Ids": {
-        "scope": "scope.rtm",
-        "prefix": "TAKE_FROM_WORKTOP_BY_IDS",
-        "body": "TAKE_FROM_WORKTOP_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\") Bucket(\"${3:Bucket Name}\");",
-        "description": "Takes resources from the worktop and into a bucket."
-    },
-    
-    "Return to Worktop": {
-        "scope": "scope.rtm",
-        "prefix": "RETURN_TO_WORKTOP",
-        "body": "RETURN_TO_WORKTOP Bucket(\"${1:Bucket Name}\");",
-        "description": "Returns a bucket to the transaction worktop."
-    },
+	"Take From Worktop": {
+		"scope": "scope.rtm",
+		"prefix": "TAKE_FROM_WORKTOP",
+		"body": "TAKE_FROM_WORKTOP ResourceAddress(\"$1\") Bucket(\"${2:Bucket Name}\");",
+		"description": "Takes resources from the worktop and into a bucket."
+	},
+	"Take From Worktop by Amount": {
+		"scope": "scope.rtm",
+		"prefix": "TAKE_FROM_WORKTOP_BY_AMOUNT",
+		"body": "TAKE_FROM_WORKTOP_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\") Bucket(\"${3:Bucket Name}\");",
+		"description": "Takes resources from the worktop and into a bucket."
+	},
+	"Take From Worktop by Ids": {
+		"scope": "scope.rtm",
+		"prefix": "TAKE_FROM_WORKTOP_BY_IDS",
+		"body": "TAKE_FROM_WORKTOP_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\") Bucket(\"${3:Bucket Name}\");",
+		"description": "Takes resources from the worktop and into a bucket."
+	},
 
-    "Assert Worktop Contains": {
-        "scope": "scope.rtm",
-        "prefix": "ASSERT_WORKTOP_CONTAINS",
-        "body": "ASSERT_WORKTOP_CONTAINS ResourceAddress(\"$1\");",
-        "description": "Asserts that the transaction worktop contains some resource."
-    },
-    "Assert Worktop Contains by Amount": {
-        "scope": "scope.rtm",
-        "prefix": "ASSERT_WORKTOP_CONTAINS_BY_AMOUNT",
-        "body": "ASSERT_WORKTOP_CONTAINS_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\");",
-        "description": "Asserts that the transaction worktop contains some resource."
-    },
-    "Assert Worktop Contains by Ids": {
-        "scope": "scope.rtm",
-        "prefix": "ASSERT_WORKTOP_CONTAINS_BY_IDS",
-        "body": "ASSERT_WORKTOP_CONTAINS_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\");",
-        "description": "Asserts that the transaction worktop contains some resource."
-    },
+	"Return to Worktop": {
+		"scope": "scope.rtm",
+		"prefix": "RETURN_TO_WORKTOP",
+		"body": "RETURN_TO_WORKTOP Bucket(\"${1:Bucket Name}\");",
+		"description": "Returns a bucket to the transaction worktop."
+	},
 
-    "Pop from Auth Zone": {
-        "scope": "scope.rtm",
-        "prefix": "POP_FROM_AUTH_ZONE",
-        "body": "POP_FROM_AUTH_ZONE Proof(\"${1:Proof Name}\");",
-        "description": "Pops a proof from the Auth Zone."
-    },
-    "Push to Auth Zone": {
-        "scope": "scope.rtm",
-        "prefix": "PUSH_TO_AUTH_ZONE",
-        "body": "PUSH_TO_AUTH_ZONE Proof(\"${1:Proof Name}\");",
-        "description": "Pushes a proof to the auth zone."
-    },
+	"Assert Worktop Contains": {
+		"scope": "scope.rtm",
+		"prefix": "ASSERT_WORKTOP_CONTAINS",
+		"body": "ASSERT_WORKTOP_CONTAINS ResourceAddress(\"$1\");",
+		"description": "Asserts that the transaction worktop contains some resource."
+	},
+	"Assert Worktop Contains by Amount": {
+		"scope": "scope.rtm",
+		"prefix": "ASSERT_WORKTOP_CONTAINS_BY_AMOUNT",
+		"body": "ASSERT_WORKTOP_CONTAINS_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\");",
+		"description": "Asserts that the transaction worktop contains some resource."
+	},
+	"Assert Worktop Contains by Ids": {
+		"scope": "scope.rtm",
+		"prefix": "ASSERT_WORKTOP_CONTAINS_BY_IDS",
+		"body": "ASSERT_WORKTOP_CONTAINS_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\");",
+		"description": "Asserts that the transaction worktop contains some resource."
+	},
 
-    "Create Proof from Auth Zone": {
-        "scope": "scope.rtm",
-        "prefix": "CREATE_PROOF_FROM_AUTH_ZONE",
-        "body": "CREATE_PROOF_FROM_AUTH_ZONE ResourceAddress(\"$1\") Proof(\"${2:Proof Name}\");",
-        "description": "Creates a proof from the Auth Zone."
-    },
-    "Create Proof from Auth Zone by Amount": {
-        "scope": "scope.rtm",
-        "prefix": "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT",
-        "body": "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\") Proof(\"${3:Proof Name}\");",
-        "description": "Creates a proof from the Auth Zone."
-    },
-    "Create Proof from Auth Zone by Ids": {
-        "scope": "scope.rtm",
-        "prefix": "CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS",
-        "body": "CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\") Proof(\"${3:Proof Name}\");",
-        "description": "Creates a proof from the Auth Zone."
-    },
-    
-    "Create Proof from Bucket": {
-        "scope": "scope.rtm",
-        "prefix": "CREATE_PROOF_FROM_BUCKET",
-        "body": "CREATE_PROOF_FROM_BUCKET Bucket(\"${1:Bucket Name}\") Proof(\"${2:Proof Name}\");",
-        "description": "Creates a proof from Bucket."
-    },
-    
-    "Clone Proof": {
-        "scope": "scope.rtm",
-        "prefix": "CLONE_PROOF",
-        "body": "CLONE_PROOF Proof(\"${1:Original Proof Name}\") Proof(\"${2:New Proof Name}\");",
-        "description": "Clones an existing proof."
-    },
-    "Drop Proof": {
-        "scope": "scope.rtm",
-        "prefix": "DROP_PROOF",
-        "body": "DROP_PROOF Proof(\"${1:Proof Name}\");",
-        "description": "Drops a Proof."
-    },
-    "Drop All Proof": {
-        "scope": "scope.rtm",
-        "prefix": "DROP_ALL_PROOF",
-        "body": "DROP_ALL_PROOF;",
-        "description": "Drops all Proofs."
-    },
-    "Clear Auth Zone": {
-        "scope": "scope.rtm",
-        "prefix": "CLEAR_AUTH_ZONE",
-        "body": "CLEAR_AUTH_ZONE;",
-        "description": "Drops all proofs from the Auth Zone."
-    },
-    
-    "Publish Package": {
-        "scope": "scope.rtm",
-        "prefix": "PUBLISH_PACKAGE",
-        "body": "PUBLISH_PACKAGE Bytes(\"${1:Package Blob}\");",
-        "description": "Publishes a package."
-    },
+	"Pop from Auth Zone": {
+		"scope": "scope.rtm",
+		"prefix": "POP_FROM_AUTH_ZONE",
+		"body": "POP_FROM_AUTH_ZONE Proof(\"${1:Proof Name}\");",
+		"description": "Pops a proof from the Auth Zone."
+	},
+	"Push to Auth Zone": {
+		"scope": "scope.rtm",
+		"prefix": "PUSH_TO_AUTH_ZONE",
+		"body": "PUSH_TO_AUTH_ZONE Proof(\"${1:Proof Name}\");",
+		"description": "Pushes a proof to the auth zone."
+	},
 
-    // ==================
-    // Common Operations
-    // ==================
-    "Lock Fee": {
-        "scope": "scope.rtm",
-        "prefix": "LOCK_FEE",
-        "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"lock_fee\" Decimal(\"${2:Fee to Lock}\");",
-        "description": "Locks a fee for the transaction."
-    },
+	"Create Proof from Auth Zone": {
+		"scope": "scope.rtm",
+		"prefix": "CREATE_PROOF_FROM_AUTH_ZONE",
+		"body": "CREATE_PROOF_FROM_AUTH_ZONE ResourceAddress(\"$1\") Proof(\"${2:Proof Name}\");",
+		"description": "Creates a proof from the Auth Zone."
+	},
+	"Create Proof from Auth Zone by Amount": {
+		"scope": "scope.rtm",
+		"prefix": "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT",
+		"body": "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT Decimal(\"${1:Amount}\") ResourceAddress(\"$2\") Proof(\"${3:Proof Name}\");",
+		"description": "Creates a proof from the Auth Zone."
+	},
+	"Create Proof from Auth Zone by Ids": {
+		"scope": "scope.rtm",
+		"prefix": "CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS",
+		"body": "CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS Set<NonFungibleId>(NonFungibleId(\"${1:id}\")) ResourceAddress(\"$2\") Proof(\"${3:Proof Name}\");",
+		"description": "Creates a proof from the Auth Zone."
+	},
 
-    "Withdraw from Account": {
-        "scope": "scope.rtm",
-        "prefix": "WITHDRAW_FROM_ACCOUNT",
-        "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw\" ResourceAddress(\"${2:Resource to Withdraw}\");",
-        "description": "Withdraws funds from an account."
-    },
-    "Withdraw from Account by Amount": {
-        "scope": "scope.rtm",
-        "prefix": "WITHDRAW_FROM_ACCOUNT_BY_AMOUNT",
-        "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw_by_amount\" Decimal(\"${2:Amount}\") ResourceAddress(\"${3:Resource to Withdraw}\");",
-        "description": "Withdraws funds from an account."
-    },
-    "Withdraw from Account by Ids": {
-        "scope": "scope.rtm",
-        "prefix": "WITHDRAW_FROM_ACCOUNT_BY_IDS",
-        "body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw_by_ids\" Set<NonFungibleId>(NonFungibleId(\"${2:id}\")) ResourceAddress(\"${3:Resource to Withdraw}\");",
-        "description": "Withdraws funds from an account."
-    },
+	"Create Proof from Bucket": {
+		"scope": "scope.rtm",
+		"prefix": "CREATE_PROOF_FROM_BUCKET",
+		"body": "CREATE_PROOF_FROM_BUCKET Bucket(\"${1:Bucket Name}\") Proof(\"${2:Proof Name}\");",
+		"description": "Creates a proof from Bucket."
+	},
 
-    // =============
-    // Common Types
-    // =============
+	"Clone Proof": {
+		"scope": "scope.rtm",
+		"prefix": "CLONE_PROOF",
+		"body": "CLONE_PROOF Proof(\"${1:Original Proof Name}\") Proof(\"${2:New Proof Name}\");",
+		"description": "Clones an existing proof."
+	},
+	"Drop Proof": {
+		"scope": "scope.rtm",
+		"prefix": "DROP_PROOF",
+		"body": "DROP_PROOF Proof(\"${1:Proof Name}\");",
+		"description": "Drops a Proof."
+	},
+	"Drop All Proof": {
+		"scope": "scope.rtm",
+		"prefix": "DROP_ALL_PROOF",
+		"body": "DROP_ALL_PROOF;",
+		"description": "Drops all Proofs."
+	},
+	"Clear Auth Zone": {
+		"scope": "scope.rtm",
+		"prefix": "CLEAR_AUTH_ZONE",
+		"body": "CLEAR_AUTH_ZONE;",
+		"description": "Drops all proofs from the Auth Zone."
+	},
 
-    "Bytes": {
-        "scope": "scope.rtm",
-        "prefix": "Bytes",
-        "body": "Bytes(\"${1:Bytes Hex}\")"
-    },
-    "Hash": {
-        "scope": "scope.rtm",
-        "prefix": "Hash",
-        "body": "Hash(\"${1:Hash Hex}\")"
-    },
+	"Publish Package": {
+		"scope": "scope.rtm",
+		"prefix": "PUBLISH_PACKAGE",
+		"body": "PUBLISH_PACKAGE Bytes(\"${1:Package Blob}\");",
+		"description": "Publishes a package."
+	},
 
-    "NonFungibleAddress": {
-        "scope": "scope.rtm",
-        "prefix": "NonFungibleAddress",
-        "body": "NonFungibleAddress(\"${1:NonFungibleAddress}\")"
-    },
-    "NonFungibleId": {
-        "scope": "scope.rtm",
-        "prefix": "NonFungibleId",
-        "body": "NonFungibleId(\"${1:NonFungibleId Hex}\")"
-    },
-    
-    "Bucket": {
-        "scope": "scope.rtm",
-        "prefix": "Bucket",
-        "body": "Bucket(\"${1:Bucket Name}\")"
-    },
-    "Proof": {
-        "scope": "scope.rtm",
-        "prefix": "Proof",
-        "body": "Proof(\"${1:Proof Name}\")"
-    },
-    
-    "ResourceAddress": {
-        "scope": "scope.rtm",
-        "prefix": "ResourceAddress",
-        "body": "ResourceAddress(\"${1:ResourceAddress}\")"
-    },
-    "ComponentAddress": {
-        "scope": "scope.rtm",
-        "prefix": "ComponentAddress",
-        "body": "ComponentAddress(\"${1:ComponentAddress}\")"
-    },
-    "PackageAddress": {
-        "scope": "scope.rtm",
-        "prefix": "PackageAddress",
-        "body": "PackageAddress(\"${1:PackageAddress}\")"
-    },
-    "Decimal": {
-        "scope": "scope.rtm",
-        "prefix": "Decimal",
-        "body": "Decimal(\"${1:number}\")"
-    },
-    "PreciseDecimal": {
-        "scope": "scope.rtm",
-        "prefix": "PreciseDecimal",
-        "body": "PreciseDecimal(\"${1:number}\")"
-    },
-    
-    "Map": {
-        "scope": "scope.rtm",
-        "prefix": "Map",
-        "body": "Map<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|},  ${2|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($3)"
-    },
-    "Set": {
-        "scope": "scope.rtm",
-        "prefix": "Set",
-        "body": "Set<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
-    },
-    "List": {
-        "scope": "scope.rtm",
-        "prefix": "List",
-        "body": "List<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
-    },
-    "Tuple": {
-        "scope": "scope.rtm",
-        "prefix": "Tuple",
-        "body": "Tuple<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
-    },
-    "Array": {
-        "scope": "scope.rtm",
-        "prefix": "Array",
-        "body": "Array<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
-    },
-    "Enum": {
-        "scope": "scope.rtm",
-        "prefix": "Enum",
-        "body": "Enum(\"${1:Variant Name}\", \"${2:Optional Values}\")"
-    },
-    "Struct": {
-        "scope": "scope.rtm",
-        "prefix": "Struct",
-        "body": "Struct(\"${1:Field 1 Value}\", \"${2:Field 2 Value}\")"
-    },
-    
-    // =================
-    // Useful Constants
-    // =================
-    "Radix Token": {
-        "scope": "scope.rtm",
-        "prefix": "RADIX_TOKEN",
-        "body": "resource_sim1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzqu57yag"
-    },
-    "System Component": {
-        "scope": "scope.rtm",
-        "prefix": "SYSTEM_COMPONENT",
-        "body": "component_sim1qgqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqgyhcl2"
-    }
+	// ==================
+	// Common Operations
+	// ==================
+	"Lock Fee": {
+		"scope": "scope.rtm",
+		"prefix": "LOCK_FEE",
+		"body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"lock_fee\" Decimal(\"${2:Fee to Lock}\");",
+		"description": "Locks a fee for the transaction."
+	},
+
+	"Withdraw from Account": {
+		"scope": "scope.rtm",
+		"prefix": "WITHDRAW_FROM_ACCOUNT",
+		"body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw\" ResourceAddress(\"${2:Resource to Withdraw}\");",
+		"description": "Withdraws funds from an account."
+	},
+	"Withdraw from Account by Amount": {
+		"scope": "scope.rtm",
+		"prefix": "WITHDRAW_FROM_ACCOUNT_BY_AMOUNT",
+		"body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw_by_amount\" Decimal(\"${2:Amount}\") ResourceAddress(\"${3:Resource to Withdraw}\");",
+		"description": "Withdraws funds from an account."
+	},
+	"Withdraw from Account by Ids": {
+		"scope": "scope.rtm",
+		"prefix": "WITHDRAW_FROM_ACCOUNT_BY_IDS",
+		"body": "CALL_METHOD ComponentAddress(\"${1:Account Component}\") \"withdraw_by_ids\" Set<NonFungibleId>(NonFungibleId(\"${2:id}\")) ResourceAddress(\"${3:Resource to Withdraw}\");",
+		"description": "Withdraws funds from an account."
+	},
+
+	// =============
+	// Common Types
+	// =============
+
+	"Bytes": {
+		"scope": "scope.rtm",
+		"prefix": "Bytes",
+		"body": "Bytes(\"${1:Bytes Hex}\")"
+	},
+	"Hash": {
+		"scope": "scope.rtm",
+		"prefix": "Hash",
+		"body": "Hash(\"${1:Hash Hex}\")"
+	},
+
+	"NonFungibleAddress": {
+		"scope": "scope.rtm",
+		"prefix": "NonFungibleAddress",
+		"body": "NonFungibleAddress(\"${1:NonFungibleAddress}\")"
+	},
+	"NonFungibleId": {
+		"scope": "scope.rtm",
+		"prefix": "NonFungibleId",
+		"body": "NonFungibleId(\"${1:NonFungibleId Hex}\")"
+	},
+
+	"Bucket": {
+		"scope": "scope.rtm",
+		"prefix": "Bucket",
+		"body": "Bucket(\"${1:Bucket Name}\")"
+	},
+	"Proof": {
+		"scope": "scope.rtm",
+		"prefix": "Proof",
+		"body": "Proof(\"${1:Proof Name}\")"
+	},
+
+	"ResourceAddress": {
+		"scope": "scope.rtm",
+		"prefix": "ResourceAddress",
+		"body": "ResourceAddress(\"${1:ResourceAddress}\")"
+	},
+	"ComponentAddress": {
+		"scope": "scope.rtm",
+		"prefix": "ComponentAddress",
+		"body": "ComponentAddress(\"${1:ComponentAddress}\")"
+	},
+	"PackageAddress": {
+		"scope": "scope.rtm",
+		"prefix": "PackageAddress",
+		"body": "PackageAddress(\"${1:PackageAddress}\")"
+	},
+	"Decimal": {
+		"scope": "scope.rtm",
+		"prefix": "Decimal",
+		"body": "Decimal(\"${1:number}\")"
+	},
+	"PreciseDecimal": {
+		"scope": "scope.rtm",
+		"prefix": "PreciseDecimal",
+		"body": "PreciseDecimal(\"${1:number}\")"
+	},
+
+	"Map": {
+		"scope": "scope.rtm",
+		"prefix": "Map",
+		"body": "Map<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|},  ${2|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($3)"
+	},
+	"Set": {
+		"scope": "scope.rtm",
+		"prefix": "Set",
+		"body": "Set<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+	},
+	"List": {
+		"scope": "scope.rtm",
+		"prefix": "List",
+		"body": "List<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+	},
+	"Tuple": {
+		"scope": "scope.rtm",
+		"prefix": "Tuple",
+		"body": "Tuple<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+	},
+	"Array": {
+		"scope": "scope.rtm",
+		"prefix": "Array",
+		"body": "Array<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+	},
+	"Enum": {
+		"scope": "scope.rtm",
+		"prefix": "Enum",
+		"body": "Enum(\"${1:Variant Name}\", \"${2:Optional Values}\")"
+	},
+	"Struct": {
+		"scope": "scope.rtm",
+		"prefix": "Struct",
+		"body": "Struct(\"${1:Field 1 Value}\", \"${2:Field 2 Value}\")"
+	},
+
+	// =================
+	// Useful Constants
+	// =================
+	"Radix Token": {
+		"scope": "scope.rtm",
+		"prefix": "RADIX_TOKEN",
+		"body": "resource_sim1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqzqu57yag"
+	},
+	"System Component": {
+		"scope": "scope.rtm",
+		"prefix": "SYSTEM_COMPONENT",
+		"body": "component_sim1qgqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqpqgyhcl2"
+	}
 }

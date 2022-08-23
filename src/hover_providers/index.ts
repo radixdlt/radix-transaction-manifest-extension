@@ -1,1 +1,1 @@
-export { default as BasicHoverProvider } from './basic_hover_provider';
+export { default as BasicHoverProvider } from "./basic_hover_provider";

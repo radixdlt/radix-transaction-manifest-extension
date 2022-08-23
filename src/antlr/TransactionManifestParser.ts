@@ -1,6 +1,5 @@
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
-
 import { ATN } from "antlr4ts/atn/ATN";
 import { ATNDeserializer } from "antlr4ts/atn/ATNDeserializer";
 import { FailedPredicateException } from "antlr4ts/FailedPredicateException";
@@ -25,7 +24,6 @@ import * as Utils from "antlr4ts/misc/Utils";
 
 import { TransactionManifestListener } from "./TransactionManifestListener";
 import { TransactionManifestVisitor } from "./TransactionManifestVisitor";
-
 
 export class TransactionManifestParser extends Parser {
 	public static readonly T__0 = 1;
@@ -175,59 +173,242 @@ export class TransactionManifestParser extends Parser {
 	public static readonly RULE_value = 60;
 	// tslint:disable:no-trailing-whitespace
 	public static readonly ruleNames: string[] = [
-		"manifest", "manifestInstruction", "callFunction", "callMethod", "callMethodWithAllResources", 
-		"takeFromWorktop", "takeFromWorktopByAmount", "takeFromWorktopByIds", 
-		"returnToWorktop", "assertWorktopContains", "assertWorktopContainsByAmount", 
-		"assertWorktopContainsByIds", "popFromAuthZone", "pushToAuthZone", "createProofFromAuthZone", 
-		"createProofFromAuthZoneByAmount", "createProofFromAuthZoneByIds", "createProofFromBucket", 
-		"cloneProof", "dropProof", "dropAllProofs", "clearAuthZone", "publishPackage", 
-		"unit", "bool", "i8", "i16", "i32", "i64", "i128", "u8", "u16", "u32", 
-		"u64", "u128", "string", "struct", "enum_", "option", "some", "none", 
-		"ok", "err", "array", "tuple", "list", "set", "map", "decimal", "preciseDecimal", 
-		"packageAddress", "componentAddress", "resourceAddress", "hash", "bucket", 
-		"proof", "nonFungibleId", "nonFungibleAddress", "bytes", "type", "value",
+		"manifest",
+		"manifestInstruction",
+		"callFunction",
+		"callMethod",
+		"callMethodWithAllResources",
+		"takeFromWorktop",
+		"takeFromWorktopByAmount",
+		"takeFromWorktopByIds",
+		"returnToWorktop",
+		"assertWorktopContains",
+		"assertWorktopContainsByAmount",
+		"assertWorktopContainsByIds",
+		"popFromAuthZone",
+		"pushToAuthZone",
+		"createProofFromAuthZone",
+		"createProofFromAuthZoneByAmount",
+		"createProofFromAuthZoneByIds",
+		"createProofFromBucket",
+		"cloneProof",
+		"dropProof",
+		"dropAllProofs",
+		"clearAuthZone",
+		"publishPackage",
+		"unit",
+		"bool",
+		"i8",
+		"i16",
+		"i32",
+		"i64",
+		"i128",
+		"u8",
+		"u16",
+		"u32",
+		"u64",
+		"u128",
+		"string",
+		"struct",
+		"enum_",
+		"option",
+		"some",
+		"none",
+		"ok",
+		"err",
+		"array",
+		"tuple",
+		"list",
+		"set",
+		"map",
+		"decimal",
+		"preciseDecimal",
+		"packageAddress",
+		"componentAddress",
+		"resourceAddress",
+		"hash",
+		"bucket",
+		"proof",
+		"nonFungibleId",
+		"nonFungibleAddress",
+		"bytes",
+		"type",
+		"value",
 	];
 
 	private static readonly _LITERAL_NAMES: Array<string | undefined> = [
-		undefined, "'()'", undefined, undefined, undefined, undefined, undefined, 
-		undefined, undefined, undefined, undefined, undefined, undefined, "'true'", 
-		"'false'", "'Unit'", "'Bool'", "'I8'", "'I16'", "'I32'", "'I64'", "'I128'", 
-		"'U8'", "'U16'", "'U32'", "'U64'", "'U128'", "'String'", "'Struct'", "'Enum'", 
-		"'Option'", "'Result'", "'Some'", "'None'", "'Ok'", "'Err'", "'Array'", 
-		"'Tuple'", "'List'", "'Set'", "'Map'", "'Decimal'", "'PreciseDecimal'", 
-		"'PackageAddress'", "'ComponentAddress'", "'ResourceAddress'", "'Hash'", 
-		"'Bucket'", "'Proof'", "'NonFungibleId'", "'NonFungibleAddress'", "'Bytes'", 
-		"'('", "')'", "'<'", "'>'", "','", "';'", "'TAKE_FROM_WORKTOP'", "'TAKE_FROM_WORKTOP_BY_AMOUNT'", 
-		"'TAKE_FROM_WORKTOP_BY_IDS'", "'ASSERT_WORKTOP_CONTAINS'", "'ASSERT_WORKTOP_CONTAINS_BY_AMOUNT'", 
-		"'ASSERT_WORKTOP_CONTAINS_BY_IDS'", "'RETURN_TO_WORKTOP'", "'POP_FROM_AUTH_ZONE'", 
-		"'PUSH_TO_AUTH_ZONE'", "'CLEAR_AUTHZONE'", "'CREATE_PROOF_FROM_AUTH_ZONE'", 
-		"'CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT'", "'CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS'", 
-		"'CREATE_PROOF_FROM_BUCKET'", "'CLONE_PROOF'", "'DROP_PROOF'", "'DROP_ALL_PROOFS'", 
-		"'CALL_FUNCTION'", "'CALL_METHOD'", "'CALL_METHOD_WITH_ALL_RESOURCES'", 
+		undefined,
+		"'()'",
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		undefined,
+		"'true'",
+		"'false'",
+		"'Unit'",
+		"'Bool'",
+		"'I8'",
+		"'I16'",
+		"'I32'",
+		"'I64'",
+		"'I128'",
+		"'U8'",
+		"'U16'",
+		"'U32'",
+		"'U64'",
+		"'U128'",
+		"'String'",
+		"'Struct'",
+		"'Enum'",
+		"'Option'",
+		"'Result'",
+		"'Some'",
+		"'None'",
+		"'Ok'",
+		"'Err'",
+		"'Array'",
+		"'Tuple'",
+		"'List'",
+		"'Set'",
+		"'Map'",
+		"'Decimal'",
+		"'PreciseDecimal'",
+		"'PackageAddress'",
+		"'ComponentAddress'",
+		"'ResourceAddress'",
+		"'Hash'",
+		"'Bucket'",
+		"'Proof'",
+		"'NonFungibleId'",
+		"'NonFungibleAddress'",
+		"'Bytes'",
+		"'('",
+		"')'",
+		"'<'",
+		"'>'",
+		"','",
+		"';'",
+		"'TAKE_FROM_WORKTOP'",
+		"'TAKE_FROM_WORKTOP_BY_AMOUNT'",
+		"'TAKE_FROM_WORKTOP_BY_IDS'",
+		"'ASSERT_WORKTOP_CONTAINS'",
+		"'ASSERT_WORKTOP_CONTAINS_BY_AMOUNT'",
+		"'ASSERT_WORKTOP_CONTAINS_BY_IDS'",
+		"'RETURN_TO_WORKTOP'",
+		"'POP_FROM_AUTH_ZONE'",
+		"'PUSH_TO_AUTH_ZONE'",
+		"'CLEAR_AUTHZONE'",
+		"'CREATE_PROOF_FROM_AUTH_ZONE'",
+		"'CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT'",
+		"'CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS'",
+		"'CREATE_PROOF_FROM_BUCKET'",
+		"'CLONE_PROOF'",
+		"'DROP_PROOF'",
+		"'DROP_ALL_PROOFS'",
+		"'CALL_FUNCTION'",
+		"'CALL_METHOD'",
+		"'CALL_METHOD_WITH_ALL_RESOURCES'",
 		"'PUBLISH_PACKAGE'",
 	];
 	private static readonly _SYMBOLIC_NAMES: Array<string | undefined> = [
-		undefined, undefined, "BOOL_LITERAL", "I8_LITERAL", "I16_LITERAL", "I32_LITERAL", 
-		"I64_LITERAL", "I128_LITERAL", "U8_LITERAL", "U16_LITERAL", "U32_LITERAL", 
-		"U64_LITERAL", "U128_LITERAL", "TRUE", "FALSE", "UNIT_TYPE", "BOOL_TYPE", 
-		"I8_TYPE", "I16_TYPE", "I32_TYPE", "I64_TYPE", "I128_TYPE", "U8_TYPE", 
-		"U16_TYPE", "U32_TYPE", "U64_TYPE", "U128_TYPE", "STRING_TYPE", "STRUCT_TYPE", 
-		"ENUM_TYPE", "OPTION_TYPE", "RESULT_TYPE", "SOME_TYPE", "NONE_TYPE", "OK_TYPE", 
-		"ERR_TYPE", "ARRAY_TYPE", "TUPLE_TYPE", "LIST_TYPE", "SET_TYPE", "MAP_TYPE", 
-		"DECIMAL_TYPE", "PRECISE_DECIMAL_TYPE", "PACKAGE_ADDRESS_TYPE", "COMPONENT_ADDRESS_TYPE", 
-		"RESOURCE_ADDRESS_TYPE", "HASH_TYPE", "BUCKET_TYPE", "PROOF_TYPE", "NON_FUNGIBLE_ID_TYPE", 
-		"NON_FUNGIBLE_ADDRESS_TYPE", "BYTES_TYPE", "OPEN_PARENTHESIS", "CLOED_PARENTHESIS", 
-		"LESS_THAN", "GREATER_THAN", "COMMA", "SEMICOLON", "TAKE_FROM_WORKTOP", 
-		"TAKE_FROM_WORKTOP_BY_AMOUNT", "TAKE_FROM_WORKTOP_BY_IDS", "ASSERT_WORKTOP_CONTAINS", 
-		"ASSERT_WORKTOP_CONTAINS_BY_AMOUNT", "ASSERT_WORKTOP_CONTAINS_BY_IDS", 
-		"RETURN_TO_WORKTOP", "POP_FROM_AUTH_ZONE", "PUSH_TO_AUTH_ZONE", "CLEAR_AUTHZONE", 
-		"CREATE_PROOF_FROM_AUTH_ZONE", "CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT", 
-		"CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS", "CREATE_PROOF_FROM_BUCKET", "CLONE_PROOF", 
-		"DROP_PROOF", "DROP_ALL_PROOFS", "CALL_FUNCTION", "CALL_METHOD", "CALL_METHOD_WITH_ALL_RESOURCES", 
-		"PUBLISH_PACKAGE", "STRING_LITERAL", "DIGIT", "LETTER", "NUMBER", "WS", 
+		undefined,
+		undefined,
+		"BOOL_LITERAL",
+		"I8_LITERAL",
+		"I16_LITERAL",
+		"I32_LITERAL",
+		"I64_LITERAL",
+		"I128_LITERAL",
+		"U8_LITERAL",
+		"U16_LITERAL",
+		"U32_LITERAL",
+		"U64_LITERAL",
+		"U128_LITERAL",
+		"TRUE",
+		"FALSE",
+		"UNIT_TYPE",
+		"BOOL_TYPE",
+		"I8_TYPE",
+		"I16_TYPE",
+		"I32_TYPE",
+		"I64_TYPE",
+		"I128_TYPE",
+		"U8_TYPE",
+		"U16_TYPE",
+		"U32_TYPE",
+		"U64_TYPE",
+		"U128_TYPE",
+		"STRING_TYPE",
+		"STRUCT_TYPE",
+		"ENUM_TYPE",
+		"OPTION_TYPE",
+		"RESULT_TYPE",
+		"SOME_TYPE",
+		"NONE_TYPE",
+		"OK_TYPE",
+		"ERR_TYPE",
+		"ARRAY_TYPE",
+		"TUPLE_TYPE",
+		"LIST_TYPE",
+		"SET_TYPE",
+		"MAP_TYPE",
+		"DECIMAL_TYPE",
+		"PRECISE_DECIMAL_TYPE",
+		"PACKAGE_ADDRESS_TYPE",
+		"COMPONENT_ADDRESS_TYPE",
+		"RESOURCE_ADDRESS_TYPE",
+		"HASH_TYPE",
+		"BUCKET_TYPE",
+		"PROOF_TYPE",
+		"NON_FUNGIBLE_ID_TYPE",
+		"NON_FUNGIBLE_ADDRESS_TYPE",
+		"BYTES_TYPE",
+		"OPEN_PARENTHESIS",
+		"CLOED_PARENTHESIS",
+		"LESS_THAN",
+		"GREATER_THAN",
+		"COMMA",
+		"SEMICOLON",
+		"TAKE_FROM_WORKTOP",
+		"TAKE_FROM_WORKTOP_BY_AMOUNT",
+		"TAKE_FROM_WORKTOP_BY_IDS",
+		"ASSERT_WORKTOP_CONTAINS",
+		"ASSERT_WORKTOP_CONTAINS_BY_AMOUNT",
+		"ASSERT_WORKTOP_CONTAINS_BY_IDS",
+		"RETURN_TO_WORKTOP",
+		"POP_FROM_AUTH_ZONE",
+		"PUSH_TO_AUTH_ZONE",
+		"CLEAR_AUTHZONE",
+		"CREATE_PROOF_FROM_AUTH_ZONE",
+		"CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT",
+		"CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS",
+		"CREATE_PROOF_FROM_BUCKET",
+		"CLONE_PROOF",
+		"DROP_PROOF",
+		"DROP_ALL_PROOFS",
+		"CALL_FUNCTION",
+		"CALL_METHOD",
+		"CALL_METHOD_WITH_ALL_RESOURCES",
+		"PUBLISH_PACKAGE",
+		"STRING_LITERAL",
+		"DIGIT",
+		"LETTER",
+		"NUMBER",
+		"WS",
 		"COMMENT",
 	];
-	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(TransactionManifestParser._LITERAL_NAMES, TransactionManifestParser._SYMBOLIC_NAMES, []);
+	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(
+		TransactionManifestParser._LITERAL_NAMES,
+		TransactionManifestParser._SYMBOLIC_NAMES,
+		[]
+	);
 
 	// @Override
 	// @NotNull
@@ -237,49 +418,126 @@ export class TransactionManifestParser extends Parser {
 	// tslint:enable:no-trailing-whitespace
 
 	// @Override
-	public get grammarFileName(): string { return "TransactionManifest.g4"; }
+	public get grammarFileName(): string {
+		return "TransactionManifest.g4";
+	}
 
 	// @Override
-	public get ruleNames(): string[] { return TransactionManifestParser.ruleNames; }
+	public get ruleNames(): string[] {
+		return TransactionManifestParser.ruleNames;
+	}
 
 	// @Override
-	public get serializedATN(): string { return TransactionManifestParser._serializedATN; }
+	public get serializedATN(): string {
+		return TransactionManifestParser._serializedATN;
+	}
 
-	protected createFailedPredicateException(predicate?: string, message?: string): FailedPredicateException {
+	protected createFailedPredicateException(
+		predicate?: string,
+		message?: string
+	): FailedPredicateException {
 		return new FailedPredicateException(this, predicate, message);
 	}
 
 	constructor(input: TokenStream) {
 		super(input);
-		this._interp = new ParserATNSimulator(TransactionManifestParser._ATN, this);
+		this._interp = new ParserATNSimulator(
+			TransactionManifestParser._ATN,
+			this
+		);
 	}
 	// @RuleVersion(0)
 	public manifest(): ManifestContext {
-		let _localctx: ManifestContext = new ManifestContext(this._ctx, this.state);
+		let _localctx: ManifestContext = new ManifestContext(
+			this._ctx,
+			this.state
+		);
 		this.enterRule(_localctx, 0, TransactionManifestParser.RULE_manifest);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 125;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while (((((_la - 58)) & ~0x1F) === 0 && ((1 << (_la - 58)) & ((1 << (TransactionManifestParser.TAKE_FROM_WORKTOP - 58)) | (1 << (TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT - 58)) | (1 << (TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS - 58)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS - 58)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT - 58)) | (1 << (TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS - 58)) | (1 << (TransactionManifestParser.RETURN_TO_WORKTOP - 58)) | (1 << (TransactionManifestParser.POP_FROM_AUTH_ZONE - 58)) | (1 << (TransactionManifestParser.PUSH_TO_AUTH_ZONE - 58)) | (1 << (TransactionManifestParser.CLEAR_AUTHZONE - 58)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE - 58)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT - 58)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS - 58)) | (1 << (TransactionManifestParser.CREATE_PROOF_FROM_BUCKET - 58)) | (1 << (TransactionManifestParser.CLONE_PROOF - 58)) | (1 << (TransactionManifestParser.DROP_PROOF - 58)) | (1 << (TransactionManifestParser.DROP_ALL_PROOFS - 58)) | (1 << (TransactionManifestParser.CALL_FUNCTION - 58)) | (1 << (TransactionManifestParser.CALL_METHOD - 58)) | (1 << (TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES - 58)) | (1 << (TransactionManifestParser.PUBLISH_PACKAGE - 58)))) !== 0)) {
-				{
-				{
-				this.state = 122;
-				this.manifestInstruction();
-				}
-				}
-				this.state = 127;
+				this.state = 125;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
+				while (
+					((_la - 58) & ~0x1f) === 0 &&
+					((1 << (_la - 58)) &
+						((1 <<
+							(TransactionManifestParser.TAKE_FROM_WORKTOP -
+								58)) |
+							(1 <<
+								(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.RETURN_TO_WORKTOP -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.POP_FROM_AUTH_ZONE -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.PUSH_TO_AUTH_ZONE -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.CLEAR_AUTHZONE -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.CREATE_PROOF_FROM_BUCKET -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.CLONE_PROOF - 58)) |
+							(1 << (TransactionManifestParser.DROP_PROOF - 58)) |
+							(1 <<
+								(TransactionManifestParser.DROP_ALL_PROOFS -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.CALL_FUNCTION -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.CALL_METHOD - 58)) |
+							(1 <<
+								(TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES -
+									58)) |
+							(1 <<
+								(TransactionManifestParser.PUBLISH_PACKAGE -
+									58)))) !==
+						0
+				) {
+					{
+						{
+							this.state = 122;
+							this.manifestInstruction();
+						}
+					}
+					this.state = 127;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				}
+				this.state = 128;
+				this.match(TransactionManifestParser.EOF);
 			}
-			this.state = 128;
-			this.match(TransactionManifestParser.EOF);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -287,172 +545,175 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public manifestInstruction(): ManifestInstructionContext {
-		let _localctx: ManifestInstructionContext = new ManifestInstructionContext(this._ctx, this.state);
-		this.enterRule(_localctx, 2, TransactionManifestParser.RULE_manifestInstruction);
+		let _localctx: ManifestInstructionContext =
+			new ManifestInstructionContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			2,
+			TransactionManifestParser.RULE_manifestInstruction
+		);
 		try {
 			this.state = 151;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
-			case TransactionManifestParser.CALL_FUNCTION:
-				this.enterOuterAlt(_localctx, 1);
-				{
-				this.state = 130;
-				this.callFunction();
-				}
-				break;
-			case TransactionManifestParser.CALL_METHOD:
-				this.enterOuterAlt(_localctx, 2);
-				{
-				this.state = 131;
-				this.callMethod();
-				}
-				break;
-			case TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES:
-				this.enterOuterAlt(_localctx, 3);
-				{
-				this.state = 132;
-				this.callMethodWithAllResources();
-				}
-				break;
-			case TransactionManifestParser.RETURN_TO_WORKTOP:
-				this.enterOuterAlt(_localctx, 4);
-				{
-				this.state = 133;
-				this.returnToWorktop();
-				}
-				break;
-			case TransactionManifestParser.TAKE_FROM_WORKTOP:
-				this.enterOuterAlt(_localctx, 5);
-				{
-				this.state = 134;
-				this.takeFromWorktop();
-				}
-				break;
-			case TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT:
-				this.enterOuterAlt(_localctx, 6);
-				{
-				this.state = 135;
-				this.takeFromWorktopByAmount();
-				}
-				break;
-			case TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS:
-				this.enterOuterAlt(_localctx, 7);
-				{
-				this.state = 136;
-				this.takeFromWorktopByIds();
-				}
-				break;
-			case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS:
-				this.enterOuterAlt(_localctx, 8);
-				{
-				this.state = 137;
-				this.assertWorktopContains();
-				}
-				break;
-			case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT:
-				this.enterOuterAlt(_localctx, 9);
-				{
-				this.state = 138;
-				this.assertWorktopContainsByAmount();
-				}
-				break;
-			case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS:
-				this.enterOuterAlt(_localctx, 10);
-				{
-				this.state = 139;
-				this.assertWorktopContainsByIds();
-				}
-				break;
-			case TransactionManifestParser.POP_FROM_AUTH_ZONE:
-				this.enterOuterAlt(_localctx, 11);
-				{
-				this.state = 140;
-				this.popFromAuthZone();
-				}
-				break;
-			case TransactionManifestParser.PUSH_TO_AUTH_ZONE:
-				this.enterOuterAlt(_localctx, 12);
-				{
-				this.state = 141;
-				this.pushToAuthZone();
-				}
-				break;
-			case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE:
-				this.enterOuterAlt(_localctx, 13);
-				{
-				this.state = 142;
-				this.createProofFromAuthZone();
-				}
-				break;
-			case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT:
-				this.enterOuterAlt(_localctx, 14);
-				{
-				this.state = 143;
-				this.createProofFromAuthZoneByAmount();
-				}
-				break;
-			case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS:
-				this.enterOuterAlt(_localctx, 15);
-				{
-				this.state = 144;
-				this.createProofFromAuthZoneByIds();
-				}
-				break;
-			case TransactionManifestParser.CREATE_PROOF_FROM_BUCKET:
-				this.enterOuterAlt(_localctx, 16);
-				{
-				this.state = 145;
-				this.createProofFromBucket();
-				}
-				break;
-			case TransactionManifestParser.CLONE_PROOF:
-				this.enterOuterAlt(_localctx, 17);
-				{
-				this.state = 146;
-				this.cloneProof();
-				}
-				break;
-			case TransactionManifestParser.DROP_PROOF:
-				this.enterOuterAlt(_localctx, 18);
-				{
-				this.state = 147;
-				this.dropProof();
-				}
-				break;
-			case TransactionManifestParser.DROP_ALL_PROOFS:
-				this.enterOuterAlt(_localctx, 19);
-				{
-				this.state = 148;
-				this.dropAllProofs();
-				}
-				break;
-			case TransactionManifestParser.CLEAR_AUTHZONE:
-				this.enterOuterAlt(_localctx, 20);
-				{
-				this.state = 149;
-				this.clearAuthZone();
-				}
-				break;
-			case TransactionManifestParser.PUBLISH_PACKAGE:
-				this.enterOuterAlt(_localctx, 21);
-				{
-				this.state = 150;
-				this.publishPackage();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+				case TransactionManifestParser.CALL_FUNCTION:
+					this.enterOuterAlt(_localctx, 1);
+					{
+						this.state = 130;
+						this.callFunction();
+					}
+					break;
+				case TransactionManifestParser.CALL_METHOD:
+					this.enterOuterAlt(_localctx, 2);
+					{
+						this.state = 131;
+						this.callMethod();
+					}
+					break;
+				case TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES:
+					this.enterOuterAlt(_localctx, 3);
+					{
+						this.state = 132;
+						this.callMethodWithAllResources();
+					}
+					break;
+				case TransactionManifestParser.RETURN_TO_WORKTOP:
+					this.enterOuterAlt(_localctx, 4);
+					{
+						this.state = 133;
+						this.returnToWorktop();
+					}
+					break;
+				case TransactionManifestParser.TAKE_FROM_WORKTOP:
+					this.enterOuterAlt(_localctx, 5);
+					{
+						this.state = 134;
+						this.takeFromWorktop();
+					}
+					break;
+				case TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT:
+					this.enterOuterAlt(_localctx, 6);
+					{
+						this.state = 135;
+						this.takeFromWorktopByAmount();
+					}
+					break;
+				case TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS:
+					this.enterOuterAlt(_localctx, 7);
+					{
+						this.state = 136;
+						this.takeFromWorktopByIds();
+					}
+					break;
+				case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS:
+					this.enterOuterAlt(_localctx, 8);
+					{
+						this.state = 137;
+						this.assertWorktopContains();
+					}
+					break;
+				case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT:
+					this.enterOuterAlt(_localctx, 9);
+					{
+						this.state = 138;
+						this.assertWorktopContainsByAmount();
+					}
+					break;
+				case TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS:
+					this.enterOuterAlt(_localctx, 10);
+					{
+						this.state = 139;
+						this.assertWorktopContainsByIds();
+					}
+					break;
+				case TransactionManifestParser.POP_FROM_AUTH_ZONE:
+					this.enterOuterAlt(_localctx, 11);
+					{
+						this.state = 140;
+						this.popFromAuthZone();
+					}
+					break;
+				case TransactionManifestParser.PUSH_TO_AUTH_ZONE:
+					this.enterOuterAlt(_localctx, 12);
+					{
+						this.state = 141;
+						this.pushToAuthZone();
+					}
+					break;
+				case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE:
+					this.enterOuterAlt(_localctx, 13);
+					{
+						this.state = 142;
+						this.createProofFromAuthZone();
+					}
+					break;
+				case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT:
+					this.enterOuterAlt(_localctx, 14);
+					{
+						this.state = 143;
+						this.createProofFromAuthZoneByAmount();
+					}
+					break;
+				case TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS:
+					this.enterOuterAlt(_localctx, 15);
+					{
+						this.state = 144;
+						this.createProofFromAuthZoneByIds();
+					}
+					break;
+				case TransactionManifestParser.CREATE_PROOF_FROM_BUCKET:
+					this.enterOuterAlt(_localctx, 16);
+					{
+						this.state = 145;
+						this.createProofFromBucket();
+					}
+					break;
+				case TransactionManifestParser.CLONE_PROOF:
+					this.enterOuterAlt(_localctx, 17);
+					{
+						this.state = 146;
+						this.cloneProof();
+					}
+					break;
+				case TransactionManifestParser.DROP_PROOF:
+					this.enterOuterAlt(_localctx, 18);
+					{
+						this.state = 147;
+						this.dropProof();
+					}
+					break;
+				case TransactionManifestParser.DROP_ALL_PROOFS:
+					this.enterOuterAlt(_localctx, 19);
+					{
+						this.state = 148;
+						this.dropAllProofs();
+					}
+					break;
+				case TransactionManifestParser.CLEAR_AUTHZONE:
+					this.enterOuterAlt(_localctx, 20);
+					{
+						this.state = 149;
+						this.clearAuthZone();
+					}
+					break;
+				case TransactionManifestParser.PUBLISH_PACKAGE:
+					this.enterOuterAlt(_localctx, 21);
+					{
+						this.state = 150;
+						this.publishPackage();
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -460,47 +721,128 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public callFunction(): CallFunctionContext {
-		let _localctx: CallFunctionContext = new CallFunctionContext(this._ctx, this.state);
-		this.enterRule(_localctx, 4, TransactionManifestParser.RULE_callFunction);
+		let _localctx: CallFunctionContext = new CallFunctionContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			4,
+			TransactionManifestParser.RULE_callFunction
+		);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 153;
-			this.match(TransactionManifestParser.CALL_FUNCTION);
-			this.state = 154;
-			this.packageAddress();
-			this.state = 155;
-			this.string();
-			this.state = 156;
-			this.string();
-			this.state = 160;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-				{
-				{
-				this.state = 157;
-				this.value();
-				}
-				}
-				this.state = 162;
+				this.state = 153;
+				this.match(TransactionManifestParser.CALL_FUNCTION);
+				this.state = 154;
+				this.packageAddress();
+				this.state = 155;
+				this.string();
+				this.state = 156;
+				this.string();
+				this.state = 160;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
+				while (
+					((_la & ~0x1f) === 0 &&
+						((1 << _la) &
+							((1 << TransactionManifestParser.T__0) |
+								(1 << TransactionManifestParser.BOOL_LITERAL) |
+								(1 << TransactionManifestParser.I8_LITERAL) |
+								(1 << TransactionManifestParser.I16_LITERAL) |
+								(1 << TransactionManifestParser.I32_LITERAL) |
+								(1 << TransactionManifestParser.I64_LITERAL) |
+								(1 << TransactionManifestParser.I128_LITERAL) |
+								(1 << TransactionManifestParser.U8_LITERAL) |
+								(1 << TransactionManifestParser.U16_LITERAL) |
+								(1 << TransactionManifestParser.U32_LITERAL) |
+								(1 << TransactionManifestParser.U64_LITERAL) |
+								(1 << TransactionManifestParser.U128_LITERAL) |
+								(1 << TransactionManifestParser.STRUCT_TYPE) |
+								(1 << TransactionManifestParser.ENUM_TYPE))) !==
+							0) ||
+					(((_la - 32) & ~0x1f) === 0 &&
+						((1 << (_la - 32)) &
+							((1 << (TransactionManifestParser.SOME_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.NONE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.OK_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ERR_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ARRAY_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.TUPLE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.LIST_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.SET_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.MAP_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.HASH_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BUCKET_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PROOF_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BYTES_TYPE -
+										32)))) !==
+							0) ||
+					_la === TransactionManifestParser.STRING_LITERAL
+				) {
+					{
+						{
+							this.state = 157;
+							this.value();
+						}
+					}
+					this.state = 162;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				}
+				this.state = 163;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-			this.state = 163;
-			this.match(TransactionManifestParser.SEMICOLON);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -508,45 +850,122 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public callMethod(): CallMethodContext {
-		let _localctx: CallMethodContext = new CallMethodContext(this._ctx, this.state);
+		let _localctx: CallMethodContext = new CallMethodContext(
+			this._ctx,
+			this.state
+		);
 		this.enterRule(_localctx, 6, TransactionManifestParser.RULE_callMethod);
 		let _la: number;
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 165;
-			this.match(TransactionManifestParser.CALL_METHOD);
-			this.state = 166;
-			this.componentAddress();
-			this.state = 167;
-			this.string();
-			this.state = 171;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-				{
-				{
-				this.state = 168;
-				this.value();
-				}
-				}
-				this.state = 173;
+				this.state = 165;
+				this.match(TransactionManifestParser.CALL_METHOD);
+				this.state = 166;
+				this.componentAddress();
+				this.state = 167;
+				this.string();
+				this.state = 171;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
+				while (
+					((_la & ~0x1f) === 0 &&
+						((1 << _la) &
+							((1 << TransactionManifestParser.T__0) |
+								(1 << TransactionManifestParser.BOOL_LITERAL) |
+								(1 << TransactionManifestParser.I8_LITERAL) |
+								(1 << TransactionManifestParser.I16_LITERAL) |
+								(1 << TransactionManifestParser.I32_LITERAL) |
+								(1 << TransactionManifestParser.I64_LITERAL) |
+								(1 << TransactionManifestParser.I128_LITERAL) |
+								(1 << TransactionManifestParser.U8_LITERAL) |
+								(1 << TransactionManifestParser.U16_LITERAL) |
+								(1 << TransactionManifestParser.U32_LITERAL) |
+								(1 << TransactionManifestParser.U64_LITERAL) |
+								(1 << TransactionManifestParser.U128_LITERAL) |
+								(1 << TransactionManifestParser.STRUCT_TYPE) |
+								(1 << TransactionManifestParser.ENUM_TYPE))) !==
+							0) ||
+					(((_la - 32) & ~0x1f) === 0 &&
+						((1 << (_la - 32)) &
+							((1 << (TransactionManifestParser.SOME_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.NONE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.OK_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ERR_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ARRAY_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.TUPLE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.LIST_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.SET_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.MAP_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.HASH_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BUCKET_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PROOF_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BYTES_TYPE -
+										32)))) !==
+							0) ||
+					_la === TransactionManifestParser.STRING_LITERAL
+				) {
+					{
+						{
+							this.state = 168;
+							this.value();
+						}
+					}
+					this.state = 173;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				}
+				this.state = 174;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-			this.state = 174;
-			this.match(TransactionManifestParser.SEMICOLON);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -554,30 +973,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public callMethodWithAllResources(): CallMethodWithAllResourcesContext {
-		let _localctx: CallMethodWithAllResourcesContext = new CallMethodWithAllResourcesContext(this._ctx, this.state);
-		this.enterRule(_localctx, 8, TransactionManifestParser.RULE_callMethodWithAllResources);
+		let _localctx: CallMethodWithAllResourcesContext =
+			new CallMethodWithAllResourcesContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			8,
+			TransactionManifestParser.RULE_callMethodWithAllResources
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 176;
-			this.match(TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES);
-			this.state = 177;
-			this.componentAddress();
-			this.state = 178;
-			this.string();
-			this.state = 179;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 176;
+				this.match(
+					TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES
+				);
+				this.state = 177;
+				this.componentAddress();
+				this.state = 178;
+				this.string();
+				this.state = 179;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -585,30 +1009,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public takeFromWorktop(): TakeFromWorktopContext {
-		let _localctx: TakeFromWorktopContext = new TakeFromWorktopContext(this._ctx, this.state);
-		this.enterRule(_localctx, 10, TransactionManifestParser.RULE_takeFromWorktop);
+		let _localctx: TakeFromWorktopContext = new TakeFromWorktopContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			10,
+			TransactionManifestParser.RULE_takeFromWorktop
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 181;
-			this.match(TransactionManifestParser.TAKE_FROM_WORKTOP);
-			this.state = 182;
-			this.resourceAddress();
-			this.state = 183;
-			this.bucket();
-			this.state = 184;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 181;
+				this.match(TransactionManifestParser.TAKE_FROM_WORKTOP);
+				this.state = 182;
+				this.resourceAddress();
+				this.state = 183;
+				this.bucket();
+				this.state = 184;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -616,32 +1045,37 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public takeFromWorktopByAmount(): TakeFromWorktopByAmountContext {
-		let _localctx: TakeFromWorktopByAmountContext = new TakeFromWorktopByAmountContext(this._ctx, this.state);
-		this.enterRule(_localctx, 12, TransactionManifestParser.RULE_takeFromWorktopByAmount);
+		let _localctx: TakeFromWorktopByAmountContext =
+			new TakeFromWorktopByAmountContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			12,
+			TransactionManifestParser.RULE_takeFromWorktopByAmount
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 186;
-			this.match(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT);
-			this.state = 187;
-			this.decimal();
-			this.state = 188;
-			this.resourceAddress();
-			this.state = 189;
-			this.bucket();
-			this.state = 190;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 186;
+				this.match(
+					TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT
+				);
+				this.state = 187;
+				this.decimal();
+				this.state = 188;
+				this.resourceAddress();
+				this.state = 189;
+				this.bucket();
+				this.state = 190;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -649,32 +1083,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public takeFromWorktopByIds(): TakeFromWorktopByIdsContext {
-		let _localctx: TakeFromWorktopByIdsContext = new TakeFromWorktopByIdsContext(this._ctx, this.state);
-		this.enterRule(_localctx, 14, TransactionManifestParser.RULE_takeFromWorktopByIds);
+		let _localctx: TakeFromWorktopByIdsContext =
+			new TakeFromWorktopByIdsContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			14,
+			TransactionManifestParser.RULE_takeFromWorktopByIds
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 192;
-			this.match(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS);
-			this.state = 193;
-			this.set();
-			this.state = 194;
-			this.resourceAddress();
-			this.state = 195;
-			this.bucket();
-			this.state = 196;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 192;
+				this.match(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS);
+				this.state = 193;
+				this.set();
+				this.state = 194;
+				this.resourceAddress();
+				this.state = 195;
+				this.bucket();
+				this.state = 196;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -682,28 +1119,33 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public returnToWorktop(): ReturnToWorktopContext {
-		let _localctx: ReturnToWorktopContext = new ReturnToWorktopContext(this._ctx, this.state);
-		this.enterRule(_localctx, 16, TransactionManifestParser.RULE_returnToWorktop);
+		let _localctx: ReturnToWorktopContext = new ReturnToWorktopContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			16,
+			TransactionManifestParser.RULE_returnToWorktop
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 198;
-			this.match(TransactionManifestParser.RETURN_TO_WORKTOP);
-			this.state = 199;
-			this.bucket();
-			this.state = 200;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 198;
+				this.match(TransactionManifestParser.RETURN_TO_WORKTOP);
+				this.state = 199;
+				this.bucket();
+				this.state = 200;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -711,28 +1153,31 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public assertWorktopContains(): AssertWorktopContainsContext {
-		let _localctx: AssertWorktopContainsContext = new AssertWorktopContainsContext(this._ctx, this.state);
-		this.enterRule(_localctx, 18, TransactionManifestParser.RULE_assertWorktopContains);
+		let _localctx: AssertWorktopContainsContext =
+			new AssertWorktopContainsContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			18,
+			TransactionManifestParser.RULE_assertWorktopContains
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 202;
-			this.match(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS);
-			this.state = 203;
-			this.resourceAddress();
-			this.state = 204;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 202;
+				this.match(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS);
+				this.state = 203;
+				this.resourceAddress();
+				this.state = 204;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -740,30 +1185,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public assertWorktopContainsByAmount(): AssertWorktopContainsByAmountContext {
-		let _localctx: AssertWorktopContainsByAmountContext = new AssertWorktopContainsByAmountContext(this._ctx, this.state);
-		this.enterRule(_localctx, 20, TransactionManifestParser.RULE_assertWorktopContainsByAmount);
+		let _localctx: AssertWorktopContainsByAmountContext =
+			new AssertWorktopContainsByAmountContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			20,
+			TransactionManifestParser.RULE_assertWorktopContainsByAmount
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 206;
-			this.match(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT);
-			this.state = 207;
-			this.decimal();
-			this.state = 208;
-			this.resourceAddress();
-			this.state = 209;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 206;
+				this.match(
+					TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT
+				);
+				this.state = 207;
+				this.decimal();
+				this.state = 208;
+				this.resourceAddress();
+				this.state = 209;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -771,30 +1221,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public assertWorktopContainsByIds(): AssertWorktopContainsByIdsContext {
-		let _localctx: AssertWorktopContainsByIdsContext = new AssertWorktopContainsByIdsContext(this._ctx, this.state);
-		this.enterRule(_localctx, 22, TransactionManifestParser.RULE_assertWorktopContainsByIds);
+		let _localctx: AssertWorktopContainsByIdsContext =
+			new AssertWorktopContainsByIdsContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			22,
+			TransactionManifestParser.RULE_assertWorktopContainsByIds
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 211;
-			this.match(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS);
-			this.state = 212;
-			this.set();
-			this.state = 213;
-			this.resourceAddress();
-			this.state = 214;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 211;
+				this.match(
+					TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS
+				);
+				this.state = 212;
+				this.set();
+				this.state = 213;
+				this.resourceAddress();
+				this.state = 214;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -802,28 +1257,33 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public popFromAuthZone(): PopFromAuthZoneContext {
-		let _localctx: PopFromAuthZoneContext = new PopFromAuthZoneContext(this._ctx, this.state);
-		this.enterRule(_localctx, 24, TransactionManifestParser.RULE_popFromAuthZone);
+		let _localctx: PopFromAuthZoneContext = new PopFromAuthZoneContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			24,
+			TransactionManifestParser.RULE_popFromAuthZone
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 216;
-			this.match(TransactionManifestParser.POP_FROM_AUTH_ZONE);
-			this.state = 217;
-			this.proof();
-			this.state = 218;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 216;
+				this.match(TransactionManifestParser.POP_FROM_AUTH_ZONE);
+				this.state = 217;
+				this.proof();
+				this.state = 218;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -831,28 +1291,33 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public pushToAuthZone(): PushToAuthZoneContext {
-		let _localctx: PushToAuthZoneContext = new PushToAuthZoneContext(this._ctx, this.state);
-		this.enterRule(_localctx, 26, TransactionManifestParser.RULE_pushToAuthZone);
+		let _localctx: PushToAuthZoneContext = new PushToAuthZoneContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			26,
+			TransactionManifestParser.RULE_pushToAuthZone
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 220;
-			this.match(TransactionManifestParser.PUSH_TO_AUTH_ZONE);
-			this.state = 221;
-			this.proof();
-			this.state = 222;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 220;
+				this.match(TransactionManifestParser.PUSH_TO_AUTH_ZONE);
+				this.state = 221;
+				this.proof();
+				this.state = 222;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -860,30 +1325,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public createProofFromAuthZone(): CreateProofFromAuthZoneContext {
-		let _localctx: CreateProofFromAuthZoneContext = new CreateProofFromAuthZoneContext(this._ctx, this.state);
-		this.enterRule(_localctx, 28, TransactionManifestParser.RULE_createProofFromAuthZone);
+		let _localctx: CreateProofFromAuthZoneContext =
+			new CreateProofFromAuthZoneContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			28,
+			TransactionManifestParser.RULE_createProofFromAuthZone
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 224;
-			this.match(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE);
-			this.state = 225;
-			this.resourceAddress();
-			this.state = 226;
-			this.proof();
-			this.state = 227;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 224;
+				this.match(
+					TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE
+				);
+				this.state = 225;
+				this.resourceAddress();
+				this.state = 226;
+				this.proof();
+				this.state = 227;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -891,32 +1361,37 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public createProofFromAuthZoneByAmount(): CreateProofFromAuthZoneByAmountContext {
-		let _localctx: CreateProofFromAuthZoneByAmountContext = new CreateProofFromAuthZoneByAmountContext(this._ctx, this.state);
-		this.enterRule(_localctx, 30, TransactionManifestParser.RULE_createProofFromAuthZoneByAmount);
+		let _localctx: CreateProofFromAuthZoneByAmountContext =
+			new CreateProofFromAuthZoneByAmountContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			30,
+			TransactionManifestParser.RULE_createProofFromAuthZoneByAmount
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 229;
-			this.match(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT);
-			this.state = 230;
-			this.decimal();
-			this.state = 231;
-			this.resourceAddress();
-			this.state = 232;
-			this.proof();
-			this.state = 233;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 229;
+				this.match(
+					TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT
+				);
+				this.state = 230;
+				this.decimal();
+				this.state = 231;
+				this.resourceAddress();
+				this.state = 232;
+				this.proof();
+				this.state = 233;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -924,32 +1399,37 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public createProofFromAuthZoneByIds(): CreateProofFromAuthZoneByIdsContext {
-		let _localctx: CreateProofFromAuthZoneByIdsContext = new CreateProofFromAuthZoneByIdsContext(this._ctx, this.state);
-		this.enterRule(_localctx, 32, TransactionManifestParser.RULE_createProofFromAuthZoneByIds);
+		let _localctx: CreateProofFromAuthZoneByIdsContext =
+			new CreateProofFromAuthZoneByIdsContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			32,
+			TransactionManifestParser.RULE_createProofFromAuthZoneByIds
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 235;
-			this.match(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS);
-			this.state = 236;
-			this.set();
-			this.state = 237;
-			this.resourceAddress();
-			this.state = 238;
-			this.proof();
-			this.state = 239;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 235;
+				this.match(
+					TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS
+				);
+				this.state = 236;
+				this.set();
+				this.state = 237;
+				this.resourceAddress();
+				this.state = 238;
+				this.proof();
+				this.state = 239;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -957,30 +1437,33 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public createProofFromBucket(): CreateProofFromBucketContext {
-		let _localctx: CreateProofFromBucketContext = new CreateProofFromBucketContext(this._ctx, this.state);
-		this.enterRule(_localctx, 34, TransactionManifestParser.RULE_createProofFromBucket);
+		let _localctx: CreateProofFromBucketContext =
+			new CreateProofFromBucketContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			34,
+			TransactionManifestParser.RULE_createProofFromBucket
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 241;
-			this.match(TransactionManifestParser.CREATE_PROOF_FROM_BUCKET);
-			this.state = 242;
-			this.bucket();
-			this.state = 243;
-			this.proof();
-			this.state = 244;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 241;
+				this.match(TransactionManifestParser.CREATE_PROOF_FROM_BUCKET);
+				this.state = 242;
+				this.bucket();
+				this.state = 243;
+				this.proof();
+				this.state = 244;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -988,30 +1471,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public cloneProof(): CloneProofContext {
-		let _localctx: CloneProofContext = new CloneProofContext(this._ctx, this.state);
-		this.enterRule(_localctx, 36, TransactionManifestParser.RULE_cloneProof);
+		let _localctx: CloneProofContext = new CloneProofContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			36,
+			TransactionManifestParser.RULE_cloneProof
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 246;
-			this.match(TransactionManifestParser.CLONE_PROOF);
-			this.state = 247;
-			this.proof();
-			this.state = 248;
-			this.proof();
-			this.state = 249;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 246;
+				this.match(TransactionManifestParser.CLONE_PROOF);
+				this.state = 247;
+				this.proof();
+				this.state = 248;
+				this.proof();
+				this.state = 249;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1019,28 +1507,29 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public dropProof(): DropProofContext {
-		let _localctx: DropProofContext = new DropProofContext(this._ctx, this.state);
+		let _localctx: DropProofContext = new DropProofContext(
+			this._ctx,
+			this.state
+		);
 		this.enterRule(_localctx, 38, TransactionManifestParser.RULE_dropProof);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 251;
-			this.match(TransactionManifestParser.DROP_PROOF);
-			this.state = 252;
-			this.proof();
-			this.state = 253;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 251;
+				this.match(TransactionManifestParser.DROP_PROOF);
+				this.state = 252;
+				this.proof();
+				this.state = 253;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1048,26 +1537,31 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public dropAllProofs(): DropAllProofsContext {
-		let _localctx: DropAllProofsContext = new DropAllProofsContext(this._ctx, this.state);
-		this.enterRule(_localctx, 40, TransactionManifestParser.RULE_dropAllProofs);
+		let _localctx: DropAllProofsContext = new DropAllProofsContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			40,
+			TransactionManifestParser.RULE_dropAllProofs
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 255;
-			this.match(TransactionManifestParser.DROP_ALL_PROOFS);
-			this.state = 256;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 255;
+				this.match(TransactionManifestParser.DROP_ALL_PROOFS);
+				this.state = 256;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1075,26 +1569,31 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public clearAuthZone(): ClearAuthZoneContext {
-		let _localctx: ClearAuthZoneContext = new ClearAuthZoneContext(this._ctx, this.state);
-		this.enterRule(_localctx, 42, TransactionManifestParser.RULE_clearAuthZone);
+		let _localctx: ClearAuthZoneContext = new ClearAuthZoneContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			42,
+			TransactionManifestParser.RULE_clearAuthZone
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 258;
-			this.match(TransactionManifestParser.CLEAR_AUTHZONE);
-			this.state = 259;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 258;
+				this.match(TransactionManifestParser.CLEAR_AUTHZONE);
+				this.state = 259;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1102,28 +1601,33 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public publishPackage(): PublishPackageContext {
-		let _localctx: PublishPackageContext = new PublishPackageContext(this._ctx, this.state);
-		this.enterRule(_localctx, 44, TransactionManifestParser.RULE_publishPackage);
+		let _localctx: PublishPackageContext = new PublishPackageContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			44,
+			TransactionManifestParser.RULE_publishPackage
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 261;
-			this.match(TransactionManifestParser.PUBLISH_PACKAGE);
-			this.state = 262;
-			this.bytes();
-			this.state = 263;
-			this.match(TransactionManifestParser.SEMICOLON);
+				this.state = 261;
+				this.match(TransactionManifestParser.PUBLISH_PACKAGE);
+				this.state = 262;
+				this.bytes();
+				this.state = 263;
+				this.match(TransactionManifestParser.SEMICOLON);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1131,8 +1635,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1144,11 +1647,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 265;
-			this.match(TransactionManifestParser.T__0);
+				this.state = 265;
+				this.match(TransactionManifestParser.T__0);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1156,8 +1658,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1169,11 +1670,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 267;
-			this.match(TransactionManifestParser.BOOL_LITERAL);
+				this.state = 267;
+				this.match(TransactionManifestParser.BOOL_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1181,8 +1681,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1194,11 +1693,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 269;
-			this.match(TransactionManifestParser.I8_LITERAL);
+				this.state = 269;
+				this.match(TransactionManifestParser.I8_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1206,8 +1704,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1219,11 +1716,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 271;
-			this.match(TransactionManifestParser.I16_LITERAL);
+				this.state = 271;
+				this.match(TransactionManifestParser.I16_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1231,8 +1727,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1244,11 +1739,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 273;
-			this.match(TransactionManifestParser.I32_LITERAL);
+				this.state = 273;
+				this.match(TransactionManifestParser.I32_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1256,8 +1750,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1269,11 +1762,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 275;
-			this.match(TransactionManifestParser.I64_LITERAL);
+				this.state = 275;
+				this.match(TransactionManifestParser.I64_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1281,8 +1773,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1294,11 +1785,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 277;
-			this.match(TransactionManifestParser.I128_LITERAL);
+				this.state = 277;
+				this.match(TransactionManifestParser.I128_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1306,8 +1796,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1319,11 +1808,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 279;
-			this.match(TransactionManifestParser.U8_LITERAL);
+				this.state = 279;
+				this.match(TransactionManifestParser.U8_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1331,8 +1819,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1344,11 +1831,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 281;
-			this.match(TransactionManifestParser.U16_LITERAL);
+				this.state = 281;
+				this.match(TransactionManifestParser.U16_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1356,8 +1842,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1369,11 +1854,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 283;
-			this.match(TransactionManifestParser.U32_LITERAL);
+				this.state = 283;
+				this.match(TransactionManifestParser.U32_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1381,8 +1865,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1394,11 +1877,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 285;
-			this.match(TransactionManifestParser.U64_LITERAL);
+				this.state = 285;
+				this.match(TransactionManifestParser.U64_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1406,8 +1888,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1419,11 +1900,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 287;
-			this.match(TransactionManifestParser.U128_LITERAL);
+				this.state = 287;
+				this.match(TransactionManifestParser.U128_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1431,8 +1911,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1444,11 +1923,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 289;
-			this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 289;
+				this.match(TransactionManifestParser.STRING_LITERAL);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1456,8 +1934,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1470,41 +1947,116 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 291;
-			this.match(TransactionManifestParser.STRUCT_TYPE);
-			this.state = 292;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 301;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-				{
-				this.state = 293;
-				this.value();
-				this.state = 298;
+				this.state = 291;
+				this.match(TransactionManifestParser.STRUCT_TYPE);
+				this.state = 292;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 301;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === TransactionManifestParser.COMMA) {
+				if (
+					((_la & ~0x1f) === 0 &&
+						((1 << _la) &
+							((1 << TransactionManifestParser.T__0) |
+								(1 << TransactionManifestParser.BOOL_LITERAL) |
+								(1 << TransactionManifestParser.I8_LITERAL) |
+								(1 << TransactionManifestParser.I16_LITERAL) |
+								(1 << TransactionManifestParser.I32_LITERAL) |
+								(1 << TransactionManifestParser.I64_LITERAL) |
+								(1 << TransactionManifestParser.I128_LITERAL) |
+								(1 << TransactionManifestParser.U8_LITERAL) |
+								(1 << TransactionManifestParser.U16_LITERAL) |
+								(1 << TransactionManifestParser.U32_LITERAL) |
+								(1 << TransactionManifestParser.U64_LITERAL) |
+								(1 << TransactionManifestParser.U128_LITERAL) |
+								(1 << TransactionManifestParser.STRUCT_TYPE) |
+								(1 << TransactionManifestParser.ENUM_TYPE))) !==
+							0) ||
+					(((_la - 32) & ~0x1f) === 0 &&
+						((1 << (_la - 32)) &
+							((1 << (TransactionManifestParser.SOME_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.NONE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.OK_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ERR_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ARRAY_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.TUPLE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.LIST_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.SET_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.MAP_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.HASH_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BUCKET_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PROOF_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BYTES_TYPE -
+										32)))) !==
+							0) ||
+					_la === TransactionManifestParser.STRING_LITERAL
+				) {
 					{
-					{
-					this.state = 294;
-					this.match(TransactionManifestParser.COMMA);
-					this.state = 295;
-					this.value();
+						this.state = 293;
+						this.value();
+						this.state = 298;
+						this._errHandler.sync(this);
+						_la = this._input.LA(1);
+						while (_la === TransactionManifestParser.COMMA) {
+							{
+								{
+									this.state = 294;
+									this.match(TransactionManifestParser.COMMA);
+									this.state = 295;
+									this.value();
+								}
+							}
+							this.state = 300;
+							this._errHandler.sync(this);
+							_la = this._input.LA(1);
+						}
 					}
-					}
-					this.state = 300;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
 				}
-				}
-			}
 
-			this.state = 303;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 303;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1512,8 +2064,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1526,47 +2077,142 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 305;
-			this.match(TransactionManifestParser.ENUM_TYPE);
-			this.state = 306;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			{
-			this.state = 307;
-			this.string();
-			this.state = 308;
-			this.match(TransactionManifestParser.COMMA);
-			this.state = 317;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
+				this.state = 305;
+				this.match(TransactionManifestParser.ENUM_TYPE);
+				this.state = 306;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
 				{
-				this.state = 309;
-				this.value();
-				this.state = 314;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				while (_la === TransactionManifestParser.COMMA) {
-					{
-					{
-					this.state = 310;
+					this.state = 307;
+					this.string();
+					this.state = 308;
 					this.match(TransactionManifestParser.COMMA);
-					this.state = 311;
-					this.value();
-					}
-					}
-					this.state = 316;
+					this.state = 317;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
+					if (
+						((_la & ~0x1f) === 0 &&
+							((1 << _la) &
+								((1 << TransactionManifestParser.T__0) |
+									(1 <<
+										TransactionManifestParser.BOOL_LITERAL) |
+									(1 <<
+										TransactionManifestParser.I8_LITERAL) |
+									(1 <<
+										TransactionManifestParser.I16_LITERAL) |
+									(1 <<
+										TransactionManifestParser.I32_LITERAL) |
+									(1 <<
+										TransactionManifestParser.I64_LITERAL) |
+									(1 <<
+										TransactionManifestParser.I128_LITERAL) |
+									(1 <<
+										TransactionManifestParser.U8_LITERAL) |
+									(1 <<
+										TransactionManifestParser.U16_LITERAL) |
+									(1 <<
+										TransactionManifestParser.U32_LITERAL) |
+									(1 <<
+										TransactionManifestParser.U64_LITERAL) |
+									(1 <<
+										TransactionManifestParser.U128_LITERAL) |
+									(1 <<
+										TransactionManifestParser.STRUCT_TYPE) |
+									(1 <<
+										TransactionManifestParser.ENUM_TYPE))) !==
+								0) ||
+						(((_la - 32) & ~0x1f) === 0 &&
+							((1 << (_la - 32)) &
+								((1 <<
+									(TransactionManifestParser.SOME_TYPE -
+										32)) |
+									(1 <<
+										(TransactionManifestParser.NONE_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.OK_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.ERR_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.ARRAY_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.TUPLE_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.LIST_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.SET_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.MAP_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.DECIMAL_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.HASH_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.BUCKET_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.PROOF_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.BYTES_TYPE -
+											32)))) !==
+								0) ||
+						_la === TransactionManifestParser.STRING_LITERAL
+					) {
+						{
+							this.state = 309;
+							this.value();
+							this.state = 314;
+							this._errHandler.sync(this);
+							_la = this._input.LA(1);
+							while (_la === TransactionManifestParser.COMMA) {
+								{
+									{
+										this.state = 310;
+										this.match(
+											TransactionManifestParser.COMMA
+										);
+										this.state = 311;
+										this.value();
+									}
+								}
+								this.state = 316;
+								this._errHandler.sync(this);
+								_la = this._input.LA(1);
+							}
+						}
+					}
 				}
-				}
+				this.state = 319;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-
-			}
-			this.state = 319;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1574,8 +2220,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1587,27 +2232,26 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 323;
-			this._errHandler.sync(this);
-			switch (this._input.LA(1)) {
-			case TransactionManifestParser.SOME_TYPE:
-				{
-				this.state = 321;
-				this.some();
+				this.state = 323;
+				this._errHandler.sync(this);
+				switch (this._input.LA(1)) {
+					case TransactionManifestParser.SOME_TYPE:
+						{
+							this.state = 321;
+							this.some();
+						}
+						break;
+					case TransactionManifestParser.NONE_TYPE:
+						{
+							this.state = 322;
+							this.none();
+						}
+						break;
+					default:
+						throw new NoViableAltException(this);
 				}
-				break;
-			case TransactionManifestParser.NONE_TYPE:
-				{
-				this.state = 322;
-				this.none();
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
 			}
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1615,8 +2259,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1629,35 +2272,34 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 325;
-			this.match(TransactionManifestParser.SOME_TYPE);
-			this.state = 326;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			{
-			this.state = 327;
-			this.value();
-			this.state = 332;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while (_la === TransactionManifestParser.COMMA) {
+				this.state = 325;
+				this.match(TransactionManifestParser.SOME_TYPE);
+				this.state = 326;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
 				{
-				{
-				this.state = 328;
-				this.match(TransactionManifestParser.COMMA);
-				this.state = 329;
-				this.value();
+					this.state = 327;
+					this.value();
+					this.state = 332;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+					while (_la === TransactionManifestParser.COMMA) {
+						{
+							{
+								this.state = 328;
+								this.match(TransactionManifestParser.COMMA);
+								this.state = 329;
+								this.value();
+							}
+						}
+						this.state = 334;
+						this._errHandler.sync(this);
+						_la = this._input.LA(1);
+					}
 				}
-				}
-				this.state = 334;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
+				this.state = 335;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-			}
-			this.state = 335;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1665,8 +2307,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1678,11 +2319,10 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 337;
-			this.match(TransactionManifestParser.NONE_TYPE);
+				this.state = 337;
+				this.match(TransactionManifestParser.NONE_TYPE);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1690,8 +2330,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1704,35 +2343,34 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 339;
-			this.match(TransactionManifestParser.OK_TYPE);
-			this.state = 340;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			{
-			this.state = 341;
-			this.value();
-			this.state = 346;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while (_la === TransactionManifestParser.COMMA) {
+				this.state = 339;
+				this.match(TransactionManifestParser.OK_TYPE);
+				this.state = 340;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
 				{
-				{
-				this.state = 342;
-				this.match(TransactionManifestParser.COMMA);
-				this.state = 343;
-				this.value();
+					this.state = 341;
+					this.value();
+					this.state = 346;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+					while (_la === TransactionManifestParser.COMMA) {
+						{
+							{
+								this.state = 342;
+								this.match(TransactionManifestParser.COMMA);
+								this.state = 343;
+								this.value();
+							}
+						}
+						this.state = 348;
+						this._errHandler.sync(this);
+						_la = this._input.LA(1);
+					}
 				}
-				}
-				this.state = 348;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
+				this.state = 349;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-			}
-			this.state = 349;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1740,8 +2378,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1754,35 +2391,34 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 351;
-			this.match(TransactionManifestParser.ERR_TYPE);
-			this.state = 352;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			{
-			this.state = 353;
-			this.value();
-			this.state = 358;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while (_la === TransactionManifestParser.COMMA) {
+				this.state = 351;
+				this.match(TransactionManifestParser.ERR_TYPE);
+				this.state = 352;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
 				{
-				{
-				this.state = 354;
-				this.match(TransactionManifestParser.COMMA);
-				this.state = 355;
-				this.value();
+					this.state = 353;
+					this.value();
+					this.state = 358;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+					while (_la === TransactionManifestParser.COMMA) {
+						{
+							{
+								this.state = 354;
+								this.match(TransactionManifestParser.COMMA);
+								this.state = 355;
+								this.value();
+							}
+						}
+						this.state = 360;
+						this._errHandler.sync(this);
+						_la = this._input.LA(1);
+					}
 				}
-				}
-				this.state = 360;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
+				this.state = 361;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-			}
-			this.state = 361;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1790,8 +2426,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1804,47 +2439,122 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 363;
-			this.match(TransactionManifestParser.ARRAY_TYPE);
-			this.state = 364;
-			this.match(TransactionManifestParser.LESS_THAN);
-			this.state = 365;
-			this.type();
-			this.state = 366;
-			this.match(TransactionManifestParser.GREATER_THAN);
-			this.state = 367;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 376;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-				{
-				this.state = 368;
-				this.value();
-				this.state = 373;
+				this.state = 363;
+				this.match(TransactionManifestParser.ARRAY_TYPE);
+				this.state = 364;
+				this.match(TransactionManifestParser.LESS_THAN);
+				this.state = 365;
+				this.type();
+				this.state = 366;
+				this.match(TransactionManifestParser.GREATER_THAN);
+				this.state = 367;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 376;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === TransactionManifestParser.COMMA) {
+				if (
+					((_la & ~0x1f) === 0 &&
+						((1 << _la) &
+							((1 << TransactionManifestParser.T__0) |
+								(1 << TransactionManifestParser.BOOL_LITERAL) |
+								(1 << TransactionManifestParser.I8_LITERAL) |
+								(1 << TransactionManifestParser.I16_LITERAL) |
+								(1 << TransactionManifestParser.I32_LITERAL) |
+								(1 << TransactionManifestParser.I64_LITERAL) |
+								(1 << TransactionManifestParser.I128_LITERAL) |
+								(1 << TransactionManifestParser.U8_LITERAL) |
+								(1 << TransactionManifestParser.U16_LITERAL) |
+								(1 << TransactionManifestParser.U32_LITERAL) |
+								(1 << TransactionManifestParser.U64_LITERAL) |
+								(1 << TransactionManifestParser.U128_LITERAL) |
+								(1 << TransactionManifestParser.STRUCT_TYPE) |
+								(1 << TransactionManifestParser.ENUM_TYPE))) !==
+							0) ||
+					(((_la - 32) & ~0x1f) === 0 &&
+						((1 << (_la - 32)) &
+							((1 << (TransactionManifestParser.SOME_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.NONE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.OK_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ERR_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ARRAY_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.TUPLE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.LIST_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.SET_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.MAP_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.HASH_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BUCKET_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PROOF_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BYTES_TYPE -
+										32)))) !==
+							0) ||
+					_la === TransactionManifestParser.STRING_LITERAL
+				) {
 					{
-					{
-					this.state = 369;
-					this.match(TransactionManifestParser.COMMA);
-					this.state = 370;
-					this.value();
+						this.state = 368;
+						this.value();
+						this.state = 373;
+						this._errHandler.sync(this);
+						_la = this._input.LA(1);
+						while (_la === TransactionManifestParser.COMMA) {
+							{
+								{
+									this.state = 369;
+									this.match(TransactionManifestParser.COMMA);
+									this.state = 370;
+									this.value();
+								}
+							}
+							this.state = 375;
+							this._errHandler.sync(this);
+							_la = this._input.LA(1);
+						}
 					}
-					}
-					this.state = 375;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
 				}
-				}
-			}
 
-			this.state = 378;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 378;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1852,8 +2562,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1866,43 +2575,118 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 380;
-			this.match(TransactionManifestParser.TUPLE_TYPE);
-			this.state = 381;
-			this.match(TransactionManifestParser.LESS_THAN);
-			this.state = 382;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 391;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-				{
-				this.state = 383;
-				this.value();
-				this.state = 388;
+				this.state = 380;
+				this.match(TransactionManifestParser.TUPLE_TYPE);
+				this.state = 381;
+				this.match(TransactionManifestParser.LESS_THAN);
+				this.state = 382;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 391;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === TransactionManifestParser.COMMA) {
+				if (
+					((_la & ~0x1f) === 0 &&
+						((1 << _la) &
+							((1 << TransactionManifestParser.T__0) |
+								(1 << TransactionManifestParser.BOOL_LITERAL) |
+								(1 << TransactionManifestParser.I8_LITERAL) |
+								(1 << TransactionManifestParser.I16_LITERAL) |
+								(1 << TransactionManifestParser.I32_LITERAL) |
+								(1 << TransactionManifestParser.I64_LITERAL) |
+								(1 << TransactionManifestParser.I128_LITERAL) |
+								(1 << TransactionManifestParser.U8_LITERAL) |
+								(1 << TransactionManifestParser.U16_LITERAL) |
+								(1 << TransactionManifestParser.U32_LITERAL) |
+								(1 << TransactionManifestParser.U64_LITERAL) |
+								(1 << TransactionManifestParser.U128_LITERAL) |
+								(1 << TransactionManifestParser.STRUCT_TYPE) |
+								(1 << TransactionManifestParser.ENUM_TYPE))) !==
+							0) ||
+					(((_la - 32) & ~0x1f) === 0 &&
+						((1 << (_la - 32)) &
+							((1 << (TransactionManifestParser.SOME_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.NONE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.OK_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ERR_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ARRAY_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.TUPLE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.LIST_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.SET_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.MAP_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.HASH_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BUCKET_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PROOF_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BYTES_TYPE -
+										32)))) !==
+							0) ||
+					_la === TransactionManifestParser.STRING_LITERAL
+				) {
 					{
-					{
-					this.state = 384;
-					this.match(TransactionManifestParser.COMMA);
-					this.state = 385;
-					this.value();
+						this.state = 383;
+						this.value();
+						this.state = 388;
+						this._errHandler.sync(this);
+						_la = this._input.LA(1);
+						while (_la === TransactionManifestParser.COMMA) {
+							{
+								{
+									this.state = 384;
+									this.match(TransactionManifestParser.COMMA);
+									this.state = 385;
+									this.value();
+								}
+							}
+							this.state = 390;
+							this._errHandler.sync(this);
+							_la = this._input.LA(1);
+						}
 					}
-					}
-					this.state = 390;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
 				}
-				}
-			}
 
-			this.state = 393;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 393;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1910,8 +2694,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1924,47 +2707,122 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 395;
-			this.match(TransactionManifestParser.LIST_TYPE);
-			this.state = 396;
-			this.match(TransactionManifestParser.LESS_THAN);
-			this.state = 397;
-			this.type();
-			this.state = 398;
-			this.match(TransactionManifestParser.GREATER_THAN);
-			this.state = 399;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 408;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-				{
-				this.state = 400;
-				this.value();
-				this.state = 405;
+				this.state = 395;
+				this.match(TransactionManifestParser.LIST_TYPE);
+				this.state = 396;
+				this.match(TransactionManifestParser.LESS_THAN);
+				this.state = 397;
+				this.type();
+				this.state = 398;
+				this.match(TransactionManifestParser.GREATER_THAN);
+				this.state = 399;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 408;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === TransactionManifestParser.COMMA) {
+				if (
+					((_la & ~0x1f) === 0 &&
+						((1 << _la) &
+							((1 << TransactionManifestParser.T__0) |
+								(1 << TransactionManifestParser.BOOL_LITERAL) |
+								(1 << TransactionManifestParser.I8_LITERAL) |
+								(1 << TransactionManifestParser.I16_LITERAL) |
+								(1 << TransactionManifestParser.I32_LITERAL) |
+								(1 << TransactionManifestParser.I64_LITERAL) |
+								(1 << TransactionManifestParser.I128_LITERAL) |
+								(1 << TransactionManifestParser.U8_LITERAL) |
+								(1 << TransactionManifestParser.U16_LITERAL) |
+								(1 << TransactionManifestParser.U32_LITERAL) |
+								(1 << TransactionManifestParser.U64_LITERAL) |
+								(1 << TransactionManifestParser.U128_LITERAL) |
+								(1 << TransactionManifestParser.STRUCT_TYPE) |
+								(1 << TransactionManifestParser.ENUM_TYPE))) !==
+							0) ||
+					(((_la - 32) & ~0x1f) === 0 &&
+						((1 << (_la - 32)) &
+							((1 << (TransactionManifestParser.SOME_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.NONE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.OK_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ERR_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ARRAY_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.TUPLE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.LIST_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.SET_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.MAP_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.HASH_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BUCKET_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PROOF_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BYTES_TYPE -
+										32)))) !==
+							0) ||
+					_la === TransactionManifestParser.STRING_LITERAL
+				) {
 					{
-					{
-					this.state = 401;
-					this.match(TransactionManifestParser.COMMA);
-					this.state = 402;
-					this.value();
+						this.state = 400;
+						this.value();
+						this.state = 405;
+						this._errHandler.sync(this);
+						_la = this._input.LA(1);
+						while (_la === TransactionManifestParser.COMMA) {
+							{
+								{
+									this.state = 401;
+									this.match(TransactionManifestParser.COMMA);
+									this.state = 402;
+									this.value();
+								}
+							}
+							this.state = 407;
+							this._errHandler.sync(this);
+							_la = this._input.LA(1);
+						}
 					}
-					}
-					this.state = 407;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
 				}
-				}
-			}
 
-			this.state = 410;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 410;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -1972,8 +2830,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -1986,47 +2843,122 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 412;
-			this.match(TransactionManifestParser.SET_TYPE);
-			this.state = 413;
-			this.match(TransactionManifestParser.LESS_THAN);
-			this.state = 414;
-			this.type();
-			this.state = 415;
-			this.match(TransactionManifestParser.GREATER_THAN);
-			this.state = 416;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 425;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			if ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-				{
-				this.state = 417;
-				this.value();
-				this.state = 422;
+				this.state = 412;
+				this.match(TransactionManifestParser.SET_TYPE);
+				this.state = 413;
+				this.match(TransactionManifestParser.LESS_THAN);
+				this.state = 414;
+				this.type();
+				this.state = 415;
+				this.match(TransactionManifestParser.GREATER_THAN);
+				this.state = 416;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 425;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === TransactionManifestParser.COMMA) {
+				if (
+					((_la & ~0x1f) === 0 &&
+						((1 << _la) &
+							((1 << TransactionManifestParser.T__0) |
+								(1 << TransactionManifestParser.BOOL_LITERAL) |
+								(1 << TransactionManifestParser.I8_LITERAL) |
+								(1 << TransactionManifestParser.I16_LITERAL) |
+								(1 << TransactionManifestParser.I32_LITERAL) |
+								(1 << TransactionManifestParser.I64_LITERAL) |
+								(1 << TransactionManifestParser.I128_LITERAL) |
+								(1 << TransactionManifestParser.U8_LITERAL) |
+								(1 << TransactionManifestParser.U16_LITERAL) |
+								(1 << TransactionManifestParser.U32_LITERAL) |
+								(1 << TransactionManifestParser.U64_LITERAL) |
+								(1 << TransactionManifestParser.U128_LITERAL) |
+								(1 << TransactionManifestParser.STRUCT_TYPE) |
+								(1 << TransactionManifestParser.ENUM_TYPE))) !==
+							0) ||
+					(((_la - 32) & ~0x1f) === 0 &&
+						((1 << (_la - 32)) &
+							((1 << (TransactionManifestParser.SOME_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.NONE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.OK_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ERR_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ARRAY_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.TUPLE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.LIST_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.SET_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.MAP_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.HASH_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BUCKET_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PROOF_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BYTES_TYPE -
+										32)))) !==
+							0) ||
+					_la === TransactionManifestParser.STRING_LITERAL
+				) {
 					{
-					{
-					this.state = 418;
-					this.match(TransactionManifestParser.COMMA);
-					this.state = 419;
-					this.value();
+						this.state = 417;
+						this.value();
+						this.state = 422;
+						this._errHandler.sync(this);
+						_la = this._input.LA(1);
+						while (_la === TransactionManifestParser.COMMA) {
+							{
+								{
+									this.state = 418;
+									this.match(TransactionManifestParser.COMMA);
+									this.state = 419;
+									this.value();
+								}
+							}
+							this.state = 424;
+							this._errHandler.sync(this);
+							_la = this._input.LA(1);
+						}
 					}
-					}
-					this.state = 424;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
 				}
-				}
-			}
 
-			this.state = 427;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 427;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2034,8 +2966,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -2048,43 +2979,118 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 429;
-			this.match(TransactionManifestParser.MAP_TYPE);
-			this.state = 430;
-			this.match(TransactionManifestParser.LESS_THAN);
-			this.state = 431;
-			this.type();
-			this.state = 432;
-			this.match(TransactionManifestParser.COMMA);
-			this.state = 433;
-			this.type();
-			this.state = 434;
-			this.match(TransactionManifestParser.GREATER_THAN);
-			this.state = 435;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 442;
-			this._errHandler.sync(this);
-			_la = this._input.LA(1);
-			while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.T__0) | (1 << TransactionManifestParser.BOOL_LITERAL) | (1 << TransactionManifestParser.I8_LITERAL) | (1 << TransactionManifestParser.I16_LITERAL) | (1 << TransactionManifestParser.I32_LITERAL) | (1 << TransactionManifestParser.I64_LITERAL) | (1 << TransactionManifestParser.I128_LITERAL) | (1 << TransactionManifestParser.U8_LITERAL) | (1 << TransactionManifestParser.U16_LITERAL) | (1 << TransactionManifestParser.U32_LITERAL) | (1 << TransactionManifestParser.U64_LITERAL) | (1 << TransactionManifestParser.U128_LITERAL) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0) || _la === TransactionManifestParser.STRING_LITERAL) {
-				{
-				{
-				this.state = 436;
-				this.value();
-				this.state = 437;
+				this.state = 429;
+				this.match(TransactionManifestParser.MAP_TYPE);
+				this.state = 430;
+				this.match(TransactionManifestParser.LESS_THAN);
+				this.state = 431;
+				this.type();
+				this.state = 432;
 				this.match(TransactionManifestParser.COMMA);
-				this.state = 438;
-				this.value();
-				}
-				}
-				this.state = 444;
+				this.state = 433;
+				this.type();
+				this.state = 434;
+				this.match(TransactionManifestParser.GREATER_THAN);
+				this.state = 435;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 442;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
+				while (
+					((_la & ~0x1f) === 0 &&
+						((1 << _la) &
+							((1 << TransactionManifestParser.T__0) |
+								(1 << TransactionManifestParser.BOOL_LITERAL) |
+								(1 << TransactionManifestParser.I8_LITERAL) |
+								(1 << TransactionManifestParser.I16_LITERAL) |
+								(1 << TransactionManifestParser.I32_LITERAL) |
+								(1 << TransactionManifestParser.I64_LITERAL) |
+								(1 << TransactionManifestParser.I128_LITERAL) |
+								(1 << TransactionManifestParser.U8_LITERAL) |
+								(1 << TransactionManifestParser.U16_LITERAL) |
+								(1 << TransactionManifestParser.U32_LITERAL) |
+								(1 << TransactionManifestParser.U64_LITERAL) |
+								(1 << TransactionManifestParser.U128_LITERAL) |
+								(1 << TransactionManifestParser.STRUCT_TYPE) |
+								(1 << TransactionManifestParser.ENUM_TYPE))) !==
+							0) ||
+					(((_la - 32) & ~0x1f) === 0 &&
+						((1 << (_la - 32)) &
+							((1 << (TransactionManifestParser.SOME_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.NONE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.OK_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ERR_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.ARRAY_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.TUPLE_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.LIST_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.SET_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.MAP_TYPE - 32)) |
+								(1 <<
+									(TransactionManifestParser.DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.HASH_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BUCKET_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.PROOF_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+										32)) |
+								(1 <<
+									(TransactionManifestParser.BYTES_TYPE -
+										32)))) !==
+							0) ||
+					_la === TransactionManifestParser.STRING_LITERAL
+				) {
+					{
+						{
+							this.state = 436;
+							this.value();
+							this.state = 437;
+							this.match(TransactionManifestParser.COMMA);
+							this.state = 438;
+							this.value();
+						}
+					}
+					this.state = 444;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				}
+				this.state = 445;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-			this.state = 445;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2092,30 +3098,31 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public decimal(): DecimalContext {
-		let _localctx: DecimalContext = new DecimalContext(this._ctx, this.state);
+		let _localctx: DecimalContext = new DecimalContext(
+			this._ctx,
+			this.state
+		);
 		this.enterRule(_localctx, 96, TransactionManifestParser.RULE_decimal);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 447;
-			this.match(TransactionManifestParser.DECIMAL_TYPE);
-			this.state = 448;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 449;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 450;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 447;
+				this.match(TransactionManifestParser.DECIMAL_TYPE);
+				this.state = 448;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 449;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 450;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2123,30 +3130,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public preciseDecimal(): PreciseDecimalContext {
-		let _localctx: PreciseDecimalContext = new PreciseDecimalContext(this._ctx, this.state);
-		this.enterRule(_localctx, 98, TransactionManifestParser.RULE_preciseDecimal);
+		let _localctx: PreciseDecimalContext = new PreciseDecimalContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			98,
+			TransactionManifestParser.RULE_preciseDecimal
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 452;
-			this.match(TransactionManifestParser.PRECISE_DECIMAL_TYPE);
-			this.state = 453;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 454;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 455;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 452;
+				this.match(TransactionManifestParser.PRECISE_DECIMAL_TYPE);
+				this.state = 453;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 454;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 455;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2154,30 +3166,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public packageAddress(): PackageAddressContext {
-		let _localctx: PackageAddressContext = new PackageAddressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 100, TransactionManifestParser.RULE_packageAddress);
+		let _localctx: PackageAddressContext = new PackageAddressContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			100,
+			TransactionManifestParser.RULE_packageAddress
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 457;
-			this.match(TransactionManifestParser.PACKAGE_ADDRESS_TYPE);
-			this.state = 458;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 459;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 460;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 457;
+				this.match(TransactionManifestParser.PACKAGE_ADDRESS_TYPE);
+				this.state = 458;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 459;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 460;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2185,30 +3202,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public componentAddress(): ComponentAddressContext {
-		let _localctx: ComponentAddressContext = new ComponentAddressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 102, TransactionManifestParser.RULE_componentAddress);
+		let _localctx: ComponentAddressContext = new ComponentAddressContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			102,
+			TransactionManifestParser.RULE_componentAddress
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 462;
-			this.match(TransactionManifestParser.COMPONENT_ADDRESS_TYPE);
-			this.state = 463;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 464;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 465;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 462;
+				this.match(TransactionManifestParser.COMPONENT_ADDRESS_TYPE);
+				this.state = 463;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 464;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 465;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2216,30 +3238,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public resourceAddress(): ResourceAddressContext {
-		let _localctx: ResourceAddressContext = new ResourceAddressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 104, TransactionManifestParser.RULE_resourceAddress);
+		let _localctx: ResourceAddressContext = new ResourceAddressContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			104,
+			TransactionManifestParser.RULE_resourceAddress
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 467;
-			this.match(TransactionManifestParser.RESOURCE_ADDRESS_TYPE);
-			this.state = 468;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 469;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 470;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 467;
+				this.match(TransactionManifestParser.RESOURCE_ADDRESS_TYPE);
+				this.state = 468;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 469;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 470;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2247,8 +3274,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -2260,17 +3286,16 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 472;
-			this.match(TransactionManifestParser.HASH_TYPE);
-			this.state = 473;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 474;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 475;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 472;
+				this.match(TransactionManifestParser.HASH_TYPE);
+				this.state = 473;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 474;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 475;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2278,8 +3303,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -2292,27 +3316,31 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 477;
-			this.match(TransactionManifestParser.BUCKET_TYPE);
-			this.state = 478;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 479;
-			_la = this._input.LA(1);
-			if (!(_la === TransactionManifestParser.U32_LITERAL || _la === TransactionManifestParser.STRING_LITERAL)) {
-			this._errHandler.recoverInline(this);
-			} else {
-				if (this._input.LA(1) === Token.EOF) {
-					this.matchedEOF = true;
-				}
+				this.state = 477;
+				this.match(TransactionManifestParser.BUCKET_TYPE);
+				this.state = 478;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 479;
+				_la = this._input.LA(1);
+				if (
+					!(
+						_la === TransactionManifestParser.U32_LITERAL ||
+						_la === TransactionManifestParser.STRING_LITERAL
+					)
+				) {
+					this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) === Token.EOF) {
+						this.matchedEOF = true;
+					}
 
-				this._errHandler.reportMatch(this);
-				this.consume();
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
+				this.state = 480;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-			this.state = 480;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2320,8 +3348,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -2334,27 +3361,31 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 482;
-			this.match(TransactionManifestParser.PROOF_TYPE);
-			this.state = 483;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 484;
-			_la = this._input.LA(1);
-			if (!(_la === TransactionManifestParser.U32_LITERAL || _la === TransactionManifestParser.STRING_LITERAL)) {
-			this._errHandler.recoverInline(this);
-			} else {
-				if (this._input.LA(1) === Token.EOF) {
-					this.matchedEOF = true;
-				}
+				this.state = 482;
+				this.match(TransactionManifestParser.PROOF_TYPE);
+				this.state = 483;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 484;
+				_la = this._input.LA(1);
+				if (
+					!(
+						_la === TransactionManifestParser.U32_LITERAL ||
+						_la === TransactionManifestParser.STRING_LITERAL
+					)
+				) {
+					this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) === Token.EOF) {
+						this.matchedEOF = true;
+					}
 
-				this._errHandler.reportMatch(this);
-				this.consume();
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
+				this.state = 485;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-			this.state = 485;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2362,30 +3393,35 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public nonFungibleId(): NonFungibleIdContext {
-		let _localctx: NonFungibleIdContext = new NonFungibleIdContext(this._ctx, this.state);
-		this.enterRule(_localctx, 112, TransactionManifestParser.RULE_nonFungibleId);
+		let _localctx: NonFungibleIdContext = new NonFungibleIdContext(
+			this._ctx,
+			this.state
+		);
+		this.enterRule(
+			_localctx,
+			112,
+			TransactionManifestParser.RULE_nonFungibleId
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 487;
-			this.match(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE);
-			this.state = 488;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 489;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 490;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 487;
+				this.match(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE);
+				this.state = 488;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 489;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 490;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2393,30 +3429,33 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
 	}
 	// @RuleVersion(0)
 	public nonFungibleAddress(): NonFungibleAddressContext {
-		let _localctx: NonFungibleAddressContext = new NonFungibleAddressContext(this._ctx, this.state);
-		this.enterRule(_localctx, 114, TransactionManifestParser.RULE_nonFungibleAddress);
+		let _localctx: NonFungibleAddressContext =
+			new NonFungibleAddressContext(this._ctx, this.state);
+		this.enterRule(
+			_localctx,
+			114,
+			TransactionManifestParser.RULE_nonFungibleAddress
+		);
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 492;
-			this.match(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE);
-			this.state = 493;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 494;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 495;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 492;
+				this.match(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE);
+				this.state = 493;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 494;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 495;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2424,8 +3463,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -2437,17 +3475,16 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 497;
-			this.match(TransactionManifestParser.BYTES_TYPE);
-			this.state = 498;
-			this.match(TransactionManifestParser.OPEN_PARENTHESIS);
-			this.state = 499;
-			this.match(TransactionManifestParser.STRING_LITERAL);
-			this.state = 500;
-			this.match(TransactionManifestParser.CLOED_PARENTHESIS);
+				this.state = 497;
+				this.match(TransactionManifestParser.BYTES_TYPE);
+				this.state = 498;
+				this.match(TransactionManifestParser.OPEN_PARENTHESIS);
+				this.state = 499;
+				this.match(TransactionManifestParser.STRING_LITERAL);
+				this.state = 500;
+				this.match(TransactionManifestParser.CLOED_PARENTHESIS);
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2455,8 +3492,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -2469,21 +3505,110 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 502;
-			_la = this._input.LA(1);
-			if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << TransactionManifestParser.UNIT_TYPE) | (1 << TransactionManifestParser.BOOL_TYPE) | (1 << TransactionManifestParser.I8_TYPE) | (1 << TransactionManifestParser.I16_TYPE) | (1 << TransactionManifestParser.I32_TYPE) | (1 << TransactionManifestParser.I64_TYPE) | (1 << TransactionManifestParser.I128_TYPE) | (1 << TransactionManifestParser.U8_TYPE) | (1 << TransactionManifestParser.U16_TYPE) | (1 << TransactionManifestParser.U32_TYPE) | (1 << TransactionManifestParser.U64_TYPE) | (1 << TransactionManifestParser.U128_TYPE) | (1 << TransactionManifestParser.STRING_TYPE) | (1 << TransactionManifestParser.STRUCT_TYPE) | (1 << TransactionManifestParser.ENUM_TYPE) | (1 << TransactionManifestParser.OPTION_TYPE) | (1 << TransactionManifestParser.RESULT_TYPE))) !== 0) || ((((_la - 32)) & ~0x1F) === 0 && ((1 << (_la - 32)) & ((1 << (TransactionManifestParser.SOME_TYPE - 32)) | (1 << (TransactionManifestParser.NONE_TYPE - 32)) | (1 << (TransactionManifestParser.OK_TYPE - 32)) | (1 << (TransactionManifestParser.ERR_TYPE - 32)) | (1 << (TransactionManifestParser.ARRAY_TYPE - 32)) | (1 << (TransactionManifestParser.TUPLE_TYPE - 32)) | (1 << (TransactionManifestParser.LIST_TYPE - 32)) | (1 << (TransactionManifestParser.SET_TYPE - 32)) | (1 << (TransactionManifestParser.MAP_TYPE - 32)) | (1 << (TransactionManifestParser.DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PRECISE_DECIMAL_TYPE - 32)) | (1 << (TransactionManifestParser.PACKAGE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.COMPONENT_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.RESOURCE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.HASH_TYPE - 32)) | (1 << (TransactionManifestParser.BUCKET_TYPE - 32)) | (1 << (TransactionManifestParser.PROOF_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ID_TYPE - 32)) | (1 << (TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE - 32)) | (1 << (TransactionManifestParser.BYTES_TYPE - 32)))) !== 0))) {
-			this._errHandler.recoverInline(this);
-			} else {
-				if (this._input.LA(1) === Token.EOF) {
-					this.matchedEOF = true;
-				}
+				this.state = 502;
+				_la = this._input.LA(1);
+				if (
+					!(
+						((_la & ~0x1f) === 0 &&
+							((1 << _la) &
+								((1 << TransactionManifestParser.UNIT_TYPE) |
+									(1 << TransactionManifestParser.BOOL_TYPE) |
+									(1 << TransactionManifestParser.I8_TYPE) |
+									(1 << TransactionManifestParser.I16_TYPE) |
+									(1 << TransactionManifestParser.I32_TYPE) |
+									(1 << TransactionManifestParser.I64_TYPE) |
+									(1 << TransactionManifestParser.I128_TYPE) |
+									(1 << TransactionManifestParser.U8_TYPE) |
+									(1 << TransactionManifestParser.U16_TYPE) |
+									(1 << TransactionManifestParser.U32_TYPE) |
+									(1 << TransactionManifestParser.U64_TYPE) |
+									(1 << TransactionManifestParser.U128_TYPE) |
+									(1 <<
+										TransactionManifestParser.STRING_TYPE) |
+									(1 <<
+										TransactionManifestParser.STRUCT_TYPE) |
+									(1 << TransactionManifestParser.ENUM_TYPE) |
+									(1 <<
+										TransactionManifestParser.OPTION_TYPE) |
+									(1 <<
+										TransactionManifestParser.RESULT_TYPE))) !==
+								0) ||
+						(((_la - 32) & ~0x1f) === 0 &&
+							((1 << (_la - 32)) &
+								((1 <<
+									(TransactionManifestParser.SOME_TYPE -
+										32)) |
+									(1 <<
+										(TransactionManifestParser.NONE_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.OK_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.ERR_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.ARRAY_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.TUPLE_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.LIST_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.SET_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.MAP_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.DECIMAL_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.PRECISE_DECIMAL_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.PACKAGE_ADDRESS_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.COMPONENT_ADDRESS_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.RESOURCE_ADDRESS_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.HASH_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.BUCKET_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.PROOF_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE -
+											32)) |
+									(1 <<
+										(TransactionManifestParser.BYTES_TYPE -
+											32)))) !==
+								0)
+					)
+				) {
+					this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) === Token.EOF) {
+						this.matchedEOF = true;
+					}
 
-				this._errHandler.reportMatch(this);
-				this.consume();
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
 			}
-			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2491,8 +3616,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -2504,297 +3628,298 @@ export class TransactionManifestParser extends Parser {
 		try {
 			this.state = 540;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 21, this._ctx) ) {
-			case 1:
-				this.enterOuterAlt(_localctx, 1);
-				{
-				this.state = 504;
-				this.unit();
-				}
-				break;
+			switch (
+				this.interpreter.adaptivePredict(this._input, 21, this._ctx)
+			) {
+				case 1:
+					this.enterOuterAlt(_localctx, 1);
+					{
+						this.state = 504;
+						this.unit();
+					}
+					break;
 
-			case 2:
-				this.enterOuterAlt(_localctx, 2);
-				{
-				this.state = 505;
-				this.bool();
-				}
-				break;
+				case 2:
+					this.enterOuterAlt(_localctx, 2);
+					{
+						this.state = 505;
+						this.bool();
+					}
+					break;
 
-			case 3:
-				this.enterOuterAlt(_localctx, 3);
-				{
-				this.state = 506;
-				this.i8();
-				}
-				break;
+				case 3:
+					this.enterOuterAlt(_localctx, 3);
+					{
+						this.state = 506;
+						this.i8();
+					}
+					break;
 
-			case 4:
-				this.enterOuterAlt(_localctx, 4);
-				{
-				this.state = 507;
-				this.i16();
-				}
-				break;
+				case 4:
+					this.enterOuterAlt(_localctx, 4);
+					{
+						this.state = 507;
+						this.i16();
+					}
+					break;
 
-			case 5:
-				this.enterOuterAlt(_localctx, 5);
-				{
-				this.state = 508;
-				this.i32();
-				}
-				break;
+				case 5:
+					this.enterOuterAlt(_localctx, 5);
+					{
+						this.state = 508;
+						this.i32();
+					}
+					break;
 
-			case 6:
-				this.enterOuterAlt(_localctx, 6);
-				{
-				this.state = 509;
-				this.i64();
-				}
-				break;
+				case 6:
+					this.enterOuterAlt(_localctx, 6);
+					{
+						this.state = 509;
+						this.i64();
+					}
+					break;
 
-			case 7:
-				this.enterOuterAlt(_localctx, 7);
-				{
-				this.state = 510;
-				this.i128();
-				}
-				break;
+				case 7:
+					this.enterOuterAlt(_localctx, 7);
+					{
+						this.state = 510;
+						this.i128();
+					}
+					break;
 
-			case 8:
-				this.enterOuterAlt(_localctx, 8);
-				{
-				this.state = 511;
-				this.u8();
-				}
-				break;
+				case 8:
+					this.enterOuterAlt(_localctx, 8);
+					{
+						this.state = 511;
+						this.u8();
+					}
+					break;
 
-			case 9:
-				this.enterOuterAlt(_localctx, 9);
-				{
-				this.state = 512;
-				this.u16();
-				}
-				break;
+				case 9:
+					this.enterOuterAlt(_localctx, 9);
+					{
+						this.state = 512;
+						this.u16();
+					}
+					break;
 
-			case 10:
-				this.enterOuterAlt(_localctx, 10);
-				{
-				this.state = 513;
-				this.u32();
-				}
-				break;
+				case 10:
+					this.enterOuterAlt(_localctx, 10);
+					{
+						this.state = 513;
+						this.u32();
+					}
+					break;
 
-			case 11:
-				this.enterOuterAlt(_localctx, 11);
-				{
-				this.state = 514;
-				this.u64();
-				}
-				break;
+				case 11:
+					this.enterOuterAlt(_localctx, 11);
+					{
+						this.state = 514;
+						this.u64();
+					}
+					break;
 
-			case 12:
-				this.enterOuterAlt(_localctx, 12);
-				{
-				this.state = 515;
-				this.u128();
-				}
-				break;
+				case 12:
+					this.enterOuterAlt(_localctx, 12);
+					{
+						this.state = 515;
+						this.u128();
+					}
+					break;
 
-			case 13:
-				this.enterOuterAlt(_localctx, 13);
-				{
-				this.state = 516;
-				this.string();
-				}
-				break;
+				case 13:
+					this.enterOuterAlt(_localctx, 13);
+					{
+						this.state = 516;
+						this.string();
+					}
+					break;
 
-			case 14:
-				this.enterOuterAlt(_localctx, 14);
-				{
-				this.state = 517;
-				this.struct();
-				}
-				break;
+				case 14:
+					this.enterOuterAlt(_localctx, 14);
+					{
+						this.state = 517;
+						this.struct();
+					}
+					break;
 
-			case 15:
-				this.enterOuterAlt(_localctx, 15);
-				{
-				this.state = 518;
-				this.enum_();
-				}
-				break;
+				case 15:
+					this.enterOuterAlt(_localctx, 15);
+					{
+						this.state = 518;
+						this.enum_();
+					}
+					break;
 
-			case 16:
-				this.enterOuterAlt(_localctx, 16);
-				{
-				this.state = 519;
-				this.option();
-				}
-				break;
+				case 16:
+					this.enterOuterAlt(_localctx, 16);
+					{
+						this.state = 519;
+						this.option();
+					}
+					break;
 
-			case 17:
-				this.enterOuterAlt(_localctx, 17);
-				{
-				this.state = 520;
-				this.some();
-				}
-				break;
+				case 17:
+					this.enterOuterAlt(_localctx, 17);
+					{
+						this.state = 520;
+						this.some();
+					}
+					break;
 
-			case 18:
-				this.enterOuterAlt(_localctx, 18);
-				{
-				this.state = 521;
-				this.none();
-				}
-				break;
+				case 18:
+					this.enterOuterAlt(_localctx, 18);
+					{
+						this.state = 521;
+						this.none();
+					}
+					break;
 
-			case 19:
-				this.enterOuterAlt(_localctx, 19);
-				{
-				this.state = 522;
-				this.ok();
-				}
-				break;
+				case 19:
+					this.enterOuterAlt(_localctx, 19);
+					{
+						this.state = 522;
+						this.ok();
+					}
+					break;
 
-			case 20:
-				this.enterOuterAlt(_localctx, 20);
-				{
-				this.state = 523;
-				this.err();
-				}
-				break;
+				case 20:
+					this.enterOuterAlt(_localctx, 20);
+					{
+						this.state = 523;
+						this.err();
+					}
+					break;
 
-			case 21:
-				this.enterOuterAlt(_localctx, 21);
-				{
-				this.state = 524;
-				this.array();
-				}
-				break;
+				case 21:
+					this.enterOuterAlt(_localctx, 21);
+					{
+						this.state = 524;
+						this.array();
+					}
+					break;
 
-			case 22:
-				this.enterOuterAlt(_localctx, 22);
-				{
-				this.state = 525;
-				this.tuple();
-				}
-				break;
+				case 22:
+					this.enterOuterAlt(_localctx, 22);
+					{
+						this.state = 525;
+						this.tuple();
+					}
+					break;
 
-			case 23:
-				this.enterOuterAlt(_localctx, 23);
-				{
-				this.state = 526;
-				this.list();
-				}
-				break;
+				case 23:
+					this.enterOuterAlt(_localctx, 23);
+					{
+						this.state = 526;
+						this.list();
+					}
+					break;
 
-			case 24:
-				this.enterOuterAlt(_localctx, 24);
-				{
-				this.state = 527;
-				this.set();
-				}
-				break;
+				case 24:
+					this.enterOuterAlt(_localctx, 24);
+					{
+						this.state = 527;
+						this.set();
+					}
+					break;
 
-			case 25:
-				this.enterOuterAlt(_localctx, 25);
-				{
-				this.state = 528;
-				this.map();
-				}
-				break;
+				case 25:
+					this.enterOuterAlt(_localctx, 25);
+					{
+						this.state = 528;
+						this.map();
+					}
+					break;
 
-			case 26:
-				this.enterOuterAlt(_localctx, 26);
-				{
-				this.state = 529;
-				this.decimal();
-				}
-				break;
+				case 26:
+					this.enterOuterAlt(_localctx, 26);
+					{
+						this.state = 529;
+						this.decimal();
+					}
+					break;
 
-			case 27:
-				this.enterOuterAlt(_localctx, 27);
-				{
-				this.state = 530;
-				this.preciseDecimal();
-				}
-				break;
+				case 27:
+					this.enterOuterAlt(_localctx, 27);
+					{
+						this.state = 530;
+						this.preciseDecimal();
+					}
+					break;
 
-			case 28:
-				this.enterOuterAlt(_localctx, 28);
-				{
-				this.state = 531;
-				this.packageAddress();
-				}
-				break;
+				case 28:
+					this.enterOuterAlt(_localctx, 28);
+					{
+						this.state = 531;
+						this.packageAddress();
+					}
+					break;
 
-			case 29:
-				this.enterOuterAlt(_localctx, 29);
-				{
-				this.state = 532;
-				this.componentAddress();
-				}
-				break;
+				case 29:
+					this.enterOuterAlt(_localctx, 29);
+					{
+						this.state = 532;
+						this.componentAddress();
+					}
+					break;
 
-			case 30:
-				this.enterOuterAlt(_localctx, 30);
-				{
-				this.state = 533;
-				this.resourceAddress();
-				}
-				break;
+				case 30:
+					this.enterOuterAlt(_localctx, 30);
+					{
+						this.state = 533;
+						this.resourceAddress();
+					}
+					break;
 
-			case 31:
-				this.enterOuterAlt(_localctx, 31);
-				{
-				this.state = 534;
-				this.hash();
-				}
-				break;
+				case 31:
+					this.enterOuterAlt(_localctx, 31);
+					{
+						this.state = 534;
+						this.hash();
+					}
+					break;
 
-			case 32:
-				this.enterOuterAlt(_localctx, 32);
-				{
-				this.state = 535;
-				this.bucket();
-				}
-				break;
+				case 32:
+					this.enterOuterAlt(_localctx, 32);
+					{
+						this.state = 535;
+						this.bucket();
+					}
+					break;
 
-			case 33:
-				this.enterOuterAlt(_localctx, 33);
-				{
-				this.state = 536;
-				this.proof();
-				}
-				break;
+				case 33:
+					this.enterOuterAlt(_localctx, 33);
+					{
+						this.state = 536;
+						this.proof();
+					}
+					break;
 
-			case 34:
-				this.enterOuterAlt(_localctx, 34);
-				{
-				this.state = 537;
-				this.nonFungibleId();
-				}
-				break;
+				case 34:
+					this.enterOuterAlt(_localctx, 34);
+					{
+						this.state = 537;
+						this.nonFungibleId();
+					}
+					break;
 
-			case 35:
-				this.enterOuterAlt(_localctx, 35);
-				{
-				this.state = 538;
-				this.nonFungibleAddress();
-				}
-				break;
+				case 35:
+					this.enterOuterAlt(_localctx, 35);
+					{
+						this.state = 538;
+						this.nonFungibleAddress();
+					}
+					break;
 
-			case 36:
-				this.enterOuterAlt(_localctx, 36);
-				{
-				this.state = 539;
-				this.bytes();
-				}
-				break;
+				case 36:
+					this.enterOuterAlt(_localctx, 36);
+					{
+						this.state = 539;
+						this.bytes();
+					}
+					break;
 			}
-		}
-		catch (re) {
+		} catch (re) {
 			if (re instanceof RecognitionException) {
 				_localctx.exception = re;
 				this._errHandler.reportError(this, re);
@@ -2802,8 +3927,7 @@ export class TransactionManifestParser extends Parser {
 			} else {
 				throw re;
 			}
-		}
-		finally {
+		} finally {
 			this.exitRule();
 		}
 		return _localctx;
@@ -2816,8 +3940,8 @@ export class TransactionManifestParser extends Parser {
 		"\x0E\t\x0E\x04\x0F\t\x0F\x04\x10\t\x10\x04\x11\t\x11\x04\x12\t\x12\x04" +
 		"\x13\t\x13\x04\x14\t\x14\x04\x15\t\x15\x04\x16\t\x16\x04\x17\t\x17\x04" +
 		"\x18\t\x18\x04\x19\t\x19\x04\x1A\t\x1A\x04\x1B\t\x1B\x04\x1C\t\x1C\x04" +
-		"\x1D\t\x1D\x04\x1E\t\x1E\x04\x1F\t\x1F\x04 \t \x04!\t!\x04\"\t\"\x04#" +
-		"\t#\x04$\t$\x04%\t%\x04&\t&\x04\'\t\'\x04(\t(\x04)\t)\x04*\t*\x04+\t+" +
+		'\x1D\t\x1D\x04\x1E\t\x1E\x04\x1F\t\x1F\x04 \t \x04!\t!\x04"\t"\x04#' +
+		"\t#\x04$\t$\x04%\t%\x04&\t&\x04'\t'\x04(\t(\x04)\t)\x04*\t*\x04+\t+" +
 		"\x04,\t,\x04-\t-\x04.\t.\x04/\t/\x040\t0\x041\t1\x042\t2\x043\t3\x044" +
 		"\t4\x045\t5\x046\t6\x047\t7\x048\t8\x049\t9\x04:\t:\x04;\t;\x04<\t<\x04" +
 		"=\t=\x04>\t>\x03\x02\x07\x02~\n\x02\f\x02\x0E\x02\x81\v\x02\x03\x02\x03" +
@@ -2837,10 +3961,10 @@ export class TransactionManifestParser extends Parser {
 		"\x15\x03\x15\x03\x15\x03\x16\x03\x16\x03\x16\x03\x17\x03\x17\x03\x17\x03" +
 		"\x18\x03\x18\x03\x18\x03\x18\x03\x19\x03\x19\x03\x1A\x03\x1A\x03\x1B\x03" +
 		"\x1B\x03\x1C\x03\x1C\x03\x1D\x03\x1D\x03\x1E\x03\x1E\x03\x1F\x03\x1F\x03" +
-		" \x03 \x03!\x03!\x03\"\x03\"\x03#\x03#\x03$\x03$\x03%\x03%\x03&\x03&\x03" +
+		' \x03 \x03!\x03!\x03"\x03"\x03#\x03#\x03$\x03$\x03%\x03%\x03&\x03&\x03' +
 		"&\x03&\x03&\x07&\u012B\n&\f&\x0E&\u012E\v&\x05&\u0130\n&\x03&\x03&\x03" +
-		"\'\x03\'\x03\'\x03\'\x03\'\x03\'\x03\'\x07\'\u013B\n\'\f\'\x0E\'\u013E" +
-		"\v\'\x05\'\u0140\n\'\x03\'\x03\'\x03(\x03(\x05(\u0146\n(\x03)\x03)\x03" +
+		"'\x03'\x03'\x03'\x03'\x03'\x03'\x07'\u013B\n'\f'\x0E'\u013E" +
+		"\v'\x05'\u0140\n'\x03'\x03'\x03(\x03(\x05(\u0146\n(\x03)\x03)\x03" +
 		")\x03)\x03)\x07)\u014D\n)\f)\x0E)\u0150\v)\x03)\x03)\x03*\x03*\x03+\x03" +
 		"+\x03+\x03+\x03+\x07+\u015B\n+\f+\x0E+\u015E\v+\x03+\x03+\x03,\x03,\x03" +
 		",\x03,\x03,\x07,\u0167\n,\f,\x0E,\u016A\v,\x03,\x03,\x03-\x03-\x03-\x03" +
@@ -2859,7 +3983,7 @@ export class TransactionManifestParser extends Parser {
 		">\x03>\x03>\x03>\x03>\x03>\x03>\x03>\x03>\x03>\x03>\x03>\x03>\x03>\x03" +
 		">\x05>\u021F\n>\x03>\x02\x02\x02?\x02\x02\x04\x02\x06\x02\b\x02\n\x02" +
 		"\f\x02\x0E\x02\x10\x02\x12\x02\x14\x02\x16\x02\x18\x02\x1A\x02\x1C\x02" +
-		"\x1E\x02 \x02\"\x02$\x02&\x02(\x02*\x02,\x02.\x020\x022\x024\x026\x02" +
+		'\x1E\x02 \x02"\x02$\x02&\x02(\x02*\x02,\x02.\x020\x022\x024\x026\x02' +
 		"8\x02:\x02<\x02>\x02@\x02B\x02D\x02F\x02H\x02J\x02L\x02N\x02P\x02R\x02" +
 		"T\x02V\x02X\x02Z\x02\\\x02^\x02`\x02b\x02d\x02f\x02h\x02j\x02l\x02n\x02" +
 		"p\x02r\x02t\x02v\x02x\x02z\x02\x02\x04\x04\x02\f\fQQ\x03\x02\x115\x02" +
@@ -2868,7 +3992,7 @@ export class TransactionManifestParser extends Parser {
 		"\x02\x0E\xBC\x03\x02\x02\x02\x10\xC2\x03\x02\x02\x02\x12\xC8\x03\x02\x02" +
 		"\x02\x14\xCC\x03\x02\x02\x02\x16\xD0\x03\x02\x02\x02\x18\xD5\x03\x02\x02" +
 		"\x02\x1A\xDA\x03\x02\x02\x02\x1C\xDE\x03\x02\x02\x02\x1E\xE2\x03\x02\x02" +
-		"\x02 \xE7\x03\x02\x02\x02\"\xED\x03\x02\x02\x02$\xF3\x03\x02\x02\x02&" +
+		'\x02 \xE7\x03\x02\x02\x02"\xED\x03\x02\x02\x02$\xF3\x03\x02\x02\x02&' +
 		"\xF8\x03\x02\x02\x02(\xFD\x03\x02\x02\x02*\u0101\x03\x02\x02\x02,\u0104" +
 		"\x03\x02\x02\x02.\u0107\x03\x02\x02\x020\u010B\x03\x02\x02\x022\u010D" +
 		"\x03\x02\x02\x024\u010F\x03\x02\x02\x026\u0111\x03\x02\x02\x028\u0113" +
@@ -2890,7 +4014,7 @@ export class TransactionManifestParser extends Parser {
 		"\x87\x9A\x05\x12\n\x02\x88\x9A\x05\f\x07\x02\x89\x9A\x05\x0E\b\x02\x8A" +
 		"\x9A\x05\x10\t\x02\x8B\x9A\x05\x14\v\x02\x8C\x9A\x05\x16\f\x02\x8D\x9A" +
 		"\x05\x18\r\x02\x8E\x9A\x05\x1A\x0E\x02\x8F\x9A\x05\x1C\x0F\x02\x90\x9A" +
-		"\x05\x1E\x10\x02\x91\x9A\x05 \x11\x02\x92\x9A\x05\"\x12\x02\x93\x9A\x05" +
+		'\x05\x1E\x10\x02\x91\x9A\x05 \x11\x02\x92\x9A\x05"\x12\x02\x93\x9A\x05' +
 		"$\x13\x02\x94\x9A\x05&\x14\x02\x95\x9A\x05(\x15\x02\x96\x9A\x05*\x16\x02" +
 		"\x97\x9A\x05,\x17\x02\x98\x9A\x05.\x18\x02\x99\x84\x03\x02\x02\x02\x99" +
 		"\x85\x03\x02\x02\x02\x99\x86\x03\x02\x02\x02\x99\x87\x03\x02\x02\x02\x99" +
@@ -2928,7 +4052,7 @@ export class TransactionManifestParser extends Parser {
 		"\xEE\xEF\x05^0\x02\xEF\xF0\x05j6\x02\xF0\xF1\x05p9\x02\xF1\xF2\x07;\x02" +
 		"\x02\xF2#\x03\x02\x02\x02\xF3\xF4\x07I\x02\x02\xF4\xF5\x05n8\x02\xF5\xF6" +
 		"\x05p9\x02\xF6\xF7\x07;\x02\x02\xF7%\x03\x02\x02\x02\xF8\xF9\x07J\x02" +
-		"\x02\xF9\xFA\x05p9\x02\xFA\xFB\x05p9\x02\xFB\xFC\x07;\x02\x02\xFC\'\x03" +
+		"\x02\xF9\xFA\x05p9\x02\xFA\xFB\x05p9\x02\xFB\xFC\x07;\x02\x02\xFC'\x03" +
 		"\x02\x02\x02\xFD\xFE\x07K\x02\x02\xFE\xFF\x05p9\x02\xFF\u0100\x07;\x02" +
 		"\x02\u0100)\x03\x02\x02\x02\u0101\u0102\x07L\x02\x02\u0102\u0103\x07;" +
 		"\x02\x02\u0103+\x03\x02\x02\x02\u0104\u0105\x07E\x02\x02\u0105\u0106\x07" +
@@ -2957,7 +4081,7 @@ export class TransactionManifestParser extends Parser {
 		"\u0140\x03\x02\x02\x02\u0140\u0141\x03\x02\x02\x02\u0141\u0142\x077\x02" +
 		"\x02\u0142M\x03\x02\x02\x02\u0143\u0146\x05P)\x02\u0144\u0146\x05R*\x02" +
 		"\u0145\u0143\x03\x02\x02\x02\u0145\u0144\x03\x02\x02\x02\u0146O\x03\x02" +
-		"\x02\x02\u0147\u0148\x07\"\x02\x02\u0148\u0149\x076\x02\x02\u0149\u014E" +
+		'\x02\x02\u0147\u0148\x07"\x02\x02\u0148\u0149\x076\x02\x02\u0149\u014E' +
 		"\x05z>\x02\u014A\u014B\x07:\x02\x02\u014B\u014D\x05z>\x02\u014C\u014A" +
 		"\x03\x02\x02\x02\u014D\u0150\x03\x02\x02\x02\u014E\u014C\x03\x02\x02\x02" +
 		"\u014E\u014F\x03\x02\x02\x02\u014F\u0151\x03\x02\x02\x02\u0150\u014E\x03" +
@@ -2979,7 +4103,7 @@ export class TransactionManifestParser extends Parser {
 		"\x02\x02\u0178\u017B\x03\x02\x02\x02\u0179\u0177\x03\x02\x02\x02\u017A" +
 		"\u0172\x03\x02\x02\x02\u017A\u017B\x03\x02\x02\x02\u017B\u017C\x03\x02" +
 		"\x02\x02\u017C\u017D\x077\x02\x02\u017DY\x03\x02\x02\x02\u017E\u017F\x07" +
-		"\'\x02\x02\u017F\u0180\x078\x02\x02\u0180\u0189\x076\x02\x02\u0181\u0186" +
+		"'\x02\x02\u017F\u0180\x078\x02\x02\u0180\u0189\x076\x02\x02\u0181\u0186" +
 		"\x05z>\x02\u0182\u0183\x07:\x02\x02\u0183\u0185\x05z>\x02\u0184\u0182" +
 		"\x03\x02\x02\x02\u0185\u0188\x03\x02\x02\x02\u0186\u0184\x03\x02\x02\x02" +
 		"\u0186\u0187\x03\x02\x02\x02\u0187\u018A\x03\x02\x02\x02\u0188\u0186\x03" +
@@ -3028,9 +4152,9 @@ export class TransactionManifestParser extends Parser {
 		"\x02\u01F9y\x03\x02\x02\x02\u01FA\u021F\x050\x19\x02\u01FB\u021F\x052" +
 		"\x1A\x02\u01FC\u021F\x054\x1B\x02\u01FD\u021F\x056\x1C\x02\u01FE\u021F" +
 		"\x058\x1D\x02\u01FF\u021F\x05:\x1E\x02\u0200\u021F\x05<\x1F\x02\u0201" +
-		"\u021F\x05> \x02\u0202\u021F\x05@!\x02\u0203\u021F\x05B\"\x02\u0204\u021F" +
+		'\u021F\x05> \x02\u0202\u021F\x05@!\x02\u0203\u021F\x05B"\x02\u0204\u021F' +
 		"\x05D#\x02\u0205\u021F\x05F$\x02\u0206\u021F\x05H%\x02\u0207\u021F\x05" +
-		"J&\x02\u0208\u021F\x05L\'\x02\u0209\u021F\x05N(\x02\u020A\u021F\x05P)" +
+		"J&\x02\u0208\u021F\x05L'\x02\u0209\u021F\x05N(\x02\u020A\u021F\x05P)" +
 		"\x02\u020B\u021F\x05R*\x02\u020C\u021F\x05T+\x02\u020D\u021F\x05V,\x02" +
 		"\u020E\u021F\x05X-\x02\u020F\u021F\x05Z.\x02\u0210\u021F\x05\\/\x02\u0211" +
 		"\u021F\x05^0\x02\u0212\u021F\x05`1\x02\u0213\u021F\x05b2\x02\u0214\u021F" +
@@ -3057,19 +4181,24 @@ export class TransactionManifestParser extends Parser {
 	public static __ATN: ATN;
 	public static get _ATN(): ATN {
 		if (!TransactionManifestParser.__ATN) {
-			TransactionManifestParser.__ATN = new ATNDeserializer().deserialize(Utils.toCharArray(TransactionManifestParser._serializedATN));
+			TransactionManifestParser.__ATN = new ATNDeserializer().deserialize(
+				Utils.toCharArray(TransactionManifestParser._serializedATN)
+			);
 		}
 
 		return TransactionManifestParser.__ATN;
 	}
-
 }
 
 export class ManifestContext extends ParserRuleContext {
-	public EOF(): TerminalNode { return this.getToken(TransactionManifestParser.EOF, 0); }
+	public EOF(): TerminalNode {
+		return this.getToken(TransactionManifestParser.EOF, 0);
+	}
 	public manifestInstruction(): ManifestInstructionContext[];
 	public manifestInstruction(i: number): ManifestInstructionContext;
-	public manifestInstruction(i?: number): ManifestInstructionContext | ManifestInstructionContext[] {
+	public manifestInstruction(
+		i?: number
+	): ManifestInstructionContext | ManifestInstructionContext[] {
 		if (i === undefined) {
 			return this.getRuleContexts(ManifestInstructionContext);
 		} else {
@@ -3080,7 +4209,9 @@ export class ManifestContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_manifest; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_manifest;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterManifest) {
@@ -3103,7 +4234,6 @@ export class ManifestContext extends ParserRuleContext {
 	}
 }
 
-
 export class ManifestInstructionContext extends ParserRuleContext {
 	public callFunction(): CallFunctionContext | undefined {
 		return this.tryGetRuleContext(0, CallFunctionContext);
@@ -3111,7 +4241,9 @@ export class ManifestInstructionContext extends ParserRuleContext {
 	public callMethod(): CallMethodContext | undefined {
 		return this.tryGetRuleContext(0, CallMethodContext);
 	}
-	public callMethodWithAllResources(): CallMethodWithAllResourcesContext | undefined {
+	public callMethodWithAllResources():
+		| CallMethodWithAllResourcesContext
+		| undefined {
 		return this.tryGetRuleContext(0, CallMethodWithAllResourcesContext);
 	}
 	public returnToWorktop(): ReturnToWorktopContext | undefined {
@@ -3120,7 +4252,9 @@ export class ManifestInstructionContext extends ParserRuleContext {
 	public takeFromWorktop(): TakeFromWorktopContext | undefined {
 		return this.tryGetRuleContext(0, TakeFromWorktopContext);
 	}
-	public takeFromWorktopByAmount(): TakeFromWorktopByAmountContext | undefined {
+	public takeFromWorktopByAmount():
+		| TakeFromWorktopByAmountContext
+		| undefined {
 		return this.tryGetRuleContext(0, TakeFromWorktopByAmountContext);
 	}
 	public takeFromWorktopByIds(): TakeFromWorktopByIdsContext | undefined {
@@ -3129,10 +4263,14 @@ export class ManifestInstructionContext extends ParserRuleContext {
 	public assertWorktopContains(): AssertWorktopContainsContext | undefined {
 		return this.tryGetRuleContext(0, AssertWorktopContainsContext);
 	}
-	public assertWorktopContainsByAmount(): AssertWorktopContainsByAmountContext | undefined {
+	public assertWorktopContainsByAmount():
+		| AssertWorktopContainsByAmountContext
+		| undefined {
 		return this.tryGetRuleContext(0, AssertWorktopContainsByAmountContext);
 	}
-	public assertWorktopContainsByIds(): AssertWorktopContainsByIdsContext | undefined {
+	public assertWorktopContainsByIds():
+		| AssertWorktopContainsByIdsContext
+		| undefined {
 		return this.tryGetRuleContext(0, AssertWorktopContainsByIdsContext);
 	}
 	public popFromAuthZone(): PopFromAuthZoneContext | undefined {
@@ -3141,13 +4279,22 @@ export class ManifestInstructionContext extends ParserRuleContext {
 	public pushToAuthZone(): PushToAuthZoneContext | undefined {
 		return this.tryGetRuleContext(0, PushToAuthZoneContext);
 	}
-	public createProofFromAuthZone(): CreateProofFromAuthZoneContext | undefined {
+	public createProofFromAuthZone():
+		| CreateProofFromAuthZoneContext
+		| undefined {
 		return this.tryGetRuleContext(0, CreateProofFromAuthZoneContext);
 	}
-	public createProofFromAuthZoneByAmount(): CreateProofFromAuthZoneByAmountContext | undefined {
-		return this.tryGetRuleContext(0, CreateProofFromAuthZoneByAmountContext);
+	public createProofFromAuthZoneByAmount():
+		| CreateProofFromAuthZoneByAmountContext
+		| undefined {
+		return this.tryGetRuleContext(
+			0,
+			CreateProofFromAuthZoneByAmountContext
+		);
 	}
-	public createProofFromAuthZoneByIds(): CreateProofFromAuthZoneByIdsContext | undefined {
+	public createProofFromAuthZoneByIds():
+		| CreateProofFromAuthZoneByIdsContext
+		| undefined {
 		return this.tryGetRuleContext(0, CreateProofFromAuthZoneByIdsContext);
 	}
 	public createProofFromBucket(): CreateProofFromBucketContext | undefined {
@@ -3172,7 +4319,9 @@ export class ManifestInstructionContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_manifestInstruction; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_manifestInstruction;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterManifestInstruction) {
@@ -3195,9 +4344,10 @@ export class ManifestInstructionContext extends ParserRuleContext {
 	}
 }
 
-
 export class CallFunctionContext extends ParserRuleContext {
-	public CALL_FUNCTION(): TerminalNode { return this.getToken(TransactionManifestParser.CALL_FUNCTION, 0); }
+	public CALL_FUNCTION(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CALL_FUNCTION, 0);
+	}
 	public packageAddress(): PackageAddressContext {
 		return this.getRuleContext(0, PackageAddressContext);
 	}
@@ -3210,7 +4360,9 @@ export class CallFunctionContext extends ParserRuleContext {
 			return this.getRuleContext(i, StringContext);
 		}
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -3224,7 +4376,9 @@ export class CallFunctionContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_callFunction; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_callFunction;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterCallFunction) {
@@ -3247,16 +4401,19 @@ export class CallFunctionContext extends ParserRuleContext {
 	}
 }
 
-
 export class CallMethodContext extends ParserRuleContext {
-	public CALL_METHOD(): TerminalNode { return this.getToken(TransactionManifestParser.CALL_METHOD, 0); }
+	public CALL_METHOD(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CALL_METHOD, 0);
+	}
 	public componentAddress(): ComponentAddressContext {
 		return this.getRuleContext(0, ComponentAddressContext);
 	}
 	public string(): StringContext {
 		return this.getRuleContext(0, StringContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -3270,7 +4427,9 @@ export class CallMethodContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_callMethod; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_callMethod;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterCallMethod) {
@@ -3293,21 +4452,29 @@ export class CallMethodContext extends ParserRuleContext {
 	}
 }
 
-
 export class CallMethodWithAllResourcesContext extends ParserRuleContext {
-	public CALL_METHOD_WITH_ALL_RESOURCES(): TerminalNode { return this.getToken(TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES, 0); }
+	public CALL_METHOD_WITH_ALL_RESOURCES(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.CALL_METHOD_WITH_ALL_RESOURCES,
+			0
+		);
+	}
 	public componentAddress(): ComponentAddressContext {
 		return this.getRuleContext(0, ComponentAddressContext);
 	}
 	public string(): StringContext {
 		return this.getRuleContext(0, StringContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_callMethodWithAllResources; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_callMethodWithAllResources;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterCallMethodWithAllResources) {
@@ -3330,21 +4497,26 @@ export class CallMethodWithAllResourcesContext extends ParserRuleContext {
 	}
 }
 
-
 export class TakeFromWorktopContext extends ParserRuleContext {
-	public TAKE_FROM_WORKTOP(): TerminalNode { return this.getToken(TransactionManifestParser.TAKE_FROM_WORKTOP, 0); }
+	public TAKE_FROM_WORKTOP(): TerminalNode {
+		return this.getToken(TransactionManifestParser.TAKE_FROM_WORKTOP, 0);
+	}
 	public resourceAddress(): ResourceAddressContext {
 		return this.getRuleContext(0, ResourceAddressContext);
 	}
 	public bucket(): BucketContext {
 		return this.getRuleContext(0, BucketContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_takeFromWorktop; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_takeFromWorktop;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterTakeFromWorktop) {
@@ -3367,9 +4539,13 @@ export class TakeFromWorktopContext extends ParserRuleContext {
 	}
 }
 
-
 export class TakeFromWorktopByAmountContext extends ParserRuleContext {
-	public TAKE_FROM_WORKTOP_BY_AMOUNT(): TerminalNode { return this.getToken(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT, 0); }
+	public TAKE_FROM_WORKTOP_BY_AMOUNT(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.TAKE_FROM_WORKTOP_BY_AMOUNT,
+			0
+		);
+	}
 	public decimal(): DecimalContext {
 		return this.getRuleContext(0, DecimalContext);
 	}
@@ -3379,12 +4555,16 @@ export class TakeFromWorktopByAmountContext extends ParserRuleContext {
 	public bucket(): BucketContext {
 		return this.getRuleContext(0, BucketContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_takeFromWorktopByAmount; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_takeFromWorktopByAmount;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterTakeFromWorktopByAmount) {
@@ -3407,9 +4587,13 @@ export class TakeFromWorktopByAmountContext extends ParserRuleContext {
 	}
 }
 
-
 export class TakeFromWorktopByIdsContext extends ParserRuleContext {
-	public TAKE_FROM_WORKTOP_BY_IDS(): TerminalNode { return this.getToken(TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS, 0); }
+	public TAKE_FROM_WORKTOP_BY_IDS(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.TAKE_FROM_WORKTOP_BY_IDS,
+			0
+		);
+	}
 	public set(): SetContext {
 		return this.getRuleContext(0, SetContext);
 	}
@@ -3419,12 +4603,16 @@ export class TakeFromWorktopByIdsContext extends ParserRuleContext {
 	public bucket(): BucketContext {
 		return this.getRuleContext(0, BucketContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_takeFromWorktopByIds; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_takeFromWorktopByIds;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterTakeFromWorktopByIds) {
@@ -3447,18 +4635,23 @@ export class TakeFromWorktopByIdsContext extends ParserRuleContext {
 	}
 }
 
-
 export class ReturnToWorktopContext extends ParserRuleContext {
-	public RETURN_TO_WORKTOP(): TerminalNode { return this.getToken(TransactionManifestParser.RETURN_TO_WORKTOP, 0); }
+	public RETURN_TO_WORKTOP(): TerminalNode {
+		return this.getToken(TransactionManifestParser.RETURN_TO_WORKTOP, 0);
+	}
 	public bucket(): BucketContext {
 		return this.getRuleContext(0, BucketContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_returnToWorktop; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_returnToWorktop;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterReturnToWorktop) {
@@ -3481,18 +4674,26 @@ export class ReturnToWorktopContext extends ParserRuleContext {
 	}
 }
 
-
 export class AssertWorktopContainsContext extends ParserRuleContext {
-	public ASSERT_WORKTOP_CONTAINS(): TerminalNode { return this.getToken(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS, 0); }
+	public ASSERT_WORKTOP_CONTAINS(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.ASSERT_WORKTOP_CONTAINS,
+			0
+		);
+	}
 	public resourceAddress(): ResourceAddressContext {
 		return this.getRuleContext(0, ResourceAddressContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_assertWorktopContains; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_assertWorktopContains;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterAssertWorktopContains) {
@@ -3515,21 +4716,29 @@ export class AssertWorktopContainsContext extends ParserRuleContext {
 	}
 }
 
-
 export class AssertWorktopContainsByAmountContext extends ParserRuleContext {
-	public ASSERT_WORKTOP_CONTAINS_BY_AMOUNT(): TerminalNode { return this.getToken(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT, 0); }
+	public ASSERT_WORKTOP_CONTAINS_BY_AMOUNT(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_AMOUNT,
+			0
+		);
+	}
 	public decimal(): DecimalContext {
 		return this.getRuleContext(0, DecimalContext);
 	}
 	public resourceAddress(): ResourceAddressContext {
 		return this.getRuleContext(0, ResourceAddressContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_assertWorktopContainsByAmount; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_assertWorktopContainsByAmount;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterAssertWorktopContainsByAmount) {
@@ -3552,21 +4761,29 @@ export class AssertWorktopContainsByAmountContext extends ParserRuleContext {
 	}
 }
 
-
 export class AssertWorktopContainsByIdsContext extends ParserRuleContext {
-	public ASSERT_WORKTOP_CONTAINS_BY_IDS(): TerminalNode { return this.getToken(TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS, 0); }
+	public ASSERT_WORKTOP_CONTAINS_BY_IDS(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.ASSERT_WORKTOP_CONTAINS_BY_IDS,
+			0
+		);
+	}
 	public set(): SetContext {
 		return this.getRuleContext(0, SetContext);
 	}
 	public resourceAddress(): ResourceAddressContext {
 		return this.getRuleContext(0, ResourceAddressContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_assertWorktopContainsByIds; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_assertWorktopContainsByIds;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterAssertWorktopContainsByIds) {
@@ -3589,18 +4806,23 @@ export class AssertWorktopContainsByIdsContext extends ParserRuleContext {
 	}
 }
 
-
 export class PopFromAuthZoneContext extends ParserRuleContext {
-	public POP_FROM_AUTH_ZONE(): TerminalNode { return this.getToken(TransactionManifestParser.POP_FROM_AUTH_ZONE, 0); }
+	public POP_FROM_AUTH_ZONE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.POP_FROM_AUTH_ZONE, 0);
+	}
 	public proof(): ProofContext {
 		return this.getRuleContext(0, ProofContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_popFromAuthZone; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_popFromAuthZone;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterPopFromAuthZone) {
@@ -3623,18 +4845,23 @@ export class PopFromAuthZoneContext extends ParserRuleContext {
 	}
 }
 
-
 export class PushToAuthZoneContext extends ParserRuleContext {
-	public PUSH_TO_AUTH_ZONE(): TerminalNode { return this.getToken(TransactionManifestParser.PUSH_TO_AUTH_ZONE, 0); }
+	public PUSH_TO_AUTH_ZONE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.PUSH_TO_AUTH_ZONE, 0);
+	}
 	public proof(): ProofContext {
 		return this.getRuleContext(0, ProofContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_pushToAuthZone; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_pushToAuthZone;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterPushToAuthZone) {
@@ -3657,21 +4884,29 @@ export class PushToAuthZoneContext extends ParserRuleContext {
 	}
 }
 
-
 export class CreateProofFromAuthZoneContext extends ParserRuleContext {
-	public CREATE_PROOF_FROM_AUTH_ZONE(): TerminalNode { return this.getToken(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE, 0); }
+	public CREATE_PROOF_FROM_AUTH_ZONE(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE,
+			0
+		);
+	}
 	public resourceAddress(): ResourceAddressContext {
 		return this.getRuleContext(0, ResourceAddressContext);
 	}
 	public proof(): ProofContext {
 		return this.getRuleContext(0, ProofContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_createProofFromAuthZone; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_createProofFromAuthZone;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterCreateProofFromAuthZone) {
@@ -3694,9 +4929,13 @@ export class CreateProofFromAuthZoneContext extends ParserRuleContext {
 	}
 }
 
-
 export class CreateProofFromAuthZoneByAmountContext extends ParserRuleContext {
-	public CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT(): TerminalNode { return this.getToken(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT, 0); }
+	public CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT,
+			0
+		);
+	}
 	public decimal(): DecimalContext {
 		return this.getRuleContext(0, DecimalContext);
 	}
@@ -3706,12 +4945,16 @@ export class CreateProofFromAuthZoneByAmountContext extends ParserRuleContext {
 	public proof(): ProofContext {
 		return this.getRuleContext(0, ProofContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_createProofFromAuthZoneByAmount; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_createProofFromAuthZoneByAmount;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterCreateProofFromAuthZoneByAmount) {
@@ -3734,9 +4977,13 @@ export class CreateProofFromAuthZoneByAmountContext extends ParserRuleContext {
 	}
 }
 
-
 export class CreateProofFromAuthZoneByIdsContext extends ParserRuleContext {
-	public CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS(): TerminalNode { return this.getToken(TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS, 0); }
+	public CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS,
+			0
+		);
+	}
 	public set(): SetContext {
 		return this.getRuleContext(0, SetContext);
 	}
@@ -3746,12 +4993,16 @@ export class CreateProofFromAuthZoneByIdsContext extends ParserRuleContext {
 	public proof(): ProofContext {
 		return this.getRuleContext(0, ProofContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_createProofFromAuthZoneByIds; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_createProofFromAuthZoneByIds;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterCreateProofFromAuthZoneByIds) {
@@ -3774,21 +5025,29 @@ export class CreateProofFromAuthZoneByIdsContext extends ParserRuleContext {
 	}
 }
 
-
 export class CreateProofFromBucketContext extends ParserRuleContext {
-	public CREATE_PROOF_FROM_BUCKET(): TerminalNode { return this.getToken(TransactionManifestParser.CREATE_PROOF_FROM_BUCKET, 0); }
+	public CREATE_PROOF_FROM_BUCKET(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.CREATE_PROOF_FROM_BUCKET,
+			0
+		);
+	}
 	public bucket(): BucketContext {
 		return this.getRuleContext(0, BucketContext);
 	}
 	public proof(): ProofContext {
 		return this.getRuleContext(0, ProofContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_createProofFromBucket; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_createProofFromBucket;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterCreateProofFromBucket) {
@@ -3811,9 +5070,10 @@ export class CreateProofFromBucketContext extends ParserRuleContext {
 	}
 }
 
-
 export class CloneProofContext extends ParserRuleContext {
-	public CLONE_PROOF(): TerminalNode { return this.getToken(TransactionManifestParser.CLONE_PROOF, 0); }
+	public CLONE_PROOF(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLONE_PROOF, 0);
+	}
 	public proof(): ProofContext[];
 	public proof(i: number): ProofContext;
 	public proof(i?: number): ProofContext | ProofContext[] {
@@ -3823,12 +5083,16 @@ export class CloneProofContext extends ParserRuleContext {
 			return this.getRuleContext(i, ProofContext);
 		}
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_cloneProof; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_cloneProof;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterCloneProof) {
@@ -3851,18 +5115,23 @@ export class CloneProofContext extends ParserRuleContext {
 	}
 }
 
-
 export class DropProofContext extends ParserRuleContext {
-	public DROP_PROOF(): TerminalNode { return this.getToken(TransactionManifestParser.DROP_PROOF, 0); }
+	public DROP_PROOF(): TerminalNode {
+		return this.getToken(TransactionManifestParser.DROP_PROOF, 0);
+	}
 	public proof(): ProofContext {
 		return this.getRuleContext(0, ProofContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_dropProof; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_dropProof;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterDropProof) {
@@ -3885,15 +5154,20 @@ export class DropProofContext extends ParserRuleContext {
 	}
 }
 
-
 export class DropAllProofsContext extends ParserRuleContext {
-	public DROP_ALL_PROOFS(): TerminalNode { return this.getToken(TransactionManifestParser.DROP_ALL_PROOFS, 0); }
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public DROP_ALL_PROOFS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.DROP_ALL_PROOFS, 0);
+	}
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_dropAllProofs; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_dropAllProofs;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterDropAllProofs) {
@@ -3916,15 +5190,20 @@ export class DropAllProofsContext extends ParserRuleContext {
 	}
 }
 
-
 export class ClearAuthZoneContext extends ParserRuleContext {
-	public CLEAR_AUTHZONE(): TerminalNode { return this.getToken(TransactionManifestParser.CLEAR_AUTHZONE, 0); }
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public CLEAR_AUTHZONE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLEAR_AUTHZONE, 0);
+	}
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_clearAuthZone; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_clearAuthZone;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterClearAuthZone) {
@@ -3947,18 +5226,23 @@ export class ClearAuthZoneContext extends ParserRuleContext {
 	}
 }
 
-
 export class PublishPackageContext extends ParserRuleContext {
-	public PUBLISH_PACKAGE(): TerminalNode { return this.getToken(TransactionManifestParser.PUBLISH_PACKAGE, 0); }
+	public PUBLISH_PACKAGE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.PUBLISH_PACKAGE, 0);
+	}
 	public bytes(): BytesContext {
 		return this.getRuleContext(0, BytesContext);
 	}
-	public SEMICOLON(): TerminalNode { return this.getToken(TransactionManifestParser.SEMICOLON, 0); }
+	public SEMICOLON(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SEMICOLON, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_publishPackage; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_publishPackage;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterPublishPackage) {
@@ -3981,13 +5265,14 @@ export class PublishPackageContext extends ParserRuleContext {
 	}
 }
 
-
 export class UnitContext extends ParserRuleContext {
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_unit; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_unit;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterUnit) {
@@ -4010,14 +5295,17 @@ export class UnitContext extends ParserRuleContext {
 	}
 }
 
-
 export class BoolContext extends ParserRuleContext {
-	public BOOL_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.BOOL_LITERAL, 0); }
+	public BOOL_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.BOOL_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_bool; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_bool;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterBool) {
@@ -4040,14 +5328,17 @@ export class BoolContext extends ParserRuleContext {
 	}
 }
 
-
 export class I8Context extends ParserRuleContext {
-	public I8_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.I8_LITERAL, 0); }
+	public I8_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.I8_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_i8; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_i8;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterI8) {
@@ -4070,14 +5361,17 @@ export class I8Context extends ParserRuleContext {
 	}
 }
 
-
 export class I16Context extends ParserRuleContext {
-	public I16_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.I16_LITERAL, 0); }
+	public I16_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.I16_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_i16; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_i16;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterI16) {
@@ -4100,14 +5394,17 @@ export class I16Context extends ParserRuleContext {
 	}
 }
 
-
 export class I32Context extends ParserRuleContext {
-	public I32_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.I32_LITERAL, 0); }
+	public I32_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.I32_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_i32; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_i32;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterI32) {
@@ -4130,14 +5427,17 @@ export class I32Context extends ParserRuleContext {
 	}
 }
 
-
 export class I64Context extends ParserRuleContext {
-	public I64_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.I64_LITERAL, 0); }
+	public I64_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.I64_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_i64; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_i64;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterI64) {
@@ -4160,14 +5460,17 @@ export class I64Context extends ParserRuleContext {
 	}
 }
 
-
 export class I128Context extends ParserRuleContext {
-	public I128_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.I128_LITERAL, 0); }
+	public I128_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.I128_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_i128; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_i128;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterI128) {
@@ -4190,14 +5493,17 @@ export class I128Context extends ParserRuleContext {
 	}
 }
 
-
 export class U8Context extends ParserRuleContext {
-	public U8_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.U8_LITERAL, 0); }
+	public U8_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.U8_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_u8; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_u8;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterU8) {
@@ -4220,14 +5526,17 @@ export class U8Context extends ParserRuleContext {
 	}
 }
 
-
 export class U16Context extends ParserRuleContext {
-	public U16_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.U16_LITERAL, 0); }
+	public U16_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.U16_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_u16; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_u16;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterU16) {
@@ -4250,14 +5559,17 @@ export class U16Context extends ParserRuleContext {
 	}
 }
 
-
 export class U32Context extends ParserRuleContext {
-	public U32_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.U32_LITERAL, 0); }
+	public U32_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.U32_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_u32; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_u32;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterU32) {
@@ -4280,14 +5592,17 @@ export class U32Context extends ParserRuleContext {
 	}
 }
 
-
 export class U64Context extends ParserRuleContext {
-	public U64_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.U64_LITERAL, 0); }
+	public U64_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.U64_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_u64; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_u64;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterU64) {
@@ -4310,14 +5625,17 @@ export class U64Context extends ParserRuleContext {
 	}
 }
 
-
 export class U128Context extends ParserRuleContext {
-	public U128_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.U128_LITERAL, 0); }
+	public U128_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.U128_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_u128; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_u128;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterU128) {
@@ -4340,14 +5658,17 @@ export class U128Context extends ParserRuleContext {
 	}
 }
 
-
 export class StringContext extends ParserRuleContext {
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_string; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_string;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterString) {
@@ -4370,11 +5691,16 @@ export class StringContext extends ParserRuleContext {
 	}
 }
 
-
 export class StructContext extends ParserRuleContext {
-	public STRUCT_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.STRUCT_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public STRUCT_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRUCT_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4397,7 +5723,9 @@ export class StructContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_struct; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_struct;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterStruct) {
@@ -4420,11 +5748,16 @@ export class StructContext extends ParserRuleContext {
 	}
 }
 
-
 export class Enum_Context extends ParserRuleContext {
-	public ENUM_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.ENUM_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public ENUM_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.ENUM_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public string(): StringContext | undefined {
 		return this.tryGetRuleContext(0, StringContext);
 	}
@@ -4450,7 +5783,9 @@ export class Enum_Context extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_enum_; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_enum_;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterEnum_) {
@@ -4473,7 +5808,6 @@ export class Enum_Context extends ParserRuleContext {
 	}
 }
 
-
 export class OptionContext extends ParserRuleContext {
 	public some(): SomeContext | undefined {
 		return this.tryGetRuleContext(0, SomeContext);
@@ -4485,7 +5819,9 @@ export class OptionContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_option; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_option;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterOption) {
@@ -4508,11 +5844,16 @@ export class OptionContext extends ParserRuleContext {
 	}
 }
 
-
 export class SomeContext extends ParserRuleContext {
-	public SOME_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.SOME_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public SOME_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SOME_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4535,7 +5876,9 @@ export class SomeContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_some; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_some;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterSome) {
@@ -4558,14 +5901,17 @@ export class SomeContext extends ParserRuleContext {
 	}
 }
 
-
 export class NoneContext extends ParserRuleContext {
-	public NONE_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.NONE_TYPE, 0); }
+	public NONE_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.NONE_TYPE, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_none; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_none;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterNone) {
@@ -4588,11 +5934,16 @@ export class NoneContext extends ParserRuleContext {
 	}
 }
 
-
 export class OkContext extends ParserRuleContext {
-	public OK_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.OK_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public OK_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OK_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4615,7 +5966,9 @@ export class OkContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_ok; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_ok;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterOk) {
@@ -4638,11 +5991,16 @@ export class OkContext extends ParserRuleContext {
 	}
 }
 
-
 export class ErrContext extends ParserRuleContext {
-	public ERR_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.ERR_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public ERR_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.ERR_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4665,7 +6023,9 @@ export class ErrContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_err; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_err;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterErr) {
@@ -4688,16 +6048,25 @@ export class ErrContext extends ParserRuleContext {
 	}
 }
 
-
 export class ArrayContext extends ParserRuleContext {
-	public ARRAY_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.ARRAY_TYPE, 0); }
-	public LESS_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.LESS_THAN, 0); }
+	public ARRAY_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.ARRAY_TYPE, 0);
+	}
+	public LESS_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.LESS_THAN, 0);
+	}
 	public type(): TypeContext {
 		return this.getRuleContext(0, TypeContext);
 	}
-	public GREATER_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.GREATER_THAN, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public GREATER_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.GREATER_THAN, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4720,7 +6089,9 @@ export class ArrayContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_array; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_array;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterArray) {
@@ -4743,12 +6114,19 @@ export class ArrayContext extends ParserRuleContext {
 	}
 }
 
-
 export class TupleContext extends ParserRuleContext {
-	public TUPLE_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.TUPLE_TYPE, 0); }
-	public LESS_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.LESS_THAN, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public TUPLE_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.TUPLE_TYPE, 0);
+	}
+	public LESS_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.LESS_THAN, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4771,7 +6149,9 @@ export class TupleContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_tuple; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_tuple;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterTuple) {
@@ -4794,16 +6174,25 @@ export class TupleContext extends ParserRuleContext {
 	}
 }
 
-
 export class ListContext extends ParserRuleContext {
-	public LIST_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.LIST_TYPE, 0); }
-	public LESS_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.LESS_THAN, 0); }
+	public LIST_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.LIST_TYPE, 0);
+	}
+	public LESS_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.LESS_THAN, 0);
+	}
 	public type(): TypeContext {
 		return this.getRuleContext(0, TypeContext);
 	}
-	public GREATER_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.GREATER_THAN, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public GREATER_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.GREATER_THAN, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4826,7 +6215,9 @@ export class ListContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_list; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_list;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterList) {
@@ -4849,16 +6240,25 @@ export class ListContext extends ParserRuleContext {
 	}
 }
 
-
 export class SetContext extends ParserRuleContext {
-	public SET_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.SET_TYPE, 0); }
-	public LESS_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.LESS_THAN, 0); }
+	public SET_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.SET_TYPE, 0);
+	}
+	public LESS_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.LESS_THAN, 0);
+	}
 	public type(): TypeContext {
 		return this.getRuleContext(0, TypeContext);
 	}
-	public GREATER_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.GREATER_THAN, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public GREATER_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.GREATER_THAN, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4881,7 +6281,9 @@ export class SetContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_set; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_set;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterSet) {
@@ -4904,10 +6306,13 @@ export class SetContext extends ParserRuleContext {
 	}
 }
 
-
 export class MapContext extends ParserRuleContext {
-	public MAP_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.MAP_TYPE, 0); }
-	public LESS_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.LESS_THAN, 0); }
+	public MAP_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.MAP_TYPE, 0);
+	}
+	public LESS_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.LESS_THAN, 0);
+	}
 	public type(): TypeContext[];
 	public type(i: number): TypeContext;
 	public type(i?: number): TypeContext | TypeContext[] {
@@ -4926,9 +6331,15 @@ export class MapContext extends ParserRuleContext {
 			return this.getToken(TransactionManifestParser.COMMA, i);
 		}
 	}
-	public GREATER_THAN(): TerminalNode { return this.getToken(TransactionManifestParser.GREATER_THAN, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public GREATER_THAN(): TerminalNode {
+		return this.getToken(TransactionManifestParser.GREATER_THAN, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	public value(): ValueContext[];
 	public value(i: number): ValueContext;
 	public value(i?: number): ValueContext | ValueContext[] {
@@ -4942,7 +6353,9 @@ export class MapContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_map; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_map;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterMap) {
@@ -4965,17 +6378,26 @@ export class MapContext extends ParserRuleContext {
 	}
 }
 
-
 export class DecimalContext extends ParserRuleContext {
-	public DECIMAL_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.DECIMAL_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public DECIMAL_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.DECIMAL_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_decimal; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_decimal;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterDecimal) {
@@ -4998,17 +6420,26 @@ export class DecimalContext extends ParserRuleContext {
 	}
 }
 
-
 export class PreciseDecimalContext extends ParserRuleContext {
-	public PRECISE_DECIMAL_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.PRECISE_DECIMAL_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public PRECISE_DECIMAL_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.PRECISE_DECIMAL_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_preciseDecimal; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_preciseDecimal;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterPreciseDecimal) {
@@ -5031,17 +6462,26 @@ export class PreciseDecimalContext extends ParserRuleContext {
 	}
 }
 
-
 export class PackageAddressContext extends ParserRuleContext {
-	public PACKAGE_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.PACKAGE_ADDRESS_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public PACKAGE_ADDRESS_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.PACKAGE_ADDRESS_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_packageAddress; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_packageAddress;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterPackageAddress) {
@@ -5064,17 +6504,29 @@ export class PackageAddressContext extends ParserRuleContext {
 	}
 }
 
-
 export class ComponentAddressContext extends ParserRuleContext {
-	public COMPONENT_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.COMPONENT_ADDRESS_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public COMPONENT_ADDRESS_TYPE(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.COMPONENT_ADDRESS_TYPE,
+			0
+		);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_componentAddress; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_componentAddress;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterComponentAddress) {
@@ -5097,17 +6549,29 @@ export class ComponentAddressContext extends ParserRuleContext {
 	}
 }
 
-
 export class ResourceAddressContext extends ParserRuleContext {
-	public RESOURCE_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.RESOURCE_ADDRESS_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public RESOURCE_ADDRESS_TYPE(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.RESOURCE_ADDRESS_TYPE,
+			0
+		);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_resourceAddress; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_resourceAddress;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterResourceAddress) {
@@ -5130,17 +6594,26 @@ export class ResourceAddressContext extends ParserRuleContext {
 	}
 }
 
-
 export class HashContext extends ParserRuleContext {
-	public HASH_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.HASH_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public HASH_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.HASH_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_hash; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_hash;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterHash) {
@@ -5163,18 +6636,29 @@ export class HashContext extends ParserRuleContext {
 	}
 }
 
-
 export class BucketContext extends ParserRuleContext {
-	public BUCKET_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.BUCKET_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public U32_LITERAL(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.U32_LITERAL, 0); }
+	public BUCKET_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.BUCKET_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public U32_LITERAL(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.U32_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_bucket; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_bucket;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterBucket) {
@@ -5197,18 +6681,29 @@ export class BucketContext extends ParserRuleContext {
 	}
 }
 
-
 export class ProofContext extends ParserRuleContext {
-	public PROOF_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.PROOF_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public U32_LITERAL(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.U32_LITERAL, 0); }
+	public PROOF_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.PROOF_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public U32_LITERAL(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.U32_LITERAL, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_proof; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_proof;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterProof) {
@@ -5231,17 +6726,26 @@ export class ProofContext extends ParserRuleContext {
 	}
 }
 
-
 export class NonFungibleIdContext extends ParserRuleContext {
-	public NON_FUNGIBLE_ID_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public NON_FUNGIBLE_ID_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_nonFungibleId; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_nonFungibleId;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterNonFungibleId) {
@@ -5264,17 +6768,29 @@ export class NonFungibleIdContext extends ParserRuleContext {
 	}
 }
 
-
 export class NonFungibleAddressContext extends ParserRuleContext {
-	public NON_FUNGIBLE_ADDRESS_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public NON_FUNGIBLE_ADDRESS_TYPE(): TerminalNode {
+		return this.getToken(
+			TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE,
+			0
+		);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_nonFungibleAddress; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_nonFungibleAddress;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterNonFungibleAddress) {
@@ -5297,17 +6813,26 @@ export class NonFungibleAddressContext extends ParserRuleContext {
 	}
 }
 
-
 export class BytesContext extends ParserRuleContext {
-	public BYTES_TYPE(): TerminalNode { return this.getToken(TransactionManifestParser.BYTES_TYPE, 0); }
-	public OPEN_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0); }
-	public STRING_LITERAL(): TerminalNode { return this.getToken(TransactionManifestParser.STRING_LITERAL, 0); }
-	public CLOED_PARENTHESIS(): TerminalNode { return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0); }
+	public BYTES_TYPE(): TerminalNode {
+		return this.getToken(TransactionManifestParser.BYTES_TYPE, 0);
+	}
+	public OPEN_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.OPEN_PARENTHESIS, 0);
+	}
+	public STRING_LITERAL(): TerminalNode {
+		return this.getToken(TransactionManifestParser.STRING_LITERAL, 0);
+	}
+	public CLOED_PARENTHESIS(): TerminalNode {
+		return this.getToken(TransactionManifestParser.CLOED_PARENTHESIS, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_bytes; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_bytes;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterBytes) {
@@ -5330,50 +6855,143 @@ export class BytesContext extends ParserRuleContext {
 	}
 }
 
-
 export class TypeContext extends ParserRuleContext {
-	public UNIT_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.UNIT_TYPE, 0); }
-	public BOOL_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.BOOL_TYPE, 0); }
-	public I8_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.I8_TYPE, 0); }
-	public I16_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.I16_TYPE, 0); }
-	public I32_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.I32_TYPE, 0); }
-	public I64_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.I64_TYPE, 0); }
-	public I128_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.I128_TYPE, 0); }
-	public U8_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.U8_TYPE, 0); }
-	public U16_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.U16_TYPE, 0); }
-	public U32_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.U32_TYPE, 0); }
-	public U64_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.U64_TYPE, 0); }
-	public U128_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.U128_TYPE, 0); }
-	public STRING_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.STRING_TYPE, 0); }
-	public STRUCT_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.STRUCT_TYPE, 0); }
-	public ENUM_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.ENUM_TYPE, 0); }
-	public OPTION_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.OPTION_TYPE, 0); }
-	public RESULT_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.RESULT_TYPE, 0); }
-	public SOME_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.SOME_TYPE, 0); }
-	public NONE_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.NONE_TYPE, 0); }
-	public OK_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.OK_TYPE, 0); }
-	public ERR_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.ERR_TYPE, 0); }
-	public ARRAY_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.ARRAY_TYPE, 0); }
-	public TUPLE_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.TUPLE_TYPE, 0); }
-	public LIST_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.LIST_TYPE, 0); }
-	public SET_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.SET_TYPE, 0); }
-	public MAP_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.MAP_TYPE, 0); }
-	public DECIMAL_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.DECIMAL_TYPE, 0); }
-	public PRECISE_DECIMAL_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.PRECISE_DECIMAL_TYPE, 0); }
-	public PACKAGE_ADDRESS_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.PACKAGE_ADDRESS_TYPE, 0); }
-	public COMPONENT_ADDRESS_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.COMPONENT_ADDRESS_TYPE, 0); }
-	public RESOURCE_ADDRESS_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.RESOURCE_ADDRESS_TYPE, 0); }
-	public HASH_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.HASH_TYPE, 0); }
-	public BUCKET_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.BUCKET_TYPE, 0); }
-	public PROOF_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.PROOF_TYPE, 0); }
-	public NON_FUNGIBLE_ID_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.NON_FUNGIBLE_ID_TYPE, 0); }
-	public NON_FUNGIBLE_ADDRESS_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE, 0); }
-	public BYTES_TYPE(): TerminalNode | undefined { return this.tryGetToken(TransactionManifestParser.BYTES_TYPE, 0); }
+	public UNIT_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.UNIT_TYPE, 0);
+	}
+	public BOOL_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.BOOL_TYPE, 0);
+	}
+	public I8_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.I8_TYPE, 0);
+	}
+	public I16_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.I16_TYPE, 0);
+	}
+	public I32_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.I32_TYPE, 0);
+	}
+	public I64_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.I64_TYPE, 0);
+	}
+	public I128_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.I128_TYPE, 0);
+	}
+	public U8_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.U8_TYPE, 0);
+	}
+	public U16_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.U16_TYPE, 0);
+	}
+	public U32_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.U32_TYPE, 0);
+	}
+	public U64_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.U64_TYPE, 0);
+	}
+	public U128_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.U128_TYPE, 0);
+	}
+	public STRING_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.STRING_TYPE, 0);
+	}
+	public STRUCT_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.STRUCT_TYPE, 0);
+	}
+	public ENUM_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.ENUM_TYPE, 0);
+	}
+	public OPTION_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.OPTION_TYPE, 0);
+	}
+	public RESULT_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.RESULT_TYPE, 0);
+	}
+	public SOME_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.SOME_TYPE, 0);
+	}
+	public NONE_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.NONE_TYPE, 0);
+	}
+	public OK_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.OK_TYPE, 0);
+	}
+	public ERR_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.ERR_TYPE, 0);
+	}
+	public ARRAY_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.ARRAY_TYPE, 0);
+	}
+	public TUPLE_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.TUPLE_TYPE, 0);
+	}
+	public LIST_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.LIST_TYPE, 0);
+	}
+	public SET_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.SET_TYPE, 0);
+	}
+	public MAP_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.MAP_TYPE, 0);
+	}
+	public DECIMAL_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.DECIMAL_TYPE, 0);
+	}
+	public PRECISE_DECIMAL_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(
+			TransactionManifestParser.PRECISE_DECIMAL_TYPE,
+			0
+		);
+	}
+	public PACKAGE_ADDRESS_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(
+			TransactionManifestParser.PACKAGE_ADDRESS_TYPE,
+			0
+		);
+	}
+	public COMPONENT_ADDRESS_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(
+			TransactionManifestParser.COMPONENT_ADDRESS_TYPE,
+			0
+		);
+	}
+	public RESOURCE_ADDRESS_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(
+			TransactionManifestParser.RESOURCE_ADDRESS_TYPE,
+			0
+		);
+	}
+	public HASH_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.HASH_TYPE, 0);
+	}
+	public BUCKET_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.BUCKET_TYPE, 0);
+	}
+	public PROOF_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.PROOF_TYPE, 0);
+	}
+	public NON_FUNGIBLE_ID_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(
+			TransactionManifestParser.NON_FUNGIBLE_ID_TYPE,
+			0
+		);
+	}
+	public NON_FUNGIBLE_ADDRESS_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(
+			TransactionManifestParser.NON_FUNGIBLE_ADDRESS_TYPE,
+			0
+		);
+	}
+	public BYTES_TYPE(): TerminalNode | undefined {
+		return this.tryGetToken(TransactionManifestParser.BYTES_TYPE, 0);
+	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_type; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_type;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterType) {
@@ -5395,7 +7013,6 @@ export class TypeContext extends ParserRuleContext {
 		}
 	}
 }
-
 
 export class ValueContext extends ParserRuleContext {
 	public unit(): UnitContext | undefined {
@@ -5510,7 +7127,9 @@ export class ValueContext extends ParserRuleContext {
 		super(parent, invokingState);
 	}
 	// @Override
-	public get ruleIndex(): number { return TransactionManifestParser.RULE_value; }
+	public get ruleIndex(): number {
+		return TransactionManifestParser.RULE_value;
+	}
 	// @Override
 	public enterRule(listener: TransactionManifestListener): void {
 		if (listener.enterValue) {
@@ -5532,5 +7151,3 @@ export class ValueContext extends ParserRuleContext {
 		}
 	}
 }
-
-
