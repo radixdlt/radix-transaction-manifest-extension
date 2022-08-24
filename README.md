@@ -177,7 +177,10 @@ The extension adds grammar and syntax rules for transaction manifest files which
 
 ## Option 1: Install through VS Code marketplace
 
-Coming soon!
+You can install this extension through the VS Code marketplace by doing the following:
+
+1. Find the [extension](https://marketplace.visualstudio.com/items?itemName=RadixPublishing.radix-transaction-manifest-support) on the VS Code marketplace.
+2. Click on "Install". This will open VS Code for you and will take you to the extension listing.
 
 ## Option 2: Installing through the .vsix file
 
