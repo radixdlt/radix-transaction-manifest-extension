@@ -197,3 +197,7 @@ If you would like to build and package your own extension from source for the pu
 
 1. In your command line, run the command: `vsce package`. This packages the extension for you in a vsix file.
 2. Follow the steps in "Option 2" above to install the vsix file you packaged.
+
+# Issus and Bug Reports
+
+If you have any questions or encounter any bugs or issues that you would like to report, you can [file an issue](https://github.com/radixdlt/radix-transaction-manifest-extension/issues/new) on the extension's GitHub repository. 
