@@ -66,15 +66,49 @@
 				"command": "extension.runManifest",
 				"title": "Radix Transaction Manifest: Run the currently open transaction manifest",
 				"icon": "$(play)"
-			},
+			}
+		],
+		"configuration":[
 			{
-				"command": "extension.defaultAccount",
-				"title": "Radix Transaction Manifest: Copy default account address to clipboard"
-			},
-			{
-				"command": "extension.newAccount",
-				"title": "Radix Transaction Manifest: Create a new account",
-				"icon": "$(person)"
+				"title": "Diagnostics",
+				"properties": {
+					"rtm.diagnostics.enableGeneralDiagnostics": {
+						"type": "boolean",
+						"scope": "window",
+						"default": true,
+						"description": "Allows you to control whether the General Diagnostics Provider should be enabled or disabled."
+					},
+					"rtm.diagnostics.enableAddressDiagnostics": {
+						"type": "boolean",
+						"scope": "window",
+						"default": true,
+						"description": "Allows you to control whether the Address Diagnostics Provider should be enabled or disabled."
+					},
+					"rtm.diagnostics.enableIdValidatorDiagnostics": {
+						"type": "boolean",
+						"scope": "window",
+						"default": true,
+						"description": "Allows you to control whether the Id Validator Diagnostics Provider should be enabled or disabled."
+					},
+					"rtm.diagnostics.enableLexerDiagnostics": {
+						"type": "boolean",
+						"scope": "window",
+						"default": true,
+						"description": "Allows you to control whether the Lexer Diagnostics Provider should be enabled or disabled."
+					},
+					"rtm.diagnostics.enableParserDiagnostics": {
+						"type": "boolean",
+						"scope": "window",
+						"default": true,
+						"description": "Allows you to control whether the Parser Diagnostics Provider should be enabled or disabled."
+					},
+					"rtm.diagnostics.enableNumbersDiagnostics": {
+						"type": "boolean",
+						"scope": "window",
+						"default": true,
+						"description": "Allows you to control whether the Numbers Diagnostics Provider should be enabled or disabled."
+					}
+				}
 			}
 		],
 		"menus": {

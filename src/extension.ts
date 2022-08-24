@@ -24,6 +24,7 @@ import {
 	LexerDiagnosticsProvider,
 	GeneralDiagnosticsProvider,
 	IdValidationDiagnosticsProvider,
+	DiagnosticsProvider,
 } from "./diagnostic_providers";
 import { BasicFormattingProvider } from "./formatting_providers";
 import * as vscode from "vscode";
@@ -79,24 +80,23 @@ export async function activate(context: vscode.ExtensionContext) {
 	): vscode.Diagnostic[] => {
 		let diagnostics: vscode.Diagnostic[] = [];
 
-		diagnostics.push(
-			...new AddressesDiagnosticProvider(document).getDiagnostics()
-		);
-		diagnostics.push(
-			...new NumbersDiagnosticsProvider(document).getDiagnostics()
-		);
-		diagnostics.push(
-			...new ParsingDiagnosticsProvider(document).getDiagnostics()
-		);
-		diagnostics.push(
-			...new LexerDiagnosticsProvider(document).getDiagnostics()
-		);
-		diagnostics.push(
-			...new GeneralDiagnosticsProvider(document).getDiagnostics()
-		);
-		diagnostics.push(
-			...new IdValidationDiagnosticsProvider(document).getDiagnostics()
-		);
+		// Only add the diagnostic provider that the configuration allows for.
+		let diagnosticConfigClassMapping: [string, typeof DiagnosticsProvider][] = [
+			['enableIdValidatorDiagnostics', IdValidationDiagnosticsProvider],
+			['enableAddressDiagnostics', AddressesDiagnosticProvider],
+			['enableGeneralDiagnostics', GeneralDiagnosticsProvider],
+			['enableNumbersDiagnostics', NumbersDiagnosticsProvider],
+			['enableParserDiagnostics', ParsingDiagnosticsProvider],
+			['enableLexerDiagnostics', LexerDiagnosticsProvider],
+		];
+
+		let diagnosticsConfiguration: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('rtm.diagnostics');
+		for (const [configurationName, diagnosticsProvider] of diagnosticConfigClassMapping) {
+			if (diagnosticsConfiguration.get(configurationName)) {
+				// @ts-ignore
+				diagnostics.push(...new diagnosticsProvider(document).getDiagnostics());
+			}
+		}
 
 		return diagnostics;
 	};
