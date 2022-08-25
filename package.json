@@ -16,7 +16,7 @@
 		"Formatters",
 		"Linters"
 	],
-	"license": "Apache",
+	"license": "Apache-2.0",
 	"activationEvents": [
 		"onLanguage:rtm"
 	],
