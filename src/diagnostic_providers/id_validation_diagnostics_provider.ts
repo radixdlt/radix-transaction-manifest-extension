@@ -19,9 +19,9 @@
 
 import {
 	BucketContext,
+	BurnBucketContext,
 	CallFunctionContext,
 	CallMethodContext,
-	CallMethodWithAllResourcesContext,
 	CloneProofContext,
 	CreateProofFromAuthZoneByAmountContext,
 	CreateProofFromAuthZoneByIdsContext,
@@ -29,6 +29,7 @@ import {
 	CreateProofFromBucketContext,
 	DropAllProofsContext,
 	DropProofContext,
+	ExpressionContext,
 	PopFromAuthZoneContext,
 	ProofContext,
 	PushToAuthZoneContext,
@@ -207,18 +208,20 @@ export default class IdValidationDiagnosticsProvider
 		}
 	}
 
-	enterCallMethodWithAllResources(_: CallMethodWithAllResourcesContext) {
-		for (var bucket of this.getBuckets()) {
-			this.removeObject(bucket);
-		}
-	}
-
 	enterCallMethod(context: CallMethodContext) {
 		this.handleCallMethodOrFunction(context);
 	}
 
 	enterCallFunction(context: CallFunctionContext) {
 		this.handleCallMethodOrFunction(context);
+	}
+
+	enterBurnBucket(context: BurnBucketContext) {
+		this.removeObject(
+			context.children![
+				context.children!.length - 2
+			] as ScryptoObjectContext
+		);
 	}
 
 	// ==================================
@@ -320,6 +323,15 @@ export default class IdValidationDiagnosticsProvider
 				child instanceof ProofContext
 			) {
 				this.removeObject(child);
+			} else if (child instanceof ExpressionContext) {
+				let expressionString: string = child.text.split('"')[1];
+				switch (expressionString) {
+					case "ENTIRE_WORKTOP":
+						for (var bucket of this.getBuckets()) {
+							this.removeObject(bucket);
+						}
+						return;
+				}
 			}
 		}
 	}
@@ -409,7 +421,11 @@ function flattenTree(tree: ParseTree[]): ParseTree[] {
 	let flattened: ParseTree[] = [];
 
 	for (var token of tree) {
-		if (token instanceof BucketContext || token instanceof ProofContext) {
+		if (
+			token instanceof BucketContext ||
+			token instanceof ProofContext ||
+			token instanceof ExpressionContext
+		) {
 			flattened.push(token);
 		}
 		// @ts-ignore

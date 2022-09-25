@@ -127,8 +127,27 @@
 	"Publish Package": {
 		"scope": "scope.rtm",
 		"prefix": "PUBLISH_PACKAGE",
-		"body": "PUBLISH_PACKAGE Bytes(\"${1:Package Blob}\");",
+		"body": "PUBLISH_PACKAGE Blob(\"${1:Package WASM Blob}\") Blob(\"${2:Package ABI Blob}\");",
 		"description": "Publishes a package."
+	},
+
+	"Mint Fungible": {
+		"scope": "scope.rtm",
+		"prefix": "MINT_FUNGIBLE",
+		"body": "MINT_FUNGIBLE ResourceAddress(\"${1:Resource Address}\") Decimal(\"${2:Amount}\");",
+		"description": "Mints a fungible token."
+	},
+	"Burn Bucket": {
+		"scope": "scope.rtm",
+		"prefix": "BURN_BUCKET",
+		"body": "BURN_BUCKET Bucket(\"${1:Bucket Name}\");",
+		"description": "Burns a Bucket."
+	},
+	"Create Resource": {
+		"scope": "scope.rtm",
+		"prefix": "CREATE_RESOURCE",
+		"body": "CREATE_RESOURCE Enum(\"Fungible\", ${1:Token Divisibility}u8) Map<String, String>(String(\"name\"), String(\"${2:Token Name}\")) Map<Enum, Tuple>(Enum(\"Withdraw\"), Tuple(Enum(\"AllowAll\"), Enum(\"LOCKED\"))) Some(Enum(\"Fungible\", Decimal(\"${3:Initial Supply}\")))",
+		"description": "Creates a new resource."
 	},
 
 	// ==================
@@ -164,10 +183,15 @@
 	// Common Types
 	// =============
 
-	"Bytes": {
+	"Blob": {
 		"scope": "scope.rtm",
-		"prefix": "Bytes",
-		"body": "Bytes(\"${1:Bytes Hex}\")"
+		"prefix": "Blob",
+		"body": "Blob(\"${1:Blob Hash}\")"
+	},
+	"Expression": {
+		"scope": "scope.rtm",
+		"prefix": "Expression",
+		"body": "Expression(\"${1|ENTIRE_WORKTOP,ENTIRE_AUTH_ZONE|}\")"
 	},
 	"Hash": {
 		"scope": "scope.rtm",

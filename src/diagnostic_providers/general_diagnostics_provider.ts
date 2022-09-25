@@ -18,7 +18,8 @@
 "use strict";
 
 import {
-	BytesContext,
+	BlobContext,
+	ExpressionContext,
 	NonFungibleAddressContext,
 	NonFungibleIdContext,
 	TransactionManifestParser,
@@ -28,6 +29,7 @@ import { TransactionManifestLexer } from "../antlr/TransactionManifestLexer";
 import { CharStream, CharStreams, CommonTokenStream } from "antlr4ts";
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 import { ParseTreeWalker } from "antlr4ts/tree/ParseTreeWalker";
+import { Buffer } from "buffer";
 
 import DiagnosticsProvider from "./diagnostics_provider";
 import * as vscode from "vscode";
@@ -75,8 +77,7 @@ export default class GeneralDiagnosticsProvider
 		if (!this.isHex(nonFungibleId)) {
 			this.addDiagnostic(
 				context,
-				"Invalid Hex: This NonFungibleId is not a valid hexadecimal number",
-				vscode.DiagnosticSeverity.Error
+				"Invalid Hex: This NonFungibleId is not a valid hexadecimal number"
 			);
 			return;
 		}
@@ -95,29 +96,44 @@ export default class GeneralDiagnosticsProvider
 		if (!resourceAddress.startsWith("00") || !this.isHex(resourceAddress)) {
 			this.addDiagnostic(
 				context,
-				"Invalid Resource Address: The resource address portion of the NonFungibleAddress does not seem to be correct.",
-				vscode.DiagnosticSeverity.Error
+				"Invalid Resource Address: The resource address portion of the NonFungibleAddress does not seem to be correct."
 			);
 		}
 		if (!this.isHex(nonFungibleId)) {
 			this.addDiagnostic(
 				context,
-				"Invalid Hex: This NonFungibleId is not a valid hexadecimal number",
-				vscode.DiagnosticSeverity.Error
+				"Invalid Hex: This NonFungibleId is not a valid hexadecimal number"
 			);
 			return;
 		}
 	}
 
-	enterBytes(context: BytesContext) {
-		let bytes: string = context.children![2].toString().slice(1, -1);
-		if (!this.isHex(bytes)) {
+	enterBlob(context: BlobContext) {
+		let blobHash: string = context.children![2].toString().slice(1, -1);
+		if (!this.isHex(blobHash)) {
 			this.addDiagnostic(
 				context,
-				"Invalid Hex: This Bytes is not a valid hexadecimal number",
-				vscode.DiagnosticSeverity.Error
+				"Invalid Hex: This blob is not a valid hexadecimal number"
 			);
 			return;
+		}
+		if (blobHash.length !== 64) {
+			this.addDiagnostic(
+				context,
+				`Invalid Hash: In the manifest, blobs contain hashes of the blobs that they reference. A valid Sha256 hash is 64 characters long, however, this is ${blobHash.length} characters long.`
+			);
+		}
+	}
+
+	enterExpression(context: ExpressionContext) {
+		let expressionString: string = context.text.split('"')[1];
+		if (
+			!["ENTIRE_WORKTOP", "ENTIRE_AUTH_ZONE"].includes(expressionString)
+		) {
+			this.addDiagnostic(
+				context,
+				"Invalid Expression: Invalid expression, the only two valid expressions are: ENTIRE_WORKTOP and ENTIRE_AUTH_ZONE"
+			);
 		}
 	}
 

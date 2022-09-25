@@ -200,4 +200,4 @@ If you would like to build and package your own extension from source for the pu
 
 # Issus and Bug Reports
 
-If you have any questions or encounter any bugs or issues that you would like to report, you can [file an issue](https://github.com/radixdlt/radix-transaction-manifest-extension/issues/new) on the extension's GitHub repository. 
+If you have any questions or encounter any bugs or issues that you would like to report, you can [file an issue](https://github.com/radixdlt/radix-transaction-manifest-extension/issues/new) on the extension's GitHub repository.

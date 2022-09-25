@@ -28,7 +28,6 @@ manifest
 manifestInstruction
     :   callFunction
     |   callMethod
-    |   callMethodWithAllResources
     
     |   returnToWorktop
     |   takeFromWorktop
@@ -53,6 +52,10 @@ manifestInstruction
     |   clearAuthZone
 
     |   publishPackage
+
+    |   createResource
+    |   burnBucket
+    |   mintFungible
     ;
 
 // Instructions
@@ -68,11 +71,6 @@ callMethod : CALL_METHOD
         componentAddress    // Address of the component
         string              // method name
         value*              // arguments
-        SEMICOLON ;
-
-callMethodWithAllResources : CALL_METHOD_WITH_ALL_RESOURCES
-        componentAddress    // Address of the component
-        string              // method name
         SEMICOLON ;
 
 takeFromWorktop : TAKE_FROM_WORKTOP
@@ -146,7 +144,24 @@ clearAuthZone : CLEAR_AUTHZONE
         SEMICOLON ;
 
 publishPackage : PUBLISH_PACKAGE
-        bytes               // The bytes of the package to publish
+        blob                // The blob corresponding to the package WASM
+        blob                // The blob corresponding to the package ABI
+        SEMICOLON ; 
+
+burnBucket : BURN_BUCKET
+        bucket              // The bucket to burn
+        SEMICOLON ; 
+
+mintFungible : MINT_FUNGIBLE
+        resourceAddress     // The resource address of the token to mint
+        decimal             // The amount of the resource to mint
+        SEMICOLON ; 
+
+createResource : CREATE_RESOURCE
+        enum_               // An enum representing the resource type.
+        map                 // A string, string HashMap of the metadata of the resource.
+        map                 // An enum, typle HashMap mapping the resource method name to a tuple of access rule and mutability.
+        option?             // An optional enum field of the minting parameters when the resource is initially created.
         SEMICOLON ; 
 
 // Argument types
@@ -164,18 +179,18 @@ u32                 :   U32_LITERAL ;
 u64                 :   U64_LITERAL ;
 u128                :   U128_LITERAL ;
 string              :   STRING_LITERAL ;
-struct              :   STRUCT_TYPE OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
+struct              :   STRUCT_TYPE (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
 enum_               :   ENUM_TYPE OPEN_PARENTHESIS (string COMMA (value (COMMA value)*)?) CLOED_PARENTHESIS ;
 option              :   ( some | none ) ;
-some                :   SOME_TYPE OPEN_PARENTHESIS (value (COMMA value)*) CLOED_PARENTHESIS ;
+some                :   SOME_TYPE OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
 none                :   NONE_TYPE ;
-ok                  :   OK_TYPE OPEN_PARENTHESIS (value (COMMA value)*) CLOED_PARENTHESIS ;
-err                 :   ERR_TYPE OPEN_PARENTHESIS (value (COMMA value)*) CLOED_PARENTHESIS ;
-array               :   ARRAY_TYPE LESS_THAN type GREATER_THAN OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
-tuple               :   TUPLE_TYPE LESS_THAN OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
-list                :   LIST_TYPE LESS_THAN type GREATER_THAN OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
-set                 :   SET_TYPE LESS_THAN type GREATER_THAN OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS ;
-map                 :   MAP_TYPE LESS_THAN type COMMA type GREATER_THAN OPEN_PARENTHESIS (value COMMA value)* CLOED_PARENTHESIS ;
+ok                  :   OK_TYPE OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
+err                 :   ERR_TYPE OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
+array               :   ARRAY_TYPE LESS_THAN type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
+tuple               :   TUPLE_TYPE LESS_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
+list                :   LIST_TYPE LESS_THAN type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
+set                 :   SET_TYPE LESS_THAN type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
+map                 :   MAP_TYPE LESS_THAN type COMMA type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value COMMA value)*? CLOED_PARENTHESIS) ;
 decimal             :   DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 preciseDecimal      :   PRECISE_DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 packageAddress      :   PACKAGE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
@@ -184,9 +199,10 @@ resourceAddress     :   RESOURCE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CL
 hash                :   HASH_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 bucket              :   BUCKET_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
 proof               :   PROOF_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
-nonFungibleId       :   NON_FUNGIBLE_ID_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ; // Might need to revise this.
+nonFungibleId       :   NON_FUNGIBLE_ID_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ; // TODO: Might need to revise this.
 nonFungibleAddress  :   NON_FUNGIBLE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-bytes               :   BYTES_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+blob                :   BLOB_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+expression          :   EXPRESSION_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 
 type
     : UNIT_TYPE
@@ -225,7 +241,8 @@ type
     | PROOF_TYPE
     | NON_FUNGIBLE_ID_TYPE
     | NON_FUNGIBLE_ADDRESS_TYPE
-    | BYTES_TYPE
+    | BLOB_TYPE
+    | EXPRESSION_TYPE
     ;
 
 value
@@ -264,7 +281,8 @@ value
     | proof
     | nonFungibleId
     | nonFungibleAddress
-    | bytes
+    | blob
+    | expression
     ;
 
 /*
@@ -323,12 +341,15 @@ BUCKET_TYPE                         : 'Bucket' ;
 PROOF_TYPE                          : 'Proof' ;
 NON_FUNGIBLE_ID_TYPE                : 'NonFungibleId' ;
 NON_FUNGIBLE_ADDRESS_TYPE           : 'NonFungibleAddress' ;
-BYTES_TYPE                          : 'Bytes' ;
+
+BLOB_TYPE                           : 'Blob' ;
+EXPRESSION_TYPE                     : 'Expression' ;
 
 // Punctuations
 
 OPEN_PARENTHESIS                    : '(' ;
 CLOED_PARENTHESIS                   : ')' ;
+EMPTY_PARENTHESIS                   : '()' ;
 LESS_THAN                           : '<' ;
 GREATER_THAN                        : '>' ;
 COMMA                               : ',' ;
@@ -361,9 +382,12 @@ DROP_ALL_PROOFS                     : 'DROP_ALL_PROOFS' ;
 
 CALL_FUNCTION                       : 'CALL_FUNCTION' ;
 CALL_METHOD                         : 'CALL_METHOD' ;
-CALL_METHOD_WITH_ALL_RESOURCES      : 'CALL_METHOD_WITH_ALL_RESOURCES' ;
 
 PUBLISH_PACKAGE                     : 'PUBLISH_PACKAGE' ;
+
+BURN_BUCKET                         : 'BURN_BUCKET' ;
+MINT_FUNGIBLE                       : 'MINT_FUNGIBLE' ;
+CREATE_RESOURCE                     : 'CREATE_RESOURCE' ;
 
 // Primitive Definitions
 STRING_LITERAL                      : '"' ('\\' ["\\] | ~["\\\r\n] | [_-] | ' ')* '"' ;

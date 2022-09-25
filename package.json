@@ -68,7 +68,7 @@
 				"icon": "$(play)"
 			}
 		],
-		"configuration":[
+		"configuration": [
 			{
 				"title": "Diagnostics",
 				"properties": {

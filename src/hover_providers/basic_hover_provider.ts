@@ -36,10 +36,6 @@ export default class BasicHoverProvider extends HoverProvider {
 				return new Hover(basicHoverInformation.callFunction);
 			case TokenKind.callMethod:
 				return new Hover(basicHoverInformation.callMethod);
-			case TokenKind.callMethodWithAllResources:
-				return new Hover(
-					basicHoverInformation.callMethodWithAllResources
-				);
 			case TokenKind.clearAuthZone:
 				return new Hover(basicHoverInformation.clearAuthZone);
 			case TokenKind.cloneProof:

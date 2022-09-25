@@ -85,8 +85,6 @@ abstract class HoverProvider implements vscode.HoverProvider {
 					return TokenKind.callFunction;
 				case "CALL_METHOD":
 					return TokenKind.callMethod;
-				case "CALL_METHOD_WITH_ALL_RESOURCES":
-					return TokenKind.callMethodWithAllResources;
 				case "CLEAR_AUTH_ZONE":
 					return TokenKind.clearAuthZone;
 				case "CLONE_PROOF":
@@ -149,7 +147,6 @@ enum TokenKind {
 	assertWorktopContainsByIds,
 	callFunction,
 	callMethod,
-	callMethodWithAllResources,
 	clearAuthZone,
 	cloneProof,
 	createProofFromAuthZone,

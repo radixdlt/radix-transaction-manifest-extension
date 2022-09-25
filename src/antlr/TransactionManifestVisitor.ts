@@ -1,20 +1,3 @@
-// Licensed to the Apache Software Foundation (ASF) under one
-// or more contributor license agreements.  See the NOTICE file
-// distributed with this work for additional information
-// regarding copyright ownership.  The ASF licenses this file
-// to you under the Apache License, Version 2.0 (the
-// "License"); you may not use this file except in compliance
-// with the License.  You may obtain a copy of the License at
-
-//   http://www.apache.org/licenses/LICENSE-2.0
-
-// Unless required by applicable law or agreed to in writing,
-// software distributed under the License is distributed on an
-// "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-// KIND, either express or implied.  See the License for the
-// specific language governing permissions and limitations
-// under the License.
-
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
 import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
@@ -23,7 +6,6 @@ import { ManifestContext } from "./TransactionManifestParser";
 import { ManifestInstructionContext } from "./TransactionManifestParser";
 import { CallFunctionContext } from "./TransactionManifestParser";
 import { CallMethodContext } from "./TransactionManifestParser";
-import { CallMethodWithAllResourcesContext } from "./TransactionManifestParser";
 import { TakeFromWorktopContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByAmountContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByIdsContext } from "./TransactionManifestParser";
@@ -42,6 +24,9 @@ import { DropProofContext } from "./TransactionManifestParser";
 import { DropAllProofsContext } from "./TransactionManifestParser";
 import { ClearAuthZoneContext } from "./TransactionManifestParser";
 import { PublishPackageContext } from "./TransactionManifestParser";
+import { BurnBucketContext } from "./TransactionManifestParser";
+import { MintFungibleContext } from "./TransactionManifestParser";
+import { CreateResourceContext } from "./TransactionManifestParser";
 import { UnitContext } from "./TransactionManifestParser";
 import { BoolContext } from "./TransactionManifestParser";
 import { I8Context } from "./TransactionManifestParser";
@@ -77,7 +62,8 @@ import { BucketContext } from "./TransactionManifestParser";
 import { ProofContext } from "./TransactionManifestParser";
 import { NonFungibleIdContext } from "./TransactionManifestParser";
 import { NonFungibleAddressContext } from "./TransactionManifestParser";
-import { BytesContext } from "./TransactionManifestParser";
+import { BlobContext } from "./TransactionManifestParser";
+import { ExpressionContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
 
@@ -117,15 +103,6 @@ export interface TransactionManifestVisitor<Result>
 	 * @return the visitor result
 	 */
 	visitCallMethod?: (ctx: CallMethodContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.callMethodWithAllResources`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitCallMethodWithAllResources?: (
-		ctx: CallMethodWithAllResourcesContext
-	) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktop`.
@@ -264,6 +241,27 @@ export interface TransactionManifestVisitor<Result>
 	 * @return the visitor result
 	 */
 	visitPublishPackage?: (ctx: PublishPackageContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.burnBucket`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBurnBucket?: (ctx: BurnBucketContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.mintFungible`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitMintFungible?: (ctx: MintFungibleContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.createResource`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCreateResource?: (ctx: CreateResourceContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.unit`.
@@ -511,11 +509,18 @@ export interface TransactionManifestVisitor<Result>
 	visitNonFungibleAddress?: (ctx: NonFungibleAddressContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.bytes`.
+	 * Visit a parse tree produced by `TransactionManifestParser.blob`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitBytes?: (ctx: BytesContext) => Result;
+	visitBlob?: (ctx: BlobContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.expression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExpression?: (ctx: ExpressionContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.type`.

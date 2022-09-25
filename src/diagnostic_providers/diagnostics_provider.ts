@@ -54,7 +54,8 @@ export default abstract class DiagnosticsProvider {
 	protected addDiagnostic(
 		context: ParserRuleContext,
 		message: string,
-		severity: vscode.DiagnosticSeverity | undefined
+		severity: vscode.DiagnosticSeverity | undefined = vscode
+			.DiagnosticSeverity.Error
 	): void {
 		// Translate the context into a range
 		let start: Token = context._start;
