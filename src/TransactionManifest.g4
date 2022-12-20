@@ -26,36 +26,36 @@ manifest
     ;
 
 manifestInstruction
-    :   callFunction
-    |   callMethod
-    
-    |   returnToWorktop
-    |   takeFromWorktop
+    :   takeFromWorktop
     |   takeFromWorktopByAmount
     |   takeFromWorktopByIds
-    
+
+    |   returnToWorktop
+
     |   assertWorktopContains
     |   assertWorktopContainsByAmount
     |   assertWorktopContainsByIds
-
+    
     |   popFromAuthZone
     |   pushToAuthZone
-
+    |   clearAuthZone
+    
     |   createProofFromAuthZone
     |   createProofFromAuthZoneByAmount
     |   createProofFromAuthZoneByIds
-
+    
     |   createProofFromBucket
+    
     |   cloneProof
     |   dropProof
     |   dropAllProofs
-    |   clearAuthZone
-
-    |   publishPackage
-
-    |   createResource
-    |   burnBucket
-    |   mintFungible
+    
+    |   callFunction
+    |   callMethod
+    |   callNativeFunction
+    |   callNativeMethod
+    
+    |   publishPackageWithOwner
     ;
 
 // Instructions
@@ -67,8 +67,20 @@ callFunction : CALL_FUNCTION
         value*              // arguments
         SEMICOLON ;
 
+callNativeFunction : CALL_NATIVE_FUNCTION
+        string              // blueprint name
+        string              // function name
+        value*              // arguments
+        SEMICOLON ;
+
 callMethod : CALL_METHOD
-        componentAddress    // Address of the component
+        (componentAddress | component)    // Address of the component
+        string              // method name
+        value*              // arguments
+        SEMICOLON ;
+
+callNativeMethod : CALL_NATIVE_METHOD
+        re_node_id          // id of the node to call
         string              // method name
         value*              // arguments
         SEMICOLON ;
@@ -83,7 +95,7 @@ takeFromWorktopByAmount : TAKE_FROM_WORKTOP_BY_AMOUNT
         bucket              // The bucket that the resource will go into
         SEMICOLON ; 
 takeFromWorktopByIds : TAKE_FROM_WORKTOP_BY_IDS
-        set                 // Set of IDs to take
+        array               // Array of IDs to take
         resourceAddress     // The resource address to take
         bucket              // The bucket that the resource will go into
         SEMICOLON ; 
@@ -100,7 +112,7 @@ assertWorktopContainsByAmount : ASSERT_WORKTOP_CONTAINS_BY_AMOUNT
         resourceAddress     // The resource address to assert
         SEMICOLON ; 
 assertWorktopContainsByIds : ASSERT_WORKTOP_CONTAINS_BY_IDS
-        set                 // Set of IDs to assert
+        array               // Array of IDs to assert
         resourceAddress     // The resource address to assert
         SEMICOLON ; 
 
@@ -121,7 +133,7 @@ createProofFromAuthZoneByAmount : CREATE_PROOF_FROM_AUTH_ZONE_BY_AMOUNT
         proof               // The named proof that the created proof will be stored in
         SEMICOLON ; 
 createProofFromAuthZoneByIds : CREATE_PROOF_FROM_AUTH_ZONE_BY_IDS
-        set                 // Set of IDs to take
+        array               // Array of IDs to take
         resourceAddress     // The resource address to take
         proof               // The named proof that the created proof will be stored in
         SEMICOLON ;
@@ -143,9 +155,10 @@ dropAllProofs : DROP_ALL_PROOFS
 clearAuthZone : CLEAR_AUTHZONE
         SEMICOLON ;
 
-publishPackage : PUBLISH_PACKAGE
+publishPackageWithOwner : PUBLISH_PACKAGE_WITH_OWNER
         blob                // The blob corresponding to the package WASM
         blob                // The blob corresponding to the package ABI
+        nonFungibleAddress  // Thhe non-fungible address of the owner
         SEMICOLON ; 
 
 burnBucket : BURN_BUCKET
@@ -159,50 +172,55 @@ mintFungible : MINT_FUNGIBLE
 
 createResource : CREATE_RESOURCE
         enum_               // An enum representing the resource type.
-        map                 // A string, string HashMap of the metadata of the resource.
-        map                 // An enum, typle HashMap mapping the resource method name to a tuple of access rule and mutability.
+        array               // A string, string HashMap of the metadata of the resource.
+        array               // An enum, typle HashMap mapping the resource method name to a tuple of access rule and mutability.
         option?             // An optional enum field of the minting parameters when the resource is initially created.
         SEMICOLON ; 
 
 // Argument types
 
-unit                :   '()' ;
-bool                :   BOOL_LITERAL ;
-i8                  :   I8_LITERAL ;
-i16                 :   I16_LITERAL ;
-i32                 :   I32_LITERAL ;
-i64                 :   I64_LITERAL ;
-i128                :   I128_LITERAL ;
-u8                  :   U8_LITERAL ;
-u16                 :   U16_LITERAL ;
-u32                 :   U32_LITERAL ;
-u64                 :   U64_LITERAL ;
-u128                :   U128_LITERAL ;
-string              :   STRING_LITERAL ;
-struct              :   STRUCT_TYPE (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
-enum_               :   ENUM_TYPE OPEN_PARENTHESIS (string COMMA (value (COMMA value)*)?) CLOED_PARENTHESIS ;
-option              :   ( some | none ) ;
-some                :   SOME_TYPE OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
-none                :   NONE_TYPE ;
-ok                  :   OK_TYPE OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
-err                 :   ERR_TYPE OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
-array               :   ARRAY_TYPE LESS_THAN type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
-tuple               :   TUPLE_TYPE LESS_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
-list                :   LIST_TYPE LESS_THAN type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
-set                 :   SET_TYPE LESS_THAN type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
-map                 :   MAP_TYPE LESS_THAN type COMMA type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value COMMA value)*? CLOED_PARENTHESIS) ;
-decimal             :   DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-preciseDecimal      :   PRECISE_DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-packageAddress      :   PACKAGE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-componentAddress    :   COMPONENT_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-resourceAddress     :   RESOURCE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-hash                :   HASH_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-bucket              :   BUCKET_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
-proof               :   PROOF_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
-nonFungibleId       :   NON_FUNGIBLE_ID_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ; // TODO: Might need to revise this.
-nonFungibleAddress  :   NON_FUNGIBLE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-blob                :   BLOB_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
-expression          :   EXPRESSION_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+unit                    :   '()' ;
+bool                    :   BOOL_LITERAL ;
+i8                      :   I8_LITERAL ;
+i16                     :   I16_LITERAL ;
+i32                     :   I32_LITERAL ;
+i64                     :   I64_LITERAL ;
+i128                    :   I128_LITERAL ;
+u8                      :   U8_LITERAL ;
+u16                     :   U16_LITERAL ;
+u32                     :   U32_LITERAL ;
+u64                     :   U64_LITERAL ;
+u128                    :   U128_LITERAL ;
+string                  :   STRING_LITERAL ;
+enum_                   :   ENUM_TYPE OPEN_PARENTHESIS (string COMMA (value (COMMA value)*)?) CLOED_PARENTHESIS ;
+option                  :   ( some | none ) ;
+some                    :   'Some' OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
+none                    :   'None' ;
+ok                      :   'Ok' OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
+err                     :   'Err' OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
+array                   :   ARRAY_TYPE LESS_THAN type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
+tuple                   :   TUPLE_TYPE LESS_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
+decimal                 :   DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+preciseDecimal          :   PRECISE_DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+packageAddress          :   PACKAGE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+componentAddress        :   COMPONENT_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+resourceAddress         :   RESOURCE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+systemAddress           :   SYSTEM_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+hash                    :   HASH_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+bytes                   :   BYTES_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+component               :   COMPONENT_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+vault                   :   VAULT_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+keyValueStore           :   KEY_VALUE_STORE_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+bucket                  :   BUCKET_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
+proof                   :   PROOF_TYPE OPEN_PARENTHESIS (STRING_LITERAL | U32_LITERAL ) CLOED_PARENTHESIS ;
+nonFungibleId           :   NON_FUNGIBLE_ID_TYPE OPEN_PARENTHESIS non_fungible_id_values CLOED_PARENTHESIS ; 
+nonFungibleAddress      :   NON_FUNGIBLE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL COMMA non_fungible_id_values CLOED_PARENTHESIS ;
+blob                    :   BLOB_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+ecdsaSecp256k1PublicKey :   ECDSA_SECP256K1_PUBLIC_KEY_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+ecdsaSecp256k1Signature :   ECDSA_SECP256K1_SIGNATURE_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+eddsaEd25519PublicKey   :   EDDSA_ED25519_PUBLIC_KEY_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+eddsaEd25519Signature   :   EDDSA_ED25519_SIGNATURE_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+expression              :   EXPRESSION_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 
 type
     : UNIT_TYPE
@@ -218,31 +236,38 @@ type
     | U64_TYPE
     | U128_TYPE
     | STRING_TYPE
-    | STRUCT_TYPE
     | ENUM_TYPE
-    | OPTION_TYPE
-    | RESULT_TYPE
-    | SOME_TYPE
-    | NONE_TYPE
-    | OK_TYPE
-    | ERR_TYPE
     | ARRAY_TYPE
     | TUPLE_TYPE
-    | LIST_TYPE
-    | SET_TYPE
-    | MAP_TYPE
-    | DECIMAL_TYPE
-    | PRECISE_DECIMAL_TYPE
+    | BYTES_TYPE
     | PACKAGE_ADDRESS_TYPE
     | COMPONENT_ADDRESS_TYPE
     | RESOURCE_ADDRESS_TYPE
-    | HASH_TYPE
+    | SYSTEM_ADDRESS_TYPE
+    | COMPONENT_TYPE
+    | KEY_VALUE_STORE_TYPE
     | BUCKET_TYPE
     | PROOF_TYPE
-    | NON_FUNGIBLE_ID_TYPE
-    | NON_FUNGIBLE_ADDRESS_TYPE
-    | BLOB_TYPE
+    | VAULT_TYPE
     | EXPRESSION_TYPE
+    | BLOB_TYPE
+    | NON_FUNGIBLE_ADDRESS_TYPE
+    | HASH_TYPE
+    | ECDSA_SECP256K1_PUBLIC_KEY_TYPE
+    | ECDSA_SECP256K1_SIGNATURE_TYPE
+    | EDDSA_ED25519_PUBLIC_KEY_TYPE
+    | EDDSA_ED25519_SIGNATURE_TYPE
+    | DECIMAL_TYPE
+    | PRECISE_DECIMAL_TYPE
+    | NON_FUNGIBLE_ID_TYPE
+    ;
+
+non_fungible_id_values
+    : u32
+    | u64
+    | u128
+    | string
+    | bytes
     ;
 
 value
@@ -253,37 +278,81 @@ value
     | i32
     | i64
     | i128
+
     | u8
     | u16
     | u32
     | u64
     | u128
+    
     | string
-    | struct
+    
     | enum_
-    | option
+    
+    | array
+    | tuple
+    
     | some
     | none
     | ok
     | err
-    | array
-    | tuple
-    | list
-    | set
-    | map
-    | decimal
-    | preciseDecimal
+    
+    | bytes
+    
     | packageAddress
     | componentAddress
     | resourceAddress
-    | hash
+    | systemAddress
+    
+    | component
+    | keyValueStore
     | bucket
     | proof
+    | vault
+    
+    | expression
+    | blob
+    
     | nonFungibleId
     | nonFungibleAddress
-    | blob
-    | expression
+    
+    | hash
+    | ecdsaSecp256k1PublicKey
+    | ecdsaSecp256k1Signature
+    | eddsaEd25519PublicKey
+    | eddsaEd25519Signature
+    
+    | decimal
+    | preciseDecimal
     ;
+
+re_node_id
+    : bucket
+    | proof
+    | authZoneStack
+    | feeReserve
+    | worktop
+    | global
+    | keyValueStore
+    | nonFungibleStore
+    | component
+    | vault
+    | resourceManager
+    | package_
+    | epochManager
+    | clock
+    ;
+
+worktop             : 'Worktop' ;
+authZoneStack       : 'AuthZoneStack' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+feeReserve          : 'FeeReserve' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+global              : 'Global' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+nonFungibleStore    : 'NonFungibleStore' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;                
+resourceManager     : 'ResourceManager' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;            
+package_            : 'Package' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;    
+epochManager        : 'EpochManager' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;            
+clock               : 'Clock' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;    
+
 
 /*
  * Lexer Grammar
@@ -317,33 +386,30 @@ U32_TYPE                            : 'U32' ;
 U64_TYPE                            : 'U64' ;
 U128_TYPE                           : 'U128' ;
 STRING_TYPE                         : 'String' ;
-STRUCT_TYPE                         : 'Struct' ;
 ENUM_TYPE                           : 'Enum' ;
-OPTION_TYPE                         : 'Option' ;
-RESULT_TYPE                         : 'Result' ;
-SOME_TYPE                           : 'Some' ;
-NONE_TYPE                           : 'None' ;
-OK_TYPE                             : 'Ok' ;
-ERR_TYPE                            : 'Err' ;
 ARRAY_TYPE                          : 'Array' ;
 TUPLE_TYPE                          : 'Tuple' ;
-LIST_TYPE                           : 'List' ;
-SET_TYPE                            : 'Set' ;
-MAP_TYPE                            : 'Map' ;
-
-DECIMAL_TYPE                        : 'Decimal' ;
-PRECISE_DECIMAL_TYPE                : 'PreciseDecimal' ;
+BYTES_TYPE                          : 'Bytes' ;
 PACKAGE_ADDRESS_TYPE                : 'PackageAddress' ;
 COMPONENT_ADDRESS_TYPE              : 'ComponentAddress' ;
 RESOURCE_ADDRESS_TYPE               : 'ResourceAddress' ;
-HASH_TYPE                           : 'Hash' ;
+SYSTEM_ADDRESS_TYPE                 : 'SystemAddress' ;
+COMPONENT_TYPE                      : 'Component' ;
+KEY_VALUE_STORE_TYPE                : 'KeyValueStore' ;
 BUCKET_TYPE                         : 'Bucket' ;
 PROOF_TYPE                          : 'Proof' ;
-NON_FUNGIBLE_ID_TYPE                : 'NonFungibleId' ;
-NON_FUNGIBLE_ADDRESS_TYPE           : 'NonFungibleAddress' ;
-
-BLOB_TYPE                           : 'Blob' ;
+VAULT_TYPE                          : 'Vault' ;
 EXPRESSION_TYPE                     : 'Expression' ;
+BLOB_TYPE                           : 'Blob' ;
+NON_FUNGIBLE_ADDRESS_TYPE           : 'NonFungibleAddress' ;
+HASH_TYPE                           : 'Hash' ;
+ECDSA_SECP256K1_PUBLIC_KEY_TYPE     : 'EcdsaSecp256K1PublicKey' ;
+ECDSA_SECP256K1_SIGNATURE_TYPE      : 'EcdsaSecp256K1Signature' ;
+EDDSA_ED25519_PUBLIC_KEY_TYPE       : 'EddsaEd25519PublicKey' ;
+EDDSA_ED25519_SIGNATURE_TYPE        : 'EddsaEd25519Signature' ;
+DECIMAL_TYPE                        : 'Decimal' ;
+PRECISE_DECIMAL_TYPE                : 'PreciseDecimal' ;
+NON_FUNGIBLE_ID_TYPE                : 'NonFungibleId' ;
 
 // Punctuations
 
@@ -382,8 +448,10 @@ DROP_ALL_PROOFS                     : 'DROP_ALL_PROOFS' ;
 
 CALL_FUNCTION                       : 'CALL_FUNCTION' ;
 CALL_METHOD                         : 'CALL_METHOD' ;
+CALL_NATIVE_FUNCTION                : 'CALL_NATIVE_FUNCTION' ;
+CALL_NATIVE_METHOD                  : 'CALL_NATIVE_METHOD' ;
 
-PUBLISH_PACKAGE                     : 'PUBLISH_PACKAGE' ;
+PUBLISH_PACKAGE_WITH_OWNER          : 'PUBLISH_PACKAGE_WITH_OWNER' ;
 
 BURN_BUCKET                         : 'BURN_BUCKET' ;
 MINT_FUNGIBLE                       : 'MINT_FUNGIBLE' ;
