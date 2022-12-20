@@ -21,6 +21,7 @@ import {
 	ComponentAddressContext,
 	PackageAddressContext,
 	ResourceAddressContext,
+	SystemAddressContext,
 	TransactionManifestParser,
 } from "../antlr/TransactionManifestParser";
 import { TransactionManifestListener } from "../antlr/TransactionManifestListener";
@@ -82,6 +83,10 @@ export default class AddressesDiagnosticProvider
 	enterResourceAddress(context: ResourceAddressContext) {
 		this.addAddressDiagnostics(context);
 	}
+	
+	enterSystemAddress(context: SystemAddressContext) {
+		this.addAddressDiagnostics(context);
+	}
 
 	// ==================================
 	// Helper Methods and Internal Logic
@@ -95,6 +100,7 @@ export default class AddressesDiagnosticProvider
 			| ComponentAddressContext
 			| PackageAddressContext
 			| ResourceAddressContext
+			| SystemAddressContext
 	): void {
 		let addressString: string =
 			this.extractAddressStringFromAddress(address)!;
@@ -116,14 +122,7 @@ export default class AddressesDiagnosticProvider
 		// Ensure that the HRP has an entity specifier and a network specifier.
 		let hrp: string = decodedAddress.prefix;
 		let splittedHrp: string[] = hrp.split("_");
-		if (splittedHrp.length > 2) {
-			this.addDiagnostic(
-				address,
-				"The address contains multiple specifier separators.",
-				vscode.DiagnosticSeverity.Error
-			);
-			return;
-		} else if (splittedHrp.length < 2) {
+		if (splittedHrp.length < 2) {
 			this.addDiagnostic(
 				address,
 				"The address does not contain a network and entity specifiers.",
@@ -134,14 +133,15 @@ export default class AddressesDiagnosticProvider
 
 		// Checking the entity specifier and the network specifier to make sure that they are valid.
 		// TODO: the expected entity specifier should be dependent on the entity byte.
-		let [entitySpecifier, networkSpecifier]: string[] = splittedHrp;
+		let entitySpecifier: string = splittedHrp[0];
+		let networkSpecifier: string = splittedHrp.slice(1, -1).join('_');
 		let validEntitySpecifiers: string[] = [];
 		let validEntityBytes: number[] = [];
 		let addressType: string;
 		if (address instanceof ComponentAddressContext) {
 			addressType = "ComponentAddress";
-			validEntitySpecifiers.push(...["component", "account", "system"]);
-			validEntityBytes.push(...[0x02, 0x03, 0x04]);
+			validEntitySpecifiers.push(...["component", "account"]);
+			validEntityBytes.push(...[0x02, 0x03, 0x06, 0x07]);
 		} else if (address instanceof ResourceAddressContext) {
 			addressType = "ResourceAddress";
 			validEntitySpecifiers.push(...["resource"]);
@@ -150,6 +150,10 @@ export default class AddressesDiagnosticProvider
 			addressType = "PackageAddress";
 			validEntitySpecifiers.push(...["package"]);
 			validEntityBytes.push(...[0x01]);
+		} else if (address instanceof SystemAddressContext) {
+			addressType = "SystemAddress";
+			validEntitySpecifiers.push(...["system"]);
+			validEntityBytes.push(...[0x04, 0x05]);
 		} else {
 			throw new Error("Should never be able to get here");
 		}
@@ -203,6 +207,7 @@ export default class AddressesDiagnosticProvider
 			| ComponentAddressContext
 			| PackageAddressContext
 			| ResourceAddressContext
+			| SystemAddressContext
 	): string | undefined {
 		let children: ParseTree[] | undefined = address.children;
 		if (children) {
