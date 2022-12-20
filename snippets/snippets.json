@@ -124,10 +124,10 @@
 		"description": "Drops all proofs from the Auth Zone."
 	},
 
-	"Publish Package": {
+	"Publish Package with Owner": {
 		"scope": "scope.rtm",
-		"prefix": "PUBLISH_PACKAGE",
-		"body": "PUBLISH_PACKAGE Blob(\"${1:Package WASM Blob}\") Blob(\"${2:Package ABI Blob}\");",
+		"prefix": "PUBLISH_PACKAGE_WITH_OWNER",
+		"body": "PUBLISH_PACKAGE_WITH_OWNER Blob(\"${1:Package WASM Blob}\") Blob(\"${2:Package ABI Blob}\") NonFungibleAddress(\"${3:Owner Resource Address}\", ${4:Owner Non-Fungible Id);",
 		"description": "Publishes a package."
 	},
 
@@ -202,12 +202,12 @@
 	"NonFungibleAddress": {
 		"scope": "scope.rtm",
 		"prefix": "NonFungibleAddress",
-		"body": "NonFungibleAddress(\"${1:NonFungibleAddress}\")"
+		"body": "NonFungibleAddress(\"${1:Resource Address}\", ${2:Non-Fungible Id})"
 	},
 	"NonFungibleId": {
 		"scope": "scope.rtm",
 		"prefix": "NonFungibleId",
-		"body": "NonFungibleId(\"${1:NonFungibleId Hex}\")"
+		"body": "NonFungibleId(${1:NonFungibleId})"
 	},
 
 	"Bucket": {
@@ -224,17 +224,22 @@
 	"ResourceAddress": {
 		"scope": "scope.rtm",
 		"prefix": "ResourceAddress",
-		"body": "ResourceAddress(\"${1:ResourceAddress}\")"
+		"body": "ResourceAddress(\"${1:Resource Address}\")"
 	},
 	"ComponentAddress": {
 		"scope": "scope.rtm",
 		"prefix": "ComponentAddress",
-		"body": "ComponentAddress(\"${1:ComponentAddress}\")"
+		"body": "ComponentAddress(\"${1:Component Address}\")"
 	},
 	"PackageAddress": {
 		"scope": "scope.rtm",
 		"prefix": "PackageAddress",
-		"body": "PackageAddress(\"${1:PackageAddress}\")"
+		"body": "PackageAddress(\"${1:Package Address}\")"
+	},
+	"SystemAddress": {
+		"scope": "scope.rtm",
+		"prefix": "SystemAddress",
+		"body": "SystemAddress(\"${1:System Address}\")"
 	},
 	"Decimal": {
 		"scope": "scope.rtm",
@@ -247,25 +252,10 @@
 		"body": "PreciseDecimal(\"${1:number}\")"
 	},
 
-	"Map": {
-		"scope": "scope.rtm",
-		"prefix": "Map",
-		"body": "Map<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|},  ${2|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($3)"
-	},
-	"Set": {
-		"scope": "scope.rtm",
-		"prefix": "Set",
-		"body": "Set<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
-	},
-	"List": {
-		"scope": "scope.rtm",
-		"prefix": "List",
-		"body": "List<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
-	},
 	"Tuple": {
 		"scope": "scope.rtm",
 		"prefix": "Tuple",
-		"body": "Tuple<${1|I8,I16,I32,I64,I128,U8,U16,U32,U64,U128,Decimal,PreciseDecimal,String,Struct,Enum,Option,Some,None,Ok,Err,Array,Tuple,List,Set,Map,ComponentAddress,PackageAddress,ResourceAddress,Hash,Bucket,Proof,NonFungibleId,NonFungibleAddress,Bytes|}>($2)"
+		"body": "Tuple($2)"
 	},
 	"Array": {
 		"scope": "scope.rtm",
@@ -277,10 +267,47 @@
 		"prefix": "Enum",
 		"body": "Enum(\"${1:Variant Name}\", \"${2:Optional Values}\")"
 	},
-	"Struct": {
+	
+	"Vault": {
 		"scope": "scope.rtm",
-		"prefix": "Struct",
-		"body": "Struct(\"${1:Field 1 Value}\", \"${2:Field 2 Value}\")"
+		"prefix": "Vault",
+		"body": "Vault(\"${1:Vault Id}\")"
+	},
+	"Component": {
+		"scope": "scope.rtm",
+		"prefix": "Component",
+		"body": "Component(\"${1:Component Id}\")"
+	},
+	"KeyValueStore": {
+		"scope": "scope.rtm",
+		"prefix": "KeyValueStore",
+		"body": "KeyValueStore(\"${1:KeyValueStore Id}\")"
+	},
+	"Bytes": {
+		"scope": "scope.rtm",
+		"prefix": "Bytes",
+		"body": "Bytes(\"${1:Bytes Hex}\")"
+	},
+	
+	"EcdsaSecp256k1PublicKey": {
+		"scope": "scope.rtm",
+		"prefix": "EcdsaSecp256k1PublicKey",
+		"body": "EcdsaSecp256k1PublicKey(\"${1:Ecdsa Secp256k1 Public Key}\")"
+	},
+	"EcdsaSecp256k1Signature": {
+		"scope": "scope.rtm",
+		"prefix": "EcdsaSecp256k1Signature",
+		"body": "EcdsaSecp256k1Signature(\"${1:Ecdsa Secp256k1 Signature}\")"
+	},
+	"EddsaEd25519PublicKey": {
+		"scope": "scope.rtm",
+		"prefix": "EddsaEd25519PublicKey",
+		"body": "EddsaEd25519PublicKey(\"${1:Eddsa Ed25519 Public Key}\")"
+	},
+	"EddsaEd25519Signature": {
+		"scope": "scope.rtm",
+		"prefix": "EddsaEd25519Signature",
+		"body": "EddsaEd25519Signature(\"${1:Eddsa Ed25519 Signature}\")"
 	},
 
 	// =================
