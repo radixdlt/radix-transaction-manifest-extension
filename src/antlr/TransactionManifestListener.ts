@@ -1,11 +1,14 @@
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
+
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
 import { ManifestContext } from "./TransactionManifestParser";
 import { ManifestInstructionContext } from "./TransactionManifestParser";
 import { CallFunctionContext } from "./TransactionManifestParser";
+import { CallNativeFunctionContext } from "./TransactionManifestParser";
 import { CallMethodContext } from "./TransactionManifestParser";
+import { CallNativeMethodContext } from "./TransactionManifestParser";
 import { TakeFromWorktopContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByAmountContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByIdsContext } from "./TransactionManifestParser";
@@ -23,7 +26,7 @@ import { CloneProofContext } from "./TransactionManifestParser";
 import { DropProofContext } from "./TransactionManifestParser";
 import { DropAllProofsContext } from "./TransactionManifestParser";
 import { ClearAuthZoneContext } from "./TransactionManifestParser";
-import { PublishPackageContext } from "./TransactionManifestParser";
+import { PublishPackageWithOwnerContext } from "./TransactionManifestParser";
 import { BurnBucketContext } from "./TransactionManifestParser";
 import { MintFungibleContext } from "./TransactionManifestParser";
 import { CreateResourceContext } from "./TransactionManifestParser";
@@ -40,7 +43,6 @@ import { U32Context } from "./TransactionManifestParser";
 import { U64Context } from "./TransactionManifestParser";
 import { U128Context } from "./TransactionManifestParser";
 import { StringContext } from "./TransactionManifestParser";
-import { StructContext } from "./TransactionManifestParser";
 import { Enum_Context } from "./TransactionManifestParser";
 import { OptionContext } from "./TransactionManifestParser";
 import { SomeContext } from "./TransactionManifestParser";
@@ -49,23 +51,41 @@ import { OkContext } from "./TransactionManifestParser";
 import { ErrContext } from "./TransactionManifestParser";
 import { ArrayContext } from "./TransactionManifestParser";
 import { TupleContext } from "./TransactionManifestParser";
-import { ListContext } from "./TransactionManifestParser";
-import { SetContext } from "./TransactionManifestParser";
-import { MapContext } from "./TransactionManifestParser";
 import { DecimalContext } from "./TransactionManifestParser";
 import { PreciseDecimalContext } from "./TransactionManifestParser";
 import { PackageAddressContext } from "./TransactionManifestParser";
 import { ComponentAddressContext } from "./TransactionManifestParser";
 import { ResourceAddressContext } from "./TransactionManifestParser";
+import { SystemAddressContext } from "./TransactionManifestParser";
 import { HashContext } from "./TransactionManifestParser";
+import { BytesContext } from "./TransactionManifestParser";
+import { ComponentContext } from "./TransactionManifestParser";
+import { VaultContext } from "./TransactionManifestParser";
+import { KeyValueStoreContext } from "./TransactionManifestParser";
 import { BucketContext } from "./TransactionManifestParser";
 import { ProofContext } from "./TransactionManifestParser";
 import { NonFungibleIdContext } from "./TransactionManifestParser";
 import { NonFungibleAddressContext } from "./TransactionManifestParser";
 import { BlobContext } from "./TransactionManifestParser";
+import { EcdsaSecp256k1PublicKeyContext } from "./TransactionManifestParser";
+import { EcdsaSecp256k1SignatureContext } from "./TransactionManifestParser";
+import { EddsaEd25519PublicKeyContext } from "./TransactionManifestParser";
+import { EddsaEd25519SignatureContext } from "./TransactionManifestParser";
 import { ExpressionContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
+import { Non_fungible_id_valuesContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
+import { Re_node_idContext } from "./TransactionManifestParser";
+import { WorktopContext } from "./TransactionManifestParser";
+import { AuthZoneStackContext } from "./TransactionManifestParser";
+import { FeeReserveContext } from "./TransactionManifestParser";
+import { GlobalContext } from "./TransactionManifestParser";
+import { NonFungibleStoreContext } from "./TransactionManifestParser";
+import { ResourceManagerContext } from "./TransactionManifestParser";
+import { Package_Context } from "./TransactionManifestParser";
+import { EpochManagerContext } from "./TransactionManifestParser";
+import { ClockContext } from "./TransactionManifestParser";
+
 
 /**
  * This interface defines a complete listener for a parse tree produced by
@@ -106,6 +126,17 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitCallFunction?: (ctx: CallFunctionContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.callNativeFunction`.
+	 * @param ctx the parse tree
+	 */
+	enterCallNativeFunction?: (ctx: CallNativeFunctionContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.callNativeFunction`.
+	 * @param ctx the parse tree
+	 */
+	exitCallNativeFunction?: (ctx: CallNativeFunctionContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.callMethod`.
 	 * @param ctx the parse tree
 	 */
@@ -115,6 +146,17 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitCallMethod?: (ctx: CallMethodContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.callNativeMethod`.
+	 * @param ctx the parse tree
+	 */
+	enterCallNativeMethod?: (ctx: CallNativeMethodContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.callNativeMethod`.
+	 * @param ctx the parse tree
+	 */
+	exitCallNativeMethod?: (ctx: CallNativeMethodContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorktop`.
@@ -131,9 +173,7 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.
 	 * @param ctx the parse tree
 	 */
-	enterTakeFromWorktopByAmount?: (
-		ctx: TakeFromWorktopByAmountContext
-	) => void;
+	enterTakeFromWorktopByAmount?: (ctx: TakeFromWorktopByAmountContext) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.takeFromWorktopByAmount`.
 	 * @param ctx the parse tree
@@ -177,31 +217,23 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.assertWorktopContainsByAmount`.
 	 * @param ctx the parse tree
 	 */
-	enterAssertWorktopContainsByAmount?: (
-		ctx: AssertWorktopContainsByAmountContext
-	) => void;
+	enterAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByAmount`.
 	 * @param ctx the parse tree
 	 */
-	exitAssertWorktopContainsByAmount?: (
-		ctx: AssertWorktopContainsByAmountContext
-	) => void;
+	exitAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
 	 * @param ctx the parse tree
 	 */
-	enterAssertWorktopContainsByIds?: (
-		ctx: AssertWorktopContainsByIdsContext
-	) => void;
+	enterAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
 	 * @param ctx the parse tree
 	 */
-	exitAssertWorktopContainsByIds?: (
-		ctx: AssertWorktopContainsByIdsContext
-	) => void;
+	exitAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.popFromAuthZone`.
@@ -229,9 +261,7 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZone`.
 	 * @param ctx the parse tree
 	 */
-	enterCreateProofFromAuthZone?: (
-		ctx: CreateProofFromAuthZoneContext
-	) => void;
+	enterCreateProofFromAuthZone?: (ctx: CreateProofFromAuthZoneContext) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZone`.
 	 * @param ctx the parse tree
@@ -242,31 +272,23 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
 	 * @param ctx the parse tree
 	 */
-	enterCreateProofFromAuthZoneByAmount?: (
-		ctx: CreateProofFromAuthZoneByAmountContext
-	) => void;
+	enterCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
 	 * @param ctx the parse tree
 	 */
-	exitCreateProofFromAuthZoneByAmount?: (
-		ctx: CreateProofFromAuthZoneByAmountContext
-	) => void;
+	exitCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
 	 * @param ctx the parse tree
 	 */
-	enterCreateProofFromAuthZoneByIds?: (
-		ctx: CreateProofFromAuthZoneByIdsContext
-	) => void;
+	enterCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => void;
 	/**
 	 * Exit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
 	 * @param ctx the parse tree
 	 */
-	exitCreateProofFromAuthZoneByIds?: (
-		ctx: CreateProofFromAuthZoneByIdsContext
-	) => void;
+	exitCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.createProofFromBucket`.
@@ -324,15 +346,15 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitClearAuthZone?: (ctx: ClearAuthZoneContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.publishPackage`.
+	 * Enter a parse tree produced by `TransactionManifestParser.publishPackageWithOwner`.
 	 * @param ctx the parse tree
 	 */
-	enterPublishPackage?: (ctx: PublishPackageContext) => void;
+	enterPublishPackageWithOwner?: (ctx: PublishPackageWithOwnerContext) => void;
 	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.publishPackage`.
+	 * Exit a parse tree produced by `TransactionManifestParser.publishPackageWithOwner`.
 	 * @param ctx the parse tree
 	 */
-	exitPublishPackage?: (ctx: PublishPackageContext) => void;
+	exitPublishPackageWithOwner?: (ctx: PublishPackageWithOwnerContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.burnBucket`.
@@ -511,17 +533,6 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitString?: (ctx: StringContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.struct`.
-	 * @param ctx the parse tree
-	 */
-	enterStruct?: (ctx: StructContext) => void;
-	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.struct`.
-	 * @param ctx the parse tree
-	 */
-	exitStruct?: (ctx: StructContext) => void;
-
-	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.enum_`.
 	 * @param ctx the parse tree
 	 */
@@ -610,39 +621,6 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitTuple?: (ctx: TupleContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.list`.
-	 * @param ctx the parse tree
-	 */
-	enterList?: (ctx: ListContext) => void;
-	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.list`.
-	 * @param ctx the parse tree
-	 */
-	exitList?: (ctx: ListContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.set`.
-	 * @param ctx the parse tree
-	 */
-	enterSet?: (ctx: SetContext) => void;
-	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.set`.
-	 * @param ctx the parse tree
-	 */
-	exitSet?: (ctx: SetContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `TransactionManifestParser.map`.
-	 * @param ctx the parse tree
-	 */
-	enterMap?: (ctx: MapContext) => void;
-	/**
-	 * Exit a parse tree produced by `TransactionManifestParser.map`.
-	 * @param ctx the parse tree
-	 */
-	exitMap?: (ctx: MapContext) => void;
-
-	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.decimal`.
 	 * @param ctx the parse tree
 	 */
@@ -698,6 +676,17 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitResourceAddress?: (ctx: ResourceAddressContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.systemAddress`.
+	 * @param ctx the parse tree
+	 */
+	enterSystemAddress?: (ctx: SystemAddressContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.systemAddress`.
+	 * @param ctx the parse tree
+	 */
+	exitSystemAddress?: (ctx: SystemAddressContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.hash`.
 	 * @param ctx the parse tree
 	 */
@@ -707,6 +696,50 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitHash?: (ctx: HashContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.bytes`.
+	 * @param ctx the parse tree
+	 */
+	enterBytes?: (ctx: BytesContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.bytes`.
+	 * @param ctx the parse tree
+	 */
+	exitBytes?: (ctx: BytesContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.component`.
+	 * @param ctx the parse tree
+	 */
+	enterComponent?: (ctx: ComponentContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.component`.
+	 * @param ctx the parse tree
+	 */
+	exitComponent?: (ctx: ComponentContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.vault`.
+	 * @param ctx the parse tree
+	 */
+	enterVault?: (ctx: VaultContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.vault`.
+	 * @param ctx the parse tree
+	 */
+	exitVault?: (ctx: VaultContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.keyValueStore`.
+	 * @param ctx the parse tree
+	 */
+	enterKeyValueStore?: (ctx: KeyValueStoreContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.keyValueStore`.
+	 * @param ctx the parse tree
+	 */
+	exitKeyValueStore?: (ctx: KeyValueStoreContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.bucket`.
@@ -764,6 +797,50 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitBlob?: (ctx: BlobContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.ecdsaSecp256k1PublicKey`.
+	 * @param ctx the parse tree
+	 */
+	enterEcdsaSecp256k1PublicKey?: (ctx: EcdsaSecp256k1PublicKeyContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.ecdsaSecp256k1PublicKey`.
+	 * @param ctx the parse tree
+	 */
+	exitEcdsaSecp256k1PublicKey?: (ctx: EcdsaSecp256k1PublicKeyContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.ecdsaSecp256k1Signature`.
+	 * @param ctx the parse tree
+	 */
+	enterEcdsaSecp256k1Signature?: (ctx: EcdsaSecp256k1SignatureContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.ecdsaSecp256k1Signature`.
+	 * @param ctx the parse tree
+	 */
+	exitEcdsaSecp256k1Signature?: (ctx: EcdsaSecp256k1SignatureContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.eddsaEd25519PublicKey`.
+	 * @param ctx the parse tree
+	 */
+	enterEddsaEd25519PublicKey?: (ctx: EddsaEd25519PublicKeyContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.eddsaEd25519PublicKey`.
+	 * @param ctx the parse tree
+	 */
+	exitEddsaEd25519PublicKey?: (ctx: EddsaEd25519PublicKeyContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.eddsaEd25519Signature`.
+	 * @param ctx the parse tree
+	 */
+	enterEddsaEd25519Signature?: (ctx: EddsaEd25519SignatureContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.eddsaEd25519Signature`.
+	 * @param ctx the parse tree
+	 */
+	exitEddsaEd25519Signature?: (ctx: EddsaEd25519SignatureContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.expression`.
 	 * @param ctx the parse tree
 	 */
@@ -786,6 +863,17 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	exitType?: (ctx: TypeContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.non_fungible_id_values`.
+	 * @param ctx the parse tree
+	 */
+	enterNon_fungible_id_values?: (ctx: Non_fungible_id_valuesContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.non_fungible_id_values`.
+	 * @param ctx the parse tree
+	 */
+	exitNon_fungible_id_values?: (ctx: Non_fungible_id_valuesContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `TransactionManifestParser.value`.
 	 * @param ctx the parse tree
 	 */
@@ -795,4 +883,115 @@ export interface TransactionManifestListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitValue?: (ctx: ValueContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.re_node_id`.
+	 * @param ctx the parse tree
+	 */
+	enterRe_node_id?: (ctx: Re_node_idContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.re_node_id`.
+	 * @param ctx the parse tree
+	 */
+	exitRe_node_id?: (ctx: Re_node_idContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.worktop`.
+	 * @param ctx the parse tree
+	 */
+	enterWorktop?: (ctx: WorktopContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.worktop`.
+	 * @param ctx the parse tree
+	 */
+	exitWorktop?: (ctx: WorktopContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.authZoneStack`.
+	 * @param ctx the parse tree
+	 */
+	enterAuthZoneStack?: (ctx: AuthZoneStackContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.authZoneStack`.
+	 * @param ctx the parse tree
+	 */
+	exitAuthZoneStack?: (ctx: AuthZoneStackContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.feeReserve`.
+	 * @param ctx the parse tree
+	 */
+	enterFeeReserve?: (ctx: FeeReserveContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.feeReserve`.
+	 * @param ctx the parse tree
+	 */
+	exitFeeReserve?: (ctx: FeeReserveContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.global`.
+	 * @param ctx the parse tree
+	 */
+	enterGlobal?: (ctx: GlobalContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.global`.
+	 * @param ctx the parse tree
+	 */
+	exitGlobal?: (ctx: GlobalContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.nonFungibleStore`.
+	 * @param ctx the parse tree
+	 */
+	enterNonFungibleStore?: (ctx: NonFungibleStoreContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.nonFungibleStore`.
+	 * @param ctx the parse tree
+	 */
+	exitNonFungibleStore?: (ctx: NonFungibleStoreContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.resourceManager`.
+	 * @param ctx the parse tree
+	 */
+	enterResourceManager?: (ctx: ResourceManagerContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.resourceManager`.
+	 * @param ctx the parse tree
+	 */
+	exitResourceManager?: (ctx: ResourceManagerContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.package_`.
+	 * @param ctx the parse tree
+	 */
+	enterPackage_?: (ctx: Package_Context) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.package_`.
+	 * @param ctx the parse tree
+	 */
+	exitPackage_?: (ctx: Package_Context) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.epochManager`.
+	 * @param ctx the parse tree
+	 */
+	enterEpochManager?: (ctx: EpochManagerContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.epochManager`.
+	 * @param ctx the parse tree
+	 */
+	exitEpochManager?: (ctx: EpochManagerContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `TransactionManifestParser.clock`.
+	 * @param ctx the parse tree
+	 */
+	enterClock?: (ctx: ClockContext) => void;
+	/**
+	 * Exit a parse tree produced by `TransactionManifestParser.clock`.
+	 * @param ctx the parse tree
+	 */
+	exitClock?: (ctx: ClockContext) => void;
 }
+

@@ -1,11 +1,14 @@
 // Generated from src/TransactionManifest.g4 by ANTLR 4.9.0-SNAPSHOT
 
+
 import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 
 import { ManifestContext } from "./TransactionManifestParser";
 import { ManifestInstructionContext } from "./TransactionManifestParser";
 import { CallFunctionContext } from "./TransactionManifestParser";
+import { CallNativeFunctionContext } from "./TransactionManifestParser";
 import { CallMethodContext } from "./TransactionManifestParser";
+import { CallNativeMethodContext } from "./TransactionManifestParser";
 import { TakeFromWorktopContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByAmountContext } from "./TransactionManifestParser";
 import { TakeFromWorktopByIdsContext } from "./TransactionManifestParser";
@@ -23,7 +26,7 @@ import { CloneProofContext } from "./TransactionManifestParser";
 import { DropProofContext } from "./TransactionManifestParser";
 import { DropAllProofsContext } from "./TransactionManifestParser";
 import { ClearAuthZoneContext } from "./TransactionManifestParser";
-import { PublishPackageContext } from "./TransactionManifestParser";
+import { PublishPackageWithOwnerContext } from "./TransactionManifestParser";
 import { BurnBucketContext } from "./TransactionManifestParser";
 import { MintFungibleContext } from "./TransactionManifestParser";
 import { CreateResourceContext } from "./TransactionManifestParser";
@@ -40,7 +43,6 @@ import { U32Context } from "./TransactionManifestParser";
 import { U64Context } from "./TransactionManifestParser";
 import { U128Context } from "./TransactionManifestParser";
 import { StringContext } from "./TransactionManifestParser";
-import { StructContext } from "./TransactionManifestParser";
 import { Enum_Context } from "./TransactionManifestParser";
 import { OptionContext } from "./TransactionManifestParser";
 import { SomeContext } from "./TransactionManifestParser";
@@ -49,23 +51,41 @@ import { OkContext } from "./TransactionManifestParser";
 import { ErrContext } from "./TransactionManifestParser";
 import { ArrayContext } from "./TransactionManifestParser";
 import { TupleContext } from "./TransactionManifestParser";
-import { ListContext } from "./TransactionManifestParser";
-import { SetContext } from "./TransactionManifestParser";
-import { MapContext } from "./TransactionManifestParser";
 import { DecimalContext } from "./TransactionManifestParser";
 import { PreciseDecimalContext } from "./TransactionManifestParser";
 import { PackageAddressContext } from "./TransactionManifestParser";
 import { ComponentAddressContext } from "./TransactionManifestParser";
 import { ResourceAddressContext } from "./TransactionManifestParser";
+import { SystemAddressContext } from "./TransactionManifestParser";
 import { HashContext } from "./TransactionManifestParser";
+import { BytesContext } from "./TransactionManifestParser";
+import { ComponentContext } from "./TransactionManifestParser";
+import { VaultContext } from "./TransactionManifestParser";
+import { KeyValueStoreContext } from "./TransactionManifestParser";
 import { BucketContext } from "./TransactionManifestParser";
 import { ProofContext } from "./TransactionManifestParser";
 import { NonFungibleIdContext } from "./TransactionManifestParser";
 import { NonFungibleAddressContext } from "./TransactionManifestParser";
 import { BlobContext } from "./TransactionManifestParser";
+import { EcdsaSecp256k1PublicKeyContext } from "./TransactionManifestParser";
+import { EcdsaSecp256k1SignatureContext } from "./TransactionManifestParser";
+import { EddsaEd25519PublicKeyContext } from "./TransactionManifestParser";
+import { EddsaEd25519SignatureContext } from "./TransactionManifestParser";
 import { ExpressionContext } from "./TransactionManifestParser";
 import { TypeContext } from "./TransactionManifestParser";
+import { Non_fungible_id_valuesContext } from "./TransactionManifestParser";
 import { ValueContext } from "./TransactionManifestParser";
+import { Re_node_idContext } from "./TransactionManifestParser";
+import { WorktopContext } from "./TransactionManifestParser";
+import { AuthZoneStackContext } from "./TransactionManifestParser";
+import { FeeReserveContext } from "./TransactionManifestParser";
+import { GlobalContext } from "./TransactionManifestParser";
+import { NonFungibleStoreContext } from "./TransactionManifestParser";
+import { ResourceManagerContext } from "./TransactionManifestParser";
+import { Package_Context } from "./TransactionManifestParser";
+import { EpochManagerContext } from "./TransactionManifestParser";
+import { ClockContext } from "./TransactionManifestParser";
+
 
 /**
  * This interface defines a complete generic visitor for a parse tree produced
@@ -74,8 +94,7 @@ import { ValueContext } from "./TransactionManifestParser";
  * @param <Result> The return type of the visit operation. Use `void` for
  * operations with no return type.
  */
-export interface TransactionManifestVisitor<Result>
-	extends ParseTreeVisitor<Result> {
+export interface TransactionManifestVisitor<Result> extends ParseTreeVisitor<Result> {
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.manifest`.
 	 * @param ctx the parse tree
@@ -98,11 +117,25 @@ export interface TransactionManifestVisitor<Result>
 	visitCallFunction?: (ctx: CallFunctionContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.callNativeFunction`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCallNativeFunction?: (ctx: CallNativeFunctionContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.callMethod`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitCallMethod?: (ctx: CallMethodContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.callNativeMethod`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitCallNativeMethod?: (ctx: CallNativeMethodContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktop`.
@@ -116,9 +149,7 @@ export interface TransactionManifestVisitor<Result>
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitTakeFromWorktopByAmount?: (
-		ctx: TakeFromWorktopByAmountContext
-	) => Result;
+	visitTakeFromWorktopByAmount?: (ctx: TakeFromWorktopByAmountContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.takeFromWorktopByIds`.
@@ -146,18 +177,14 @@ export interface TransactionManifestVisitor<Result>
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitAssertWorktopContainsByAmount?: (
-		ctx: AssertWorktopContainsByAmountContext
-	) => Result;
+	visitAssertWorktopContainsByAmount?: (ctx: AssertWorktopContainsByAmountContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.assertWorktopContainsByIds`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitAssertWorktopContainsByIds?: (
-		ctx: AssertWorktopContainsByIdsContext
-	) => Result;
+	visitAssertWorktopContainsByIds?: (ctx: AssertWorktopContainsByIdsContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.popFromAuthZone`.
@@ -178,27 +205,21 @@ export interface TransactionManifestVisitor<Result>
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitCreateProofFromAuthZone?: (
-		ctx: CreateProofFromAuthZoneContext
-	) => Result;
+	visitCreateProofFromAuthZone?: (ctx: CreateProofFromAuthZoneContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByAmount`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitCreateProofFromAuthZoneByAmount?: (
-		ctx: CreateProofFromAuthZoneByAmountContext
-	) => Result;
+	visitCreateProofFromAuthZoneByAmount?: (ctx: CreateProofFromAuthZoneByAmountContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromAuthZoneByIds`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitCreateProofFromAuthZoneByIds?: (
-		ctx: CreateProofFromAuthZoneByIdsContext
-	) => Result;
+	visitCreateProofFromAuthZoneByIds?: (ctx: CreateProofFromAuthZoneByIdsContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.createProofFromBucket`.
@@ -236,11 +257,11 @@ export interface TransactionManifestVisitor<Result>
 	visitClearAuthZone?: (ctx: ClearAuthZoneContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.publishPackage`.
+	 * Visit a parse tree produced by `TransactionManifestParser.publishPackageWithOwner`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitPublishPackage?: (ctx: PublishPackageContext) => Result;
+	visitPublishPackageWithOwner?: (ctx: PublishPackageWithOwnerContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.burnBucket`.
@@ -355,13 +376,6 @@ export interface TransactionManifestVisitor<Result>
 	visitString?: (ctx: StringContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.struct`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitStruct?: (ctx: StructContext) => Result;
-
-	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.enum_`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -418,27 +432,6 @@ export interface TransactionManifestVisitor<Result>
 	visitTuple?: (ctx: TupleContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.list`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitList?: (ctx: ListContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.set`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSet?: (ctx: SetContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `TransactionManifestParser.map`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitMap?: (ctx: MapContext) => Result;
-
-	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.decimal`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -474,11 +467,46 @@ export interface TransactionManifestVisitor<Result>
 	visitResourceAddress?: (ctx: ResourceAddressContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.systemAddress`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSystemAddress?: (ctx: SystemAddressContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.hash`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitHash?: (ctx: HashContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.bytes`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBytes?: (ctx: BytesContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.component`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitComponent?: (ctx: ComponentContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.vault`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitVault?: (ctx: VaultContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.keyValueStore`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitKeyValueStore?: (ctx: KeyValueStoreContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.bucket`.
@@ -516,6 +544,34 @@ export interface TransactionManifestVisitor<Result>
 	visitBlob?: (ctx: BlobContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.ecdsaSecp256k1PublicKey`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEcdsaSecp256k1PublicKey?: (ctx: EcdsaSecp256k1PublicKeyContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.ecdsaSecp256k1Signature`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEcdsaSecp256k1Signature?: (ctx: EcdsaSecp256k1SignatureContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.eddsaEd25519PublicKey`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEddsaEd25519PublicKey?: (ctx: EddsaEd25519PublicKeyContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.eddsaEd25519Signature`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEddsaEd25519Signature?: (ctx: EddsaEd25519SignatureContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.expression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -530,9 +586,87 @@ export interface TransactionManifestVisitor<Result>
 	visitType?: (ctx: TypeContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.non_fungible_id_values`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNon_fungible_id_values?: (ctx: Non_fungible_id_valuesContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `TransactionManifestParser.value`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitValue?: (ctx: ValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.re_node_id`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitRe_node_id?: (ctx: Re_node_idContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.worktop`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitWorktop?: (ctx: WorktopContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.authZoneStack`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAuthZoneStack?: (ctx: AuthZoneStackContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.feeReserve`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFeeReserve?: (ctx: FeeReserveContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.global`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitGlobal?: (ctx: GlobalContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.nonFungibleStore`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNonFungibleStore?: (ctx: NonFungibleStoreContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.resourceManager`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitResourceManager?: (ctx: ResourceManagerContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.package_`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPackage_?: (ctx: Package_Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.epochManager`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEpochManager?: (ctx: EpochManagerContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `TransactionManifestParser.clock`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitClock?: (ctx: ClockContext) => Result;
 }
+
