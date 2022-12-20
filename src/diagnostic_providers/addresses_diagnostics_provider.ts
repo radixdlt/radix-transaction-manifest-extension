@@ -38,7 +38,7 @@ import * as vscode from "vscode";
  * A diagnostics provider that is able to understand the addressing format used in Scrypto and provide diagnostic
  * information related to addresses. This diagnostics provider provides the following features:
  *
- * 1- Ensures that the addresses are a valid Bech32m.
+ * 1- Ensures that the addresses are a valid Bech32m (if it isn't a variable).
  * 2- Ensures that the addresses Bech32 HRP and Entity type match.
  * 3- Ensures that the address string matches the object that it should belong to.
  */
@@ -102,12 +102,14 @@ export default class AddressesDiagnosticProvider
 		// Checking if the address is a valid Bech32m or not.
 		let decodedAddress: bech32.Decoded | undefined =
 			bech32.bech32m.decodeUnsafe(addressString);
-		if (!decodedAddress) {
-			this.addDiagnostic(
-				address,
-				"The address is not a valid Bech32m address.",
-				vscode.DiagnosticSeverity.Error
-			);
+		if (decodedAddress === undefined) {
+			if (!addressString.startsWith("${") || !addressString.endsWith("}")) {
+				this.addDiagnostic(
+					address,
+					"The address is not a valid Bech32m address.",
+					vscode.DiagnosticSeverity.Error
+				);
+			}
 			return;
 		}
 
