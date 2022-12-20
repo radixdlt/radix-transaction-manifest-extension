@@ -26,37 +26,32 @@ manifest
     ;
 
 manifestInstruction
-    :   takeFromWorktop
-    |   takeFromWorktopByAmount
-    |   takeFromWorktopByIds
-
-    |   returnToWorktop
-
-    |   assertWorktopContains
-    |   assertWorktopContainsByAmount
-    |   assertWorktopContainsByIds
-    
-    |   popFromAuthZone
-    |   pushToAuthZone
-    |   clearAuthZone
-    
-    |   createProofFromAuthZone
-    |   createProofFromAuthZoneByAmount
-    |   createProofFromAuthZoneByIds
-    
-    |   createProofFromBucket
-    
-    |   cloneProof
-    |   dropProof
-    |   dropAllProofs
-    
-    |   callFunction
-    |   callMethod
-    |   callNativeFunction
-    |   callNativeMethod
-    
-    |   publishPackageWithOwner
-    ;
+        : callFunction
+        | callNativeFunction
+        | callMethod
+        | callNativeMethod
+        | takeFromWorktop
+        | takeFromWorktopByAmount
+        | takeFromWorktopByIds
+        | returnToWorktop
+        | assertWorktopContains
+        | assertWorktopContainsByAmount
+        | assertWorktopContainsByIds
+        | popFromAuthZone
+        | pushToAuthZone
+        | createProofFromAuthZone
+        | createProofFromAuthZoneByAmount
+        | createProofFromAuthZoneByIds
+        | createProofFromBucket
+        | cloneProof
+        | dropProof
+        | dropAllProofs
+        | clearAuthZone
+        | publishPackageWithOwner
+        | burnBucket
+        | mintFungible
+        | createResource
+        ;
 
 // Instructions
 
@@ -192,14 +187,14 @@ u32                     :   U32_LITERAL ;
 u64                     :   U64_LITERAL ;
 u128                    :   U128_LITERAL ;
 string                  :   STRING_LITERAL ;
-enum_                   :   ENUM_TYPE OPEN_PARENTHESIS (string COMMA (value (COMMA value)*)?) CLOED_PARENTHESIS ;
+enum_                   :   ENUM_TYPE OPEN_PARENTHESIS string (COMMA value)* CLOED_PARENTHESIS ;
 option                  :   ( some | none ) ;
 some                    :   'Some' OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
 none                    :   'None' ;
 ok                      :   'Ok' OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
 err                     :   'Err' OPEN_PARENTHESIS value CLOED_PARENTHESIS ;
 array                   :   ARRAY_TYPE LESS_THAN type GREATER_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
-tuple                   :   TUPLE_TYPE LESS_THAN (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
+tuple                   :   TUPLE_TYPE (EMPTY_PARENTHESIS | OPEN_PARENTHESIS (value (COMMA value)*)? CLOED_PARENTHESIS) ;
 decimal                 :   DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 preciseDecimal          :   PRECISE_DECIMAL_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 packageAddress          :   PACKAGE_ADDRESS_TYPE OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
@@ -344,7 +339,7 @@ re_node_id
     ;
 
 worktop             : 'Worktop' ;
-authZoneStack       : 'AuthZoneStack' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
+authZoneStack       : 'AuthZoneStack' OPEN_PARENTHESIS U32_LITERAL CLOED_PARENTHESIS ;
 feeReserve          : 'FeeReserve' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 global              : 'Global' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;
 nonFungibleStore    : 'NonFungibleStore' OPEN_PARENTHESIS STRING_LITERAL CLOED_PARENTHESIS ;                
